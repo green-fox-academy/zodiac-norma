@@ -3,10 +3,10 @@ var app = express();
 
 var port = process.env.PORT || 8080
 
-// app.use(express.static());
+app.use(express.static(__dirname + '/dist'));
 
 app.get('/', function(req, res){
-    res.sendfile(__dirname + '/first-heroku-app/src/index.html');
+    res.sendfile(__dirname + '/first-heroku-app/dist/index.html');
 })
 
 app.listen(port, function(){
