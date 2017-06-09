@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/greenfox-academy/zodiac-norma/issues"
   },
-  "homepage": "https://github.com/greenfox-academy/zodiac-norma#readme"
+  "homepage": "https://github.com/greenfox-academy/zodiac-norma#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
 }
