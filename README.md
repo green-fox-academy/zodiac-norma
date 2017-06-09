@@ -21,17 +21,13 @@ About team Norma:
 We are three students from the Greenfox Academy Lagopus-Zodiac class.:
 
 Pamela Paprasz
-
 https://github.com/PamelaPaprasz
 
 Daniel Kőrösi
-
 https://github.com/danielkorosi
 
 Ferenc Hartmann
-
 https://github.com/Fekapapa
-
 www.ferenchartmann.com
 
 
