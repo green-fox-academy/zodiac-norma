@@ -1,0 +1,11 @@
+<body>
+    <div class="inputContainer">
+      <label>Search tested:</label>
+        <input class="search" [(ngModel)]="username" (ngModelChange)="onChange(username)">
+    </div>
+    <div class="dynamicContainer">
+        <ul class="dynamicGrid" *ngFor = "let i of itemsFiltered;">
+            <li class="gridElement">{{i}}</li>
+        </ul>
+    </div>
+</body>
