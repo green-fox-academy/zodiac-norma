@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+
+export class Hotel {
+  id: number;
+  name: string;
+  descr: string;
+}
+ 
 
 @Component({
   selector: 'app-top-hotels',
@@ -13,3 +21,5 @@ export class TopHotelsComponent implements OnInit {
   }
 
 }
+
+
