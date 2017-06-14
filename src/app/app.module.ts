@@ -17,7 +17,8 @@ import { TopHotelsComponent } from './top-hotels/top-hotels.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
