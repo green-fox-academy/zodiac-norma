@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { SliderComponent } from './slider/slider.component';
 import { BookinSectionComponent } from './bookin-section/bookin-section.component';
 import { TopHotelsComponent } from './top-hotels/top-hotels.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SliderComponent,
     BookinSectionComponent,
-    TopHotelsComponent
+    TopHotelsComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

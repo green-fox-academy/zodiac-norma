@@ -1,0 +1,37 @@
+#header {
+    padding: 0px 225px;
+    min-height: 90px;
+    height: 6.8%;
+    background: rgb(25, 25, 25);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.topLogo {
+    width: 166px;
+    height: 55px;
+    background-image: url(../images/paradise_logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover
+}
+
+.navContainer {
+    margin-left: 140px;
+    min-width: 540px;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation {
+    color: rgb(255, 255 ,255);
+    padding: 0px 17px;
+    border-right: solid rgb(48, 48, 48) 1px;
+    text-overflow:ellipsis;
+}
+
+.end {
+    border: none;
+}
