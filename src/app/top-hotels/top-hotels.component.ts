@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 export class Hotel {
   id: number;
@@ -15,7 +16,16 @@ export class Hotel {
 })
 export class TopHotelsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: Http) { }
+
+  fetchData(){
+    return this.http.get('https://bookingnorma.glitch.me/toprooms').map(
+    (response) => response.json
+    ).subscribe(
+    (data) => console.log(data)
+    
+    )
+  }
 
   ngOnInit() {
   }
