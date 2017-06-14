@@ -33,19 +33,19 @@ app-bookin-section {
     align-items: center;
 }
 
-// @mixin grid($cols, $mgn){1.135
-//   float: left;
-//   margin-right: $mgn;
-//   margin-bottom: $mgn;
-//   margin-top: 0px;
-//   width: ((100% - (($cols - 1) * $mgn)) / $cols);
-//   &:nth-child(#{($cols)}n){
-//     margin-right: 0;
-//   }
-// }
-//
-// .dynamicGrid {
-//   height: 150px;
-//   background-color: rgba(255, 255, 255, 0);
-//   @include grid(3, 2%);
-// }
+@mixin grid($cols, $mgn){
+    float: left;
+    margin-right: $mgn;
+    margin-bottom: $mgn;
+    margin-top: 0px;
+    width: ((100% - (($cols - 1) * $mgn)) / $cols);
+    &:nth-child(#{($cols)}n){
+        margin-right: 0;
+    }
+}
+
+.dynamicGrid {
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0);
+    @include grid(3, 2%);
+}
