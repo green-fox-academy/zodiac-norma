@@ -1,9 +1,65 @@
+$break: 1000px;
+$break-small: 800px;
+$break-collapse: 620px;
+
 .footer {
-    min-height: 67px;
+    min-width: 590px;
+    padding: 0;
+    min-height: 65px;
     height: 5.1%;
-    background: lightblue;
+    background: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
+    @media screen and (max-width: $break-collapse) {
+        min-width: 250px;
+    }
+}
+
+.footer .container {
+    width: 900px;
+    min-width: 590px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    background: rgb(255, 255, 255);
+    justify-content: space-between;
+    @media screen and (max-width: $break-collapse) {
+        min-width: 250px;
+        flex-direction: column-reverse;
+    }
+}
+
+.footerText {
+    padding-left: 10px;
+    min-width: 265px;
+    color: rgb(170, 170, 170);
+    font-size: 12px;
+    @media screen and (max-width: $break-collapse) {
+    margin-bottom: 15px;
+    }
+}
+
+.footer .container .navContainer {
+    margin-right: 10px;
+    min-width: 540px;
+    max-width: 540px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (max-width: $break-small) {
+        min-width: 340px;
+    }
+    @media screen and (max-width: $break-collapse) {
+        min-width: 150px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+.footer .container .navContainer .navigation {
+    color: rgb(170, 170, 170);
+    font-size: 12px;
+    padding: 0px 5px;
+    @media screen and (max-width: $break-small) {
+    padding: 0px 5px;
+    }
 }
