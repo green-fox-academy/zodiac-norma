@@ -1,3 +1,8 @@
-<p>
-  top-hotels works! Pami Pami
-</p>
+
+<div class="hotels" *ngFor="let hotel of hotels">
+  <!--<div class='image' ng-style="background-image:url(placehold.it/300x150);"></div>-->
+  <img class='image' src = "http://{{ hotel.image }}">
+  <h2 class="title">{{hotel.title}} <span>{{hotel.price}}</span></h2> 
+  <p class="descr">{{hotel.description}}</p> 
+  <p class="price">{{hotel.price}}</p> 
+</div>

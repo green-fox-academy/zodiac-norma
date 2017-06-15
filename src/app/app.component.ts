@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TopHotelsComponent } from './top-hotels/top-hotels.component';
 
 @Component({
   selector: 'app-root',
@@ -6,26 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  
+  constructor(private topHotelService: TopHotelsComponent) {
+  }
+
   ngOnInit() {
-  }
-  constructor() {
+    this.topHotelService.fetchData
   }
 
-  items = ["amazing", "awesome", "blithesome", "excellent", "fabulous", "fantastic", "favorable", "fortuitous", "great", "incredible", "ineffable", "mirthful", "outstanding", "perfect", "propitious", "remarkable", "smart", "spectacular", "splendid", "stellar", "stupendous", "super", "ultimate", "unbelievable", "wondrous"];
 
-  itemsFiltered = this.items;
-  username: string;
 
   onChange = function(username) {
-    this.itemsFiltered = [];
-    //for (let i = 0; i < this.items.length; i++) {
-     // if (this.items[i].includes(username)) {
-     //   this.itemsFiltered.push(this.items[i]);
-      //}
-    //}
-
-    this.itemsFiltered = this.items.filter(item => {
-      return item.indexOf(username) != -1;
-    });
+    
   }
 }
+
