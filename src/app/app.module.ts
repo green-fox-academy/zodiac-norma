@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { SliderComponent } from './slider/slider.component';
+// import { SliderComponent } from './slider/slider.component';
 import { BookinSectionComponent } from './bookin-section/bookin-section.component';
 import { TopHotelsComponent } from './top-hotels/top-hotels.component';
 import { HeaderComponent } from './header/header.component';
@@ -13,7 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
-    SliderComponent,
+    // SliderComponent,
     BookinSectionComponent,
     TopHotelsComponent,
     HeaderComponent,
