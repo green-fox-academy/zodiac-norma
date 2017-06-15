@@ -2,10 +2,8 @@
 
 <div class='top-hotel-container'>
   <div class="hotels" *ngFor="let hotel of hotels">
-    <!--<div class='image' ng-style="background-image:url(placehold.it/300x150);"></div>-->
     <img class='image' src = "http://{{ hotel.image }}">
     <h3 class="title">{{hotel.title}} <span>{{hotel.price}}</span></h3> 
     <p class="descr">{{hotel.description}}</p> 
-    <!--<p class="price">{{hotel.price}}</p> -->
   </div>
 </div>

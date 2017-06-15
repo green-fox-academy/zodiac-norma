@@ -1,7 +1,4 @@
-$break: 1000px;
-$break-small: 800px;
-$break-collapse: 620px;
-
+@import '../.././scss/break-points.scss';
 
 .header {
     min-width: 590px;
