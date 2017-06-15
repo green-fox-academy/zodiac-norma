@@ -3,22 +3,34 @@
 .top-hotel-container {
   max-width: 975px;
   min-width: 975px;
-  display: flex;
-  justify-content: center;
-}
-
-.hotels {
-  height: 300px;
-  // width: 975px;
-  background-color: rgba(255, 255, 255, 0);
-  @include grid(3, 5%);
-  &:nth-child(#1){
-    margin-left: 0;
+  @media screen and (max-width: 975px) {
+    min-width: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
+.hotels {
+  height: 320px;
+  background-color: rgba(255, 255, 255, 0);
+  @include grid(3, 5%);
+  // @media screen and (max-width: 1100px) {
+  //   @include grid(3, 2%);
+  // }
+  @media screen and (max-width: 975px) {
+    @include grid(1, 0%);
+    clear: left;
+    margin-bottom: 20px;
+  } 
+}
+
 .image {
+  // max-width: 295px;
+  // max-height: 145px;
+  // min-width: 295px;
+  // min-height: 145px;
   max-width: 100%;
+  // min-width: 100%;
 }
 
 .descr {

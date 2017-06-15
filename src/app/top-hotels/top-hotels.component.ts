@@ -27,6 +27,10 @@ export class TopHotelsComponent implements OnInit {
     )
   }
 
+  postData(){
+    
+  }
+
   ngOnInit() {
     this.fetchData()
   }
