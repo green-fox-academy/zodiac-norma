@@ -1,3 +1,6 @@
+@import '.././scss/grid.scss';
+
+
 section {
     margin:0;
     padding:0;
@@ -31,17 +34,6 @@ app-bookin-section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-@mixin grid($cols, $mgn){
-    float: left;
-    margin-right: $mgn;
-    margin-bottom: $mgn;
-    margin-top: 0px;
-    width: ((100% - (($cols - 1) * $mgn)) / $cols);
-    &:nth-child(#{($cols)}n){
-        margin-right: 0;
-    }
 }
 
 .dynamicGrid {

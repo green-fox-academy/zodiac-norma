@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 
 @Component({
   selector: 'app-bookin-section',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookinSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  private myDatePickerOptions: IMyDpOptions = {
+          // other options...
+          dateFormat: 'dd.mm.yyyy',
+      };
 }
