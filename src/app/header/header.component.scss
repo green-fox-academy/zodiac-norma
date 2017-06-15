@@ -36,11 +36,11 @@ header div a {
 .topLogo {
     margin-left: 10px;
     min-width: 166px;
-    min-height: 55px;
-    background-image: url(../images/paradise_logo.png);
+    min-height: 80px;
+    background-image: url(../images/cute_logo.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     @media screen and (max-width: $break-collapse) {
     }
 }
