@@ -1,3 +1,8 @@
-<p>
-  slider works!!
-</p>
+<section>
+  <div class="mainimage">
+      <img (click)="shiftArray('translated-right', 'imgItem')" class='arrow left' src="http://img.freepik.com/free-icon/next_318-143043.jpg?size=338c&ext=jpg" alt="">
+      <img *ngFor="let x of imageData; let i = index"  [src]="x.file" [ngStyle]="{'z-index': imageData.length-i}" [class]= 'x.class'> 
+      <img (click)="shiftArray('translated-left', 'imgItem')" class='arrow right' src="http://img.freepik.com/free-icon/next_318-143043.jpg?size=338c&ext=jpg" alt="">
+  </div>
+</section>
+
