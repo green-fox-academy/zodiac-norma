@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 })
 export class TopHotelsComponent implements OnInit {
 
-  hotels: [null];
+  hotels: {};
 
   constructor(private http: Http) { }
 
@@ -21,6 +21,8 @@ export class TopHotelsComponent implements OnInit {
     ).subscribe(
     (hotels => {
       this.hotels = hotels
+      console.log(this.hotels[0].image);
+      
     }) 
     )
   }

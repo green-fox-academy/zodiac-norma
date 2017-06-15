@@ -20,7 +20,7 @@ import { TopHotelsComponent } from './top-hotels/top-hotels.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [TopHotelsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

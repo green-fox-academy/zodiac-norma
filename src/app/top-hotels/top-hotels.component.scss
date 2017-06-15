@@ -1,0 +1,22 @@
+@mixin grid($cols, $mgn){
+  float: left;
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  margin-top: 0px;
+  width: ((100% - (($cols - 1) * $mgn)) / $cols);
+  &:nth-child(#{($cols)}n){
+    margin-right:0;
+  }
+}
+
+
+.hotels {
+  height: 150px;
+  // background: url('https://bookingnorma.glitch.me/toprooms');
+  background-color: rgba(255, 255, 255, 0);
+  @include grid(3, 20%);
+}
+
+// .descr {
+
+// }
