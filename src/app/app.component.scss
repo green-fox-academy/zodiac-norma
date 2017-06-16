@@ -9,10 +9,11 @@ section {
 app-bookin-section {
     position: absolute;
     line-height: 50px;
-    bottom: -65px;
+    top: 628px;
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 101;
 }
 
 .slider {
