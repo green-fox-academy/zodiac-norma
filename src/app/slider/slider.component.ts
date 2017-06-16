@@ -29,9 +29,11 @@ export class SliderComponent implements OnInit {
   }
 
   setClassIndex(x, className) {
+    
     if (this.classIndex >= 0 && this.classIndex < this.rawData.length-1) {
       this.classIndex += x;
       this.imageData[this.imageData.length-1].class = 'img-item';
+      this.imageData[0].class = 'img-item';
     } else if (this.classIndex === this.rawData.length-1) {
         this.classIndex = 0;
     } else if (this.classIndex === 0){
@@ -56,33 +58,15 @@ export class SliderComponent implements OnInit {
   }
 
   setClassesBackward(classInput, x) {
-    this.imageData[this.classIndex].class = classInput;
-    if (this.classIndex === this.imageData.length-1) {
-      this.imageData
-    }
-    this.imageData[this.classIndex-x].class = 'actual-front';
-    this.imageData[this.classIndex-(2*x)].class = 'img-item';
-    //if (this.imageData)
-  
+    /*if (this.classIndex === -1) {
+      this.classIndex = this.imageData.length;
+      this.imageData[this.imageData.length-1].class = classInput;
+      this.imageData[this.imageData[0]].class = 'actual-front';
+      this.imageData[this.imageData[1]].class = 'img-item';
+    } else {*/
+      this.imageData[this.classIndex].class = classInput;
+      this.imageData[this.classIndex-x].class = 'actual-front';
+      this.imageData[this.classIndex-(2*x)].class = 'img-item';
+    //}
   }
-  
-  
-
-  /*shiftArrayForward(className) {
-
-    this.rawData.splice(this.rawData.length, 0, this.rawData[0])
-    this.rawData.shift()
-    this.imageData = []
-    this.createObject(className, 0)
-    console.log(this.imageData);
-    
-  }
-
-  shiftArrayBackward(className) {
-    this.rawData.splice(0, 0, this.rawData[this.rawData.length-1]);
-    this.rawData.splice(this.rawData.length-1, 1);
-
-    this.imageData = []
-    this.createObject(className, 0);
-  }*/
 }
