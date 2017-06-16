@@ -22,7 +22,7 @@ export class BookinSectionComponent implements OnInit {
       console.log( this.inputValues);
   }
 
-  private myDatePickerOptions: IMyDpOptions = {
+  myDatePickerOptions: IMyDpOptions = {
           // other options...
           dateFormat: 'dd.mm.yyyy',
       };
