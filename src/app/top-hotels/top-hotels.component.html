@@ -2,7 +2,7 @@
 
 <div class='top-hotel-container'>
   <div class="hotels" *ngFor="let hotel of hotels">
-    <img class='image' src = "http://{{ hotel.image }}">
+    <div class='image' [ngStyle]="{'background-image': 'url(http://'+hotel.image+')'}"></div>
     <h3 class="title">{{hotel.title}} <span>{{hotel.price}}</span></h3> 
     <p class="descr">{{hotel.description}}</p> 
   </div>
