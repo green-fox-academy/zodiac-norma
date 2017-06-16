@@ -7,10 +7,10 @@ describe('zodiac-norma App', () => {
     page = new ZodiacNormaPage();
   });
 
-  it('should display welcome message', done => {
+  it('should display: Book a room online', done => {
     page.navigateTo();
     page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Welcome to app!!'))
+      .then(msg => expect(msg).toEqual('Book a room online'))
       .then(done, done.fail);
   });
 });
