@@ -28,17 +28,34 @@
 
 header div a {
     z-index: 200;
+    display: flex;
 }
 
 .topLogo {
     min-width: 100px;
     min-height: 80px;
-    background-image: url(../images/cute_logo.png);
+    background-image: url(../images/cute_logo_nohead.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    @media screen and (max-width: $break-collapse) {
-    }
+}
+
+.topLogoMoving {
+    min-width: 45px;
+    min-height: 45px;
+    position: relative;
+    left: -65px;
+    top: -20px;
+    background-image: url(../images/deerhead.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: 1s;
+}
+
+.topLogoMoving:hover {
+    transform: translateY(10px);
+    transition: transform 1s;
 }
 
 .navContainer {
