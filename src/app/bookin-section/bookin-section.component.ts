@@ -14,6 +14,7 @@ export class BookinSectionComponent implements OnInit {
   ngOnInit() {
   }
 
+
   private myDatePickerOptions: IMyDpOptions = {
           // other options...
           dateFormat: 'dd.mm.yyyy',
