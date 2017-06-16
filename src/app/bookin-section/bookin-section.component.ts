@@ -6,6 +6,7 @@ import { IMyDpOptions } from 'mydatepicker';
   templateUrl: './bookin-section.component.html',
   styleUrls: ['./bookin-section.component.scss']
 })
+
 export class BookinSectionComponent implements OnInit {
 
   constructor() {
@@ -14,6 +15,12 @@ export class BookinSectionComponent implements OnInit {
   ngOnInit() {
   }
 
+  inputValues = [];
+
+  pushItem(roomType, checkin, checkout, adults, children) {
+      this.inputValues.push(roomType, checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
+      console.log( this.inputValues);
+  }
 
   private myDatePickerOptions: IMyDpOptions = {
           // other options...
