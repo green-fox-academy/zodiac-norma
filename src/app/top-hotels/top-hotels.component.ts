@@ -21,8 +21,6 @@ export class TopHotelsComponent implements OnInit {
     ).subscribe(
     (hotels => {
       this.hotels = hotels
-      console.log(this.hotels);
-      
     }) 
     )
   }
