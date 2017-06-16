@@ -27,6 +27,7 @@ export class TopHotelsComponent implements OnInit {
     )
   }
 
+
   ngOnInit() {
     this.fetchData()
   }
