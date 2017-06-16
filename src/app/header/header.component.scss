@@ -20,14 +20,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    z-index: 2;
+    z-index: 200;
     @media screen and (max-width: $break-collapse) {
         min-width: 250px;
     }
 }
 
 header div a {
-    z-index: 2;
+    z-index: 200;
 }
 
 .topLogo {
@@ -83,7 +83,7 @@ header div a {
     @media screen and (max-width: $break-collapse) {
     display: block;
     cursor: pointer;
-    z-index: 2;
+    z-index: 200;
     }
 }
 
