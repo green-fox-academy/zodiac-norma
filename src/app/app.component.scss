@@ -41,3 +41,7 @@ app-bookin-section {
     background-color: rgba(255, 255, 255, 0);
     @include grid(3, 2%);
 }
+
+app-slider {
+  width: 100%;
+}
