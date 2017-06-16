@@ -21,13 +21,15 @@
                     [(ngModel)]="checkoutDate" required></my-date-picker>
         </form>
     </div>
-    <div class="miniBox">
-        <label>Adults:</label>
-        <input #adults>
-    </div>
-    <div class="miniBox">
-        <label>Children:</label>
-        <input #children>
+    <div class="miniContainer">
+        <div class="miniBox">
+            <label>Adults:</label>
+            <input #adults>
+        </div>
+        <div class="miniBox">
+            <label>Children:</label>
+            <input #children>
+        </div>
     </div>
     <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
         <p>Book now</p>

@@ -1,3 +1,5 @@
+@import '../.././scss/break-points.scss';
+
 .mainContainer {
     width: 975px;
     height: 100px;
@@ -8,6 +10,12 @@
     border-style: solid;
     border-width: 2px;
     background-color: rgb(255, 255, 255);
+    @media screen and (max-width: $break) {
+        flex-direction: column;
+        width: 320px;
+        height: auto;
+        align-items: center;
+    }
 }
 
 .textBox {
@@ -17,6 +25,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media screen and (max-width: $break) {
+        padding-bottom: 0;
+    }
 }
 
 .textBox h1 {
@@ -45,6 +56,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media screen and (max-width: $break) {
+        padding-bottom: 0;
+    }
 }
 
 input {
@@ -68,6 +82,19 @@ label {
     line-height: 20px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: $break) {
+        padding-bottom: 0;
+    }
+}
+
+.miniContainer {
+    width: 118px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $break) {
+        width: 140px;
+    }
+
 }
 
 .miniBox {
@@ -80,6 +107,9 @@ label {
     flex-direction: column;
     justify-content: center;
     line-height: 20px;
+    @media screen and (max-width: $break) {
+        padding-bottom: 0;
+    }
 }
 
 .buttonBox {
@@ -95,4 +125,9 @@ label {
     color: white;
     font-weight: bold;
     cursor: pointer;
+    @media screen and (max-width: $break) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
 }
