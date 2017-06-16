@@ -1,8 +1,8 @@
 <section>
   <div class="mainimage">
-      <img (click)="setClassIndex(-1, 'translated-right')" class='arrow left' src="001-arrows.svg" alt="">
-      <img *ngFor="let x of imageData; let i = index"  [src]="x.file" [class]= 'x.class'  > 
-      <img (click)="setClassIndex(1, 'translated-left')" class='arrow right' src="002-next.svg" alt="">
+      <div (click)="setClassIndex(-1, 'translated-right')" class='arrow left' alt=""></div>
+      <div *ngFor="let x of imageData; let i = index"  [ngStyle]="{'background-image': 'url('+x.file+')'}" [class]= 'x.class'> </div>
+      <div (click)="setClassIndex(1, 'translated-left')" class='arrow right' src="arrow1.svg" alt=""></div>
   </div>
 </section>
 
