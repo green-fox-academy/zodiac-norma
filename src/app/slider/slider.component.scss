@@ -20,7 +20,7 @@ section {
 }
 
 .left {
-    transform: rotate(180deg);
+    //transform: rotate(180deg);
     position: absolute;
     top: 40%;
     left: 0%;
@@ -36,41 +36,58 @@ img {
     height: auto;
 }
 
-.imgItem {
+.img-item {
     position: absolute;
+    width: 100%;
+    height: 100%;
     left: 0px;
     margin: auto;
     //transform
 }
 
+.actual-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    margin: auto;
+    z-index: 98;
+}
+
 .translated-right {
+    width: 100%;
+    height: 100%;
     position: relative;
     left: 100%;
     //transform: translateX(-50px);
     //transition: position 0.5s 1s ease ;
-    animation: from-right 2s ease-in;
+    animation: from-right 0.6s ease forwards;
+    //animation-fill-mode: forwards;
 }
 
 .translated-left {
+    width: 100%;
+    height: 100%;
     position: relative;
     left: -100%;
     //transform: translateX(100%); 
-    animation: from-left 2s ease-in;
+    animation: from-left 0.6s ease forwards;
+    //animation-fill-mode: forwards;
 }
 
 @keyframes from-left {
-    from {left: -100%}
-    to {left: 0%}
+    from {left: -100%; z-index: 99}
+    to {left: 0%; z-index: 99}
 }
 
 @keyframes from-right {
-    from {left: 100%}
-    to {left: 0%}
+    from {left: 100%; z-index: 99}
+    to {left: 0%; z-index: 99}
 }
-.from-right {
+/*.from-right {
     transform: translateY(50%);
     transition: all 0.5s 10s;
-}
+}*/
 
 /*.fade-in {
      transition: 1s all;

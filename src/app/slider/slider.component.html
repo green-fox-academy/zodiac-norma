@@ -1,8 +1,8 @@
 <section>
   <div class="mainimage">
-      <img (click)="shiftArray('translated-right')" class='arrow left' src="http://img.freepik.com/free-icon/next_318-143043.jpg?size=338c&ext=jpg" alt="">
-      <img *ngFor="let x of imageData; let i = index"  [src]="x.file" [ngStyle]="{'z-index': imageData.length-i}" [class]= 'x.class'> 
-      <img (click)="shiftArray('translated-left')" class='arrow right' src="http://img.freepik.com/free-icon/next_318-143043.jpg?size=338c&ext=jpg" alt="">
+      <img (click)="setClassIndex(-1, 'translated-right')" class='arrow left' src="001-arrows.svg" alt="">
+      <img *ngFor="let x of imageData; let i = index"  [src]="x.file" [class]= 'x.class'  > 
+      <img (click)="setClassIndex(1, 'translated-left')" class='arrow right' src="002-next.svg" alt="">
   </div>
 </section>
 
