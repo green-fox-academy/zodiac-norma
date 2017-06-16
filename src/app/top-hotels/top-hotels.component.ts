@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
-
-
-@Injectable()
  
 
 @Component({
@@ -17,7 +12,6 @@ import 'rxjs/add/operator/map';
 export class TopHotelsComponent implements OnInit {
 
   hotels: {};
-  post: {};
 
   constructor(private http: Http) { }
 
@@ -33,25 +27,9 @@ export class TopHotelsComponent implements OnInit {
     )
   }
 
-  postData(){
-    var json = JSON.stringify({ var1: 'test', var2: 'proof'});
-    var params = 'json' + json;
-    var headers = new Headers('Content-Type', 'application/json');
-    let options = new RequestOptions({ headers: headers });
-    return this.http.post('https://bookingnorma.glitch.me/proof-post', params).map(
-    res => res.json()
-    ).subscribe(
-    (post => {
-      this.post = post
-      console.log(post);
-      
-    })
-    )
-  }
 
   ngOnInit() {
-    this.fetchData(),
-    this.postData()
+    this.fetchData()
   }
 }
 
