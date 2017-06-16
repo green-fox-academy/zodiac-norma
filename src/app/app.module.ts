@@ -26,7 +26,7 @@ import { FooterComponent } from './footer/footer.component';
     HttpModule,
     MyDatePickerModule
   ],
-  exports: [MyDatePickerModule],
+  
   providers: [TopHotelsComponent],
   bootstrap: [AppComponent]
 })
