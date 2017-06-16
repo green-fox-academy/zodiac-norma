@@ -14,27 +14,33 @@ export class SliderComponent implements OnInit {
    ngOnInit() {
   }
 
-  rawData = [{src: 'img1.jpg'}, {src: 'img2.jpg'}, {src: 'img3.jpg'}, {src: 'img4.jpg'}, {src: 'img5.jpg'}];
+  rawData = [{src: 'http://lorempixel.com/400/200/sports/'}, {src: 'http://lorempixel.com/400/205/sports/'}, {src: 'http://lorempixel.com/400/210/sports/'}, {src: 'http://lorempixel.com/400/215/sports/'}, {src: 'http://lorempixel.com/400/220/sports/'}];
   imageData = [];
   
   createObject() {
     for (let i = 0; i < this.rawData.length; i++) {
       this.imageData.push({file: this.rawData[i].src, class: 'imgItem'})
     }
-    /*this.imageData[1].class = 'translated'*/
+
     return this.imageData
   }
 
+  fadeIn() {
+    this.imageData[1].class = 'fade';
+  }
 
-
-  shiftArray(className, original) {
+  animate = false;
+  shiftArray(className) {
     this.rawData.splice(this.rawData.length, 0, this.rawData[0])
     this.rawData.shift()
     this.imageData = []
     this.createObject()
-    this.imageData[1].class += " " + className;
+    this.imageData[1].class = className;
+    //this.imageData[1].class = fadein;
     //this.imageData[1].class = original;
     //console.log(this.rawData);
+    
+    this.animate = true
     console.log(this.imageData);
 
   }

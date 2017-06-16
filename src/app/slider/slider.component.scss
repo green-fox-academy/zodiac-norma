@@ -40,15 +40,39 @@ img {
     position: absolute;
     left: 0px;
     margin: auto;
-    transition: 1s all ease;
-    transform: translateX(0%);
+    //transform
 }
 
 .translated-right {
-    transform: translateX(100%);
+    position: relative;
+    left: 100%;
+    //transform: translateX(-50px);
+    //transition: position 0.5s 1s ease ;
+    animation: from-right 2s ease-in;
 }
 
-.translated-left{
-    transform: translateY(100px);
+.translated-left {
+    position: relative;
+    left: -100%;
+    //transform: translateX(100%); 
+    animation: from-left 2s ease-in;
 }
+
+@keyframes from-left {
+    from {left: -100%}
+    to {left: 0%}
+}
+
+@keyframes from-right {
+    from {left: 100%}
+    to {left: 0%}
+}
+.from-right {
+    transform: translateY(50%);
+    transition: all 0.5s 10s;
+}
+
+/*.fade-in {
+     transition: 1s all;
+}*/
 
