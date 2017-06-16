@@ -18,11 +18,17 @@ app-bookin-section {
 .slider {
     height: 50.5%;
     min-height: 588px;
+    max-height: 588px;
     min-width: 100%;
-    background: rgb(208, 208, 208);
+    // background: rgb(208, 208, 208);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+app-slider {
+    min-height: 588px;
+    max-height: 588px;
 }
 
 .topHotels {
