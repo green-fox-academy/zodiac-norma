@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IMyDpOptions} from 'mydatepicker';
+import { IMyDpOptions } from 'mydatepicker';
 
 @Component({
   selector: 'app-bookin-section',
