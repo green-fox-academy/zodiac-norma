@@ -15,14 +15,22 @@ export class SliderComponent implements OnInit {
   }
 
   //rawData = [{src: 'http://lorempixel.com/400/200/sports/'}, {src: 'http://lorempixel.com/400/205/sports/'}, {src: 'http://lorempixel.com/400/210/sports/'}, {src: 'http://lorempixel.com/400/215/sports/'}, {src: 'http://lorempixel.com/400/220/sports/'}];
-  rawData = [{src: 'img1.jpg'}, {src: 'img2.jpg'}, {src: 'img3.jpg'}, {src: 'img4.jpg'}, {src: 'img5.jpg'}, {src: 'img6.jpg'}, {src: 'img7.jpg'}];
+  rawData = [
+    {src: 'img1.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
+    {src: 'img2.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
+    {src: 'img3.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
+    {src: 'img4.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
+    {src: 'img5.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
+    {src: 'img6.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
+    {src: 'img7.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}
+  ];
   
   imageData = [];
   classIndex = 0;
 
   createObject() {
     for (let i = 0; i < this.rawData.length; i++) {
-      this.imageData.push({file: this.rawData[i].src, class: 'img-item'})
+      this.imageData.push({file: this.rawData[i].src, class: 'img-item', destination: this.rawData[i].destination, subtitle: this.rawData[i].subtitle})
     }
     this.imageData[0].class = 'current-front';
     return this.imageData
