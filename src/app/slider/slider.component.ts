@@ -29,25 +29,25 @@ export class SliderComponent implements OnInit {
   }
 
   setClassIndex(x, className) {
-    
-    if (this.classIndex >= 0 && this.classIndex < this.rawData.length-1) {
-      this.classIndex += x;
+    this.classIndex += x;
+    if (this.classIndex > 0 && this.classIndex < this.imageData.length) {
       this.imageData[this.imageData.length-1].class = 'img-item';
       this.imageData[0].class = 'img-item';
-    } else if (this.classIndex === this.rawData.length-1) {
+    } else if (this.classIndex === this.imageData.length) {
         this.classIndex = 0;
-    } else if (this.classIndex === 0){
-        this.classIndex = this.rawData.length-1
+    } else if (this.classIndex === -1){
+        this.classIndex = this.imageData.length-1;
     }
+    
     if (x === 1) {
       this.setClassesForward(className, x)
     } else if (x === -1) {
       this.setClassesBackward(className, x)
     }
   }
-
-  setClassesForward(classInput, x) {
-    this.imageData[this.classIndex].class = classInput;
+  
+ setClassesForward(className, x) {
+    this.imageData[this.classIndex].class = className;
     if (this.classIndex === 0) {
       this.imageData[this.imageData.length-1].class = 'actual-front';
       this.imageData[this.imageData.length-2].class = 'img-item';
@@ -57,16 +57,15 @@ export class SliderComponent implements OnInit {
     }
   }
 
-  setClassesBackward(classInput, x) {
-    /*if (this.classIndex === -1) {
-      this.classIndex = this.imageData.length;
-      this.imageData[this.imageData.length-1].class = classInput;
-      this.imageData[this.imageData[0]].class = 'actual-front';
-      this.imageData[this.imageData[1]].class = 'img-item';
-    } else {*/
-      this.imageData[this.classIndex].class = classInput;
+  setClassesBackward(className, x) {
+    console.log(this.classIndex);
+    this.imageData[this.classIndex].class = className;
+    if (this.classIndex === this.imageData.length-1) {
+      this.imageData[0].class = 'actual-front';
+      this.imageData[1].class = 'img-item';
+    } else {
       this.imageData[this.classIndex-x].class = 'actual-front';
       this.imageData[this.classIndex-(2*x)].class = 'img-item';
-    //}
+    }
   }
 }
