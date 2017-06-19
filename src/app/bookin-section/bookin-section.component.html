@@ -31,7 +31,7 @@
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input placeholder="0" #children type="number">
+            <input placeholder="0" #children type="number" min="0">
         </div>
     </div>
     <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
