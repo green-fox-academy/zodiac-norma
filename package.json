@@ -12,6 +12,7 @@
     "start": "ng serve",
     "build": "ng build",
     "lint": "ng lint",
+    "local": "node index.js",
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build"
   }
