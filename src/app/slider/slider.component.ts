@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
+import { AppService } from '.././app.service';
 
 @Component({
   selector: 'app-slider',
@@ -7,14 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SliderComponent implements OnInit {
-  
-  constructor() { }
+  rawData = [];
+  constructor(private request: AppService) { }
+
   ngOnInit() {
-     this.createObject()
+    this.request.getData('https://bookingnorma.glitch.me/slider')
+    .subscribe(
+        (response: Response) => {
+          const sliderData = response.json();
+          this.rawData = sliderData;
+          //console.log(this.rawData);
+          this.createObject(this.rawData)
+        },
+        (error) => console.log(error)  
+      );
   }
 
-  //rawData = [{src: 'http://lorempixel.com/400/200/sports/'}, {src: 'http://lorempixel.com/400/205/sports/'}, {src: 'http://lorempixel.com/400/210/sports/'}, {src: 'http://lorempixel.com/400/215/sports/'}, {src: 'http://lorempixel.com/400/220/sports/'}];
-  rawData = [
+  /*rawData = [
     {src: 'img1.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
     {src: 'img2.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
     {src: 'img3.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
@@ -22,14 +33,15 @@ export class SliderComponent implements OnInit {
     {src: 'img5.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
     {src: 'img6.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
     {src: 'img7.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}
-  ];
+  ];*/
   
   imageData = [];
   classIndex = 0;
 
-  createObject() {
-    for (let i = 0; i < this.rawData.length; i++) {
-      this.imageData.push({file: this.rawData[i].src, class: 'img-item', destination: this.rawData[i].destination, subtitle: this.rawData[i].subtitle})
+  createObject(data) {
+    console.log(data);
+    for (let i = 0; i < data.length; i++) {
+      this.imageData.push({file: data[i].image, class: 'img-item', title: data[i].title, subtitle: data[i].subtitle})
     }
     this.imageData[0].class = 'current-front';
     return this.imageData
