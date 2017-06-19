@@ -29,8 +29,8 @@ describe('zodiac-norma App', () => {
     expect(elem.getText()).toBe('Select a type of room');
   });
 
-  it('datepicker placeholder initially should be DD/MM/YYYY', () => {
-    let elem = element(by.css('my-date-picker'));
+  it('first datepicker placeholder initially should be DD/MM/YYYY', () => {
+    let elem = element(by.css('#firstDatePicker'));
     expect(elem.getAttribute('placeholder')).toBe('DD/MM/YYYY');
   });
 
@@ -44,6 +44,20 @@ describe('zodiac-norma App', () => {
     expect(elem.getAttribute('value')).toBe('0');
   });
 
+  it('footertextk color should be rgba(170, 170, 170, 1)', () => {
+    let elem = element(by.css('.footerText'));
+    expect(elem.getCssValue('color')).toBe('rgba(170, 170, 170, 1)');
+  });
+
+  it("slider arrow z-index should be 100", () => {
+    let elem = element(by.css('.arrow.left'));
+    expect(elem.getCssValue('z-index')).toEqual('100');
+  });
+
+  it("number of hotels class should be 3", () => {
+    let elem = element.all(by.css('.hotels'));
+    expect(elem.count()).toEqual(3);
+  });
 
 
 });

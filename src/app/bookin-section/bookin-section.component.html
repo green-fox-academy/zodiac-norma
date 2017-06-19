@@ -13,7 +13,7 @@
     <div class="lesserBox">
         <label>Check-in date:</label>
         <form #checkin="ngForm" novalidate>
-            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkinDate" required></my-date-picker>
+            <my-date-picker id="firstDatePicker" placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkinDate" required></my-date-picker>
         </form>
     </div>
     <div class="lesserBox">
