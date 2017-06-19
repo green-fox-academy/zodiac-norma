@@ -65,14 +65,24 @@
     }
 }
 
-input {
+input, select {
     padding-left: 6px;
+    height: 34px;
     width: 100%;
     border-radius: 3px;
     border-style: solid;
     border-color: rgb(210, 210, 210);
     border-width: 1px;
     line-height: 30px;
+    color: rgb(128, 128, 128);
+}
+
+// select:invalid {
+//     color: rgb(128, 128, 128);
+// }
+
+input[type=number]::-webkit-inner-spin-button {
+    height: 38px;
 }
 
 label {
@@ -102,7 +112,6 @@ label {
     @media screen and (max-width: $break) {
         width: 140px;
     }
-
 }
 
 .miniBox {

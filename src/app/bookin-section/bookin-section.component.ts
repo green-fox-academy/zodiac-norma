@@ -14,6 +14,7 @@ export class BookinSectionComponent implements OnInit {
 
   ngOnInit() {
   }
+
   roomsinList = ['single room', 'double room', 'extra view room', 'luxory room'];
   peopleinList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
   inputValues = [];

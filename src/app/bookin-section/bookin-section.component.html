@@ -5,7 +5,10 @@
     </div>
     <div class="elemBox">
         <label>Type of Room:</label>
-        <input placeholder="Select a type of room" #roomType list="rooms">
+        <select  #roomType>
+            <option class="placehold" value="" disabled selected hidden>Select a type of room</option>
+            <option *ngFor = "let i of roomsinList;" value={{i}}>{{i}}</option>
+        </select>
     </div>
     <div class="lesserBox">
         <label>Check-in date:</label>
@@ -24,11 +27,11 @@
     <div class="miniContainer">
         <div class="miniBox">
             <label>Adults:</label>
-            <input placeholder="1" #adults list="peopleList">
+            <input placeholder="1" #adults value=1 type="number" min="1">
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input placeholder="0" #children list="peopleList">
+            <input placeholder="0" #children type="number">
         </div>
     </div>
     <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
@@ -37,9 +40,6 @@
 </div>
 
 
-<datalist id="rooms">
-    <option *ngFor = "let i of roomsinList;" value={{i}}>
-</datalist>
 
 <datalist id="peopleList">
     <option *ngFor = "let i of peopleinList;" value={{i}}>
