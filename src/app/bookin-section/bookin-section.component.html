@@ -5,7 +5,7 @@
     </div>
     <div class="elemBox">
         <label>Type of Room:</label>
-        <select  #roomType>
+        <select #roomType>
             <option class="placehold" value="" disabled selected hidden>Select a type of room</option>
             <option *ngFor = "let i of roomsinList;" value={{i}}>{{i}}</option>
         </select>
@@ -13,25 +13,23 @@
     <div class="lesserBox">
         <label>Check-in date:</label>
         <form #checkin="ngForm" novalidate>
-            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions"
-                    [(ngModel)]="checkinDate" required></my-date-picker>
+            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkinDate" required></my-date-picker>
         </form>
     </div>
     <div class="lesserBox">
         <label>Check-out date:</label>
         <form #checkout="ngForm" novalidate>
-            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions"
-                    [(ngModel)]="checkoutDate" required></my-date-picker>
+            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkoutDate" required></my-date-picker>
         </form>
     </div>
     <div class="miniContainer">
         <div class="miniBox">
             <label>Adults:</label>
-            <input placeholder="1" #adults value=1 type="number" min="1">
+            <input id="adultInput" placeholder="1" #adults value=1 type="number" min="1">
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input placeholder="0" #children type="number" min="0">
+            <input id="childInput" placeholder="0" #children value=0 type="number" min="0">
         </div>
     </div>
     <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
