@@ -13,4 +13,9 @@ describe('zodiac-norma App', () => {
       .then(msg => expect(msg).toEqual('Book a room online'))
       .then(done, done.fail);
   });
+
+  it('should find the buttonBox class', () => {
+  let elem = element(by.css('.buttonBox'));
+  expect(elem.isPresent()).toBeTruthy();
+    });
 });

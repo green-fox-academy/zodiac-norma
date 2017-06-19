@@ -29,6 +29,7 @@
     justify-content: center;
     @media screen and (max-width: $break) {
         padding: 10px 20px;
+        width: 280px;
     }
 }
 
@@ -37,6 +38,7 @@
     font-weight: bold;
     font-size: 18px;
     line-height: 40px;
+    text-align: center;
 }
 
 .textBox p {
