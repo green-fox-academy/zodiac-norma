@@ -5,7 +5,7 @@
     </div>
     <div class="elemBox">
         <label>Type of Room:</label>
-        <input placeholder="Select a type of room" #roomType>
+        <input placeholder="Select a type of room" #roomType list="rooms">
     </div>
     <div class="lesserBox">
         <label>Check-in date:</label>
@@ -24,11 +24,11 @@
     <div class="miniContainer">
         <div class="miniBox">
             <label>Adults:</label>
-            <input placeholder="1" #adults>
+            <input placeholder="1" #adults list="peopleList">
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input placeholder="0" #children>
+            <input placeholder="0" #children list="peopleList">
         </div>
     </div>
     <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
@@ -36,9 +36,11 @@
     </div>
 </div>
 
-<script>
-    var picker1 = new Pikaday({ field: document.getElementById('checkin') })
-    console.log(picker1);
-    var picker2 = new Pikaday({ field: document.getElementById('checkout') });
-    console.log(picker2);
-</script>
+
+<datalist id="rooms">
+    <option *ngFor = "let i of roomsinList;" value={{i}}>
+</datalist>
+
+<datalist id="peopleList">
+    <option *ngFor = "let i of peopleinList;" value={{i}}>
+</datalist>
