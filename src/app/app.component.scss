@@ -1,4 +1,5 @@
 @import '.././scss/grid.scss';
+@import '.././scss/break-points.scss';
 
 
 section {
@@ -14,6 +15,10 @@ app-bookin-section {
     display: flex;
     justify-content: center;
     z-index: 101;
+    @media screen and (max-width: $break) {
+        top: 728px;
+    }
+
 }
 
 .slider {

@@ -5,30 +5,30 @@
     </div>
     <div class="elemBox">
         <label>Type of Room:</label>
-        <input #roomType>
+        <input placeholder="Select a type of room" #roomType>
     </div>
     <div class="lesserBox">
         <label>Check-in date:</label>
         <form #checkin="ngForm" novalidate>
-            <my-date-picker name="mydate" [options]="myDatePickerOptions"
+            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions"
                     [(ngModel)]="checkinDate" required></my-date-picker>
         </form>
     </div>
     <div class="lesserBox">
         <label>Check-out date:</label>
         <form #checkout="ngForm" novalidate>
-            <my-date-picker name="mydate" [options]="myDatePickerOptions"
+            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions"
                     [(ngModel)]="checkoutDate" required></my-date-picker>
         </form>
     </div>
     <div class="miniContainer">
         <div class="miniBox">
             <label>Adults:</label>
-            <input #adults>
+            <input placeholder="1" #adults>
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input #children>
+            <input placeholder="0" #children>
         </div>
     </div>
     <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
