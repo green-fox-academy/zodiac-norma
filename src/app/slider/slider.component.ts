@@ -8,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
 
 export class SliderComponent implements OnInit {
   
-  constructor() { 
-    this.createObject()
-  }
-   ngOnInit() {
+  constructor() { }
+  ngOnInit() {
+     this.createObject()
   }
 
   //rawData = [{src: 'http://lorempixel.com/400/200/sports/'}, {src: 'http://lorempixel.com/400/205/sports/'}, {src: 'http://lorempixel.com/400/210/sports/'}, {src: 'http://lorempixel.com/400/215/sports/'}, {src: 'http://lorempixel.com/400/220/sports/'}];
