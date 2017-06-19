@@ -5,10 +5,10 @@ import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
 
 import { AppComponent } from './app.component';
+import { AppService } from './app.service';
 import { SliderComponent } from './slider/slider.component';
 import { BookinSectionComponent } from './bookin-section/bookin-section.component';
 import { TopHotelsComponent } from './top-hotels/top-hotels.component';
-import { TopHotelsService } from './top-hotels/top-hotels.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
@@ -29,7 +29,7 @@ import { FooterComponent } from './footer/footer.component';
     MyDatePickerModule
   ],
 
-  providers: [TopHotelsComponent, TopHotelsService],
+  providers: [TopHotelsComponent, SliderComponent, BookinSectionComponent, AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,30 +2,25 @@ import { Component, OnInit } from '@angular/core';
 // import { Http } from '@angular/http';
 // import 'rxjs/add/operator/map';
 import { Response } from '@angular/http';
-import { TopHotelsService } from './top-hotels.service';
+import { AppService } from '.././app.service';
+// import { TopHotelsService } from './top-hotels.service';
  
 
 @Component({
   selector: 'app-top-hotels',
   templateUrl: './top-hotels.component.html',
   styleUrls: ['./top-hotels.component.scss'],
-  // providers: [TopHotelsService]
+  // providers: [AppService]
 })
 export class TopHotelsComponent implements OnInit {
 
   hotels: {};
 
-  constructor(private topHotelsService: TopHotelsService) { }
+  constructor(private appService: AppService) { }
 
-  fetchData(){
-    this.topHotelsService.getTopHotelsData()
-      .subscribe(
-        (response: Response) => {
-          const hotelsData = response.json();
-          this.hotels = hotelsData;
-        },
-        (error) => console.log(error)  
-      );
+  // fetchData(){
+  //   this.appService.getData('')
+      
     // return this.http.get('https://bookingnorma.glitch.me/toprooms').map(
     // (response => response.json())
     // ).subscribe(
@@ -33,11 +28,18 @@ export class TopHotelsComponent implements OnInit {
     //   this.hotels = hotels
     // }) 
     // )
-  }
+  // }
 
 
   ngOnInit() {
-    this.fetchData()
+    this.appService.getData('https://bookingnorma.glitch.me/toprooms')
+    .subscribe(
+        (response: Response) => {
+          const hotelsData = response.json();
+          this.hotels = hotelsData;
+        },
+        (error) => console.log(error)  
+      );
   }
 }
 
