@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TopHotelsComponent } from './top-hotels/top-hotels.component';
+// import { TopHotelsComponent } from './top-hotels/top-hotels.component';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,10 @@ import { TopHotelsComponent } from './top-hotels/top-hotels.component';
 })
 export class AppComponent {
   
-  constructor(private topHotelService: TopHotelsComponent) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.topHotelService.fetchData
   }
 
 
