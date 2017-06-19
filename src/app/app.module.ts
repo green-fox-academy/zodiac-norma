@@ -7,14 +7,16 @@ import { MyDatePickerModule } from 'mydatepicker';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-import { SliderComponent } from './slider/slider.component';
-import { BookinSectionComponent } from './bookin-section/bookin-section.component';
-import { TopHotelsComponent } from './top-hotels/top-hotels.component';
+import { SliderComponent } from './home/slider/slider.component';
+import { BookinSectionComponent } from './home/bookin-section/bookin-section.component';
+import { TopHotelsComponent } from './home/top-hotels/top-hotels.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 const appRoutes: Routes =[
-  { path: '', component: AppComponent },
+  { path: '', component: HomeComponent },
   { path: 'reservation', component: ReservationComponent }
 ];
 
@@ -26,6 +28,8 @@ const appRoutes: Routes =[
     TopHotelsComponent,
     // TopHotelsService,
     HeaderComponent,
+    HomeComponent,
+    ReservationComponent,
     FooterComponent
   ],
   imports: [

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
-import { AppService } from '.././app.service';
+import { AppService } from '../../app.service';
 
 @Component({
   selector: 'app-slider',
