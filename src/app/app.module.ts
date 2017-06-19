@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
+import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-import { SliderComponent } from './slider/slider.component';
-import { BookinSectionComponent } from './bookin-section/bookin-section.component';
-import { TopHotelsComponent } from './top-hotels/top-hotels.component';
+import { SliderComponent } from './home/slider/slider.component';
+import { BookinSectionComponent } from './home/bookin-section/bookin-section.component';
+import { TopHotelsComponent } from './home/top-hotels/top-hotels.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { ReservationComponent } from './reservation/reservation.component';
+
+const appRoutes: Routes =[
+  { path: '', component: HomeComponent },
+  { path: 'reservation', component: ReservationComponent }
+];
 
 @NgModule({
   declarations: [
@@ -20,13 +28,16 @@ import { FooterComponent } from './footer/footer.component';
     TopHotelsComponent,
     // TopHotelsService,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MyDatePickerModule
+    MyDatePickerModule,
+    RouterModule.forRoot(appRoutes),
   ],
 
   providers: [TopHotelsComponent, SliderComponent, BookinSectionComponent, AppService],

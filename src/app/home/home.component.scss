@@ -1,19 +1,6 @@
-@import '.././scss/grid.scss';
-@import '.././scss/break-points.scss';
+@import '../.././scss/break-points.scss';
 
-
-section {
-    margin:0;
-    padding:0;
-}
-
-.dynamicGrid {
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0);
-    @include grid(3, 2%);
-}
-
-/*app-bookin-section {
+app-bookin-section {
     position: absolute;
     line-height: 50px;
     top: 628px;
@@ -58,4 +45,4 @@ app-slider {
 
 app-slider {
   width: 100%;
-}*/
+}

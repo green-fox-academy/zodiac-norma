@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Http } from '@angular/http';
 // import 'rxjs/add/operator/map';
 import { Response } from '@angular/http';
-import { AppService } from '.././app.service';
+import { AppService } from '../../app.service';
 // import { TopHotelsService } from './top-hotels.service';
  
 
