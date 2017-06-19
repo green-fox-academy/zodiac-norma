@@ -41,7 +41,7 @@ export class SliderComponent implements OnInit {
   createObject(data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-      this.imageData.push({file: data[i].image, class: 'img-item'/*, destination: this.rawData[i].destination, subtitle: this.rawData[i].subtitle*/})
+      this.imageData.push({file: data[i].image, class: 'img-item', title: data[i].title, subtitle: data[i].subtitle})
     }
     this.imageData[0].class = 'current-front';
     return this.imageData
