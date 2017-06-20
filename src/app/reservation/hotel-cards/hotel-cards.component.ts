@@ -9,7 +9,9 @@ import { AppService } from '../../app.service';
 })
 export class HotelCardsComponent implements OnInit {
 
-  rooms = {};
+  rooms = [];
+  tenRooms = [1, 2, 3, 4, 5];
+  
 
   constructor(private roomData: AppService) { }
 
@@ -19,6 +21,12 @@ export class HotelCardsComponent implements OnInit {
         (response: Response) => {
           const cardData = response.json();
           this.rooms = cardData;
+          for (let i = 0; i<this.rooms.length; i++){
+            console.log(this.rooms[i].features.length);
+            
+          }
+
+          
         },
         (error) => console.log(error)  
       );
