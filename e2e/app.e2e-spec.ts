@@ -55,8 +55,5 @@ describe('zodiac-norma App', () => {
     expect(elem.count()).toEqual(3);
   });
 
-  it("children input should be 0", () => {
-      let elem = element(by.css('.children'));
-      expect(elem.getAttribute('value')).toBe('0');
-    });
+
 });
