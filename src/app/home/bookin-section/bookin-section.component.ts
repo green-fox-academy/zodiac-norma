@@ -19,6 +19,16 @@ export class BookinSectionComponent implements OnInit {
   inputValues = [];
 
   pushItem(roomType, checkin, checkout, adults, children) {
+    if (checkin.mydate === undefined) {
+      checkin.mydate = {
+        formatted: ""
+      }
+    }
+    if (checkout.mydate === undefined) {
+      checkout.mydate = {
+      formatted: ""
+      }
+    }
       this.inputValues = [];
       this.inputValues.push(roomType, checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
       console.log(this.inputValues);

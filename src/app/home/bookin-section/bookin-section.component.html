@@ -32,11 +32,10 @@
             <input id="childInput" placeholder="0" #children value=0 type="number" min="0">
         </div>
     </div>
-    <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
+    <div [routerLink]="['reservation']" class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
         <p>Book now</p>
     </div>
 </div>
-
 
 
 <datalist id="peopleList">
