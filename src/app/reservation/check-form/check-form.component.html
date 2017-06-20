@@ -10,11 +10,11 @@
   </form>
   <div class="options container">
     <div>Room(s)</div>
-    <input placeholder="1" list="peopleList">
+    <input class="roomInput" placeholder="1" #rooms type="number" min="1" max="20">
     <div>Adults</div>
-    
+    <input class="adultsInput" placeholder="1" #adults type="number" min="1" max="10">
     <div>Children</div>
- 
+    <input class="adultsInput" placeholder="0" #children type="number" min="0" max="10">
   </div>
   <div class="button"> Update</div>
 </section>
