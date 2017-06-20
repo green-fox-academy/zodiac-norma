@@ -1,0 +1,21 @@
+<section>
+  <div>Edit your search</div>
+  <div>Check in</div>
+  <form #checkin="ngForm" novalidate>
+      <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="model" required></my-date-picker>
+  </form>
+  <div>Check out</div>
+  <form #checkout="ngForm" novalidate>
+      <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="model" required></my-date-picker>
+  </form>
+  <div class="options container">
+    <div>Room(s)</div>
+    <input placeholder="1" list="peopleList">
+    <div>Adults</div>
+    
+    <div>Children</div>
+ 
+  </div>
+  <div class="button"> Update</div>
+</section>
+

@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ReservationComponent } from './reservation/reservation.component';
+import { CheckFormComponent } from './reservation/check-form/check-form.component';
 import { SimpleHeaderComponent } from './reservation/simple-header/simple-header.component';
 
 const appRoutes: Routes =[
@@ -32,6 +33,7 @@ const appRoutes: Routes =[
     HomeComponent,
     ReservationComponent,
     FooterComponent,
+    CheckFormComponent,
     SimpleHeaderComponent
   ],
   imports: [
