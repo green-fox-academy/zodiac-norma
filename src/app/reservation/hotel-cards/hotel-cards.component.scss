@@ -1,0 +1,24 @@
+@import '../../../scss/grid.scss';
+
+
+.rooms {
+  max-height: 200px;
+  min-height: 200px;
+  max-width: 670px;
+  min-width: 670px;
+  display: flex;
+  background: red;
+  margin: 25px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  max-height: 200px;
+  min-height: 200px;
+  max-width: 190px;
+  min-width: 190px;
+}
