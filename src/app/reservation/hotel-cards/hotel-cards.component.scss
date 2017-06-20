@@ -1,4 +1,5 @@
 @import '../../../scss/grid.scss';
+@import '../../../scss/break-points.scss';
 
 
 .rooms {
@@ -9,12 +10,19 @@
   display: flex;
   background: whitesmoke;
   margin: 25px;
+  // box-shadow: 0px 1px 5px 0px rgba(153,147,153,1);
+  box-shadow: 0px 1px 5px 0px rgba(240,237,240,1);
 }
 
 .text-container {
   display: flex;
   flex-direction: column;
   margin: 25px;
+  margin-top: 15px;
+}
+
+.title {
+  font-weight: 900;
 }
 
 .image {
@@ -43,6 +51,39 @@ left: -15px;
 }
 
 .feature-container {
-  margin-bottom: 10px;
+  margin-bottom: 18px;
   margin-top: 10px;
+  padding-bottom: 12px;
+  border-bottom-style: dashed;
+  border-bottom-color: #DEDEDE;
+  line-height: 22px;
+}
+
+.price-container {
+  display: flex;
+}
+
+.price {
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.button {
+    margin-left: 20px;
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 35px;
+    background-color: rgb(50, 162, 227);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    @media screen and (max-width: $break) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
 }
