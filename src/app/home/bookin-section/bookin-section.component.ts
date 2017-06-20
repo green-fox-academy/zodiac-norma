@@ -19,7 +19,9 @@ export class BookinSectionComponent implements OnInit {
   inputValues = [];
 
   pushItem(roomType, checkin, checkout, adults, children) {
-    if (checkin.mydate === undefined) {
+    console.log(checkin.mydate);
+    
+    /*if (checkin.mydate === undefined) {
       checkin.mydate = {
         formatted: ""
       }
@@ -28,7 +30,8 @@ export class BookinSectionComponent implements OnInit {
       checkout.mydate = {
       formatted: ""
       }
-    }
+    }*/
+      
       this.inputValues = [];
       this.inputValues.push(roomType, checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
       console.log(this.inputValues);

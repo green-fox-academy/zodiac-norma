@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IMyDpOptions} from 'mydatepicker';
 
 @Component({
   selector: 'app-check-form',
@@ -6,12 +7,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./check-form.component.scss']
 })
 export class CheckFormComponent implements OnInit {
+   
+   private myDatePickerOptions: IMyDpOptions = {
+        dateFormat: 'dd.mm.yyyy',
+    };
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  peopleinList = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-  numbers = [0,1,2,3,4,5,6,7,8,9,10]
+  allInputs = [];
+
+  collectInput(checkin, checkout, adults, children) {
+    this.allInputs = [];
+    
+    if (checkin.mydate === undefined || checkin.mydate === null) {
+        checkin.mydate = {
+          formatted: ""
+        }
+      }
+      if (checkout.mydate === undefined || checkin.mydate === null) {
+        checkout.mydate = {
+        formatted: ""
+        }
+      }
+
+    this.allInputs.push(checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
+    console.log(this.allInputs);
+  }
+
 }
