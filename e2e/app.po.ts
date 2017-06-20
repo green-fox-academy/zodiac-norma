@@ -1,7 +1,7 @@
 import { browser, by, element } from 'protractor';
 
 export class ZodiacNormaPage {
-  navigateTo() {
+  navigateToHome() {
     return browser.get('/');
   }
 

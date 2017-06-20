@@ -19,7 +19,7 @@ export class CheckFormComponent implements OnInit {
 
   allInputs = [];
 
-  collectInput(checkin, checkout, adults, children) {
+  collectInput(checkin, checkout, rooms, adults, children) {
     this.allInputs = [];
     
     if (checkin.mydate === undefined || checkin.mydate === null) {
@@ -33,7 +33,7 @@ export class CheckFormComponent implements OnInit {
         }
       }
 
-    this.allInputs.push(checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
+    this.allInputs.push(checkin.mydate.formatted, checkout.mydate.formatted, rooms, adults, children);
     console.log(this.allInputs);
   }
 
