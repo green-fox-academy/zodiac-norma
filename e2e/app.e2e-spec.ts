@@ -8,10 +8,6 @@ describe('zodiac-norma App', () => {
     page = new ZodiacNormaPage();
   });
 
-  // it('pages title should be ZodiacNorma', () => {
-  //   expect(browser.getTitle()).toEqual('ZodiacNorma');
-  //   });
-
   it('should display: Book a room online', done => {
     page.navigateTo();
     page.getParagraphText()
@@ -44,7 +40,7 @@ describe('zodiac-norma App', () => {
     expect(elem.getAttribute('value')).toBe('0');
   });
 
-  it('footertextk color should be rgba(170, 170, 170, 1)', () => {
+  it('footertext color should be rgba(170, 170, 170, 1)', () => {
     let elem = element(by.css('.footerText'));
     expect(elem.getCssValue('color')).toBe('rgba(170, 170, 170, 1)');
   });
