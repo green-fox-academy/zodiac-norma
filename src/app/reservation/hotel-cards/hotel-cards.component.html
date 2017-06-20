@@ -1,10 +1,16 @@
 <div class='hotel-cards-container'>
   <div class="rooms" *ngFor="let room of rooms">
     <div class='image' [ngStyle]="{'background-image': 'url('+room.image+')'}"></div>
-    <h3 class="title">{{room.roomtype}}</h3>
-    <ul>
-      <li class="descr" *ngFor='let feature of room.features'> {{ feature }}</li>
-    </ul> 
-    <p class="id" >{{ room.id }}</p>
+    <div class="text-container">
+      <h3 class="title">{{room.roomtype}}</h3>
+      <div class="feature-container">
+        <ul>
+          <li class="descr" *ngFor='let feature of room.features'> {{ feature }}</li>
+        </ul> 
+      </div>
+      <div class="price-container">
+        <p class="price" >{{ room.price }}</p>
+      </div>
+    </div>
   </div>
 </div>
