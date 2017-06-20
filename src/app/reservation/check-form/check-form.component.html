@@ -11,17 +11,17 @@
   <div class="option-box">
     <div class='item-box'>
       <div class="subtitle">Room(s)</div>
-      <input class="numberInput" placeholder="1" #rooms type="number" min="1" max="20">
+      <input class="numberInput" placeholder="1" #rooms type="number" value=1 min="1" max="20">
     </div>
     <div class='item-box'>
       <div class="subtitle">Adults</div>
-      <input class="numberInput" placeholder="1" #adults type="number" min="1" max="10">
+      <input class="numberInput" placeholder="1" #adults type="number" value=1 min="1" max="10">
     </div>
     <div class='item-box'>
       <div class="subtitle">Children</div>
-      <input class="numberInput" placeholder="0" #children type="number" min="0" max="10">
+      <input class="numberInput" placeholder="0" #children type="number" value=0 min="0" max="10">
     </div>
   </div>
-  <div class="button"> Update</div>
+  <div class="button" (click) = "collectItem(checkin.value, checkout.value, adults.value, children.value)"> Update</div>
 </section>
 

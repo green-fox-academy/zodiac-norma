@@ -5,6 +5,7 @@ section {
 
 .title {
     font-size: 20px;
+    padding-bottom: 6px;
     
 }
 
@@ -15,8 +16,12 @@ section {
 
 .subtitle {
     font-size: 16px;
-    padding: 4px 0px;
+    padding: 8px 0px;
     color: #757575;
+}
+
+form {
+    padding-bottom: 4px;
 }
 
 .button {
@@ -25,8 +30,13 @@ section {
     background-color: #00A8E8;
     text-align: center;
     color: #FFFFFF;
-    box-shadow: 0px 1px 2px #888888;
 }
+
+.button:hover {
+    box-shadow: 2px 2px 2px #888888;
+    cursor: pointer;
+}
+
 .numberInput {
     height: 30px;
     width: 40px;
