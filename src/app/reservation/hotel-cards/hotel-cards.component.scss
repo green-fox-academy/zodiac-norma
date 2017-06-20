@@ -7,13 +7,14 @@
   max-width: 670px;
   min-width: 670px;
   display: flex;
-  background: red;
+  background: whitesmoke;
   margin: 25px;
 }
 
 .text-container {
   display: flex;
   flex-direction: column;
+  margin: 25px;
 }
 
 .image {
@@ -21,4 +22,27 @@
   min-height: 200px;
   max-width: 190px;
   min-width: 190px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+ul {
+  margin-left: -35px;
+  color: grey;
+  font-size: 12px;
+  font-weight: bolder;
+  columns: 180px 2;
+  list-style: inside disc;
+}
+
+li span {
+position:relative;
+left:-10px;
+}
+
+.feature-container {
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
