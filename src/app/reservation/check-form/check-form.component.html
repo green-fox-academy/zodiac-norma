@@ -1,20 +1,26 @@
 <section>
-  <div>Edit your search</div>
-  <div>Check in</div>
+  <div class="title">Edit your search</div>
+  <div class="subtitle">Check in</div>
   <form #checkin="ngForm" novalidate>
       <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="model" required></my-date-picker>
   </form>
-  <div>Check out</div>
+  <div class="subtitle">Check out</div>
   <form #checkout="ngForm" novalidate>
       <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="model" required></my-date-picker>
   </form>
-  <div class="options container">
-    <div>Room(s)</div>
-    <input class="roomInput" placeholder="1" #rooms type="number" min="1" max="20">
-    <div>Adults</div>
-    <input class="adultsInput" placeholder="1" #adults type="number" min="1" max="10">
-    <div>Children</div>
-    <input class="adultsInput" placeholder="0" #children type="number" min="0" max="10">
+  <div class="option-box">
+    <div class='item-box'>
+      <div class="subtitle">Room(s)</div>
+      <input class="roomInput" placeholder="1" #rooms type="number" min="1" max="20">
+    </div>
+    <div class='item-box'>
+      <div class="subtitle">Adults</div>
+      <input class="adultsInput" placeholder="1" #adults type="number" min="1" max="10">
+    </div>
+    <div class='item-box'>
+      <div class="subtitle">Children</div>
+      <input class="adultsInput" placeholder="0" #children type="number" min="0" max="10">
+    </div>
   </div>
   <div class="button"> Update</div>
 </section>
