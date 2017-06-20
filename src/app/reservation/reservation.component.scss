@@ -1,0 +1,51 @@
+@import '../../scss/break-points.scss';
+
+.mainSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+}
+
+.mainContainer {
+    width: 975px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+app-hotel-cards {
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hotelContainer {
+    width: 740px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.header {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.roomDescription {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    width: 670px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+    border-bottom: dashed;
+    border-color: rgb(200, 200, 200);
+    border-width: 1px;
+
+}
