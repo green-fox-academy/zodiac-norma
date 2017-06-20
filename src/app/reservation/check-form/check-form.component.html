@@ -2,26 +2,26 @@
   <div class="title">Edit your search</div>
   <div class="subtitle">Check in</div>
   <form #checkin="ngForm" novalidate>
-      <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="model" required></my-date-picker>
+      <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="checkInModel" required></my-date-picker>
   </form>
   <div class="subtitle">Check out</div>
   <form #checkout="ngForm" novalidate>
-      <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="model" required></my-date-picker>
+      <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="checkOutModel" required></my-date-picker>
   </form>
   <div class="option-box">
     <div class='item-box'>
       <div class="subtitle">Room(s)</div>
-      <input class="numberInput" placeholder="1" #rooms type="number" value=1 min="1" max="20">
+      <input class="room input" placeholder="1" #rooms type="number" value=1 min="1" max="20">
     </div>
     <div class='item-box'>
       <div class="subtitle">Adults</div>
-      <input class="numberInput" placeholder="1" #adults type="number" value=1 min="1" max="10">
+      <input class="adult input" placeholder="1" #adults type="number" value=1 min="1" max="10">
     </div>
     <div class='item-box'>
       <div class="subtitle">Children</div>
-      <input class="numberInput" placeholder="0" #children type="number" value=0 min="0" max="10">
+      <input class="children input" placeholder="0" #children type="number" value=0 min="0" max="10">
     </div>
   </div>
-  <div class="button" (click) = "collectInput(checkin.value, checkout.value, adults.value, children.value)"> Update</div>
+  <div class="button" (click) = "collectInput(checkin.value, checkout.value, rooms.value, adults.value, children.value)"> Update</div>
 </section>
 

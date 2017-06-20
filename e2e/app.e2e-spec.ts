@@ -1,4 +1,4 @@
-import { ZodiacNormaPage } from './app.po';
+import { ZodiacNormaPage, } from './app.po';
 import { browser, element, by } from 'protractor';
 
 describe('zodiac-norma App', () => {
@@ -9,7 +9,7 @@ describe('zodiac-norma App', () => {
   });
 
   it('should display: Book a room online', done => {
-    page.navigateTo();
+    page.navigateToHome();
     page.getParagraphText()
       .then(msg => expect(msg).toEqual('Book a room online'))
       .then(done, done.fail);
@@ -55,5 +55,8 @@ describe('zodiac-norma App', () => {
     expect(elem.count()).toEqual(3);
   });
 
-
+  it("children input should be 0", () => {
+      let elem = element(by.css('.children'));
+      expect(elem.getAttribute('value')).toBe('0');
+    });
 });
