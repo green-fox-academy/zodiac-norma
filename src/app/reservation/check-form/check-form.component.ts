@@ -17,10 +17,10 @@ export class CheckFormComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchInputs = [];
+  allInputs = [];
 
-  collectItem(checkin, checkout, adults, children) {
-    this.searchInputs = [];
+  collectInput(checkin, checkout, adults, children) {
+    this.allInputs = [];
     
     if (checkin.mydate === undefined || checkin.mydate === null) {
         checkin.mydate = {
@@ -33,8 +33,8 @@ export class CheckFormComponent implements OnInit {
         }
       }
 
-    this.searchInputs.push(checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
-    console.log(this.searchInputs);
+    this.allInputs.push(checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
+    console.log(this.allInputs);
   }
 
 }
