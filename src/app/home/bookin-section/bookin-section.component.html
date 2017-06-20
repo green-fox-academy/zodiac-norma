@@ -24,11 +24,11 @@
     <div class="miniContainer">
         <div class="miniBox">
             <label>Adults:</label>
-            <input placeholder="1" #adults list="peopleList">
+            <input placeholder="1" #adults type='number'>
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input placeholder="0" #children list="peopleList">
+            <input placeholder="0" #children type='number'>
         </div>
     </div>
     <div class="buttonBox" (click) = "pushItem(roomType.value, checkin.value, checkout.value, adults.value, children.value)">
