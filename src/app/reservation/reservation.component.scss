@@ -15,13 +15,14 @@
 }
 
 app-hotel-cards {
-    background-color: yellow;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .hotelContainer {
+    margin-bottom: 180px;
+    padding-right: 70px;
     width: 740px;
     display: flex;
     flex-direction: column;
@@ -53,7 +54,7 @@ app-hotel-cards {
 }
 
 .roomButton {
-    margin: 20px 0px;
+    margin-top: 20px;
     width: 668px;
     height: 30px;
     text-align: center;
