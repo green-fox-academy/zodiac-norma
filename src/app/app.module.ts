@@ -46,7 +46,14 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes)
   ],
 
-  providers: [TopHotelsComponent, SliderComponent, BookinSectionComponent, AppService],
+  providers: [
+    TopHotelsComponent, 
+    SliderComponent, 
+    BookinSectionComponent, 
+    AppService, 
+    HotelCardsComponent
+  ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

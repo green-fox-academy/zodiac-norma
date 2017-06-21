@@ -11,7 +11,7 @@
     border-color: rgba(0, 0, 0, 0.2);
     background-clip: padding-box;
     background-color: rgb(255, 255, 255);
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         flex-direction: column;
         width: 320px;
         height: auto;
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         padding: 10px 20px;
         width: 280px;
     }
@@ -60,7 +60,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         padding-bottom: 0;
     }
 }
@@ -76,10 +76,6 @@ input, select {
     line-height: 30px;
     color: rgb(128, 128, 128);
 }
-
-// select:invalid {
-//     color: rgb(128, 128, 128);
-// }
 
 input[type=number]::-webkit-inner-spin-button {
     height: 38px;
@@ -100,7 +96,7 @@ label {
     line-height: 20px;
     display: flex;
     flex-direction: column;
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         padding-bottom: 0;
     }
 }
@@ -109,7 +105,7 @@ label {
     width: 118px;
     display: flex;
     justify-content: space-between;
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         width: 140px;
     }
 }
@@ -124,7 +120,7 @@ label {
     flex-direction: column;
     justify-content: center;
     line-height: 20px;
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         padding-bottom: 0;
     }
 }
@@ -142,7 +138,7 @@ label {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         margin-top: 20px;
         margin-bottom: 20px;
         margin-right: 0;
