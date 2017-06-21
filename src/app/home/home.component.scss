@@ -8,7 +8,7 @@ app-bookin-section {
     display: flex;
     justify-content: center;
     z-index: 101;
-    @media screen and (max-width: $break) {
+    @media screen and (max-width: $break-big) {
         top: 728px;
     }
 
@@ -19,7 +19,6 @@ app-bookin-section {
     min-height: 588px;
     max-height: 588px;
     min-width: 100%;
-    // background: rgb(208, 208, 208);
     display: flex;
     justify-content: center;
     align-items: center;

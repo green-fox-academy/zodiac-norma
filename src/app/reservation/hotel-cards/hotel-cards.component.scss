@@ -5,18 +5,13 @@
 .rooms {
   max-height: 200px;
   min-height: 200px;
-  // max-height: 100%;
-  // min-height: 100%;
   max-width: 670px;
   min-width: 670px;
   display: flex;
   background: whitesmoke;
   margin: 25px;
-  // box-shadow: 0px 1px 5px 0px rgba(153,147,153,1);
   box-shadow: 0px 1px 5px 0px rgba(240,237,240,1);
-  @media screen and (max-width: $break) {
-    // max-height: 500px;
-    // min-height: 500px;
+  @media screen and (max-width: $break-big) {
     max-height: 100%;
     min-height: 100%;
     max-width: 350px;
@@ -32,7 +27,7 @@
   flex-direction: column;
   margin: 25px;
   margin-top: 15px;
-  @media screen and (max-width: $break) {
+  @media screen and (max-width: $break-big) {
     margin-top: 0px;
   }
 }
@@ -49,7 +44,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  @media screen and (max-width: $break) {
+  @media screen and (max-width: $break-big) {
     margin-left: 75px;
   }
 }
@@ -62,14 +57,14 @@ ul {
   font-weight: bolder;
   columns: 180px 2;
   list-style: inside disc;
-  @media screen and (max-width: $break) {
+  @media screen and (max-width: $break-big) {
     column-count: 1;
   }
 }
 
 li span {
-position:relative;
-left: -15px;
+  position:relative;
+  left: -15px;
 }
 
 .feature-container {
@@ -92,20 +87,19 @@ left: -15px;
 }
 
 .button {
-    margin-left: 20px;
-    width: 150px;
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 35px;
-    background-color: rgb(50, 162, 227);
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    @media screen and (max-width: $break) {
-        // margin-top: 20px;
-        margin-bottom: 20px;
-        margin-right: 0;
-    }
+  margin-left: 20px;
+  width: 150px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 35px;
+  background-color: rgb(50, 162, 227);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  @media screen and (max-width: $break-big) {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
 }
