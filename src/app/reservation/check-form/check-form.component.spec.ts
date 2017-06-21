@@ -6,6 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
 
+import { Routes, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+
 describe('CheckFormComponent', () => {
   let component: CheckFormComponent;
   let fixture: ComponentFixture<CheckFormComponent>;
@@ -16,7 +19,8 @@ describe('CheckFormComponent', () => {
       imports: [
         HttpModule, 
         MyDatePickerModule, 
-        FormsModule
+        FormsModule,
+        RouterTestingModule
       ]
     })
     .compileComponents();
