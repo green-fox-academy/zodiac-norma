@@ -37,8 +37,13 @@ describe('CheckFormComponent', () => {
   });
 
   it('room default value should be 1', () => {
-    let roomNumber = fixture.nativeElement.querySelector('.room.input').value
+    let roomNumber = fixture.nativeElement.querySelector('.room.input').value;
     expect(roomNumber).toBe('1');
   });
   
+  it('adult default value should be 1', () => {
+    let adultNumber = fixture.nativeElement.querySelector('.adult.input').value;
+    expect(adultNumber).toBe('1');
+  });
+
 });
