@@ -14,7 +14,8 @@
     "lint": "ng lint",
     "local": "node index.js",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build"
+    "heroku-postbuild": "ng build",
+    "build-dist": "ng build --aot --target=production --output-hashing none"
   }
   ,
   "repository": {

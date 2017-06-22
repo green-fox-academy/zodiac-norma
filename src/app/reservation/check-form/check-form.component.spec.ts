@@ -2,13 +2,26 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CheckFormComponent } from './check-form.component';
 
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { MyDatePickerModule } from 'mydatepicker';
+
+import { Routes, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+
 describe('CheckFormComponent', () => {
   let component: CheckFormComponent;
   let fixture: ComponentFixture<CheckFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheckFormComponent ]
+      declarations: [ CheckFormComponent ],
+      imports: [
+        HttpModule, 
+        MyDatePickerModule, 
+        FormsModule,
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));

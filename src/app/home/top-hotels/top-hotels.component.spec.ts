@@ -1,33 +1,36 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BookinSectionComponent } from './bookin-section.component';
+import { AppService } from '../../app.service';
+
+import { TopHotelsComponent } from './top-hotels.component';
 
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MyDatePickerModule } from 'mydatepicker';
 
 import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('BookinSectionComponent', () => {
-  let component: BookinSectionComponent;
-  let fixture: ComponentFixture<BookinSectionComponent>;
+describe('TopHotelsComponent', () => {
+  let component: TopHotelsComponent;
+  let fixture: ComponentFixture<TopHotelsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookinSectionComponent ],
+      declarations: [ TopHotelsComponent ],
       imports: [
         HttpModule, 
-        MyDatePickerModule, 
         FormsModule,
         RouterTestingModule
+      ],
+      providers: [
+        AppService
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookinSectionComponent);
+    fixture = TestBed.createComponent(TopHotelsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
