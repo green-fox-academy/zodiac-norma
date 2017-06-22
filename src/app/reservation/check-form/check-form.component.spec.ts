@@ -12,7 +12,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 describe('CheckFormComponent', () => {
   let component: CheckFormComponent;
   let fixture: ComponentFixture<CheckFormComponent>;
-
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CheckFormComponent ],
@@ -46,4 +46,13 @@ describe('CheckFormComponent', () => {
     expect(adultNumber).toBe('1');
   });
 
+  it ('default data is collected by clicking', () => {
+    let updateButton = fixture.nativeElement.querySelector('.button')
+    expect(component.allInputs).toEqual([])
+    
+    updateButton.click();
+    fixture.detectChanges();
+
+    expect(component.allInputs).toEqual(['','','1','1','0']);
+  })
 });
