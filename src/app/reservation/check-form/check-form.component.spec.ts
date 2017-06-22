@@ -35,4 +35,10 @@ describe('CheckFormComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('room default value should be 1', () => {
+    let roomNumber = fixture.nativeElement.querySelector('.room.input').value
+    expect(roomNumber).toBe('1');
+  });
+  
 });
