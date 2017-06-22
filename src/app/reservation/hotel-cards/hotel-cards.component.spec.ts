@@ -32,4 +32,9 @@ describe('HotelCardsComponent', () => {
   it('should be created', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should use info from the service', () => {
+    let appService = fixture.debugElement.injector.get(HotelCardsComponent);
+    expect(appService).toEqual(component);
+  });
 });
