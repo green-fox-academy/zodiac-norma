@@ -11,7 +11,7 @@ import { AppService } from '../../app.service';
 export class HotelCardsComponent implements OnInit {
 
   rooms = [];
-  
+  // roomtype: string
 
   constructor(private roomData: AppService) { }
 
@@ -24,6 +24,7 @@ export class HotelCardsComponent implements OnInit {
         },
         (error) => console.log(error)  
       );
+      // this.roomtype = this.rooms[0].roomtype
   }
   
 }
