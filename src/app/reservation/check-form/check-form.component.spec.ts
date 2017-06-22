@@ -55,4 +55,19 @@ describe('CheckFormComponent', () => {
 
     expect(component.allInputs).toEqual(['','','1','1','0']);
   })
+
+  it ('data is collected by clicking after changing input values', () => {
+    let updateButton = fixture.nativeElement.querySelector('.button')
+    let roomNumber = fixture.nativeElement.querySelector('.room.input');
+    let adultNumber = fixture.nativeElement.querySelector('.adult.input');
+    let childrenNumber = fixture.nativeElement.querySelector('.children.input');
+    
+    roomNumber.value = 2;
+    adultNumber.value = 2;
+    childrenNumber.value = 3;
+
+    updateButton.click();
+    fixture.detectChanges();
+    expect(component.allInputs).toEqual(['','','2','2','3']);
+  });
 });
