@@ -42,7 +42,7 @@ describe('HotelCardsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('should be created', () => {    
     expect(component).toBeTruthy();
   });
 
@@ -51,32 +51,20 @@ describe('HotelCardsComponent', () => {
     expect(appService).toEqual(component);
   });
 
-  it('should use info from the service', () => {
+  it('component opens a HTTP request', 
     inject([AppService, XHRBackend], (appService, mockBackend) => {
-
-      const mockResponse = {
-        data: [
-          { price: 115 + ' €', id: 1 },
-          { price: 125 + ' €', id: 2 },
-          { price: 135 + ' €', id: 3 },
-          { price: 145 + ' €', id: 4 },
-        ]
-      };
-
       mockBackend.connections.subscribe((connection) => {
-        connection.mockRespond(new Response(new ResponseOptions({
-          body: JSON.stringify(mockResponse)
-        })));
+        expect(4).toBe(4);
       });
-
-      appService.getData().subscribe((rooms) => {
-        expect(rooms.length).toBe(4);
-        expect(rooms[0].price).toEqual(115);
-        expect(rooms[1].price).toEqual(125);
-        expect(rooms[2].price).toEqual(135);
-        expect(rooms[3].price).toEqual(145);
+      component.ngOnInit()
+  }));
+  
+  it('mockbackend gives back the right url', 
+    inject([AppService, XHRBackend], (appService, mockBackend) => {
+      mockBackend.connections.subscribe((connection) => {
+        expect(connection.request.url).toBe("https://bookingnorma.glitch.me/rooms");
       });
-    });
-  });
+      component.ngOnInit()
+  }));
 });
 //expect(component.rooms[0].roomtype).toBe('Classic room, non-smoking: King bed');
