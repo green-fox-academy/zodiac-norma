@@ -40,3 +40,23 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+[0622/140450.811:ERROR:process_info.cc(625)] range at 0xef243eb400000000, size 0x235 fully unreadable
+[0622/140450.811:ERROR:process_info.cc(625)] range at 0xef243f1600000000, size 0x235 fully unreadable
+[0622/140450.811:ERROR:process_info.cc(625)] range at 0x0, size 0x235 fully unreadable
+[0622/140451.098:ERROR:process_info.cc(373)] UncheckedAllocate
+[0622/143613.273:ERROR:process_info.cc(625)] range at 0xb0ad3eb400000000, size 0x1e7 fully unreadable
+[0622/143613.273:ERROR:process_info.cc(625)] range at 0xb0ad3f1600000000, size 0x1e7 fully unreadable
+[0622/143613.273:ERROR:process_info.cc(625)] range at 0x0, size 0x1e7 fully unreadable
+[0622/143613.302:ERROR:process_info.cc(373)] UncheckedAllocate
+[0622/143613.448:ERROR:process_info.cc(625)] range at 0x9d1c3eb600000000, size 0x1eb fully unreadable
+[0622/143613.459:ERROR:process_info.cc(625)] range at 0x9d1c3f1800000000, size 0x1eb fully unreadable
+[0622/143613.459:ERROR:process_info.cc(625)] range at 0x0, size 0x1eb fully unreadable
+[0622/143613.500:ERROR:process_info.cc(625)] range at 0x3c7435c400000000, size 0x188 fully unreadable
+[0622/143613.500:ERROR:process_info.cc(625)] range at 0x3c7435e400000000, size 0x188 fully unreadable
+[0622/143613.500:ERROR:process_info.cc(625)] range at 0x3c7435e600000000, size 0x188 fully unreadable
+[0622/143631.274:ERROR:process_info.cc(625)] range at 0x37d03eb400000000, size 0x16e fully unreadable
+[0622/143631.275:ERROR:process_info.cc(625)] range at 0x37d03f1600000000, size 0x16e fully unreadable
+[0622/143631.275:ERROR:process_info.cc(625)] range at 0x0, size 0x16e fully unreadable
+[0622/143631.368:ERROR:process_info.cc(373)] UncheckedAllocate
+
