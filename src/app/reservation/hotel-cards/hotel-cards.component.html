@@ -1,5 +1,5 @@
 <div class='hotel-cards-container'>
-  <div class="rooms" *ngFor="let room of currentRooms">
+    <div class="rooms" *ngFor="let room of currentRooms">
     <div class='image' [ngStyle]="{'background-image': 'url('+room.image+')'}"></div>
     <div class="text-container">
       <h3 class="title">{{room.roomtype}}</h3>
@@ -14,5 +14,5 @@
       </div>
     </div>
   </div>
-  <div class="roomButton" (click) = "loadMoreRooms()">Load more Results</div>
+  <div class="roomButton" (click) = "loadMoreRooms()">{{ buttonText }}</div>
 </div>

@@ -16,7 +16,7 @@ export class BookinSectionComponent implements OnInit {
   ngOnInit() {
   }
 
-roomsinList = ['single room', 'double room', 'extra view room', 'luxory room'];
+roomsinList = ['single room', 'double room', 'extra view room', 'luxory room', 'Classic room, non-smoking: King bed'];
 
   pushItem = function(roomType, checkin, checkout, adults, children) {
 
