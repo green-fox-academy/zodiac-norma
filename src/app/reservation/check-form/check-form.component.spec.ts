@@ -82,7 +82,6 @@ describe('CheckFormComponent', () => {
   checkinOutput.value = null;
   updateButton.click();
   fixture.detectChanges();
-  
   expect(component.allInputs.slice(0,2)).toEqual(['','']);
 
   checkinInput.value = 563746;
@@ -90,6 +89,5 @@ describe('CheckFormComponent', () => {
   updateButton.click();
   fixture.detectChanges();
   expect(component.allInputs.slice(0,2)).toEqual(['','']);
-
   });
 });
