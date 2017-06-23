@@ -61,7 +61,6 @@ describe('CheckFormComponent', () => {
     let roomNumber = fixture.nativeElement.querySelector('.room.input');
     let adultNumber = fixture.nativeElement.querySelector('.adult.input');
     let childrenNumber = fixture.nativeElement.querySelector('.children.input');
-    console.log(updateButton);
     
     roomNumber.value = 2;
     adultNumber.value = 2;
@@ -74,20 +73,20 @@ describe('CheckFormComponent', () => {
 
   it('should return empty strings for invalid inputs ', () => {
   
-  let checkinInput = fixture.nativeElement.querySelector('.checkin');
-  let updateButton = fixture.nativeElement.querySelector('.button')
-  let checkinOutput = fixture.nativeElement.querySelector('.checkout');
+    let checkinInput = fixture.nativeElement.querySelector('.checkin');
+    let updateButton = fixture.nativeElement.querySelector('.button')
+    let checkinOutput = fixture.nativeElement.querySelector('.checkout');
 
-  checkinInput.value = 'jn;kvngmd';
-  checkinOutput.value = null;
-  updateButton.click();
-  fixture.detectChanges();
-  expect(component.allInputs.slice(0,2)).toEqual(['','']);
+    checkinInput.value = 'jn;kvngmd';
+    checkinOutput.value = null;
+    updateButton.click();
+    fixture.detectChanges();
+    expect(component.allInputs.slice(0,2)).toEqual(['','']);
 
-  checkinInput.value = 563746;
-  checkinOutput.value = undefined;
-  updateButton.click();
-  fixture.detectChanges();
-  expect(component.allInputs.slice(0,2)).toEqual(['','']);
-  });
+    checkinInput.value = 563746;
+    checkinOutput.value = undefined;
+    updateButton.click();
+    fixture.detectChanges();
+    expect(component.allInputs.slice(0,2)).toEqual(['','']);
+    });
 });
