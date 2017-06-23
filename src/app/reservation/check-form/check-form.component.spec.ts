@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 
 import { CheckFormComponent } from './check-form.component';
 
@@ -70,5 +70,26 @@ describe('CheckFormComponent', () => {
     updateButton.click();
     fixture.detectChanges();
     expect(component.allInputs).toEqual(['','','2','2','3']);
+  });
+
+  it('should return empty strings for invalid inputs ', () => {
+  
+  let checkinInput = fixture.nativeElement.querySelector('.checkin');
+  let updateButton = fixture.nativeElement.querySelector('.button')
+  let checkinOutput = fixture.nativeElement.querySelector('.checkout');
+
+  checkinInput.value = 'jn;kvngmd';
+  checkinOutput.value = null;
+  updateButton.click();
+  fixture.detectChanges();
+  
+  expect(component.allInputs.slice(0,2)).toEqual(['','']);
+
+  checkinInput.value = 563746;
+  checkinOutput.value = undefined;
+  updateButton.click();
+  fixture.detectChanges();
+  expect(component.allInputs.slice(0,2)).toEqual(['','']);
+
   });
 });
