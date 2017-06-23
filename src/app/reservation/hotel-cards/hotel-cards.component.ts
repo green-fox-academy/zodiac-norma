@@ -89,8 +89,6 @@ export class HotelCardsComponent implements OnInit {
     }
 
     loadMoreRooms = function() {
-        console.log(Math.ceil(this.rooms[0] / this.cardsPerPage));
-        console.log(this.hotelPage);
         if (Math.ceil(this.rooms[0] / this.cardsPerPage) > this.hotelPage) {
             this.hotelPage++;
             this.postRequest();
