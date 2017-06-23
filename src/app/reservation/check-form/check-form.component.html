@@ -3,11 +3,11 @@
 <section>
   <div class="title">Edit your search</div>
   <div class="subtitle">Check in</div>
-  <form #checkin="ngForm" novalidate>
+  <form class='checkin' #checkin="ngForm" novalidate>
       <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="checkInModel" required></my-date-picker>
   </form>
   <div class="subtitle">Check out</div>
-  <form #checkout="ngForm" novalidate>
+  <form class='checkout' #checkout="ngForm" novalidate>
       <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="checkOutModel" required></my-date-picker>
   </form>
   <div class="option-box">
