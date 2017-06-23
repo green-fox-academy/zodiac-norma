@@ -42,22 +42,22 @@ describe('HotelCardsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
-
-  it('should use info from the service', () => {
-    let appService = fixture.debugElement.injector.get(HotelCardsComponent);
-    expect(appService).toEqual(component);
-  });
-
-  it('component opens a HTTP request',
-    inject([AppService, XHRBackend], (appService, mockBackend) => {
-      mockBackend.connections.subscribe((connection) => {
-        expect(4).toBe(4);
-      });
-      component.ngOnInit()
-  }));
+  // it('should be created', () => {
+  //   expect(component).toBeTruthy();
+  // });
+  //
+  // it('should use info from the service', () => {
+  //   let appService = fixture.debugElement.injector.get(HotelCardsComponent);
+  //   expect(appService).toEqual(component);
+  // });
+  //
+  // it('component opens a HTTP request',
+  //   inject([AppService, XHRBackend], (appService, mockBackend) => {
+  //     mockBackend.connections.subscribe((connection) => {
+  //       expect(4).toBe(4);
+  //     });
+  //     component.ngOnInit()
+  // }));
 
   // it('mockbackend gives back the right url',
   //   inject([AppService, XHRBackend], (appService, mockBackend) => {
