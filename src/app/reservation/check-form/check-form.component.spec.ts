@@ -61,6 +61,7 @@ describe('CheckFormComponent', () => {
     let roomNumber = fixture.nativeElement.querySelector('.room.input');
     let adultNumber = fixture.nativeElement.querySelector('.adult.input');
     let childrenNumber = fixture.nativeElement.querySelector('.children.input');
+    console.log(updateButton);
     
     roomNumber.value = 2;
     adultNumber.value = 2;

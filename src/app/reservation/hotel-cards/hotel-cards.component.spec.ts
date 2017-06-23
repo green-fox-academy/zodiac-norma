@@ -51,14 +51,6 @@ describe('HotelCardsComponent', () => {
     expect(appService).toEqual(component);
   });
 
-  it('button default value should be Select a Room', () => {
-    let button = fixture.nativeElement.querySelector('.button');
-    console.log('hahah', button);
-    
-    let buttonText = button.innerHTML;
-    expect(buttonText).toMatch('Select a Room');
-  });
-
   it('component opens a HTTP request', 
     inject([AppService, XHRBackend], (appService, mockBackend) => {
       mockBackend.connections.subscribe((connection) => {
@@ -75,4 +67,4 @@ describe('HotelCardsComponent', () => {
       component.ngOnInit()
   }));
 });
-//expect(component.rooms[0].roomtype).toBe('Classic room, non-smoking: King bed');
+
