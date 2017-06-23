@@ -13,8 +13,7 @@ export class HotelCardsComponent implements OnInit {
 
     rooms = [];
     currentRooms = [];
-    hotelPage = 1;
-    cardsPerPage = 10;
+    cardsPerPage = 5;
     buttonText = 'Load more Results';
 
     typeofroom;
@@ -22,6 +21,7 @@ export class HotelCardsComponent implements OnInit {
     checkout;
     adults;
     children;
+    hotelPage;
     subscribe;
     sendData;
 
@@ -39,46 +39,61 @@ export class HotelCardsComponent implements OnInit {
                 this.checkout = params['checkout'];
                 this.adults = params['adults'];
                 this.children = params['children'];
+                this.hotelPage = params['page'];
         });
 
-        this.sendData = [{
-            'typeofroom': this.typeofroom || 0,
-            'checkin': this.checkin || 0,
-            'checkout': this.checkout || 0,
-            'adults': this.adults || 0,
-            'children': this.children || 0
-        }]
-
-        this.roomData.postData(this.sendData, 'https://bookingnorma.glitch.me/rooms')
-        .subscribe(
-            (response: Response) => {
-                const cardData = response.json();
-                this.rooms = cardData;
-                this.firstRoomFill();
-            },
-            (error) => console.log(error)
-          );
+        this.postRequest();
       }
 
-    firstRoomFill = function() {
-        let i = 0;
-        let end;
-        this.rooms.length >= this.cardsPerPage ? end = this.cardsPerPage : end = this.rooms.length;
-        for (i; i < end; i++) {
+      postRequest = function () {
+          this.sendData = [{
+              'typeofroom': this.typeofroom,
+              'checkin': this.checkin,
+              'checkout': this.checkout,
+              'adults': this.adults,
+              'children': this.children,
+              'page': this.hotelPage,
+              'cardsPerPage': this.cardsPerPage
+          }]
+
+          this.roomData.postData(this.sendData, 'https://bookingnorma.glitch.me/rooms')
+          .subscribe(
+              (response: Response) => {
+                  const cardData = response.json();
+                  this.rooms = cardData;
+                  this.roomFill();
+              },
+              (error) => console.log(error)
+            );
+      }
+
+    roomFill = function() {
+        let i = 1;
+        for (i; i < this.rooms.length; i++) {
           this.currentRooms.push(this.rooms[i]);
         }
+        if (Math.ceil(this.rooms[0] / this.cardsPerPage) === this.hotelPage) {
+            this.buttonText = 'No more Results';
+        }
+
+        this.router.navigate(['/reservation'],
+        { queryParams: {
+            typeofroom: this.typeofroom,
+            checkin: this.checkin,
+            checkout: this.checkout,
+            adults: this.adults,
+            children: this.children,
+            page: this.hotelPage
+          }
+        });
     }
 
     loadMoreRooms = function() {
-        let i = this.hotelPage * this.cardsPerPage;
-        let end;
-        (this.rooms.length - this.hotelPage * this.cardsPerPage) >= this.cardsPerPage ? end = this.hotelPage * this.cardsPerPage + this.cardsPerPage : end = this.rooms.length;
-        for (i; i < end; i++) {
-            this.currentRooms.push(this.rooms[i]);
+        console.log(Math.ceil(this.rooms[0] / this.cardsPerPage));
+        console.log(this.hotelPage);
+        if (Math.ceil(this.rooms[0] / this.cardsPerPage) > this.hotelPage) {
+            this.hotelPage++;
+            this.postRequest();
         }
-        if (end === this.rooms.length) {
-            this.buttonText = 'No more Results';
-        }
-        this.hotelPage++;
     }
 }

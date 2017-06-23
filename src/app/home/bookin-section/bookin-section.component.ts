@@ -46,12 +46,15 @@ roomsinList = ['single room', 'double room', 'extra view room', 'luxory room', '
           }
         }
       this.router.navigate(['/reservation'],
-      { queryParams: { typeofroom: roomType,
+      { queryParams: {
+          typeofroom: roomType,
           checkin: checkin.mydate.formatted,
           checkout: checkout.mydate.formatted,
           adults: adults,
-          children: children
-      } });
+          children: children,
+          page: 1
+        }
+    });
     }
 
   myDatePickerOptions: IMyDpOptions = {
