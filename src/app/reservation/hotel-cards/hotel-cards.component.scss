@@ -14,8 +14,8 @@
   @media screen and (max-width: $break-big) {
     max-height: 100%;
     min-height: 100%;
-    max-width: 350px;
-    min-width: 350px;
+    max-width: 320px;
+    min-width: 320px;
     display: block;
     margin-bottom: 30px;
     padding-bottom: 5px;
@@ -29,6 +29,7 @@
   margin-top: 15px;
   @media screen and (max-width: $break-big) {
     margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -106,7 +107,7 @@ li span {
 
 .roomButton {
     margin-top: 20px;
-    width: 668px;
+    mni-width: 668px;
     height: 30px;
     text-align: center;
     line-height: 30px;
@@ -118,4 +119,7 @@ li span {
     border-color: rgb(205, 205, 205);
     border-width: 1px;
     cursor: pointer;
+    @media screen and (max-width: $break-collapse) {
+        min-width: 318px;
+    }
 }
