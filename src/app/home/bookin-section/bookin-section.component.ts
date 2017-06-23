@@ -18,22 +18,6 @@ export class BookinSectionComponent implements OnInit {
 
 roomsinList = ['single room', 'double room', 'extra view room', 'luxory room', 'Classic room, non-smoking: King bed'];
 
-  pushItem = function(roomType, checkin, checkout, adults, children) {
-
-    console.log(roomType, checkin, checkout, adults, children);
-
-        if (checkin.mydate === undefined) {
-          checkin.mydate = {
-            formatted: ""
-          }
-        }
-        if (checkout.mydate === undefined) {
-          checkout.mydate = {
-          formatted: ""
-          }
-        }
-    }
-
     goToPage(roomType, checkin, checkout, adults, children) {
         if (checkin.mydate === undefined) {
           checkin.mydate = {
