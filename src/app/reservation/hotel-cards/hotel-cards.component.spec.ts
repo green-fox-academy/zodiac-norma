@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 
 import { HotelCardsComponent } from './hotel-cards.component';
 
@@ -17,33 +16,6 @@ import {
 } from '@angular/http';
 
 import { MockBackend } from '@angular/http/testing';
-
-TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
-
-describe('ListComponent DI Component', () => {
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [HotelCardsComponent],
-    });
-
-    this.fixture = TestBed
-      .overrideComponent(HotelCardsComponent, {
-        set: {
-          providers: [{ provide: AppService, useClass: MockBackend }],
-        },
-      })
-      .createComponent(HotelCardsComponent);
-  });
-
-  it('should render list', async(() => {
-    const element = this.fixture.nativeElement;
-    this.fixture.detectChanges();
-    expect(element.querySelectorAll('.rooms').length).toBe(28);
-  }));
-
-});
-
 
 describe('HotelCardsComponent', () => {
   let component: HotelCardsComponent;
