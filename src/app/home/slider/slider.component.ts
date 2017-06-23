@@ -21,32 +21,32 @@ export class SliderComponent implements OnInit {
           //console.log(this.rawData);
           this.createObject(this.rawData)
         },
-        (error) => console.log(error)  
+        (error) => console.log(error)
       );
   }
 
   /*rawData = [
-    {src: 'img1.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
-    {src: 'img2.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
-    {src: 'img3.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
-    {src: 'img4.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
-    {src: 'img5.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
-    {src: 'img6.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}, 
+    {src: 'img1.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'},
+    {src: 'img2.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'},
+    {src: 'img3.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'},
+    {src: 'img4.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'},
+    {src: 'img5.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'},
+    {src: 'img6.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'},
     {src: 'img7.jpg', destination: 'Budapest, Hungary', subtitle: 'The best city ever'}
   ];*/
-  
+
   imageData = [];
   classIndex = 0;
 
   createObject(data) {
-    console.log(data);
+    // console.log(data);
     for (let i = 0; i < data.length; i++) {
       this.imageData.push({file: data[i].image, class: 'img-item', title: data[i].title, subtitle: data[i].subtitle})
     }
     this.imageData[0].class = 'current-front';
     return this.imageData
   }
-    
+
   setClassIndex(x, className) {
     this.classIndex += x;
     if (this.classIndex > 0 && this.classIndex < this.imageData.length) {
@@ -82,6 +82,6 @@ export class SliderComponent implements OnInit {
 
   startAgainBackward() {
     this.imageData[0].class = 'current-front';
-    this.imageData[1].class = 'img-item'; 
+    this.imageData[1].class = 'img-item';
   }
 }

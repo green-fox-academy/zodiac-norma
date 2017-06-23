@@ -1,3 +1,5 @@
+<h1 class="header">Select Room</h1>
+<p class="roomDescription">Welcome to our room selection site! Below you can see the rooms according to your search options. You can refine your search on the right side.</p>
 <section>
   <div class="title">Edit your search</div>
   <div class="subtitle">Check in</div>
@@ -9,19 +11,18 @@
       <my-date-picker name="mydate" [options]="myDatePickerOptions"[(ngModel)]="checkOutModel" required></my-date-picker>
   </form>
   <div class="option-box">
-    <div class='item-box'>
-      <div class="subtitle room">Room(s)</div>
+    <div class='item-box1'>
+      <div class="subtitle">Room(s)</div>
       <input class="room input" placeholder="1" #rooms type="number" value=1 min="1" max="20">
     </div>
-    <div class='item-box'>
-      <div class="subtitle adults">Adults</div>
+    <div class='item-box2'>
+      <div class="subtitle">Adults</div>
       <input class="adult input" placeholder="1" #adults type="number" value=1 min="1" max="10">
     </div>
-    <div class='item-box'>
-      <div class="subtitle children">Children</div>
+    <div class='item-box3'>
+      <div class="subtitle">Children</div>
       <input class="children input" placeholder="0" #children type="number" value=0 min="0" max="10">
     </div>
   </div>
   <div class="button" (click) = "collectInput(checkin.value, checkout.value, rooms.value, adults.value, children.value)"> Update</div>
 </section>
-

@@ -1,28 +1,38 @@
-# ZodiacNorma
+# zodiac-norma
+Booking frontend team project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.0.
+Welcome Dear Guest!
 
-## Development server
+This is the booking frontend project of team Norma from the Greenfox Academy Lagopus-Zodiac class.
+Greenfox Academy is a school where we are learning software developing. Lagopus-Zodiac class is a class where we are learning
+skills and techs to be junior full stack webdevelopers. We are learning skills and technologies in the school like Javascript, Python,
+HTML5, CSS3, SASS, Angular JS 4, presentation techniques, teamwork, code planning, scrum etc.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+We are working on a webpage similar to www.booking.com as the main project work during the learning period in the school.
 
-## Code scaffolding
+About Greenfox Academy:
+https://www.greenfoxacademy.com/
+https://github.com/greenfox-academy
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+About Lagopus-Zodiac class teaching material:
+https://github.com/greenfox-academy/zodiac-syllabus
 
-## Build
+About team Norma:
+We are three students from the Greenfox Academy Lagopus-Zodiac class.:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Pamela Paprasz
 
-## Running unit tests
+https://github.com/PamelaPaprasz
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Daniel Kőrösi
 
-## Running end-to-end tests
+https://github.com/danielkorosi
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Ferenc Hartmann
 
-## Further help
+https://github.com/Fekapapa
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+www.ferenchartmann.com
+
+
+If you have any comments or suggestions please do not hesitate to contact us.
