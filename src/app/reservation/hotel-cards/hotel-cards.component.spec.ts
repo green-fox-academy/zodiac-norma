@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { async, fakeAsync, tick, ComponentFixture, TestBed, inject } from '@angular/core/testing';
 
 import { HotelCardsComponent } from './hotel-cards.component';
 
@@ -6,13 +6,15 @@ import { AppService } from '../../app.service';
 
 import { FormsModule } from '@angular/forms';
 
+import {Observable } from 'rxjs/Rx';
+
 import { 
   HttpModule, 
   Http, 
   BaseRequestOptions,
   Response,
   ResponseOptions, 
-  XHRBackend 
+  XHRBackend
 } from '@angular/http';
 
 import { MockBackend } from '@angular/http/testing';
@@ -55,11 +57,6 @@ describe('HotelCardsComponent', () => {
     let button = fixture.nativeElement.querySelector('.button');
   
     expect(button).toBe(null);
-
-    // component.ngOnInit();
-    // fixture.detectChanges();
-
-    // expect(button).toContain('Select a Room');
   });
 
   it('component opens a HTTP request', 
@@ -68,13 +65,7 @@ describe('HotelCardsComponent', () => {
       mockBackend.connections.subscribe((connection) => {
         expect(4).toBe(4);
       });
-      component.ngOnInit()
-      console.log('hahah', component);
-      fixture.detectChanges();
-      
-      let button = fixture.nativeElement.querySelector('.button');
-      expect(button).toContain('Select a Room');
-    }));
+  }));
 
   it('mockbackend gives back the right url', 
     inject([AppService, XHRBackend], (appService, mockBackend) => {
