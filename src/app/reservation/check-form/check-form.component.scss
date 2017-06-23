@@ -1,12 +1,19 @@
+@import '../../../scss/break-points.scss';
+
 section {
-    width: 220px;
-    padding: 20px;
+    margin-left: 30px;
+    width: 200px;
+    @media screen and (max-width: $break-big) {
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .title {
     font-size: 20px;
     padding-bottom: 6px;
-    
+
 }
 
 .option-box {
@@ -48,8 +55,39 @@ form {
 
 div {
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-
 }
 
+.item-box3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
 
+.header {
+    display: none;
+    @media screen and (max-width: $break-big) {
+        margin-bottom: 15px;
+        width: 100%;
+        text-align: left;
+        font-weight: normal;
+        font-size: 20px;
+        display: inherit;
+    }
+}
+
+.roomDescription {
+    display: none;
+    @media screen and (max-width: $break-big) {
+        width: 320px;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+        text-align: left;
+        font-weight: normal;
+        font-size: 14px;
+        color: rgb(105, 105, 105);
+        border-bottom: dashed;
+        border-color: rgb(200, 200, 200);
+        border-width: 1px;
+        display: inherit;
+    }
+}

@@ -19,7 +19,7 @@ export class SliderComponent implements OnInit {
           let sliderData = response.json();
           this.createImageObjects(sliderData)
         },
-        (error) => console.log(error)  
+        (error) => console.log(error)
       );
   }
   
