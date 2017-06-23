@@ -72,7 +72,7 @@ export class HotelCardsComponent implements OnInit {
         for (i; i < this.rooms.length; i++) {
           this.currentRooms.push(this.rooms[i]);
         }
-        if (Math.ceil(this.rooms[0] / this.cardsPerPage) === this.hotelPage) {
+        if (Math.ceil(this.rooms[0] / this.cardsPerPage) == this.hotelPage) {
             this.buttonText = 'No more Results';
         }
 
