@@ -10,7 +10,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class HotelCardsComponent implements OnInit {
-
     rooms = [];
     currentRooms = [];
     cardsPerPage = 5;
