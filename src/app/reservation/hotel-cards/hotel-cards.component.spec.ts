@@ -17,6 +17,9 @@ import {
 
 import { MockBackend } from '@angular/http/testing';
 
+import { Routes, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+
 describe('HotelCardsComponent', () => {
   let component: HotelCardsComponent;
   let fixture: ComponentFixture<HotelCardsComponent>;
@@ -26,7 +29,8 @@ describe('HotelCardsComponent', () => {
       declarations: [ HotelCardsComponent ],
       imports: [
         HttpModule,  
-        FormsModule
+        FormsModule,
+        RouterTestingModule
       ],
       providers: [ 
         AppService,
