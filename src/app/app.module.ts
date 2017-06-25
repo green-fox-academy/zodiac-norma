@@ -45,7 +45,7 @@ const appRoutes: Routes =[
     MyDatePickerModule,
     RouterModule.forRoot(appRoutes)
   ],
-
+  exports: [ RouterModule ],
   providers: [
     TopHotelsComponent, 
     SliderComponent, 

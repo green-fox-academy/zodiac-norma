@@ -55,30 +55,59 @@ describe('HotelCardsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should use info from the service', () => {
-    let appService = fixture.debugElement.injector.get(HotelCardsComponent);
-    expect(appService).toEqual(component);
-  });
-
-
   it('component opens a HTTP request', 
-    inject([AppService, XHRBackend], (appService, mockBackend) => {
+    inject([XHRBackend], (mockBackend) => {
       mockBackend.connections.subscribe((connection) => {
         expect(4).toBe(4);
       });
-      component.ngOnInit()
   }));
 
   it('mockbackend gives back the right url', 
+    
     inject([AppService, XHRBackend], (appService, mockBackend) => {
+      console.log('hohoh', appService);
       mockBackend.connections.subscribe((connection) => {
         expect(connection.request.url).toBe("https://bookingnorma.glitch.me/rooms");
       });
-      component.ngOnInit()
   }));
 
+  // it('should test appservice', () => {
+    
+  //   let fixture = TestBed.createComponent(HotelCardsComponent);
+  //   let app = fixture.debugElement.componentInstance;
+  //   let appService = fixture.debugElement.injector.get(AppService);
+        
+  //   app.ngOnInit();
+
+  //   appService.getData('https://bookingnorma.glitch.me/rooms')
+  //      .subscribe(
+  //       (response: Response) => {
+  //         const cardData = response.json();
+  //         this.rooms = cardData;
+  //       },
+  //       (error) => console.log(error)  
+  //     );
+    
+    
+  //   fixture.detectChanges();
+  //   fixture.whenStable().then(() => {
+  //     let rooms = fixture.nativeElement.querySelectorAll('.rooms');
+  //     console.log('hihihi', rooms);
+      
+      // expect(rooms.length).toEqual(2);
+      // let title = fixture.nativeElement.querySelector('.title');
+      // expect(title.textContent).toContain('single');
+      // let titleArray = fixture.nativeElement.querySelectorAll('.title');
+      // expect(title[0].textContent).toContain('room');
+  //   });
+
+    
+  // })
+
+
+
   it('mockbackend gives back the right url', 
-    inject([AppService, XHRBackend], (appService, mockBackend) => {
+    inject([XHRBackend], (mockBackend) => {
 
     var rooms = [
         {
@@ -102,13 +131,17 @@ describe('HotelCardsComponent', () => {
           body: JSON.stringify(rooms)
         })));
     });
+
     component.ngOnInit()
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      fixture.detectChanges();
       let rooms = fixture.nativeElement.querySelectorAll('.rooms');
+      console.log('hihi', rooms);
+      
       expect(rooms.length).toEqual(2);
       let title = fixture.nativeElement.querySelector('.title');
+      console.log('huuuuu', title);
+      
       expect(title.textContent).toContain('single');
       let titleArray = fixture.nativeElement.querySelectorAll('.title');
       expect(title[0].textContent).toContain('room');
