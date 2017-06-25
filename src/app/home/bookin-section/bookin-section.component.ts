@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IMyDpOptions } from 'mydatepicker';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bookin-section',
@@ -9,36 +10,54 @@ import { IMyDpOptions } from 'mydatepicker';
 
 export class BookinSectionComponent implements OnInit {
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
   }
 
-  roomsinList = ['single room', 'double room', 'extra view room', 'luxory room'];
-  inputValues = [];
+roomsinList = ['single room', 'double room', 'extra view room', 'luxory room', 'Classic room, non-smoking: King bed'];
 
-  pushItem(roomType, checkin, checkout, adults, children) {
-    console.log(checkin.mydate);
-    
-    /*if (checkin.mydate === undefined) {
-      checkin.mydate = {
-        formatted: ""
-      }
+  pushItem = function(roomType, checkin, checkout, adults, children) {
+
+    console.log(roomType, checkin, checkout, adults, children);
+
+        if (checkin.mydate === undefined) {
+          checkin.mydate = {
+            formatted: ""
+          }
+        }
+        if (checkout.mydate === undefined) {
+          checkout.mydate = {
+          formatted: ""
+          }
+        }
     }
-    if (checkout.mydate === undefined) {
-      checkout.mydate = {
-      formatted: ""
-      }
-    }*/
-      
-      this.inputValues = [];
-      this.inputValues.push(roomType, checkin.mydate.formatted, checkout.mydate.formatted, adults, children);
-      console.log(this.inputValues);
-  }
+
+    goToPage(roomType, checkin, checkout, adults, children) {
+        if (checkin.mydate === undefined) {
+          checkin.mydate = {
+            formatted: ""
+          }
+        }
+        if (checkout.mydate === undefined) {
+          checkout.mydate = {
+              formatted: ""
+          }
+        }
+      this.router.navigate(['/reservation'],
+      { queryParams: {
+          typeofroom: roomType,
+          checkin: checkin.mydate.formatted,
+          checkout: checkout.mydate.formatted,
+          adults: adults,
+          children: children,
+          page: 1
+        }
+    });
+    }
 
   myDatePickerOptions: IMyDpOptions = {
-          // other options...
-          dateFormat: 'dd.mm.yyyy',
-      };
+   dateFormat: 'dd.mm.yyyy',
+  };
 }

@@ -8,14 +8,14 @@
   max-width: 670px;
   min-width: 670px;
   display: flex;
-  background: whitesmoke;
-  margin: 25px;
+  background: white;
+  margin: 25px 0px;
   box-shadow: 0px 1px 5px 0px rgba(240,237,240,1);
   @media screen and (max-width: $break-big) {
     max-height: 100%;
     min-height: 100%;
-    max-width: 350px;
-    min-width: 350px;
+    max-width: 320px;
+    min-width: 320px;
     display: block;
     margin-bottom: 30px;
     padding-bottom: 5px;
@@ -29,6 +29,7 @@
   margin-top: 15px;
   @media screen and (max-width: $break-big) {
     margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 
@@ -102,4 +103,23 @@ li span {
     margin-bottom: 20px;
     margin-right: 0;
   }
+}
+
+.roomButton {
+    margin-top: 20px;
+    mni-width: 668px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    color: rgb(49, 49, 49);
+    background-color: rgb(232, 232, 232);
+    border-radius: 3px;
+    border-style: solid;
+    border-color: rgb(205, 205, 205);
+    border-width: 1px;
+    cursor: pointer;
+    @media screen and (max-width: $break-collapse) {
+        min-width: 318px;
+    }
 }

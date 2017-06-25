@@ -1,0 +1,80 @@
+@import '../../scss/break-points.scss';
+
+app-check-form {
+    @media screen and (max-width: $break-big) {
+        margin: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+}
+
+.mainSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+}
+
+.mainContainer {
+    min-width: 975px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $break-big) {
+        min-width: 320px;
+        flex-direction: column-reverse;
+    }
+}
+
+app-hotel-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hotelContainer {
+    margin-bottom: 180px;
+    min-width: 740px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: solid;
+    border-width: 1px;
+    border-color: rgb(205, 205, 205);
+    @media screen and (max-width: $break-big) {
+        min-width: 320px;
+        padding-right: 0px;
+        border: none;
+    }
+}
+
+.header {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+    font-weight: normal;
+    font-size: 20px;
+    @media screen and (max-width: $break-big) {
+        display: none;
+    }
+}
+
+.roomDescription {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    width: 670px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+    border-bottom: dashed;
+    border-color: rgb(200, 200, 200);
+    border-width: 1px;
+    @media screen and (max-width: $break-big) {
+        width: 320px;
+        display: none;
+    }
+}

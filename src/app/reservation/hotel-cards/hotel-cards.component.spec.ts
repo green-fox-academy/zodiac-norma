@@ -6,13 +6,13 @@ import { AppService } from '../../app.service';
 
 import { FormsModule } from '@angular/forms';
 
-import { 
-  HttpModule, 
-  Http, 
+import {
+  HttpModule,
+  Http,
   BaseRequestOptions,
   Response,
-  ResponseOptions, 
-  XHRBackend 
+  ResponseOptions,
+  XHRBackend
 } from '@angular/http';
 
 import { MockBackend } from '@angular/http/testing';
@@ -32,7 +32,7 @@ describe('HotelCardsComponent', () => {
         FormsModule,
         RouterTestingModule
       ],
-      providers: [ 
+      providers: [
         AppService,
         { provide: XHRBackend, useClass: MockBackend }
       ]
@@ -113,4 +113,3 @@ describe('HotelCardsComponent', () => {
     });
   }));
 });
-
