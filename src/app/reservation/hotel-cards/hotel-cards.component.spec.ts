@@ -14,7 +14,7 @@ import {
 
 import { MockBackend } from '@angular/http/testing';
 
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HotelCardsComponent', () => {
@@ -69,33 +69,41 @@ describe('HotelCardsComponent', () => {
     it('testing mockbackend and mockdata', 
         inject([AppService, XHRBackend], (appService, mockBackend) => {
 
-        var rooms = [
-            {
-                roomtype: 'single room',
-                features: ['323-452 sq ft / 30-42 sq m ', 'Free access to spa facilities', 'Comfortable work area', 'Sweet sweeper bed', 'Separate bath and shower'],
-                price: 115 + ' €',
-                id: 1,
-                image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic1_mod.jpg?1497949004290'
-            },
-            {
-                roomtype: 'Classic room, non-smoking: King bed',
-                features: ['223-452 sq ft / 20-42 sq m ', 'Free access to spa facilities', 'Comfortable work area'],
-                price: 215 + ' €',
-                id: 2,
-                image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic2_mod.jpg?1497949136425'
-            }
-        ]    
+        var serverData = {
+            rooms: [
+                {
+                    roomtype: 'single room',
+                    features: ['323-452 sq ft / 30-42 sq m ', 'Free access to spa facilities', 'Comfortable work area', 'Sweet sweeper bed', 'Separate bath and shower'],
+                    price: 115 + ' €',
+                    id: 1,
+                    image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic1_mod.jpg?1497949004290'
+                },
+                {
+                    roomtype: 'Classic room, non-smoking: King bed',
+                    features: ['223-452 sq ft / 20-42 sq m ', 'Free access to spa facilities', 'Comfortable work area'],
+                    price: 215 + ' €',
+                    id: 2,
+                    image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic2_mod.jpg?1497949136425'
+                }
+            ],
+            totalResults: '2'
 
+        }
+        
         mockBackend.connections.subscribe((connection) => {
             connection.mockRespond(new Response(new ResponseOptions({
-                body: JSON.stringify(rooms)
+                body: JSON.stringify(serverData)
             })));
         });
         
         component.ngOnInit()
+        
         fixture.detectChanges();
         fixture.whenStable().then(() => {
+            
             let rooms = fixture.nativeElement.querySelectorAll('.rooms');
+            console.log('rooms', rooms);
+            
             expect(rooms.length).toEqual(2);
 
             let title = fixture.nativeElement.querySelector('.title');
