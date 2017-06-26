@@ -10,12 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class HotelCardsComponent implements OnInit {
-    
+
     rooms = [];
     currentRooms = [];
     cardsPerPage = 5;
     buttonText = 'Load more Results';
+    buttonClass = 'roomButton';
 
+    classSelector;
     typeofroom;
     checkin;
     checkout;
@@ -55,6 +57,7 @@ export class HotelCardsComponent implements OnInit {
                 'page': this.hotelPage,
                 'cardsPerPage': this.cardsPerPage
             }]
+            console.log(this.sendData);
 
             this.roomData.postData(this.sendData, 'https://bookingnorma.glitch.me/rooms')
             .subscribe(
@@ -68,12 +71,13 @@ export class HotelCardsComponent implements OnInit {
         }
 
         roomFill = function() {
-            let i = 1;
-            for (i; i < this.rooms.length; i++) {
-                this.currentRooms.push(this.rooms[i]);
+            let i = 0;
+            for (i; i < this.rooms.rooms.length; i++) {
+                this.currentRooms.push(this.rooms.rooms[i]);
             }
-            if (Math.ceil(this.rooms[0] / this.cardsPerPage) == this.hotelPage) {
+            if (Math.ceil(this.rooms.totalResults / this.cardsPerPage) == this.hotelPage) {
                 this.buttonText = 'No more Results';
+                this.buttonClass = 'noButton';
             }
 
             this.router.navigate(['/reservation'],
@@ -89,7 +93,12 @@ export class HotelCardsComponent implements OnInit {
     }
 
     loadMoreRooms = function() {
-        if (Math.ceil(this.rooms[0] / this.cardsPerPage) > this.hotelPage) {
+        if (Math.ceil(this.rooms.totalResults / this.cardsPerPage) > this.hotelPage) {
+            this.classSelector = document.querySelectorAll('.rooms');
+            this.classSelector.forEach(function(element) {
+                element.innerHTML = '';
+                element.className = "hiddenClass";
+            });
             this.hotelPage++;
             this.postRequest();
         }

@@ -132,3 +132,17 @@ li span {
         min-width: 318px;
     }
 }
+
+.noButton {
+    margin-top: 20px;
+    min-width: 668px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    color: rgb(49, 49, 49);
+    cursor: default;
+    @media screen and (max-width: $break-collapse) {
+        min-width: 318px;
+    }
+}
