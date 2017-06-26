@@ -2,52 +2,51 @@
 @import '../../../scss/break-points.scss';
 
 .top-hotel-container {
-  max-width: 975px;
-  min-width: 975px;
-  @media screen and (max-width: $break-big) {
-    min-width: 0px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+    max-width: 975px;
+    min-width: 975px;
+    @media screen and (max-width: $break-big) {
+        min-width: 0px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .hotels {
-  height: 300px;
-
-  background-color: rgba(255, 255, 255, 0);
-  @include grid(3, 5%);
-  @media screen and (max-width: $break-big) {
-    @include grid(1, 0%);
-    clear: left;
-    margin-bottom: 0px;
-    &:nth-child(1){
-        margin-top: 590px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0);
+    @include grid(3, 5%);
+    @media screen and (max-width: $break-big) {
+        @include grid(1, 0%);
+        clear: left;
+        margin-bottom: 0px;
+        &:nth-child(1){
+            margin-top: 590px;
+        }
     }
-  }
 }
 
 .image {
-  height: 150px;
-  width: 300px;
-  background-size: cover;
+    height: 150px;
+    width: 300px;
+    background-size: cover;
 }
 
 .descr {
-  max-width: 250px;
-  max-height: 250px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 12px;
+    max-width: 250px;
+    max-height: 250px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
 }
 
 .title {
-  font-size: 20px;
-  color: grey;
-  margin-top: 5px;
-  margin-bottom: 5px;
+    font-size: 20px;
+    color: grey;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 span {
-  color: black;
-  margin-left: 10px;
+    color: black;
+    margin-left: 10px;
 }

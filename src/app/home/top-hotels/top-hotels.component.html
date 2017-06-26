@@ -1,9 +1,7 @@
-
-
 <div class='top-hotel-container'>
-  <div class="hotels" *ngFor="let hotel of hotels">
-    <div class='image' [ngStyle]="{'background-image': 'url('+hotel.image+')'}"></div>
-    <h3 class="title">{{hotel.title}} <span>{{hotel.price}}</span></h3> 
-    <p class="descr">{{hotel.description}}</p> 
-  </div>
+    <div class="hotels" *ngFor="let hotel of hotels">
+        <div class='image' [ngStyle]="{'background-image': 'url('+hotel.image+')'}"></div>
+        <h3 class="title">{{hotel.title}} <span>{{hotel.price}}</span></h3>
+        <p class="descr">{{hotel.description}}</p>
+    </div>
 </div>
