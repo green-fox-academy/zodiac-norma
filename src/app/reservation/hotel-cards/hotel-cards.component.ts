@@ -82,16 +82,16 @@ export class HotelCardsComponent implements OnInit {
                 this.buttonClass = 'noButton';
             }
 
-            // this.router.navigate(['/reservation'],
-        //     { queryParams: {
-        //         typeofroom: this.typeofroom,
-        //         checkin: this.checkin,
-        //         checkout: this.checkout,
-        //         adults: this.adults,
-        //         children: this.children,
-        //         page: this.hotelPage
-        //     }
-        // });
+            this.router.navigate(['/reservation'],
+            { queryParams: {
+                typeofroom: this.typeofroom,
+                checkin: this.checkin,
+                checkout: this.checkout,
+                adults: this.adults,
+                children: this.children,
+                page: this.hotelPage
+            }
+        });
     }
 
     loadMoreRooms = function() {
