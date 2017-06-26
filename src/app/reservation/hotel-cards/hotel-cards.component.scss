@@ -61,36 +61,23 @@
 }
 
 .image {
-<<<<<<< HEAD
-  max-height: 100%;
-  min-height: 100%;
-  max-width: 190px;
-  min-width: 190px;
-  margin-left: 20px;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: rgb(235, 235, 235);
-  background-size: 170px;
-  background-repeat: no-repeat;
-  background-position: left;
-  @media screen and (max-width: $break-big) {
-    min-height: 220px;
-    background-size: auto 150px;
-    margin-left: 67.5px;
-    border-style: none;
-  }
-=======
-    max-height: 200px;
-    min-height: 200px;
-    max-width: 190px;
-    min-width: 190px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    @media screen and (max-width: $break-big) {
-        margin-left: 75px;
-    }
->>>>>>> master
+	max-height: 100%;
+  	min-height: 100%;
+  	max-width: 190px;
+	min-width: 190px;
+	margin-left: 20px;
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-right-color: rgb(235, 235, 235);
+	background-size: 170px;
+	background-repeat: no-repeat;
+	background-position: left;
+	@media screen and (max-width: $break-big) {
+		min-height: 220px;
+		background-size: auto 150px;
+		margin-left: 67.5px;
+		border-style: none;
+	}
 }
 
 ul {
