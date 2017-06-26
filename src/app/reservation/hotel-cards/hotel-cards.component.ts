@@ -10,11 +10,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class HotelCardsComponent implements OnInit {
-    
+
     rooms = [];
     currentRooms = [];
     cardsPerPage = 5;
     buttonText = 'Load more Results';
+    buttonClass = 'roomButton';
 
     typeofroom;
     checkin;
@@ -74,6 +75,7 @@ export class HotelCardsComponent implements OnInit {
             }
             if (Math.ceil(this.rooms[0] / this.cardsPerPage) == this.hotelPage) {
                 this.buttonText = 'No more Results';
+                this.buttonClass = 'noButton';
             }
 
             this.router.navigate(['/reservation'],
