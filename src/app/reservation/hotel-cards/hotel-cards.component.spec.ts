@@ -1,9 +1,6 @@
 import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
-
 import { HotelCardsComponent } from './hotel-cards.component';
-
 import { AppService } from '../../app.service';
-
 import { FormsModule } from '@angular/forms';
 
 import {
@@ -21,8 +18,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('HotelCardsComponent', () => {
-        let component: HotelCardsComponent;
-        let fixture: ComponentFixture<HotelCardsComponent>;
+    let component: HotelCardsComponent;
+    let fixture: ComponentFixture<HotelCardsComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({

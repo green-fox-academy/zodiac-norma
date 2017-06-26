@@ -1,18 +1,18 @@
 <div class='hotel-cards-container'>
     <div class="rooms" *ngFor="let room of currentRooms">
-    <div class='image' [ngStyle]="{'background-image': 'url('+room.image+')'}"></div>
-    <div class="text-container">
-      <h3 class="title">{{room.roomtype}}</h3>
-      <div class="feature-container">
-        <ul>
-          <li class="descr" *ngFor='let feature of room.features'><span> {{ feature }}</span></li>
-        </ul>
-      </div>
-      <div class="price-container">
-        <p class="price" >{{ room.price }}</p>
-        <div class="button">Select a Room</div>
-      </div>
+        <div class='image' [ngStyle]="{'background-image': 'url('+room.image+')'}"></div>
+        <div class="text-container">
+            <h3 class="title">{{room.roomtype}}</h3>
+            <div class="feature-container">
+                <ul>
+                    <li class="descr" *ngFor='let feature of room.features'><span> {{ feature }}</span></li>
+                </ul>
+            </div>
+            <div class="price-container">
+                <p class="price" >{{ room.price }}</p>
+                <div class="button">Select a Room</div>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="roomButton" (click) = "loadMoreRooms()">{{ buttonText }}</div>
+    <div [class]= "buttonClass" (click) = "loadMoreRooms()">{{ buttonText }}</div>
 </div>

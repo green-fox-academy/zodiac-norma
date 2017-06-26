@@ -19,8 +19,8 @@ import { SimpleHeaderComponent } from './reservation/simple-header/simple-header
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
 
 const appRoutes: Routes =[
-  { path: '', component: HomeComponent },
-  { path: 'reservation', component: ReservationComponent }
+    { path: '', component: HomeComponent },
+    { path: 'reservation', component: ReservationComponent }
 ];
 
 @NgModule({
@@ -29,7 +29,6 @@ const appRoutes: Routes =[
     SliderComponent,
     BookinSectionComponent,
     TopHotelsComponent,
-    // TopHotelsService,
     HeaderComponent,
     HomeComponent,
     ReservationComponent,
