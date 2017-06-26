@@ -17,6 +17,7 @@ export class HotelCardsComponent implements OnInit {
     buttonText = 'Load more Results';
     buttonClass = 'roomButton';
 
+    classSelector;
     typeofroom;
     checkin;
     checkout;
@@ -92,6 +93,11 @@ export class HotelCardsComponent implements OnInit {
 
     loadMoreRooms = function() {
         if (Math.ceil(this.rooms[0] / this.cardsPerPage) > this.hotelPage) {
+            this.classSelector = document.querySelectorAll('.rooms');
+            this.classSelector.forEach(function(element) {
+                element.innerHTML = '';
+                element.className = "hiddenClass";
+            });
             this.hotelPage++;
             this.postRequest();
         }
