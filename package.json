@@ -2,8 +2,8 @@
   "name": "hf-test",
   "version": "1.0.0",
   "engines": {
-  "node": "6.11.0"
-    },
+    "node": "6.11.0"
+  },
   "description": "Booking frontend team project",
   "main": "index.js",
   "scripts": {
@@ -16,8 +16,7 @@
     "e2e": "ng e2e",
     "heroku-postbuild": "ng build",
     "build-dist": "ng build --aot --target=production --output-hashing none"
-  }
-  ,
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Fekapapa/hf-test.git"

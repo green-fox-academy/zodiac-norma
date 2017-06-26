@@ -33,6 +33,7 @@ export class HotelCardsComponent implements OnInit {
         private router: Router) {}
 
         ngOnInit() {
+            
             this.subscribe = this.route
             .queryParams
             .subscribe(params => {
@@ -72,6 +73,7 @@ export class HotelCardsComponent implements OnInit {
 
         roomFill = function() {
             let i = 0;
+            console.log('nem teszt szerverdata', this.rooms);
             for (i; i < this.rooms.rooms.length; i++) {
                 this.currentRooms.push(this.rooms.rooms[i]);
             }
@@ -80,16 +82,16 @@ export class HotelCardsComponent implements OnInit {
                 this.buttonClass = 'noButton';
             }
 
-            this.router.navigate(['/reservation'],
-            { queryParams: {
-                typeofroom: this.typeofroom,
-                checkin: this.checkin,
-                checkout: this.checkout,
-                adults: this.adults,
-                children: this.children,
-                page: this.hotelPage
-            }
-        });
+            // this.router.navigate(['/reservation'],
+        //     { queryParams: {
+        //         typeofroom: this.typeofroom,
+        //         checkin: this.checkin,
+        //         checkout: this.checkout,
+        //         adults: this.adults,
+        //         children: this.children,
+        //         page: this.hotelPage
+        //     }
+        // });
     }
 
     loadMoreRooms = function() {
