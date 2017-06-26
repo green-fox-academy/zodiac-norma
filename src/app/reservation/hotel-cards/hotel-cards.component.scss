@@ -2,23 +2,27 @@
 @import '../../../scss/break-points.scss';
 
 .rooms {
-    max-height: 200px;
-    min-height: 200px;
-    max-width: 670px;
-    min-width: 670px;
-    display: flex;
-    background: white;
-    margin: 25px 0px;
-    box-shadow: 0px 1px 5px 0px rgba(240,237,240,1);
-    @media screen and (max-width: $break-big) {
-        max-height: 100%;
-        min-height: 100%;
-        max-width: 320px;
-        min-width: 320px;
-        display: block;
-        margin-bottom: 30px;
-        padding-bottom: 5px;
-    }
+	max-height: 100%;
+	min-height: 100%;
+	max-width: 670px;
+	min-width: 670px;
+	display: flex;
+	background: white;
+	margin: 25px 0px;
+	border-style: solid;
+	border-width: 1px;
+	border-color:rgba(102,102,102, 0.2);
+	box-shadow: 0px 4px 10px 0px rgba(204,200,204,1);
+	border-radius: 3px;
+	@media screen and (max-width: $break-big) {
+		max-height: 100%;
+		min-height: 100%;
+		max-width: 320px;
+		min-width: 320px;
+		display: block;
+		margin-bottom: 30px;
+		padding-bottom: 5px;
+	}
 }
 
 .text-container {
@@ -37,16 +41,23 @@
 }
 
 .image {
-    max-height: 200px;
-    min-height: 200px;
-    max-width: 190px;
-    min-width: 190px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    @media screen and (max-width: $break-big) {
-        margin-left: 75px;
-    }
+	max-height: 100%;
+  	min-height: 100%;
+  	max-width: 190px;
+	min-width: 190px;
+	margin-left: 20px;
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-right-color: rgb(235, 235, 235);
+	background-size: 170px;
+	background-repeat: no-repeat;
+	background-position: left;
+	@media screen and (max-width: $break-big) {
+		min-height: 220px;
+		background-size: auto 150px;
+		margin-left: 67.5px;
+		border-style: none;
+	}
 }
 
 ul {
