@@ -10,29 +10,29 @@ import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('BookinSectionComponent', () => {
-  let component: BookinSectionComponent;
-  let fixture: ComponentFixture<BookinSectionComponent>;
+    let component: BookinSectionComponent;
+    let fixture: ComponentFixture<BookinSectionComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BookinSectionComponent ],
-      imports: [
-        HttpModule, 
-        MyDatePickerModule, 
-        FormsModule,
-        RouterTestingModule
-      ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ BookinSectionComponent ],
+            imports: [
+                HttpModule,
+                MyDatePickerModule,
+                FormsModule,
+                RouterTestingModule
+            ]
+        })
+        .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(BookinSectionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(BookinSectionComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(component).toBeTruthy();
+    });
 });

@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class HotelCardsComponent implements OnInit {
-
+    
     rooms = [];
     currentRooms = [];
     cardsPerPage = 5;
@@ -30,8 +30,8 @@ export class HotelCardsComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router) {}
 
-    ngOnInit() {
-        this.subscribe = this.route
+        ngOnInit() {
+            this.subscribe = this.route
             .queryParams
             .subscribe(params => {
                 this.typeofroom = params['typeofroom'];
@@ -40,51 +40,51 @@ export class HotelCardsComponent implements OnInit {
                 this.adults = params['adults'];
                 this.children = params['children'];
                 this.hotelPage = params['page'];
-        });
+            });
 
-        this.postRequest();
-      }
+            this.postRequest();
+        }
 
-      postRequest = function () {
-          this.sendData = [{
-              'typeofroom': this.typeofroom,
-              'checkin': this.checkin,
-              'checkout': this.checkout,
-              'adults': this.adults,
-              'children': this.children,
-              'page': this.hotelPage,
-              'cardsPerPage': this.cardsPerPage
-          }]
+        postRequest = function () {
+            this.sendData = [{
+                'typeofroom': this.typeofroom,
+                'checkin': this.checkin,
+                'checkout': this.checkout,
+                'adults': this.adults,
+                'children': this.children,
+                'page': this.hotelPage,
+                'cardsPerPage': this.cardsPerPage
+            }]
 
-          this.roomData.postData(this.sendData, 'https://bookingnorma.glitch.me/rooms')
-          .subscribe(
-              (response: Response) => {
-                  const cardData = response.json();
-                  this.rooms = cardData;
-                  this.roomFill();
-              },
-              (error) => console.log(error)
+            this.roomData.postData(this.sendData, 'https://bookingnorma.glitch.me/rooms')
+            .subscribe(
+                (response: Response) => {
+                    const cardData = response.json();
+                    this.rooms = cardData;
+                    this.roomFill();
+                },
+                (error) => console.log(error)
             );
-      }
-
-    roomFill = function() {
-        let i = 1;
-        for (i; i < this.rooms.length; i++) {
-          this.currentRooms.push(this.rooms[i]);
-        }
-        if (Math.ceil(this.rooms[0] / this.cardsPerPage) == this.hotelPage) {
-            this.buttonText = 'No more Results';
         }
 
-        this.router.navigate(['/reservation'],
-        { queryParams: {
-            typeofroom: this.typeofroom,
-            checkin: this.checkin,
-            checkout: this.checkout,
-            adults: this.adults,
-            children: this.children,
-            page: this.hotelPage
-          }
+        roomFill = function() {
+            let i = 1;
+            for (i; i < this.rooms.length; i++) {
+                this.currentRooms.push(this.rooms[i]);
+            }
+            if (Math.ceil(this.rooms[0] / this.cardsPerPage) == this.hotelPage) {
+                this.buttonText = 'No more Results';
+            }
+
+            this.router.navigate(['/reservation'],
+            { queryParams: {
+                typeofroom: this.typeofroom,
+                checkin: this.checkin,
+                checkout: this.checkout,
+                adults: this.adults,
+                children: this.children,
+                page: this.hotelPage
+            }
         });
     }
 

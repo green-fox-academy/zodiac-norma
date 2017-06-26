@@ -11,39 +11,35 @@ import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
 
 describe('ReservationComponent', () => {
-  let component: ReservationComponent;
-  let fixture: ComponentFixture<ReservationComponent>;
+    let component: ReservationComponent;
+    let fixture: ComponentFixture<ReservationComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        ReservationComponent,
-        CheckFormComponent,
-        HotelCardsComponent,
-        SimpleHeaderComponent
-      ],
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                ReservationComponent,
+                CheckFormComponent,
+                HotelCardsComponent,
+                SimpleHeaderComponent
+            ],
 
-      imports: [
-        HttpModule,
-        MyDatePickerModule,
-        FormsModule
-      ],
+            imports: [
+                HttpModule,
+                MyDatePickerModule,
+                FormsModule
+            ],
 
-      providers: [
-        AppService,
-        HotelCardsComponent
-      ]
-    })
-    .compileComponents();
-  }));
+            providers: [
+                AppService,
+                HotelCardsComponent
+            ]
+        })
+        .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ReservationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  // it('should be created', () => {
-  //   expect(component).toBeTruthy();
-  // });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(ReservationComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 });

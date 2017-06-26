@@ -19,41 +19,40 @@ import { SimpleHeaderComponent } from './reservation/simple-header/simple-header
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
 
 const appRoutes: Routes =[
-  { path: '', component: HomeComponent },
-  { path: 'reservation', component: ReservationComponent }
+    { path: '', component: HomeComponent },
+    { path: 'reservation', component: ReservationComponent }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SliderComponent,
-    BookinSectionComponent,
-    TopHotelsComponent,
-    // TopHotelsService,
-    HeaderComponent,
-    HomeComponent,
-    ReservationComponent,
-    FooterComponent,
-    CheckFormComponent,
-    SimpleHeaderComponent,
-    HotelCardsComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MyDatePickerModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    declarations: [
+        AppComponent,
+        SliderComponent,
+        BookinSectionComponent,
+        TopHotelsComponent,
+        HeaderComponent,
+        HomeComponent,
+        ReservationComponent,
+        FooterComponent,
+        CheckFormComponent,
+        SimpleHeaderComponent,
+        HotelCardsComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        MyDatePickerModule,
+        RouterModule.forRoot(appRoutes)
+    ],
 
-  providers: [
-    TopHotelsComponent, 
-    SliderComponent, 
-    BookinSectionComponent, 
-    AppService, 
-    HotelCardsComponent
-  ],
-  
-  bootstrap: [AppComponent]
+    providers: [
+        TopHotelsComponent,
+        SliderComponent,
+        BookinSectionComponent,
+        AppService,
+        HotelCardsComponent
+    ],
+
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
