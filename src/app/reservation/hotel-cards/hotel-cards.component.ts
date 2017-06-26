@@ -44,40 +44,6 @@ export class HotelCardsComponent implements OnInit {
                 this.hotelPage = params['page'];
             });
 
-<<<<<<< HEAD
-        this.postRequest();
-    }
-
-    postRequest = function () {
-        this.sendData = [{
-            'typeofroom': this.typeofroom,
-            'checkin': this.checkin,
-            'checkout': this.checkout,
-            'adults': this.adults,
-            'children': this.children,
-            'page': this.hotelPage,
-            'cardsPerPage': this.cardsPerPage
-        }]
-
-        this.roomData.postData(this.sendData, 'https://bookingnorma.glitch.me/rooms')
-        .subscribe(
-            (response: Response) => {
-                const cardData = response.json();
-                this.rooms = cardData;
-                this.roomFill();
-            },
-            (error) => console.log(error)
-          );
-    }
-
-    roomFill = function() {
-        let i = 1;
-        for (i; i < this.rooms.length; i++) {
-          this.currentRooms.push(this.rooms[i]);
-        }
-        if (Math.ceil(this.rooms[0] / this.cardsPerPage) == this.hotelPage) {
-            this.buttonText = 'No more Results';
-=======
             this.postRequest();
         }
 
@@ -102,7 +68,6 @@ export class HotelCardsComponent implements OnInit {
                 },
                 (error) => console.log(error)
             );
->>>>>>> master
         }
 
         roomFill = function() {
