@@ -3,14 +3,18 @@
 
 
 .rooms {
-  max-height: 200px;
-  min-height: 200px;
+  max-height: 100%;
+  min-height: 100%;
   max-width: 670px;
   min-width: 670px;
   display: flex;
   background: white;
   margin: 25px 0px;
-  box-shadow: 0px 1px 5px 0px rgba(240,237,240,1);
+  border-style: solid;
+  border-width: 1px;
+  border-color:rgba(102,102,102, 0.2);
+  box-shadow: 0px 4px 10px 0px rgba(204,200,204,1);
+  border-radius: 3px;
   @media screen and (max-width: $break-big) {
     max-height: 100%;
     min-height: 100%;
@@ -38,8 +42,8 @@
 }
 
 .image {
-  max-height: 200px;
-  min-height: 200px;
+  max-height: 100%;
+  min-height: 100%;
   max-width: 190px;
   min-width: 190px;
   margin-left: 20px;
@@ -50,9 +54,10 @@
   background-repeat: no-repeat;
   background-position: left;
   @media screen and (max-width: $break-big) {
+    min-height: 220px;
+    background-size: auto 150px;
     margin-left: 67.5px;
     border-style: none;
-    background-size: contain;
   }
 }
 
@@ -113,7 +118,7 @@ li span {
 
 .roomButton {
     margin-top: 20px;
-    mni-width: 668px;
+    min-width: 668px;
     height: 30px;
     text-align: center;
     line-height: 30px;
