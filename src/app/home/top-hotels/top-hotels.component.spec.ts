@@ -11,31 +11,31 @@ import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TopHotelsComponent', () => {
-  let component: TopHotelsComponent;
-  let fixture: ComponentFixture<TopHotelsComponent>;
+    let component: TopHotelsComponent;
+    let fixture: ComponentFixture<TopHotelsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TopHotelsComponent ],
-      imports: [
-        HttpModule, 
-        FormsModule,
-        RouterTestingModule
-      ],
-      providers: [
-        AppService
-      ]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [ TopHotelsComponent ],
+            imports: [
+                HttpModule,
+                FormsModule,
+                RouterTestingModule
+            ],
+            providers: [
+                AppService
+            ]
+        })
+        .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TopHotelsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(TopHotelsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(component).toBeTruthy();
+    });
 });
