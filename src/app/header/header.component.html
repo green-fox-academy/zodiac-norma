@@ -5,7 +5,7 @@
             <div class="topLogoMoving"></div>
         </a>
         <ul class="navContainer">
-            <li><a [routerLink]='["/"]' class="navigation">Home</a></li>
+            <li><a [routerLink]="['/']" class="navigation">Home</a></li>
             <li><a href="index.html" class="navigation">Rooms & Suites</a></li>
             <li><a [routerLink]="['reservation']" class="navigation">Reservation</a></li>
             <li><a href="index.html" class="navigation">Activites</a></li>
@@ -13,9 +13,9 @@
             <input type="checkbox" id="toggle">
             <label for="toggle"></label>
             <ul class="dropDown">
-                <li><a href="index.html" class="dropMenu">Hotel</a></li>
+                <li><a [routerLink]="['/']" class="dropMenu">Home</a></li>
                 <li><a href="index.html" class="dropMenu">Rooms & Suites</a></li>
-                <li><a href="index.html" class="dropMenu">Reservation</a></li>
+                <li><a [routerLink]="['reservation']" class="dropMenu">Reservation</a></li>
                 <li><a href="index.html" class="dropMenu">Activites</a></li>
                 <li><a href="index.html" class="dropMenu">Contact</a></li>
             </ul>
