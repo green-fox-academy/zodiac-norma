@@ -20,14 +20,14 @@ export class BookinSectionComponent implements OnInit {
 
     goToPage(roomType, checkin, checkout, adults, children) {
         if (checkin.mydate === undefined) {
-          checkin.mydate = {
-            formatted: ""
-          }
+            checkin.mydate = {
+                formatted: ""
+            }
         }
         if (checkout.mydate === undefined) {
-          checkout.mydate = {
-              formatted: ""
-          }
+            checkout.mydate = {
+                formatted: ""
+            }
         }
         this.router.navigate(['/reservation'],
         { queryParams: {
@@ -41,7 +41,7 @@ export class BookinSectionComponent implements OnInit {
         });
     }
 
-myDatePickerOptions: IMyDpOptions = {
-    dateFormat: 'dd.mm.yyyy',
-  };
+    myDatePickerOptions: IMyDpOptions = {
+        dateFormat: 'dd.mm.yyyy',
+    }
 }

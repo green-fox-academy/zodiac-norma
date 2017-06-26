@@ -24,46 +24,46 @@ import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
 
 describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+    let component: AppComponent;
+    let fixture: ComponentFixture<AppComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        HeaderComponent,
-        FooterComponent,
-        HomeComponent, 
-        SliderComponent, 
-        TopHotelsComponent, 
-        BookinSectionComponent,
-        ReservationComponent,
-        CheckFormComponent,
-        HotelCardsComponent,
-        SimpleHeaderComponent
-      ],
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                AppComponent,
+                HeaderComponent,
+                FooterComponent,
+                HomeComponent,
+                SliderComponent,
+                TopHotelsComponent,
+                BookinSectionComponent,
+                ReservationComponent,
+                CheckFormComponent,
+                HotelCardsComponent,
+                SimpleHeaderComponent
+            ],
 
-      imports: [
-        HttpModule, 
-        MyDatePickerModule, 
-        FormsModule,
-        RouterTestingModule
-      ],
+            imports: [
+                HttpModule,
+                MyDatePickerModule,
+                FormsModule,
+                RouterTestingModule
+            ],
 
-      providers: [
-        AppService
-      ]
-    }).compileComponents();
-  }));
+            providers: [
+                AppService
+            ]
+        }).compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AppComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
-
+    it('should be created', () => {
+        expect(component).toBeTruthy();
+    });
+    
 });
