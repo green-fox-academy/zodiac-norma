@@ -1,6 +1,6 @@
 <section>
     <div class="mainimage">
-        <div (click)="setClassIndex(-1, 'translated-left')" class='arrow left' alt=""></div>
+        <div (click)="setClassIndex(-1, 'translated-left')" class='arrow left'></div>
         <div *ngFor="let x of imageData; let i = index"  [ngStyle]="{'background-image': 'url('+x.file+')'}" [class]= 'x.class'>
             <div class='title'>{{x.title}}</div>
             <div class='subtitle'>{{x.subtitle}}</div>
