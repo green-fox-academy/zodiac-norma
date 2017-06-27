@@ -17,6 +17,8 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { CheckFormComponent } from './reservation/check-form/check-form.component';
 import { SimpleHeaderComponent } from './reservation/simple-header/simple-header.component';
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
+import { HotelComponent } from './hotel/hotel.component';
+import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
@@ -35,7 +37,9 @@ const appRoutes: Routes =[
         FooterComponent,
         CheckFormComponent,
         SimpleHeaderComponent,
-        HotelCardsComponent
+        HotelCardsComponent,
+        HotelComponent,
+        SimpleMapComponent
     ],
     imports: [
         BrowserModule,
