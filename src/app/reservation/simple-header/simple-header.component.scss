@@ -2,8 +2,18 @@
     max-height: 200px;
     min-height: 200px;
     min-width: 100%;
-    // background: url('https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fmanha.jpg?1497953417054');
     background-repeat: no-repeat;
     background-size: cover;
-    // background-position-x: 30%;
+}
+
+.title {
+    position: absolute;
+    top: 246px;
+    padding: 10px 20px 10px 20%;
+    transform: translate(-20%, 0);
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: right;
+    background-color: rgb(78, 168, 220);
 }

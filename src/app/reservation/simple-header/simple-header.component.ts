@@ -13,6 +13,7 @@ export class SimpleHeaderComponent implements OnInit {
     @ViewChild('imageHolder') imageHolder:ElementRef;
 
     imageProperties = [];
+    title;
 
     constructor(
         private imageData: AppService,
@@ -36,10 +37,10 @@ export class SimpleHeaderComponent implements OnInit {
     }
 
     headerGenerator = function () {
-        console.log(this.imageProperties[0]);
         this.imageHolder.nativeElement.style.backgroundImage = 'url(' + this.imageProperties[0].backgroundImage + ')';
+
         this.imageHolder.nativeElement.style.backgroundPosition = this.imageProperties[0].backgroundPosition;
 
-        console.log(this.imageHolder.nativeElement.style.backgroundPosition);
+        this.title = this.imageProperties[0].title;
     }
 }
