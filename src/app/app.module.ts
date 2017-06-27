@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http } from '@angular/http';
+// import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { MyDatePickerModule } from 'mydatepicker';
 
@@ -40,7 +40,6 @@ const appRoutes: Routes =[
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
         MyDatePickerModule,
         RouterModule.forRoot(appRoutes)
     ],
@@ -50,8 +49,7 @@ const appRoutes: Routes =[
         SliderComponent, 
         BookinSectionComponent, 
         AppService, 
-        HotelCardsComponent, 
-        Http
+        HotelCardsComponent
     ],
   
     bootstrap: [AppComponent]
