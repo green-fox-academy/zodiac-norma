@@ -7,7 +7,7 @@ import { MyDatePickerModule } from 'mydatepicker';
 
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-import { SliderComponent } from './home/slider/slider.component';
+import { SliderComponent } from './slider/slider.component';
 import { BookinSectionComponent } from './home/bookin-section/bookin-section.component';
 import { TopHotelsComponent } from './home/top-hotels/top-hotels.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,35 +24,35 @@ const appRoutes: Routes =[
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SliderComponent,
-    BookinSectionComponent,
-    TopHotelsComponent,
-    HeaderComponent,
-    HomeComponent,
-    ReservationComponent,
-    FooterComponent,
-    CheckFormComponent,
-    SimpleHeaderComponent,
-    HotelCardsComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MyDatePickerModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  exports: [ RouterModule ],
-  providers: [
-    TopHotelsComponent, 
-    SliderComponent, 
-    BookinSectionComponent, 
-    AppService, 
-    HotelCardsComponent
-  ],
+    declarations: [
+        AppComponent,
+        SliderComponent,
+        BookinSectionComponent,
+        TopHotelsComponent,
+        HeaderComponent,
+        HomeComponent,
+        ReservationComponent,
+        FooterComponent,
+        CheckFormComponent,
+        SimpleHeaderComponent,
+        HotelCardsComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        MyDatePickerModule,
+        RouterModule.forRoot(appRoutes)
+    ],
+    exports: [ RouterModule ],
+    providers: [
+        TopHotelsComponent, 
+        SliderComponent, 
+        BookinSectionComponent, 
+        AppService, 
+        HotelCardsComponent
+    ],
   
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
