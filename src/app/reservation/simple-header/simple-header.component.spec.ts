@@ -1,5 +1,18 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SimpleHeaderComponent } from './simple-header.component';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { AppService } from '../../app.service';
+
+import {
+    HttpModule,
+    Http,
+    BaseRequestOptions,
+    Response,
+    ResponseOptions,
+} from '@angular/http';
+
+import { Routes, RouterModule, ActivatedRoute } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('SimpleHeaderComponent', () => {
     let component: SimpleHeaderComponent;
@@ -7,7 +20,14 @@ describe('SimpleHeaderComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ SimpleHeaderComponent ]
+            declarations: [ SimpleHeaderComponent ],
+            imports: [
+                HttpModule,
+                RouterTestingModule
+            ],
+            providers: [
+                AppService
+            ]
         })
         .compileComponents();
     }));
