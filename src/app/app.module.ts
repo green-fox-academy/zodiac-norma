@@ -27,37 +27,35 @@ const appRoutes: Routes =[
 ];
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        SliderComponent,
-        BookinSectionComponent,
-        TopHotelsComponent,
-        HeaderComponent,
-        HomeComponent,
-        ReservationComponent,
-        FooterComponent,
-        CheckFormComponent,
-        SimpleHeaderComponent,
-        HotelCardsComponent,
-        HotelComponent,
-        SimpleMapComponent
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        MyDatePickerModule,
-        RouterModule.forRoot(appRoutes)
-    ],
-
-    providers: [
-        TopHotelsComponent,
-        SliderComponent,
-        BookinSectionComponent,
-        AppService,
-        HotelCardsComponent
-    ],
-
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    SliderComponent,
+    BookinSectionComponent,
+    TopHotelsComponent,
+    HeaderComponent,
+    HomeComponent,
+    ReservationComponent,
+    FooterComponent,
+    CheckFormComponent,
+    SimpleHeaderComponent,
+    HotelCardsComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    MyDatePickerModule,
+    RouterModule.forRoot(appRoutes)
+  ],
+  exports: [ RouterModule ],
+  providers: [
+    TopHotelsComponent, 
+    SliderComponent, 
+    BookinSectionComponent, 
+    AppService, 
+    HotelCardsComponent
+  ],
+  
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
