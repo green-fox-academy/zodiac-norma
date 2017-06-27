@@ -26,7 +26,7 @@ describe('SliderComponent', () => {
             ],
             providers: [
                 AppService,
-                { provide: ElementRef }
+                ElementRef 
             ]
         })
         .compileComponents();
