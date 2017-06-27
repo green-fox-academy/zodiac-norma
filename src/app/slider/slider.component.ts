@@ -1,19 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
 
 @Component({
 	selector: 'app-slider',
 	templateUrl: './slider.component.html',
-	styleUrls: ['./slider.component.scss']
+	styleUrls: ['./slider.component.scss'],
 })
 
 export class SliderComponent implements OnInit {
+    private nativeElement: Node;
+    endpoint;
 
-	constructor(private request: AppService) { }
+	constructor(private request: AppService, private element : ElementRef) {
+        this.nativeElement = element.nativeElement;
+        this.endpoint = this.nativeElement.attributes[2].nodeValue;
+        
+	 }
 
 	ngOnInit() {
-		this.request.getData('https://bookingnorma.glitch.me/slider')
+        
+		this.request.getData('https://bookingnorma.glitch.me/'+this.endpoint)
 			.subscribe(
 			(response: Response) => {
 				let sliderData = response.json();
