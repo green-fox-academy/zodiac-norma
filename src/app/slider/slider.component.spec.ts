@@ -7,7 +7,7 @@ import { AppService } from '../app.service';
 import { SliderComponent } from './slider.component';
 
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
@@ -25,8 +25,7 @@ describe('SliderComponent', () => {
                 RouterTestingModule
             ],
             providers: [
-                AppService,
-                Http
+                AppService
             ]
         })
         .compileComponents();
