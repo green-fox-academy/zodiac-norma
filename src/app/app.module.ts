@@ -22,7 +22,8 @@ import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
-    { path: 'reservation', component: ReservationComponent }
+    { path: 'reservation', component: ReservationComponent },
+	{ path: 'hotel', component: HotelComponent }
 ];
 
 @NgModule({
