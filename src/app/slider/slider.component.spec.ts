@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ElementRef } from '@angular/core';
+
 import { AppService } from '../app.service';
 
 import { SliderComponent } from './slider.component';
@@ -20,7 +22,8 @@ describe('SliderComponent', () => {
             imports: [
                 HttpModule,
                 FormsModule,
-                RouterTestingModule
+                RouterTestingModule,
+                ElementRef
             ],
             providers: [
                 AppService
