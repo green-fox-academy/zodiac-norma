@@ -22,11 +22,11 @@ describe('SliderComponent', () => {
             imports: [
                 HttpModule,
                 FormsModule,
-                RouterTestingModule,
-                ElementRef
+                RouterTestingModule
             ],
             providers: [
-                AppService
+                AppService,
+                { provide: ElementRef }
             ]
         })
         .compileComponents();
