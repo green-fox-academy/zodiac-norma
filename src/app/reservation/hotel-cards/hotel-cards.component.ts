@@ -33,7 +33,7 @@ export class HotelCardsComponent implements OnInit {
         private router: Router) {}
 
         ngOnInit() {
-            
+
             this.subscribe = this.route
             .queryParams
             .subscribe(params => {
@@ -58,7 +58,6 @@ export class HotelCardsComponent implements OnInit {
                 'page': this.hotelPage,
                 'cardsPerPage': this.cardsPerPage
             }]
-            console.log(this.sendData);
 
             this.roomData.postData(this.sendData, 'https://bookingnorma.glitch.me/rooms')
             .subscribe(
@@ -73,7 +72,6 @@ export class HotelCardsComponent implements OnInit {
 
         roomFill = function() {
             let i = 0;
-            console.log('nem teszt szerverdata', this.rooms);
             for (i; i < this.rooms.rooms.length; i++) {
                 this.currentRooms.push(this.rooms.rooms[i]);
             }

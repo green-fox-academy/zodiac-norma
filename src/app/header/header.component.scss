@@ -139,6 +139,25 @@ input[type=checkbox]:checked ~ .dropDown {
     transition: 1s ease-in-out, z-index;
 }
 
-.hiddenClass {
-    display: hidden;
+.highlighted{
+    color: white;
+    border-bottom: solid;
+    border-color: rgb(52, 161, 228);
+    border-width: 1px;
+    @media screen and (max-width: $break-small) {
+    padding: 0px 5px;
+    }
+    @media screen and (max-width: $break-collapse) {
+    display: none;
+    }
+}
+
+.highlightedDrop {
+    width: 100%;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    border-bottom: solid;
+    border-color: rgb(52, 161, 228);
+    border-width: 1px;    
 }
