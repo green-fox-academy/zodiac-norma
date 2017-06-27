@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SimpleMapComponent } from './simple-map/simple-map.component';
 
 @Component({
   selector: 'app-hotel',

@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HotelComponent } from './hotel.component';
+import { SimpleMapComponent } from './simple-map/simple-map.component';
 
 describe('HotelComponent', () => {
   let component: HotelComponent;
