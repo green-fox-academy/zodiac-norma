@@ -43,13 +43,14 @@
 .topLogoMoving {
     min-width: 45px;
     min-height: 45px;
+    padding-left: 25px;
     position: relative;
-    left: -65px;
+    left: -75px;
     top: -20px;
     background-image: url(../images/deerhead.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 45px;
     transition: 1s;
 }
 

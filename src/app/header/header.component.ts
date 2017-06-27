@@ -18,21 +18,21 @@ export class HeaderComponent implements OnInit {
     }
 
     linkHighlight = function(url) {
-        var links = document.querySelectorAll('.navigation');
-        var activeLink = document.querySelector('.highlighted');
+        var links = document.getElementsByClassName('navigation');
+        var activeLink = document.getElementsByClassName('highlighted');
 
-        if (activeLink !== null) {activeLink.className = 'navigation'}
+        if (activeLink.length !== 0) {activeLink[0].className = 'navigation'}
 
         if (url === '/') {links[0].className = 'highlighted'}
-        if (url.slice(1, 12) === 'reservation') {links[1].className = 'highlighted'}
+        if (url.slice(1, 12) === 'reservation') {links[2].className = 'highlighted'}
 
-        var dropLinks = document.querySelectorAll('.dropMenu');
-        var dropActiveLink = document.querySelector('.highlightedDrop');
+        var dropLinks = document.getElementsByClassName('dropMenu');
+        var dropActiveLink = document.getElementsByClassName('highlightedDrop');
 
-        if (dropActiveLink !== null) {dropActiveLink.className = 'dropMenu'}
+        if (dropActiveLink.length !== 0) {dropActiveLink[0].className = 'dropMenu'}
 
         if (url === '/') {dropLinks[0].className = 'highlightedDrop'}
-        if (url.slice(1, 12) === 'reservation') {dropLinks[1].className = 'highlightedDrop'}
+        if (url.slice(1, 12) === 'reservation') {dropLinks[2].className = 'highlightedDrop'}
 
     }
 }
