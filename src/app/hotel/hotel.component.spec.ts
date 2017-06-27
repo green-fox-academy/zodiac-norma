@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HotelComponent } from './hotel.component';
 import { SimpleMapComponent } from './simple-map/simple-map.component';
+import { AppService } from '../app.service';
 
 describe('HotelComponent', () => {
   let component: HotelComponent;
@@ -8,7 +9,8 @@ describe('HotelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HotelComponent ]
+      declarations: [ HotelComponent, SimpleMapComponent ],
+	  providers: [ AppService ]
     })
     .compileComponents();
   }));
