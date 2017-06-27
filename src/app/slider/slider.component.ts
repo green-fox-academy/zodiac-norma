@@ -14,14 +14,10 @@ export class SliderComponent implements OnInit {
 
 	constructor(private request: AppService, element : ElementRef) {
         this.nativeElement = element.nativeElement;
-        
-        
+        this.endpoint = this.nativeElement.attributes[2].nodeValue;
 	 }
 
 	ngOnInit() {
-        
-        this.endpoint = this.nativeElement.attributes[2].nodeValue;
-        console.log('hahh', this.nativeElement.attributes[2].nodeValue);
 		this.request.getData('https://bookingnorma.glitch.me/'+this.endpoint)
 			.subscribe(
 			(response: Response) => {
