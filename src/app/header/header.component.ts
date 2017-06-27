@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChildren } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 
 export class HeaderComponent implements OnInit {
 
+    @ViewChildren('link') link:ElementRef;
+    @ViewChildren('dropLink') dropLink:ElementRef;
+
     constructor(private router: Router) {}
 
     ngOnInit() {
@@ -18,21 +21,18 @@ export class HeaderComponent implements OnInit {
     }
 
     linkHighlight = function(url) {
-        var links = document.getElementsByClassName('navigation');
-        var activeLink = document.getElementsByClassName('highlighted');
+        for (let i = 0; i < this.link._results.length; i++) {
+            this.link._results[i].nativeElement.className = 'navigation';
+            this.dropLink._results[i].nativeElement.className = 'dropMenu';
+        }
 
-        if (activeLink.length !== 0) {activeLink[0].className = 'navigation'}
-
-        if (url === '/') {links[0].className = 'highlighted'}
-        if (url.slice(1, 12) === 'reservation') {links[2].className = 'highlighted'}
-
-        var dropLinks = document.getElementsByClassName('dropMenu');
-        var dropActiveLink = document.getElementsByClassName('highlightedDrop');
-
-        if (dropActiveLink.length !== 0) {dropActiveLink[0].className = 'dropMenu'}
-
-        if (url === '/') {dropLinks[0].className = 'highlightedDrop'}
-        if (url.slice(1, 12) === 'reservation') {dropLinks[2].className = 'highlightedDrop'}
-
+        if (url === '/') {
+            this.link._results[0].nativeElement.className = 'highlighted';
+            this.dropLink._results[0].nativeElement.className = 'highlightedDrop';
+        }
+        if (url.slice(1, 12) === 'reservation') {
+            this.link._results[2].nativeElement.className = 'highlighted';
+            this.dropLink._results[2].nativeElement.className = 'highlightedDrop';
+        }
     }
 }

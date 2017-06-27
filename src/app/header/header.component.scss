@@ -34,13 +34,13 @@
 .topLogo {
     min-width: 100px;
     min-height: 80px;
-    background-image: url(../images/cute_logo_nohead.png);
+    background-image: url(../images/cute_logo_nohead_notail.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.topLogoMoving {
+.topLogoMovingHead {
     min-width: 45px;
     min-height: 45px;
     padding-left: 25px;
@@ -54,9 +54,46 @@
     transition: 1s;
 }
 
-.topLogoMoving:hover {
-    transform: translateY(10px);
-    transition: transform 1s;
+@keyframes headmove {
+    0% {transform: translateY(0px);}
+    33% {transform: translateY(10px);}
+    66% {transform: translateY(10px);}
+    100% {transform: translateY(0px);}
+}
+
+.topLogoMovingHead:hover {
+    animation-name: headmove;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.topLogoMovingTail {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    left: -148px;
+    top: 21px;
+    background-image: url(../images/deertail.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 11px;
+    transition: 1s;
+}
+
+@keyframes tailmove {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(20deg);}
+    75% {transform: rotate(-20deg);}
+    100% {transform: rotate(0deg);}
+}
+
+.topLogoMovingTail:hover {
+    transform-origin: bottom center;
+    animation-name: tailmove;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 .navContainer {
