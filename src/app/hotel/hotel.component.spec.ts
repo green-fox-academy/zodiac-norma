@@ -2,6 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HotelComponent } from './hotel.component';
 import { SimpleMapComponent } from './simple-map/simple-map.component';
 import { AppService } from '../app.service';
+import { Routes, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 describe('HotelComponent', () => {
   let component: HotelComponent;
@@ -10,6 +14,7 @@ describe('HotelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HotelComponent, SimpleMapComponent ],
+	  imports: [HttpModule, FormsModule, RouterTestingModule],
 	  providers: [ AppService ]
     })
     .compileComponents();
