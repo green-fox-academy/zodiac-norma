@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { MyDatePickerModule } from 'mydatepicker';
-
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { SliderComponent } from './home/slider/slider.component';
@@ -38,14 +39,19 @@ const appRoutes: Routes =[
     FooterComponent,
     CheckFormComponent,
     SimpleHeaderComponent,
-    HotelCardsComponent
+    HotelCardsComponent,
+	HotelComponent,
+	SimpleMapComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MyDatePickerModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+	AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY'
+    })
   ],
   exports: [ RouterModule ],
   providers: [

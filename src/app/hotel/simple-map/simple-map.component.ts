@@ -8,32 +8,38 @@ import { AppService } from '../../app.service';
 	styleUrls: ['./simple-map.component.scss']
 })
 export class SimpleMapComponent implements OnInit {
+	lat;
+	long;
 
 	constructor(private request: AppService) { }
 
 	ngOnInit() {
-	  this.request.getData('https://bookingnorma.glitch.me/location')
+		this.request.getData('https://bookingnorma.glitch.me/hotel')
 			.subscribe(
 			(response: Response) => {
-				let data = response.json();
+				var data = response.json();
 				console.log(data);
 
-            	let lat = data.results[0].location.lat;
-            	let long = data.results[0].location.lng;
-				//this.createMap(lat, long)
+            	this.lat= data[0].lt;
+            	this.long = data[0].lng;
+				
 			},
 			(error) => console.log(error)
 			);
   	}
-	
-	/*createMap(lat, long) {
-		var map = new google.maps.Map(document.getElementById('map'), {	
-		zoom: 14,
-		center: {lat: lat, lng: lat}
-		});
-		var marker = new google.maps.Marker({
-		position: map.center,
-		map: map
-		});
+	/*ajax() {
+	  this.request.getData('https://bookingnorma.glitch.me/hotel')
+			.subscribe(
+			(response: Response) => {
+				var data = response.json();
+				console.log(data);
+
+            	this.lat= data[0].lt;
+            	this.long = data[0].lng;
+				
+			},
+			(error) => console.log(error)
+			);
 	}*/
-}
+	
+}; 
