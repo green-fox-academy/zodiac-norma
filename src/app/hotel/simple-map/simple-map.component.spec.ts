@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SimpleMapComponent } from './simple-map.component';
-import { AppService } from '../app.service';
+import { AppService } from '../../app.service';
 
 describe('SimpleMapComponent', () => {
   let component: SimpleMapComponent;

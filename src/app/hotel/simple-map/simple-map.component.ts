@@ -20,7 +20,7 @@ export class SimpleMapComponent implements OnInit {
 
             	let lat = data.results[0].location.lat;
             	let long = data.results[0].location.lng;
-				this.createMap(lat, long)
+				//this.createMap(lat, long)
 			},
 			(error) => console.log(error)
 			);
