@@ -20,7 +20,7 @@ import { SimpleHeaderComponent } from './reservation/simple-header/simple-header
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },

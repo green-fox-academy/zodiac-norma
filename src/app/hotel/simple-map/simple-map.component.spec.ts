@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule } from '@agm/core';
 
 describe('SimpleMapComponent', () => {
   let component: SimpleMapComponent;
@@ -15,8 +15,8 @@ describe('SimpleMapComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SimpleMapComponent ],
-	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule],
-	  providers: [ AppService, {provide: MapsAPILoader} ]
+	  imports: [HttpModule, FormsModule, RouterTestingModule ],
+	  providers: [ AppService, {provide: AgmCoreModule} ]
     })
     .compileComponents();
   }));
