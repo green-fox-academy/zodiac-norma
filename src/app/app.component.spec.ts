@@ -53,7 +53,6 @@ describe('AppComponent', () => {
                 HttpModule, 
                 MyDatePickerModule, 
                 FormsModule,
-				MapsAPILoader,
 				AgmCoreModule.forRoot({
       				apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY'
     			}),
