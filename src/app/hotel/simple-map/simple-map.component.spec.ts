@@ -16,7 +16,7 @@ describe('SimpleMapComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SimpleMapComponent ],
 	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule],
-	  providers: [ AppService ]
+	  providers: [ AppService, {provide: MapsAPILoader} ]
     })
     .compileComponents();
   }));

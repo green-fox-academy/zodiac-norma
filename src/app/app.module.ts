@@ -52,8 +52,7 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
 	AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
-    }),
-	
+    }),	
   ],
   exports: [ RouterModule ],
   providers: [
@@ -61,8 +60,7 @@ const appRoutes: Routes =[
     SliderComponent, 
     BookinSectionComponent, 
     AppService, 
-    HotelCardsComponent,
-	
+    HotelCardsComponent
   ],
   
   bootstrap: [AppComponent]
