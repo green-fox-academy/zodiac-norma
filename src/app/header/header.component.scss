@@ -2,8 +2,8 @@
 
 .header {
     min-width: 590px;
-    padding: 0;
     min-height: 90px;
+    padding: 0;
     height: 6.8%;
     background: rgb(25, 25, 25);
     display: flex;
@@ -34,9 +34,7 @@
 .topLogo {
     min-width: 100px;
     min-height: 80px;
-    background-image: url(../images/cute_logo_nohead_notail.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: no-repeat center url(../images/cute_logo_nohead_notail.png);
     background-size: contain;
 }
 
@@ -47,9 +45,7 @@
     position: relative;
     left: -75px;
     top: -20px;
-    background-image: url(../images/deerhead.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: no-repeat center url(../images/deerhead.png);
     background-size: 45px;
     transition: 1s;
 }
@@ -61,25 +57,14 @@
     100% {transform: translateY(0px);}
 }
 
-.topLogoMovingHead:hover {
-    animation-name: headmove;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    transition: 1s;
-}
-
 .topLogoMovingTail {
     min-width: 15px;
     height: 15px;
     position: relative;
     left: -148px;
     top: 20px;
-    background-image: url(../images/deertail.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: center no-repeat url(../images/deertail.png);
     background-size: 11px;
-    transition: 1s;
 }
 
 @keyframes tailmove {
@@ -87,14 +72,6 @@
     25% {transform: rotate(20deg);}
     75% {transform: rotate(-20deg);}
     100% {transform: rotate(0deg);}
-}
-
-.topLogoMovingTail:hover {
-    transform-origin: bottom center;
-    animation-name: tailmove;
-    animation-duration: 0.6s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 #logo {
@@ -133,7 +110,7 @@
 }
 
 .navigation {
-    color: rgb(255, 255 ,255);
+    color: white;
     padding: 0px 17px;
     border-right: solid rgb(48, 48, 48) 1px;
     @media screen and (max-width: $break-small) {
