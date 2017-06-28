@@ -10,26 +10,48 @@ import { AppService } from '../app.service';
 
 export class SliderComponent implements OnInit {
     private nativeElement: Node;
-    endpoint;
+    endpoint: string;
+    thumbNailNeed: string;
 
 	constructor(private request: AppService, element : ElementRef) {
         this.nativeElement = element.nativeElement;
-	 }
+	}
 
 	ngOnInit() {
         this.endpoint = this.nativeElement.attributes[2].nodeValue;
+        this.thumbNailNeed = this.nativeElement.attributes[1].value;
+        
 		this.request.getData('https://bookingnorma.glitch.me/'+this.endpoint)
 			.subscribe(
 			(response: Response) => {
 				let sliderData = response.json();
 				this.createImageObjects(sliderData)
+                if (this.thumbNailNeed === 'true') {
+                    this.createThumbNails(sliderData)
+                }
 			},
 			(error) => console.log(error)
 			);
 	}
+    
 
 	imageData = [];
+    thumbImages = [];
 	classIndex = 0;
+
+    // showThumb() {
+    //     if( this.thumbNailNeed ) {
+    //         return true
+    //     } return false
+    // }
+
+    createThumbNails(thumbData) {
+        for (let i = 0; i < thumbData.length; i++) {
+			this.thumbImages.push( thumbData[i].image )
+		}
+    }
+
+
 
 	createImageObjects(data) {
 		for (let i = 0; i < data.length; i++) {

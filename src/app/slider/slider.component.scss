@@ -104,6 +104,30 @@ section {
     background-color: #00A8E8;
 }
 
+.thumblist {
+    display: flex; 
+    width: 100%;
+    height: 100px;
+}
+
+.thumb {
+    width: 9vw;
+    height: 7vw;
+    border-bottom: white solid 0.1vw;
+    margin-top: 3vw;
+    margin-bottom: -1vw;
+    margin-right: 0.5vw;
+    box-shadow: 0px 0px 29px -4px rgba(64,69,59,1); 
+    z-index: 120;
+}
+
+// .thumb:hover {
+//     position:relative;
+//     transform: scale(1.05);
+//     opacity: 0.8;
+//     border-bottom: red solid 0.1vw;
+// }
+
 @keyframes from-left {
     from {left: -100%; z-index: 99}
     to {left: 0%; z-index: 99}
