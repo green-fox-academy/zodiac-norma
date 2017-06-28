@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AgmCoreModule } from '@agm/core';
+
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
@@ -20,6 +20,7 @@ import { SimpleHeaderComponent } from './reservation/simple-header/simple-header
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
@@ -59,7 +60,7 @@ const appRoutes: Routes =[
     SliderComponent, 
     BookinSectionComponent, 
     AppService, 
-    HotelCardsComponent
+    HotelCardsComponent,
   ],
   
   bootstrap: [AppComponent]

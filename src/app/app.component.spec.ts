@@ -25,6 +25,7 @@ import { Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
+import { AgmCoreModule } from '@agm/core';
 
 describe('AppComponent', () => {
     let locations, routing;
@@ -50,6 +51,9 @@ describe('AppComponent', () => {
                 HttpModule, 
                 MyDatePickerModule, 
                 FormsModule,
+				AgmCoreModule.forRoot({
+      				apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY'
+    			}),
                 RouterTestingModule.withRoutes([
                     { path: '', component: HomeComponent },
                     { path: 'reservation', component: ReservationComponent }
