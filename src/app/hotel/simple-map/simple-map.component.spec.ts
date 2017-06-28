@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { AgmCoreModule } from '@agm/core';
 
 describe('SimpleMapComponent', () => {
   let component: SimpleMapComponent;

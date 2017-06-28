@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AgmCoreModule } from '@agm/core';
 
 describe('HotelComponent', () => {
   let component: HotelComponent;
