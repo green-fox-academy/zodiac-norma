@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
 import { AgmCoreModule } from '@agm/core';
+import { HotelComponent } from './hotel/hotel.component';
+import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 
 describe('AppComponent', () => {
     let locations, routing;
