@@ -6,8 +6,8 @@
             <div class='subtitle'>{{x.subtitle}}</div>
         </div>
         <div (click)="setClassIndex(1, 'translated-right')" class='arrow right'></div>
-    </div>
-    <div class="thumblist">
-        <div class="thumb" *ngFor="let thumb of thumbImages; let thumbIndex = index" [ngStyle]="{'background-image': 'url('+thumb+')'}"></div>
+        <div class="thumblist">
+            <div class="thumb" *ngFor="let thumb of thumbImages; let thumbIndex = index" [ngStyle]="{'background-image': 'url('+thumb+')'}"></div>
+        </div>
     </div>
 </section>
