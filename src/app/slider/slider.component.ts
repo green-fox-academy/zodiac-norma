@@ -18,8 +18,10 @@ export class SliderComponent implements OnInit {
 	}
 
 	ngOnInit() {
-        this.endpoint = this.nativeElement.attributes[2].nodeValue;
-        this.thumbNailNeed = this.nativeElement.attributes[1].value;
+		console.log('att', this.nativeElement.attributes);
+		
+        this.endpoint = this.nativeElement.attributes[1].value;
+        this.thumbNailNeed = this.nativeElement.attributes[2].value;
         
 		this.request.getData('https://bookingnorma.glitch.me/'+this.endpoint)
 			.subscribe(
