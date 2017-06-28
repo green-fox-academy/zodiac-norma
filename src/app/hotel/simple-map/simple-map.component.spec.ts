@@ -10,7 +10,7 @@ import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 
 describe('SimpleMapComponent', () => {
 	let component: SimpleMapComponent;
-		let fixture: ComponentFixture<SimpleMapComponent>;
+	let fixture: ComponentFixture<SimpleMapComponent>;
 
 	beforeEach(async(() => {
     	TestBed.configureTestingModule({
