@@ -16,7 +16,7 @@ describe('HotelComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HotelComponent, SimpleMapComponent ],
 	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule, MapsAPILoader],
-	  providers: [ AppService, {provide: AgmCoreModule } ]
+	  providers: [ AppService, {provide: MapsAPILoader } ]
     })
     .compileComponents();
   }));
