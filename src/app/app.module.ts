@@ -52,7 +52,8 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
 	AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY'
-    })
+    }),
+	AgmCoreModule.forRoot()
   ],
   exports: [ RouterModule ],
   providers: [
