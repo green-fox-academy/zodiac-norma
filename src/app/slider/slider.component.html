@@ -7,7 +7,7 @@
         </div>
         <div (click)="setClassIndex(1, 'translated-right')" class='arrow right'></div>
     </div>
-    <div hidden class="thumblist">
+    <div class="thumblist">
         <div class="thumb" *ngFor="let thumb of thumbImages; let thumbIndex = index" [ngStyle]="{'background-image': 'url('+thumb+')'}"></div>
     </div>
 </section>
