@@ -15,7 +15,7 @@ describe('HotelComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HotelComponent, SimpleMapComponent ],
-	  imports: [HttpModule, FormsModule, RouterTestingModule ],
+	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule],
 	  providers: [ AppService, {provide: AgmCoreModule} ]
     })
     .compileComponents();
