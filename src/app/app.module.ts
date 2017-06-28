@@ -20,7 +20,7 @@ import { SimpleHeaderComponent } from './reservation/simple-header/simple-header
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
@@ -42,7 +42,7 @@ const appRoutes: Routes =[
     SimpleHeaderComponent,
     HotelCardsComponent,
 	HotelComponent,
-	SimpleMapComponent
+	SimpleMapComponent,	
   ],
   imports: [
     BrowserModule,
@@ -51,9 +51,9 @@ const appRoutes: Routes =[
     MyDatePickerModule,
     RouterModule.forRoot(appRoutes),
 	AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY'
+      apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
     }),
-	AgmCoreModule.forRoot()
+	
   ],
   exports: [ RouterModule ],
   providers: [
@@ -62,6 +62,7 @@ const appRoutes: Routes =[
     BookinSectionComponent, 
     AppService, 
     HotelCardsComponent,
+	
   ],
   
   bootstrap: [AppComponent]
