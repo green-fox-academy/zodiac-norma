@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AgmCoreModule} from '@agm/core';
+import { AgmCoreModule, MapsAPILoader} from '@agm/core';
 
 describe('HotelComponent', () => {
   let component: HotelComponent;
@@ -16,7 +16,7 @@ describe('HotelComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HotelComponent, SimpleMapComponent ],
 	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule],
-	  providers: [ AppService, {provide: AgmCoreModule} ]
+	  providers: [ AppService, {provide: AgmCoreModule, MapsAPILoader} ]
     })
     .compileComponents();
   }));
