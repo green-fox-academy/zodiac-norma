@@ -58,10 +58,12 @@ export class SliderComponent implements OnInit {
     }
 
 	showAsMainImage(clickedIndex) {
-		this.mainimage = this.notNodeElement.querySelector('.mainimage');
+		this.mainimage = this.notNodeElement.querySelector('.current-front');
 		
-		this.mainimage.style.backgroundImage = this.thumbImages[clickedIndex];
-		console.log('llll', this.mainimage.style.backgroundImage);
+		this.mainimage.style.setBackgroundImage = this.thumbImages[clickedIndex];
+		console.log('llll', this.mainimage);
+		console.log('aaaaaaa', this.thumbImages[clickedIndex]);
+		
 		return this.thumbImages[clickedIndex];
 	}
 
