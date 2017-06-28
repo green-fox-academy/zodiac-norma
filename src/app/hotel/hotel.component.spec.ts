@@ -9,25 +9,21 @@ import { HttpModule } from '@angular/http';
 import { AgmCoreModule, MapsAPILoader} from '@agm/core';
 
 describe('HotelComponent', () => {
-  let component: HotelComponent;
-  let fixture: ComponentFixture<HotelComponent>;
+	let component: HotelComponent;
+	let fixture: ComponentFixture<HotelComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ HotelComponent, SimpleMapComponent ],
-	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule ],
-	  providers: [ AppService, {provide: MapsAPILoader } ]
-    })
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [ HotelComponent, SimpleMapComponent ],
+	  		imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule ],
+	  		providers: [ AppService, MapsAPILoader ]
+    	})
     .compileComponents();
-  }));
+	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(HotelComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
+	beforeEach(() => {
+    	fixture = TestBed.createComponent(HotelComponent);
+    	component = fixture.componentInstance;
+    	fixture.detectChanges();
+  	});
 });

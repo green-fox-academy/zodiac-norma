@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+
 @Injectable()
 export class AppService {
     constructor(private http: Http) {}
