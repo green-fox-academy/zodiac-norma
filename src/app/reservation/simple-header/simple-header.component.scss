@@ -1,19 +1,75 @@
+@import '../../../scss/break-points.scss';
+
 .simpleHeader {
     max-height: 200px;
     min-height: 200px;
     min-width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.titleHolder {
+    width: 975px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    @media screen and (max-width: $break-big) {
+        width: 320px;
+    }
 }
 
 .title {
-    position: absolute;
-    top: 246px;
-    padding: 10px 20px 10px 20%;
-    transform: translate(-20%, 0);
+    position: relative;
+    padding: 10px 10px 10px 0px;
     color: white;
     font-size: 18px;
     text-transform: uppercase;
-    text-align: right;
+    text-align: left;
     background-color: rgb(78, 168, 220);
+    z-index: 1;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 44px 22px 0 0;
+    border-color: rgb(78, 168, 220) transparent transparent transparent;
+
+}
+
+.colorHolder {
+    position: absolute;
+    width: 100%;
+    display: flex;
+}
+
+.spaceHolder {
+    min-width: 975px;
+    @media screen and (max-width: $break-big) {
+        min-width: 320px;
+    }
+}
+
+.coloring {
+    position: relative;
+    top: -44px;
+    width: 300px;
+    height: 44px;
+    font-size: 18px;
+    background-color: rgb(78, 168, 220);
+    overflow-y: hidden;
+    z-index: 0;
+    @media screen and (max-width: $break-big) {
+        width: 350px;
+    }
+    @media screen and (max-width: $break-small) {
+        width: 300px;
+    }
+    @media screen and (max-width: 700px) {
+        width: 250px;
+    }
+
 }
