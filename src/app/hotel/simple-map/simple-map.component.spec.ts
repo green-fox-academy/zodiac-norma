@@ -15,7 +15,7 @@ describe('SimpleMapComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SimpleMapComponent ],
-	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule, MapsAPILoader ],
+	  imports: [HttpModule, FormsModule, RouterTestingModule, AgmCoreModule ],
 	  providers: [ AppService, {provide: MapsAPILoader} ]
     })
     .compileComponents();
