@@ -1,14 +1,14 @@
 <section>
     <div class="mainimage">
         <div (click)="setClassIndex(-1, 'translated-left')" class='arrow left'></div>
-        <div *ngFor="let x of imageData; let i = index"  [ngStyle]="{'background-image': 'url('+x.file+')'}" [class]= 'x.class'>
+        <div #mainpic class="mainimage" *ngFor="let x of imageData; let i = index"  [ngStyle]="{'background-image': 'url('+x.file+')'}" [class]= 'x.class'>
             <div class='title'>{{x.title}}</div>
             <div class='subtitle'>{{x.subtitle}}</div>
         </div>
         <div (click)="setClassIndex(1, 'translated-right')" class='arrow right'></div>
         <div class="thumb-container">
             <div class="thumblist" *ngFor="let thumb of thumbImages; let thumbIndex = index">
-                <div class="thumb" [ngStyle]="{'background-image': 'url('+thumb+')'}"></div>
+                <div #thumbElement (click)="showAsMainImage(thumbIndex)" class="thumb" [ngStyle]="{'background-image': 'url('+thumb+')'}"></div>
             </div>
         </div>
     </div>

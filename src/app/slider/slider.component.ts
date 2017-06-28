@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
 
@@ -10,15 +10,20 @@ import { AppService } from '../app.service';
 
 export class SliderComponent implements OnInit {
     private nativeElement: Node;
+	private notNodeElement;
+	@ViewChild('mainpic') mainimage;
+	
+	
     endpoint: string;
     thumbNailNeed: string;
 
-	constructor(private request: AppService, element : ElementRef) {
+	constructor(private request: AppService, element : ElementRef, private renderer: Renderer2) {
         this.nativeElement = element.nativeElement;
+		this.notNodeElement = element.nativeElement;
 	}
 
 	ngOnInit() {
-		console.log('att', this.nativeElement.attributes);
+		console.log('att', this.nativeElement);
 		
         this.endpoint = this.nativeElement.attributes[1].value;
         this.thumbNailNeed = this.nativeElement.attributes[2].value;
@@ -36,16 +41,15 @@ export class SliderComponent implements OnInit {
 			);
 	}
     
+	// ngAfterViewInit() {
+	// 	this.thumb.forEach(link => console.log(link));	
+	// }
+	
 
 	imageData = [];
     thumbImages = [];
 	classIndex = 0;
 
-    // showThumb() {
-    //     if( this.thumbNailNeed ) {
-    //         return true
-    //     } return false
-    // }
 
     createThumbNails(thumbData) {
         for (let i = 0; i < thumbData.length; i++) {
@@ -53,6 +57,13 @@ export class SliderComponent implements OnInit {
 		}
     }
 
+	showAsMainImage(clickedIndex) {
+		this.mainimage = this.notNodeElement.querySelector('.mainimage');
+		
+		this.mainimage.style.backgroundImage = this.thumbImages[clickedIndex];
+		console.log('llll', this.mainimage.style.backgroundImage);
+		return this.thumbImages[clickedIndex];
+	}
 
 
 	createImageObjects(data) {
