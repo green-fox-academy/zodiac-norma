@@ -1,0 +1,8 @@
+<p>Location of the hotel</p>
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<div class='map'>
+	<agm-map [styles]="customStyle" [latitude]="lat" [longitude]="long">
+  		<agm-marker [latitude]="lat" [longitude]="long"></agm-marker>
+	</agm-map>
+</div>

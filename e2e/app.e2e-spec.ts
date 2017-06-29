@@ -8,7 +8,7 @@ describe('zodiac-norma App', () => {
     page = new ZodiacNormaPage();
   });
 
-  it('should display: Book a room online', done => {
+it('should display: Book a room online', done => {
     page.navigateToHome();
     page.getParagraphText()
       .then(msg => expect(msg).toEqual('Book a room online'))
