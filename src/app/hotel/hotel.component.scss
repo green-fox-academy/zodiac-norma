@@ -1,0 +1,64 @@
+@import '../.././scss/break-points.scss';
+
+app-simple-map {
+    position: absolute;
+    display: none;
+}
+
+.fullWidthHolder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.whiteShadow {
+    width: 975px;
+    height: 50px;
+    position: absolute;
+    top: 636px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    z-index: 1100;
+}
+
+.gradientBorder {
+    width: 975px;
+    height: 1px;
+    position: absolute;
+    top: 687px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
+}
+
+.gradientShadow {
+    width: 975px;
+    height: 10px;
+    position: absolute;
+    top: 683px;
+    background: radial-gradient(rgba(190, 190, 190, 0.5), rgba(255, 255, 255, 0));
+}
+
+.navContainer {
+    min-width: 200px;
+    max-width: 200px;
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (max-width: $break-small) {
+        min-width: 420px;
+    }
+    @media screen and (max-width: $break-collapse) {
+        min-width: 50px;
+    }
+}
+
+.navigation {
+    color: rgb(55, 55, 55);
+    padding: 0px 17px;
+    line-height: 50px;
+    @media screen and (max-width: $break-small) {
+    padding: 0px 5px;
+    }
+    @media screen and (max-width: $break-collapse) {
+    display: none;
+    }
+}

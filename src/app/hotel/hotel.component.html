@@ -1,5 +1,15 @@
 <div class="slider">
     <app-slider thumbnails="true" endpoint="hotel-slider" ></app-slider>
 </div>
-
+<div class="fullWidthHolder">
+    <div class="whiteShadow">
+        <ul class="navContainer">
+            <li><a #link [routerLink]="['/']" class="navigation">Overview</a></li>
+            <li><a #link [routerLink]="['/hotel']" class="navigation">Rooms</a></li>
+            <li><a #link [routerLink]="['reservation']" class="navigation">Map</a></li>
+        </ul>
+    </div>
+    <div class="gradientBorder"></div>
+    <div class="gradientShadow"></div>
+</div>
 <app-simple-map [lat]="latitude" [long]="longitude"></app-simple-map>
