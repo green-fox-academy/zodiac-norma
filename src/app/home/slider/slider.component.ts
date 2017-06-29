@@ -13,7 +13,7 @@ export class SliderComponent implements OnInit {
 	constructor(private request: AppService) { }
 
 	ngOnInit() {
-		this.request.getData('https://bookingnorma.glitch.me/slider')
+		this.request.getData('https://two-ferns.glitch.me/slider')
 			.subscribe(
 			(response: Response) => {
 				let sliderData = response.json();

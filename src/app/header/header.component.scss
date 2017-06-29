@@ -157,14 +157,15 @@ input[type=checkbox] {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -150px;
+    top: -30px;
+    transform: translateX(49%) scale(0.01, 0.01);
     left: 0px;
-    transition: 1s ease-in-out, z-index;
+    transition: 0.5s ease-in-out, z-index;
     }
 }
 
 a.dropMenu {
-    width: 100%;
+    width: 200px;
     text-align: center;
     line-height: 30px;
     color: white;
@@ -172,10 +173,17 @@ a.dropMenu {
 
 input[type=checkbox]:checked ~ .dropDown {
     left: 0px;
-    transform: translateY(240px);
-    transition: 1s ease-in-out, z-index;
+    transform: translateY(120px);
+    transition: 0.5s ease-in-out, z-index;
+    display: flex;
 }
 
+input[type=checkbox]:checked ~ .dropDown .highlightedDrop {
+    transition-delay: 0.5s;
+    transition: 0.5s ease-in-out, z-index;
+    position: relative;
+    transform: scale(1, 1);
+}
 .highlighted{
     padding: 0px 17px;
     color: rgb(52, 161, 228);
@@ -189,8 +197,12 @@ input[type=checkbox]:checked ~ .dropDown {
 }
 
 .highlightedDrop {
-    width: 100%;
+    position: absolute;
+    width: 200px;
     text-align: center;
     line-height: 30px;
     color: rgb(52, 161, 228);
+    transform: translateX(49%) scale(0.1, 0.1);
+    transition-delay: 0.5s;
+    transition: 0.5s ease-in-out;
 }
