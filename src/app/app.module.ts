@@ -21,7 +21,7 @@ import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.compo
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { AgmCoreModule } from '@agm/core';
-import { OwerviewComponent } from './hotel/owerview/owerview.component';
+import { OverviewComponent } from './hotel/overview/overview.component';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
@@ -44,7 +44,7 @@ const appRoutes: Routes =[
     HotelCardsComponent,
 	HotelComponent,
 	SimpleMapComponent,
-	OwerviewComponent,	
+	OverviewComponent,	
   ],
   imports: [
     BrowserModule,

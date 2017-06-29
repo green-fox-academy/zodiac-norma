@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SimpleMapComponent } from './simple-map/simple-map.component';
+import { OverviewComponent } from './overview/overview.component';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { AppService } from '../app.service';
 import { Response } from '@angular/http';
