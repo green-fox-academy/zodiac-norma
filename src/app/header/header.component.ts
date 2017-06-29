@@ -26,6 +26,8 @@ export class HeaderComponent implements OnInit {
             this.dropLink._results[i].nativeElement.className = 'dropMenu';
         }
 
+        this.link._results[4].nativeElement.className = 'navigation end';
+
         if (url === '/') {
             this.link._results[0].nativeElement.className = 'highlighted';
             this.dropLink._results[0].nativeElement.className = 'highlightedDrop';

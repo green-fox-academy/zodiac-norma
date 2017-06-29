@@ -12,9 +12,9 @@ export class TopHotelsComponent implements OnInit {
     hotels: {};
 
     constructor(private appService: AppService) { }
-    
+
     ngOnInit() {
-        this.appService.getData('https://bookingnorma.glitch.me/toprooms')
+        this.appService.getData('https://two-ferns.glitch.me/toprooms')
         .subscribe(
             (response: Response) => {
                 const hotelsData = response.json();
