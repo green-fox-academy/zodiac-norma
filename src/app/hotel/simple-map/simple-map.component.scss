@@ -3,6 +3,10 @@ agm-map {
   width: 100%;
 }
 
+agm-marker {
+	height: 12px;
+}
+
 .map {
 	border:2px solid black;
 	margin: 0 auto;
@@ -12,3 +16,9 @@ p {
 	text-align: center;
 	font-size:  20px;
 }
+
+/*.frame, .pano {
+	height: 300px;
+	width: 100;
+	border: 2px solid black;
+	}*/
