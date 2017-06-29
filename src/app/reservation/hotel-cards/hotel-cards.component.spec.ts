@@ -25,7 +25,7 @@ describe('HotelCardsComponent', () => {
         TestBed.configureTestingModule({
             declarations: [ HotelCardsComponent ],
             imports: [
-                HttpModule,  
+                HttpModule,
                 FormsModule,
                 RouterTestingModule
             ],
@@ -43,30 +43,30 @@ describe('HotelCardsComponent', () => {
         fixture.detectChanges();
     });
 
-    it('rooms length is zero', () => {   
+    it('rooms length is zero', () => {
         let rooms = fixture.nativeElement.querySelectorAll('.rooms');
         expect(rooms.length).toBe(0);
     });
 
-    it('should be created', () => {    
+    it('should be created', () => {
         expect(component).toBeTruthy();
     });
 
-    it('component opens a HTTP request', 
+    it('component opens a HTTP request',
         inject([XHRBackend], (mockBackend) => {
         mockBackend.connections.subscribe((connection) => {
             expect(4).toBe(4);
         });
     }));
 
-    it('mockbackend gives back the right url', 
+    it('mockbackend gives back the right url',
         inject([AppService, XHRBackend], (appService, mockBackend) => {
         mockBackend.connections.subscribe((connection) => {
-            expect(connection.request.url).toBe("https://bookingnorma.glitch.me/rooms");
+            expect(connection.request.url).toBe('https://two-ferns.glitch.me/api/hotels');
         });
     }));
 
-    it('testing mockbackend and mockdata', 
+    it('testing mockbackend and mockdata',
         inject([AppService, XHRBackend], (appService, mockBackend) => {
 
         var serverData = {
@@ -89,21 +89,21 @@ describe('HotelCardsComponent', () => {
             totalResults: '2'
 
         }
-        
+
         mockBackend.connections.subscribe((connection) => {
             connection.mockRespond(new Response(new ResponseOptions({
                 body: JSON.stringify(serverData)
             })));
         });
-        
+
         component.ngOnInit()
-        
+
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-            
+
             let rooms = fixture.nativeElement.querySelectorAll('.rooms');
             console.log('rooms', rooms);
-            
+
             expect(rooms.length).toEqual(2);
 
             let title = fixture.nativeElement.querySelector('.title');
