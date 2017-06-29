@@ -70,25 +70,57 @@ describe('HotelCardsComponent', () => {
         inject([AppService, XHRBackend], (appService, mockBackend) => {
 
         var serverData = {
-            rooms: [
-                {
-                    roomtype: 'single room',
-                    features: ['323-452 sq ft / 30-42 sq m ', 'Free access to spa facilities', 'Comfortable work area', 'Sweet sweeper bed', 'Separate bath and shower'],
-                    price: 115 + ' €',
-                    id: 1,
-                    image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic1_mod.jpg?1497949004290'
+            hotelResponse = {
+                links: {
+                    self: 'https://two-ferns.glitch.me/hotels/'
                 },
-                {
-                    roomtype: 'Classic room, non-smoking: King bed',
-                    features: ['223-452 sq ft / 20-42 sq m ', 'Free access to spa facilities', 'Comfortable work area'],
-                    price: 215 + ' €',
-                    id: 2,
-                    image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic2_mod.jpg?1497949136425'
-                }
-            ],
-            totalResults: '2'
-
-        }
+                data: [{
+                    type: 'hotels',
+                    id: '1',
+                    attributes: {
+                        location: 'Bone City',
+                        name: 'Dog Heaven',
+                        main_image_src: 'https://placebear.com/200/300',
+                        has_wifi: true,
+                        has_parking: false,
+                        has_pets: true,
+                        has_restaurant: false,
+                        has_bar: false,
+                        has_swimming_pool: false,
+                        has_air_conditioning: false,
+                        has_gym: true,
+                        meal_plan: 'american plan',
+                        user_id: '1',
+                        booking_id: '1',
+                        amount: '50',
+                        currency: 'USD',
+                        status: 'pending',
+                        stars: '3'
+                    }
+                }, {
+                    type: 'hotels',
+                    id: '2',
+                    attributes: {
+                        location: 'near Sirius',
+                        name: 'Space Hotel',
+                        main_image_src: 'https://placebear.com/200/300',
+                        has_wifi: true,
+                        has_parking: true,
+                        has_pets: true,
+                        has_restaurant: true,
+                        has_bar: true,
+                        has_swimming_pool: false,
+                        has_air_conditioning: true,
+                        has_gym: true,
+                        meal_plan: 'continental plan',
+                        user_id: '2',
+                        booking_id: '1',
+                        amount: '50',
+                        currency: 'USD',
+                        status: 'pending',
+                        stars: '5'
+                    }
+                }]
 
         mockBackend.connections.subscribe((connection) => {
             connection.mockRespond(new Response(new ResponseOptions({
@@ -106,11 +138,8 @@ describe('HotelCardsComponent', () => {
 
             expect(rooms.length).toEqual(2);
 
-            let title = fixture.nativeElement.querySelector('.title');
-            expect(title.textContent).toContain('single');
-
-            let titleArray = fixture.nativeElement.querySelectorAll('.title');
-            expect(title[0].textContent).toContain('room');
+            let button = fixture.nativeElement.querySelector('.button');
+            expect(button.textContent).toContain('Visit Hotel');
         });
     }));
 });
