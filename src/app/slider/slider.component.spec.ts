@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AppService } from '../../app.service';
+import { AppService } from '../app.service';
 
 import { SliderComponent } from './slider.component';
 

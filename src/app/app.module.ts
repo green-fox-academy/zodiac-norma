@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MyDatePickerModule } from 'mydatepicker';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-import { SliderComponent } from './home/slider/slider.component';
+import { SliderComponent } from './slider/slider.component';
 import { BookinSectionComponent } from './home/bookin-section/bookin-section.component';
 import { TopHotelsComponent } from './home/top-hotels/top-hotels.component';
 import { HeaderComponent } from './header/header.component';
@@ -63,6 +63,6 @@ const appRoutes: Routes =[
     HotelCardsComponent
   ],
   
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
