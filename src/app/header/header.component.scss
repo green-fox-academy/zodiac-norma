@@ -2,8 +2,8 @@
 
 .header {
     min-width: 590px;
-    padding: 0;
     min-height: 90px;
+    padding: 0;
     height: 6.8%;
     background: rgb(25, 25, 25);
     display: flex;
@@ -34,9 +34,7 @@
 .topLogo {
     min-width: 100px;
     min-height: 80px;
-    background-image: url(../images/cute_logo_nohead_notail.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: no-repeat center url(../images/cute_logo_nohead_notail.png);
     background-size: contain;
 }
 
@@ -47,9 +45,7 @@
     position: relative;
     left: -75px;
     top: -20px;
-    background-image: url(../images/deerhead.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    background: no-repeat center url(../images/deerhead.png);
     background-size: 45px;
     transition: 1s;
 }
@@ -61,24 +57,14 @@
     100% {transform: translateY(0px);}
 }
 
-.topLogoMovingHead:hover {
-    animation-name: headmove;
-    animation-duration: 3s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
 .topLogoMovingTail {
-    width: 15px;
+    min-width: 15px;
     height: 15px;
     position: relative;
     left: -148px;
-    top: 21px;
-    background-image: url(../images/deertail.png);
-    background-position: center;
-    background-repeat: no-repeat;
+    top: 20px;
+    background: center no-repeat url(../images/deertail.png);
     background-size: 11px;
-    transition: 1s;
 }
 
 @keyframes tailmove {
@@ -88,7 +74,20 @@
     100% {transform: rotate(0deg);}
 }
 
-.topLogoMovingTail:hover {
+#logo {
+    width: 100px;
+    height: 80px;
+    display: flex;
+}
+
+#logo:hover #head{
+    animation-name: headmove;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+#logo:hover #tail{
     transform-origin: bottom center;
     animation-name: tailmove;
     animation-duration: 0.6s;
@@ -111,7 +110,7 @@
 }
 
 .navigation {
-    color: rgb(255, 255 ,255);
+    color: white;
     padding: 0px 17px;
     border-right: solid rgb(48, 48, 48) 1px;
     @media screen and (max-width: $break-small) {
@@ -158,14 +157,15 @@ input[type=checkbox] {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -150px;
+    top: -30px;
+    transform: translateX(49%) scale(0.01, 0.01);
     left: 0px;
-    transition: 1s ease-in-out, z-index;
+    transition: 0.5s ease-in-out, z-index;
     }
 }
 
 a.dropMenu {
-    width: 100%;
+    width: 200px;
     text-align: center;
     line-height: 30px;
     color: white;
@@ -173,15 +173,21 @@ a.dropMenu {
 
 input[type=checkbox]:checked ~ .dropDown {
     left: 0px;
-    transform: translateY(240px);
-    transition: 1s ease-in-out, z-index;
+    transform: translateY(120px);
+    transition: 0.5s ease-in-out, z-index;
+    display: flex;
 }
 
+input[type=checkbox]:checked ~ .dropDown .highlightedDrop {
+    transition-delay: 0.5s;
+    transition: 0.5s ease-in-out, z-index;
+    position: relative;
+    transform: scale(1, 1);
+}
 .highlighted{
-    color: white;
-    border-bottom: solid;
-    border-color: rgb(52, 161, 228);
-    border-width: 1px;
+    padding: 0px 17px;
+    color: rgb(52, 161, 228);
+    border-right: solid rgb(48, 48, 48) 1px;
     @media screen and (max-width: $break-small) {
     padding: 0px 5px;
     }
@@ -191,11 +197,12 @@ input[type=checkbox]:checked ~ .dropDown {
 }
 
 .highlightedDrop {
-    width: 100%;
+    position: absolute;
+    width: 200px;
     text-align: center;
     line-height: 30px;
-    color: white;
-    border-bottom: solid;
-    border-color: rgb(52, 161, 228);
-    border-width: 1px;
+    color: rgb(52, 161, 228);
+    transform: translateX(49%) scale(0.1, 0.1);
+    transition-delay: 0.5s;
+    transition: 0.5s ease-in-out;
 }

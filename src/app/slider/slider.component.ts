@@ -11,7 +11,7 @@ import { AppService } from '../app.service';
 export class SliderComponent implements OnInit {
     private nativeElement: Node;
 	private notNodeElement;
-	
+
     endpoint: string;
     thumbNailNeed: string;
 
@@ -21,10 +21,11 @@ export class SliderComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		
+
+
         this.endpoint = this.nativeElement.attributes[1].value;
         this.thumbNailNeed = this.nativeElement.attributes[2].value;
-        
+
 		this.request.getData('https://two-ferns.glitch.me/'+this.endpoint)
 			.subscribe(
 			(response: Response) => {
@@ -37,7 +38,7 @@ export class SliderComponent implements OnInit {
 			(error) => console.log(error)
 			);
 	}
-	
+
 
 	imageData = [];
     thumbImages = [];
@@ -51,7 +52,7 @@ export class SliderComponent implements OnInit {
     }
 
 	showAsMainImage(clickedIndex) {
-	
+
 		this.imageData.forEach(function(element){
 			element.class = 'default'
 		})

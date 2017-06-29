@@ -25,7 +25,7 @@ export class SimpleHeaderComponent implements OnInit {
 
     getRequest = function () {
 
-        this.imageData.getData('https://bookingnorma.glitch.me/headerimages')
+        this.imageData.getData('https://two-ferns.glitch.me/headerimages')
         .subscribe(
             (response: Response) => {
                 var responseData = response.json();

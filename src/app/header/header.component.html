@@ -1,9 +1,11 @@
 <header class="header">
     <div class="container">
         <a class="logoContainer" href="index.html">
-            <div class="topLogo"></div>
-            <div class="topLogoMovingHead"></div>
-            <div class="topLogoMovingTail"></div>
+            <div id="logo">
+                <div class="topLogo"></div>
+                <div id="head" class="topLogoMovingHead"></div>
+                <div id="tail" class="topLogoMovingTail"></div>
+            </div>
         </a>
         <ul class="navContainer">
             <li><a #link [routerLink]="['/']" class="navigation">Home</a></li>
