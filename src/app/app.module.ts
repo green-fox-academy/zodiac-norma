@@ -21,6 +21,7 @@ import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.compo
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
@@ -42,7 +43,8 @@ const appRoutes: Routes =[
     SimpleHeaderComponent,
     HotelCardsComponent,
 	HotelComponent,
-	SimpleMapComponent,	
+	SimpleMapComponent,
+	SinglehotelComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,17 +54,17 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
 	AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
-    }),	
+    }),
   ],
   exports: [ RouterModule ],
   providers: [
-    TopHotelsComponent, 
-    SliderComponent, 
-    BookinSectionComponent, 
-    AppService, 
+    TopHotelsComponent,
+    SliderComponent,
+    BookinSectionComponent,
+    AppService,
     HotelCardsComponent
   ],
-  
+
     bootstrap: [AppComponent]
 })
 export class AppModule { }
