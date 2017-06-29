@@ -1,0 +1,15 @@
+<section>
+    <div class="mainimage">
+        <div (click)="setClassIndex(-1, 'translated-left')" class='arrow left'></div>
+        <div *ngFor="let item of imageData"  [ngStyle]="{'background-image': 'url('+item.file+')'}" [class]= 'item.class'>
+            <div class='title'>{{item.title}}</div>
+            <div class='subtitle'>{{item.subtitle}}</div>
+        </div>
+        <div (click)="setClassIndex(1, 'translated-right')" class='arrow right'></div>
+        <div class="thumb-container">
+            <div class="thumblist" *ngFor="let thumb of thumbImages; let thumbIndex = index">
+                <div (click)="showAsMainImage(thumbIndex)" class="thumb" [ngStyle]="{'background-image': 'url('+thumb+')'}"></div>
+            </div>
+        </div>
+    </div>
+</section>
