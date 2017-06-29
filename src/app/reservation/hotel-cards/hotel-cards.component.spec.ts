@@ -69,8 +69,7 @@ describe('HotelCardsComponent', () => {
     it('testing mockbackend and mockdata',
         inject([AppService, XHRBackend], (appService, mockBackend) => {
 
-        var serverData = {
-            hotelResponse = {
+            var serverData = {
                 links: {
                     self: 'https://two-ferns.glitch.me/hotels/'
                 },
@@ -121,10 +120,11 @@ describe('HotelCardsComponent', () => {
                         stars: '5'
                     }
                 }]
+            };
 
         mockBackend.connections.subscribe((connection) => {
             connection.mockRespond(new Response(new ResponseOptions({
-                body: JSON.stringify(serverData)
+                body: serverData
             })));
         });
 
@@ -133,10 +133,9 @@ describe('HotelCardsComponent', () => {
         fixture.detectChanges();
         fixture.whenStable().then(() => {
 
-            let rooms = fixture.nativeElement.querySelectorAll('.rooms');
-            console.log('rooms', rooms);
+            let hotels = fixture.nativeElement.querySelectorAll('.hotels');
 
-            expect(rooms.length).toEqual(2);
+            expect(hotels.length).toEqual(2);
 
             let button = fixture.nativeElement.querySelector('.button');
             expect(button.textContent).toContain('Visit Hotel');
