@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
 
@@ -11,19 +11,16 @@ import { AppService } from '../app.service';
 export class SliderComponent implements OnInit {
     private nativeElement: Node;
 	private notNodeElement;
-	@ViewChild('mainpic') mainimage: ElementRef;
-	
 	
     endpoint: string;
     thumbNailNeed: string;
 
-	constructor(private request: AppService, element : ElementRef, private renderer: Renderer2) {
+	constructor(private request: AppService, element : ElementRef) {
         this.nativeElement = element.nativeElement;
 		this.notNodeElement = element.nativeElement;
 	}
 
 	ngOnInit() {
-		console.log('att', this.nativeElement);
 		
         this.endpoint = this.nativeElement.attributes[1].value;
         this.thumbNailNeed = this.nativeElement.attributes[2].value;
@@ -44,13 +41,7 @@ export class SliderComponent implements OnInit {
 
 	imageData = [];
     thumbImages = [];
-	// clickedIndexArray = [0];
 	classIndex = 0;
-	// lastClickedThumb = 0;
-
-	// switchThumbToArrow() {
-
-	// }
 
 
     createThumbNails(thumbData) {
@@ -60,20 +51,7 @@ export class SliderComponent implements OnInit {
     }
 
 	showAsMainImage(clickedIndex) {
-		// this.mainimage = this.notNodeElement.querySelector('.current-front');
-		// this.mainimage.nativeElement.style.backgroundImage = 'url("'+this.thumbImages[clickedIndex]+'")'
-		console.log('llll', this.mainimage);
-		console.log('sssss', this.mainimage.nativeElement.style.backgroundImage);
-		console.log('bbbbbbbb', 'url("'+this.thumbImages[clickedIndex]+'")');
-		console.log('aaaaaaa', this.thumbImages[clickedIndex]);
-
-		// this.clickedIndexArray.push(clickedIndex);
-
-		// if (this.clickedIndexArray.length === 3) {
-			// this.clickedIndexArray.splice(0, 1);
-			// this.clickedIndexArray = [];
-		// }
-
+	
 		this.imageData.forEach(function(element){
 			element.class = 'default'
 		})
@@ -81,17 +59,6 @@ export class SliderComponent implements OnInit {
 		this.imageData[clickedIndex].class = 'current-front';
 
 		this.classIndex = clickedIndex;
-		console.log(this.classIndex);
-		
-
-		// this.imageData[clickedIndex].class = 'default';
-		// this.imageData[this.clickedIndexArray[0]].class = 'default';
-
-		// this.clickedIndexArray.shift();
-
-		// if (clickCounter > 0) {
-		// 	this.imageData[this.clickedIndexArray[0]].class = 'default';
-		// }
 	}
 
 
@@ -104,10 +71,6 @@ export class SliderComponent implements OnInit {
 
 	setClassIndex(x, className) {
 		this.classIndex += x;
-
-		// this.lastClickedThumb += x;
-		// this.classIndex = this.lastClickedThumb;
-		console.log('ind', this.classIndex);
 
 		if (this.classIndex > 0 && this.classIndex < this.imageData.length) {
 			this.imageData[this.imageData.length - 1].class = 'default';
