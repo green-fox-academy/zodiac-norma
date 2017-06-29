@@ -25,7 +25,7 @@ export class SliderComponent implements OnInit {
         this.endpoint = this.nativeElement.attributes[1].value;
         this.thumbNailNeed = this.nativeElement.attributes[2].value;
         
-		this.request.getData('https://bookingnorma.glitch.me/'+this.endpoint)
+		this.request.getData('https://two-ferns.glitch.me/'+this.endpoint)
 			.subscribe(
 			(response: Response) => {
 				let sliderData = response.json();
