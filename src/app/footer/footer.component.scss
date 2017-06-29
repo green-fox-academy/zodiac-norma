@@ -1,6 +1,4 @@
-$break: 1000px;
-$break-small: 800px;
-$break-collapse: 620px;
+@import '../.././scss/break-points.scss';
 
 .footer {
     min-width: 590px;
@@ -39,14 +37,16 @@ $break-collapse: 620px;
 }
 
 .footer .container .navContainer {
-    margin-right: 10px;
     min-width: 540px;
     max-width: 540px;
     padding: 0;
     display: flex;
     justify-content: flex-end;
-    @media screen and (max-width: $break-small) {
+    @media screen and (max-width: $break-big) {
         min-width: 340px;
+    }
+    @media screen and (max-width: $break-small) {
+        min-width: 300px;
     }
     @media screen and (max-width: $break-collapse) {
         min-width: 150px;

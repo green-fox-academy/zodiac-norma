@@ -29,6 +29,7 @@
   "homepage": "https://github.com/greenfox-academy/zodiac-norma#readme",
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.0",
     "@angular/animations": "^4.2.1",
     "@angular/cli": "1.1.0",
     "@angular/common": "^4.2.1",

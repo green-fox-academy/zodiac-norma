@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
 import { MyDatePickerModule } from 'mydatepicker';
-
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
 import { SliderComponent } from './slider/slider.component';
@@ -17,41 +18,50 @@ import { ReservationComponent } from './reservation/reservation.component';
 import { CheckFormComponent } from './reservation/check-form/check-form.component';
 import { SimpleHeaderComponent } from './reservation/simple-header/simple-header.component';
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
+import { HotelComponent } from './hotel/hotel.component';
+import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
+import { AgmCoreModule } from '@agm/core';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
-    { path: 'reservation', component: ReservationComponent }
+    { path: 'reservation', component: ReservationComponent },
+	{ path: 'hotel', component: HotelComponent }
 ];
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        SliderComponent,
-        BookinSectionComponent,
-        TopHotelsComponent,
-        HeaderComponent,
-        HomeComponent,
-        ReservationComponent,
-        FooterComponent,
-        CheckFormComponent,
-        SimpleHeaderComponent,
-        HotelCardsComponent
-    ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        HttpModule,
-        MyDatePickerModule,
-        RouterModule.forRoot(appRoutes)
-    ],
-    exports: [ RouterModule ],
-    providers: [
-        TopHotelsComponent, 
-        SliderComponent, 
-        BookinSectionComponent, 
-        AppService, 
-        HotelCardsComponent
-    ],
+  declarations: [
+    AppComponent,
+    SliderComponent,
+    BookinSectionComponent,
+    TopHotelsComponent,
+    HeaderComponent,
+    HomeComponent,
+    ReservationComponent,
+    FooterComponent,
+    CheckFormComponent,
+    SimpleHeaderComponent,
+    HotelCardsComponent,
+	HotelComponent,
+	SimpleMapComponent,	
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    MyDatePickerModule,
+    RouterModule.forRoot(appRoutes),
+	AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
+    }),	
+  ],
+  exports: [ RouterModule ],
+  providers: [
+    TopHotelsComponent, 
+    SliderComponent, 
+    BookinSectionComponent, 
+    AppService, 
+    HotelCardsComponent
+  ],
   
     bootstrap: [AppComponent]
 })
