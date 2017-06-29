@@ -11,7 +11,7 @@ import { AppService } from '../app.service';
 export class SliderComponent implements OnInit {
     private nativeElement: Node;
 	private notNodeElement;
-	@ViewChild('mainpic') mainimage;
+	@ViewChild('mainpic') mainimage: ElementRef;
 	
 	
     endpoint: string;
@@ -40,15 +40,17 @@ export class SliderComponent implements OnInit {
 			(error) => console.log(error)
 			);
 	}
-    
-	// ngAfterViewInit() {
-	// 	this.thumb.forEach(link => console.log(link));	
-	// }
 	
 
 	imageData = [];
     thumbImages = [];
+	// clickedIndexArray = [0];
 	classIndex = 0;
+	// lastClickedThumb = 0;
+
+	// switchThumbToArrow() {
+
+	// }
 
 
     createThumbNails(thumbData) {
@@ -58,13 +60,38 @@ export class SliderComponent implements OnInit {
     }
 
 	showAsMainImage(clickedIndex) {
-		this.mainimage = this.notNodeElement.querySelector('.current-front');
-		
-		this.mainimage.style.setBackgroundImage = this.thumbImages[clickedIndex];
+		// this.mainimage = this.notNodeElement.querySelector('.current-front');
+		// this.mainimage.nativeElement.style.backgroundImage = 'url("'+this.thumbImages[clickedIndex]+'")'
 		console.log('llll', this.mainimage);
+		console.log('sssss', this.mainimage.nativeElement.style.backgroundImage);
+		console.log('bbbbbbbb', 'url("'+this.thumbImages[clickedIndex]+'")');
 		console.log('aaaaaaa', this.thumbImages[clickedIndex]);
+
+		// this.clickedIndexArray.push(clickedIndex);
+
+		// if (this.clickedIndexArray.length === 3) {
+			// this.clickedIndexArray.splice(0, 1);
+			// this.clickedIndexArray = [];
+		// }
+
+		this.imageData.forEach(function(element){
+			element.class = 'default'
+		})
+
+		this.imageData[clickedIndex].class = 'current-front';
+
+		this.classIndex = clickedIndex;
+		console.log(this.classIndex);
 		
-		return this.thumbImages[clickedIndex];
+
+		// this.imageData[clickedIndex].class = 'default';
+		// this.imageData[this.clickedIndexArray[0]].class = 'default';
+
+		// this.clickedIndexArray.shift();
+
+		// if (clickCounter > 0) {
+		// 	this.imageData[this.clickedIndexArray[0]].class = 'default';
+		// }
 	}
 
 
@@ -77,6 +104,10 @@ export class SliderComponent implements OnInit {
 
 	setClassIndex(x, className) {
 		this.classIndex += x;
+
+		// this.lastClickedThumb += x;
+		// this.classIndex = this.lastClickedThumb;
+		console.log('ind', this.classIndex);
 
 		if (this.classIndex > 0 && this.classIndex < this.imageData.length) {
 			this.imageData[this.imageData.length - 1].class = 'default';
