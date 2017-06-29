@@ -21,11 +21,10 @@ export class HotelComponent implements OnInit {
 			.subscribe(
 			(response: Response) => {
 				var data = response.json();
-				console.log(data); 
 
             	this.latitude= data[0].lt;
             	this.longitude = data[0].lng;
-				
+
 			},
 			(error) => console.log(error)
 			);

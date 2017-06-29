@@ -20,6 +20,10 @@ app-simple-map {
     justify-content: center;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     z-index: 1100;
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8);
+    }
 }
 
 .gradientBorder {
@@ -28,6 +32,9 @@ app-simple-map {
     position: absolute;
     top: 687px;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+    }
 }
 
 .gradientShadow {
@@ -36,29 +43,156 @@ app-simple-map {
     position: absolute;
     top: 683px;
     background: radial-gradient(rgba(190, 190, 190, 0.5), rgba(255, 255, 255, 0));
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+    }
 }
 
 .navContainer {
     min-width: 200px;
-    max-width: 200px;
     display: flex;
     justify-content: flex-end;
-    @media screen and (max-width: $break-small) {
-        min-width: 420px;
-    }
-    @media screen and (max-width: $break-collapse) {
-        min-width: 50px;
-    }
 }
 
 .navigation {
     color: rgb(55, 55, 55);
     padding: 0px 17px;
     line-height: 50px;
-    @media screen and (max-width: $break-small) {
-    padding: 0px 5px;
-    }
+}
+
+.mainContainer {
+    height: 49.5%;
+    min-height: 575px;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+}
+
+.roomsContainer {
+    margin-top: 55px;
+    width: 975px;
+    min-height: 575px;
+    display: flex;
     @media screen and (max-width: $break-collapse) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
+
+.roomsList {
+    margin: 0px 70px 180px 15px;
+    width: 654px;
+    min-height: 575px;
+    border-right: solid;
+    border-width: 1px;
+    border-color: rgb(207, 207, 207);
+    @media screen and (max-width: $break-collapse) {
+        width: 319px;
+        border: none;
+        margin: 0px 0px 180px 0px;
+    }
+}
+
+.features {
+    margin-left: 30px;
+    width: 205px;
+    @media screen and (max-width: $break-collapse) {
+        margin: 0px;
+        width: 320px;
+    }
+
+}
+
+.header {
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: rgb(55, 55, 55);
+    @media screen and (max-width: $break-collapse) {
+        display: none;
+    }
+}
+
+.oneRoom {
+    margin-bottom: 55px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $break-collapse) {
+        flex-direction: column;
+    }
+}
+
+.picture {
+    min-width: 150px;
+    height: 100px;
+    border-radius: 5px;
+    background-image: url(https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic1_mod.jpg?1497949004290);
+    background-size: contain;
+    background-repeat: no-repeat;
+    @media screen and (max-width: $break-collapse) {
+        background-position: center;
+        margin-bottom: 10px;
+    }
+}
+
+.rightBar {
+    margin-left: 20px;
+    width: 100%;
+    height: 100%;
+    @media screen and (max-width: $break-collapse) {
+        margin-left: 0px;
+    }
+}
+
+.title {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(55, 55, 55);
+}
+
+.text {
+    margin-bottom: 20px;
+    color: rgb(105, 105, 105);
+    font-size: 14px;
+    line-height: 22px;
+    @media screen and (max-width: $break-collapse) {
+        text-align: justify;
+    }
+}
+
+.button {
+    width: 150px;
+    height: 35px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 35px;
+    background-color: rgb(50, 162, 227);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.price {
+    margin-left: 25px;
+    font-size: 16px;
+    color: rgb(55, 55, 55);
+    font-weight: bold;
+    line-height: 35px;
+    display: inline-block;
+    text-shadow:
+    1px 0px rgb(55, 55, 55),
+    0px 1px rgb(55, 55, 55);
+}
+
+.headerMobile {
     display: none;
+    @media screen and (max-width: $break-collapse) {
+        margin-bottom: 40px;
+        font-size: 20px;
+        color: rgb(55, 55, 55);
+        display: inherit;
     }
 }

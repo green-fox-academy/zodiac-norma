@@ -4,12 +4,41 @@
 <div class="fullWidthHolder">
     <div class="whiteShadow">
         <ul class="navContainer">
-            <li><a #link [routerLink]="['/']" class="navigation">Overview</a></li>
-            <li><a #link [routerLink]="['/hotel']" class="navigation">Rooms</a></li>
-            <li><a #link [routerLink]="['reservation']" class="navigation">Map</a></li>
+            <li><a #link [routerLink]="['/hotel']" class="navigation">Overview</a></li>
+            <li><a #link [routerLink]="['/hotel']" class="navigation"><strong>Rooms</strong></a></li>
+            <li><a #link [routerLink]="['/hotel']" class="navigation">Map</a></li>
         </ul>
     </div>
     <div class="gradientBorder"></div>
     <div class="gradientShadow"></div>
+</div>
+<div class="mainContainer">
+    <div class='roomsContainer'>
+        <div class='roomsList'>
+            <div class="header">Available rooms</div>
+            <div class="oneRoom">
+                <div class="picture"></div>
+                <div class="rightBar">
+                    <div class="title">Presidental suite</div>
+                    <p class="text">This is our best room! It has so many extras and nearly as big as a castle. The view is amazing to the ocean and you can see even the stars at night. At winter the Northern light can be seen on the panorama roof. there is no better room in the World if you like the beautiful view.</p>
+                    <div class="button">Book now</div>
+                    <div class="price">39 USD / night</div>
+                </div>
+            </div>
+            <div class="oneRoom">
+                <div class="picture"></div>
+                <div class="rightBar">
+                    <div class="title">Presidental suite</div>
+                    <p class="text">This is our best room! It has so many extras and nearly as big as a castle. The view is amazing to the ocean and you can see even the stars at night. At winter the Northern light can be seen on the panorama roof. there is no better room in the World if you like the beautiful view.</p>
+                    <div class="button">Book now</div>
+                    <div class="price">39 USD / night</div>
+                </div>
+            </div>
+        </div>
+        <div class='features'>
+            <div class="headerMobile">Available rooms</div>
+        </div>
+
+    </div>
 </div>
 <app-simple-map [lat]="latitude" [long]="longitude"></app-simple-map>
