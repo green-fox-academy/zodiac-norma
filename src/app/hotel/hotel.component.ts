@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { SimpleMapComponent } from './simple-map/simple-map.component';
+import { OverviewComponent } from './overview/overview.component';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { AppService } from '../app.service';
 import { Response } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OwerviewComponent } from './owerview/owerview.component';
 import { SliderComponent } from '../slider/slider.component';
 
 @Component({
@@ -23,17 +23,7 @@ export class HotelComponent implements OnInit {
         private router: Router) {}
 
 	ngOnInit() {
-		this.request.getData('https://bookingnorma.glitch.me/hotel')
-			.subscribe(
-			(response: Response) => {
-				var data = response.json();
-
-            	this.latitude= data[0].lt;
-            	this.longitude = data[0].lng;
-
-			},
-			(error) => console.log(error)
-			);
+		
 	}
 
 }
