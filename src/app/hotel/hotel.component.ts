@@ -24,18 +24,7 @@ export class HotelComponent implements OnInit {
         private router: Router) {}
 
 	ngOnInit() {
-		this.request.getData('https://two-ferns.glitch.me/hotel')
-			.subscribe(
-			(response: Response) => {
-				var data = response.json();
-
-            	this.latitude= data[0].lt;
-            	this.longitude = data[0].lng;
-				this.adress = data[0].adr;
-
-			},
-			(error) => console.log(error)
-			);
+		
 	}
 
 }

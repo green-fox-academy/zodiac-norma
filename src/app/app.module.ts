@@ -25,6 +25,7 @@ import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component'
 import { OwerviewComponent } from './hotel/owerview/owerview.component';
 
 
+
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
     { path: 'reservation', component: ReservationComponent },
@@ -68,7 +69,7 @@ const appRoutes: Routes =[
     SliderComponent,
     BookinSectionComponent,
     AppService,
-    HotelCardsComponent
+    HotelCardsComponent,
   ],
 
     bootstrap: [AppComponent]

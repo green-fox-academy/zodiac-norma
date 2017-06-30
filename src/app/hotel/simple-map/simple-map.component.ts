@@ -3,6 +3,8 @@ import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 
+import { ActivatedRoute, Router } from '@angular/router';
+
 declare var google: any;
 
 @Component({
@@ -14,15 +16,31 @@ declare var google: any;
 
 export class SimpleMapComponent implements OnInit {
 
-	@Input() lat;
-	@Input() long;
-	@Input() adress;
-	
-	constructor(public mapApiWrapper:GoogleMapsAPIWrapper){
+	latitude;
+	longitude;
+	adress;
+
+	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, private request: AppService,
+        private route: ActivatedRoute,
+        private router: Router){
+		
   }
 
 	ngOnInit() {	
-  	}
+		this.request.getData('https://two-ferns.glitch.me/hotel')
+			.subscribe(
+			(response: Response) => {
+				var data = response.json();
+
+            	this.latitude= data[0].lt;
+            	this.longitude = data[0].lng;
+				this.adress = data[0].adr;
+
+			},
+			(error) => console.log(error)
+			);
+  	};
+
 	toggleStreetview() {
         console.log(document.querySelector('#sv'));
         var mapFrame = document.querySelector('#sv');
@@ -52,7 +70,7 @@ export class SimpleMapComponent implements OnInit {
       })
         
     });
-    }
+  }
 
 	public customStyle = [
     {
