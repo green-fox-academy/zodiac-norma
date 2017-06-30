@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
@@ -14,18 +14,21 @@ declare var google: any;
 
 
 export class SimpleMapComponent implements OnInit {
-
+	private nativeElement;
 	@Input() lat;
 	@Input() long;
 
-	constructor(public mapApiWrapper:GoogleMapsAPIWrapper){
-    
+	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, element : ElementRef){
+		this.nativeElement = element.nativeElement;
   }
 
 	ngOnInit() {
 	
   	}
-	
+	ngAfterContentInit() {
+		console.log(this.nativeElement.querySelector('div'));
+	}
+
 	toggleStreetview() {
 		console.log(document.querySelector('#sv'));
 		var mapFrame = document.querySelector('#sv');

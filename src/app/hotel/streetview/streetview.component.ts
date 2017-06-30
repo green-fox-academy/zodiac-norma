@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper, } from '@agm/core';
+import { Response } from '@angular/http';
+import { AppService } from '../../app.service';
 
 declare var google: any;
 
