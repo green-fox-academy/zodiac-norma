@@ -28,7 +28,10 @@ import { OwerviewComponent } from './hotel/owerview/owerview.component';
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
     { path: 'reservation', component: ReservationComponent },
-	{ path: 'hotel', component: HotelComponent }
+    { path: 'hotel', component: HotelComponent },
+    { path: 'hotel/overview', component: OwerviewComponent },
+    { path: 'hotel/rooms', component: SinglehotelComponent },
+    { path: 'hotel/map', component: SimpleMapComponent }
 ];
 
 @NgModule({

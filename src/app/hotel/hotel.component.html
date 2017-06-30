@@ -1,12 +1,17 @@
+
+<router-outlet name="overview"></router-outlet>
+<router-outlet name="rooms"></router-outlet>
+<router-outlet name="map"></router-outlet>
+
 <div class="slider">
     <app-slider thumbnails="true" endpoint="hotel-slider" ></app-slider>
 </div>
 <div class="fullWidthHolder">
     <div class="whiteShadow">
         <ul class="navContainer">
-            <li><a #link [routerLink]="['/hotel']" class="navigation">Overview</a></li>
-            <li><a #link [routerLink]="['/hotel']" class="navigation"><strong>Rooms</strong></a></li>
-            <li><a #link [routerLink]="['/hotel']" class="navigation">Map</a></li>
+            <li><a [routerLink]="['./overview']" class="navigation">Overview</a></li>
+            <li><a [routerLink]="['./rooms']" class="navigation"><strong>Rooms</strong></a></li>
+            <li><a [routerLink]="['./map']" class="navigation">Map</a></li>
         </ul>
     </div>
     <div class="gradientBorder"></div>
@@ -38,7 +43,6 @@
         <div class='features'>
             <div class="headerMobile">Available rooms</div>
         </div>
-
     </div>
 </div>
 <app-simple-map [lat]="latitude" [long]="longitude"></app-simple-map>
