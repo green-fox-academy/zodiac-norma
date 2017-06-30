@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	selector: 'app-simple-map',
@@ -9,9 +10,28 @@ import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 	styleUrls: ['./simple-map.component.scss']
 })
 export class SimpleMapComponent implements OnInit {
-	@Input() lat;
-	@Input() long;
+	lat;
+	long;
+	adress;
+	constructor( private request: AppService,
+        private route: ActivatedRoute,
+        private router: Router) { 
+		
+	}
 
+	ngOnInit() {
+		this.request.getData('https://two-ferns.glitch.me/hotel')
+			.subscribe(
+			(response: Response) => {
+				var data = response.json();
+
+            	this.lat= data[0].lt;
+            	this.long = data[0].lng;
+				this.adress = data[0].adr;
+			},
+			(error) => console.log(error)
+			);
+  	}	
 	public customStyle = [
     {
         "featureType": "administrative",
@@ -159,12 +179,5 @@ export class SimpleMapComponent implements OnInit {
     }
 ];
 
-	constructor() { 
-		console.log(this.lat);
-		console.log(this.long);
-	}
-
-	ngOnInit() {
-		
-  	}	
+	
 }; 
