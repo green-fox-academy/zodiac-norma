@@ -28,6 +28,8 @@ import { MyDatePickerModule } from 'mydatepicker';
 //import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
+import { OwerviewComponent } from './hotel/owerview/owerview.component';
+import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 
 describe('AppComponent', () => {
     let locations, routing;
@@ -47,11 +49,14 @@ describe('AppComponent', () => {
                 ReservationComponent,
                 CheckFormComponent,
                 HotelCardsComponent,
-                SimpleHeaderComponent
+                SimpleHeaderComponent,
+                SimpleMapComponent,
+                OwerviewComponent,
+                SimpleMapComponent
             ],
             imports: [
-                HttpModule, 
-                MyDatePickerModule, 
+                HttpModule,
+                MyDatePickerModule,
                 FormsModule,
 
 				/*AgmCoreModule.forRoot({
@@ -59,7 +64,11 @@ describe('AppComponent', () => {
     			}),*/
                 RouterTestingModule.withRoutes([
                     { path: '', component: HomeComponent },
-                    { path: 'reservation', component: ReservationComponent }
+                    { path: 'reservation', component: ReservationComponent },
+                    { path: 'hotel', component: HotelComponent },
+                    { path: 'hotel/overview', component: OwerviewComponent },
+                    { path: 'hotel/rooms', component: SinglehotelComponent },
+                    { path: 'hotel/map', component: SimpleMapComponent }
                 ])
             ],
             providers: [ AppService ]
@@ -100,5 +109,5 @@ describe('AppComponent', () => {
 
     it('should be created', () => {
         expect(component).toBeTruthy();
-    });   
+    });
 });
