@@ -46,6 +46,7 @@ const appRoutes: Routes =[
 	HotelComponent,
 	SimpleMapComponent,
 	OwerviewComponent,	
+	
   ],
   imports: [
     BrowserModule,
