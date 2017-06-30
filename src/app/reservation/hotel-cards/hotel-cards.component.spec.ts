@@ -25,7 +25,7 @@ describe('HotelCardsComponent', () => {
         TestBed.configureTestingModule({
             declarations: [ HotelCardsComponent ],
             imports: [
-                HttpModule,  
+                HttpModule,
                 FormsModule,
                 RouterTestingModule
             ],
@@ -43,74 +43,102 @@ describe('HotelCardsComponent', () => {
         fixture.detectChanges();
     });
 
-    it('rooms length is zero', () => {   
+    it('rooms length is zero', () => {
         let rooms = fixture.nativeElement.querySelectorAll('.rooms');
         expect(rooms.length).toBe(0);
     });
 
-    it('should be created', () => {    
+    it('should be created', () => {
         expect(component).toBeTruthy();
     });
 
-    it('component opens a HTTP request', 
+    it('component opens a HTTP request',
         inject([XHRBackend], (mockBackend) => {
         mockBackend.connections.subscribe((connection) => {
             expect(4).toBe(4);
         });
     }));
 
-    it('mockbackend gives back the right url', 
+    it('mockbackend gives back the right url',
         inject([AppService, XHRBackend], (appService, mockBackend) => {
         mockBackend.connections.subscribe((connection) => {
-            expect(connection.request.url).toBe("https://bookingnorma.glitch.me/rooms");
+            expect(connection.request.url).toBe('https://two-ferns.glitch.me/api/hotels');
         });
     }));
 
-    it('testing mockbackend and mockdata', 
+    it('testing mockbackend and mockdata',
         inject([AppService, XHRBackend], (appService, mockBackend) => {
 
-        var serverData = {
-            rooms: [
-                {
-                    roomtype: 'single room',
-                    features: ['323-452 sq ft / 30-42 sq m ', 'Free access to spa facilities', 'Comfortable work area', 'Sweet sweeper bed', 'Separate bath and shower'],
-                    price: 115 + ' €',
-                    id: 1,
-                    image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic1_mod.jpg?1497949004290'
+            var serverData = {
+                links: {
+                    self: 'https://two-ferns.glitch.me/hotels/'
                 },
-                {
-                    roomtype: 'Classic room, non-smoking: King bed',
-                    features: ['223-452 sq ft / 20-42 sq m ', 'Free access to spa facilities', 'Comfortable work area'],
-                    price: 215 + ' €',
-                    id: 2,
-                    image: 'https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic2_mod.jpg?1497949136425'
-                }
-            ],
-            totalResults: '2'
+                data: [{
+                    type: 'hotels',
+                    id: '1',
+                    attributes: {
+                        location: 'Bone City',
+                        name: 'Dog Heaven',
+                        main_image_src: 'https://placebear.com/200/300',
+                        has_wifi: true,
+                        has_parking: false,
+                        has_pets: true,
+                        has_restaurant: false,
+                        has_bar: false,
+                        has_swimming_pool: false,
+                        has_air_conditioning: false,
+                        has_gym: true,
+                        meal_plan: 'american plan',
+                        user_id: '1',
+                        booking_id: '1',
+                        amount: '50',
+                        currency: 'USD',
+                        status: 'pending',
+                        stars: '3'
+                    }
+                }, {
+                    type: 'hotels',
+                    id: '2',
+                    attributes: {
+                        location: 'near Sirius',
+                        name: 'Space Hotel',
+                        main_image_src: 'https://placebear.com/200/300',
+                        has_wifi: true,
+                        has_parking: true,
+                        has_pets: true,
+                        has_restaurant: true,
+                        has_bar: true,
+                        has_swimming_pool: false,
+                        has_air_conditioning: true,
+                        has_gym: true,
+                        meal_plan: 'continental plan',
+                        user_id: '2',
+                        booking_id: '1',
+                        amount: '50',
+                        currency: 'USD',
+                        status: 'pending',
+                        stars: '5'
+                    }
+                }]
+            };
 
-        }
-        
         mockBackend.connections.subscribe((connection) => {
             connection.mockRespond(new Response(new ResponseOptions({
-                body: JSON.stringify(serverData)
+                body: serverData
             })));
         });
-        
+
         component.ngOnInit()
-        
+
         fixture.detectChanges();
         fixture.whenStable().then(() => {
-            
-            let rooms = fixture.nativeElement.querySelectorAll('.rooms');
-            console.log('rooms', rooms);
-            
-            expect(rooms.length).toEqual(2);
 
-            let title = fixture.nativeElement.querySelector('.title');
-            expect(title.textContent).toContain('single');
+            let hotels = fixture.nativeElement.querySelectorAll('.hotels');
 
-            let titleArray = fixture.nativeElement.querySelectorAll('.title');
-            expect(title[0].textContent).toContain('room');
+            expect(hotels.length).toEqual(2);
+
+            let button = fixture.nativeElement.querySelector('.button');
+            expect(button.textContent).toContain('Visit Hotel');
         });
     }));
 });

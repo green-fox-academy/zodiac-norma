@@ -6,7 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { HomeComponent } from './home/home.component';
-import { SliderComponent } from './home/slider/slider.component';
+import { SliderComponent } from './slider/slider.component';
 import { TopHotelsComponent } from './home/top-hotels/top-hotels.component';
 import { BookinSectionComponent } from './home/bookin-section/bookin-section.component';
 

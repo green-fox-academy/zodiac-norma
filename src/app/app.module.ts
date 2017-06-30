@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MyDatePickerModule } from 'mydatepicker';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
-import { SliderComponent } from './home/slider/slider.component';
+import { SliderComponent } from './slider/slider.component';
 import { BookinSectionComponent } from './home/bookin-section/bookin-section.component';
 import { TopHotelsComponent } from './home/top-hotels/top-hotels.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,6 +21,7 @@ import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.compo
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { OwerviewComponent } from './hotel/owerview/owerview.component';
 
 
 const appRoutes: Routes =[
@@ -43,7 +44,8 @@ const appRoutes: Routes =[
     SimpleHeaderComponent,
     HotelCardsComponent,
 	HotelComponent,
-	SimpleMapComponent,	
+	SimpleMapComponent,
+	OwerviewComponent,	
   ],
   imports: [
     BrowserModule,
@@ -64,6 +66,6 @@ const appRoutes: Routes =[
     HotelCardsComponent
   ],
   
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
