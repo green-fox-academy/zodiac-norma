@@ -1,30 +1,67 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
-import { AppService } from '../../app.service';
+import { AppService } from '../app.service';
 
 @Component({
 	selector: 'app-slider',
 	templateUrl: './slider.component.html',
-	styleUrls: ['./slider.component.scss']
+	styleUrls: ['./slider.component.scss'],
 })
 
 export class SliderComponent implements OnInit {
+    private nativeElement: Node;
+	private notNodeElement;
 
-	constructor(private request: AppService) { }
+    endpoint: string;
+    thumbNailNeed: string;
+
+	constructor(private request: AppService, element : ElementRef) {
+        this.nativeElement = element.nativeElement;
+		this.notNodeElement = element.nativeElement;
+	}
 
 	ngOnInit() {
-		this.request.getData('https://bookingnorma.glitch.me/slider')
+
+
+        this.endpoint = this.nativeElement.attributes[1].value;
+        this.thumbNailNeed = this.nativeElement.attributes[2].value;
+
+		this.request.getData('https://two-ferns.glitch.me/'+this.endpoint)
 			.subscribe(
 			(response: Response) => {
 				let sliderData = response.json();
 				this.createImageObjects(sliderData)
+                if (this.thumbNailNeed === 'true') {
+                    this.createThumbNails(sliderData)
+                }
 			},
 			(error) => console.log(error)
 			);
 	}
 
+
 	imageData = [];
+    thumbImages = [];
 	classIndex = 0;
+
+
+    createThumbNails(thumbData) {
+        for (let i = 0; i < thumbData.length; i++) {
+			this.thumbImages.push( thumbData[i].image )
+		}
+    }
+
+	showAsMainImage(clickedIndex) {
+
+		this.imageData.forEach(function(element){
+			element.class = 'default'
+		})
+
+		this.imageData[clickedIndex].class = 'current-front';
+
+		this.classIndex = clickedIndex;
+	}
+
 
 	createImageObjects(data) {
 		for (let i = 0; i < data.length; i++) {

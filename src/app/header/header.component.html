@@ -1,23 +1,26 @@
 <header class="header">
     <div class="container">
         <a class="logoContainer" href="index.html">
-            <div class="topLogo"></div>
-            <div class="topLogoMoving"></div>
+            <div id="logo">
+                <div class="topLogo"></div>
+                <div id="head" class="topLogoMovingHead"></div>
+                <div id="tail" class="topLogoMovingTail"></div>
+            </div>
         </a>
         <ul class="navContainer">
-            <li><a [routerLink]="['/']" class="navigation">Home</a></li>
-            <li><a href="index.html" class="navigation">Rooms & Suites</a></li>
-            <li><a [routerLink]="['reservation']" class="navigation">Reservation</a></li>
-            <li><a href="index.html" class="navigation">Activites</a></li>
-            <li><a href="index.html" class="navigation end">Contact</a></li>
+            <li><a #link [routerLink]="['/']" class="navigation">Home</a></li>
+            <li><a #link href="index.html" class="navigation">Rooms & Suites</a></li>
+            <li><a #link [routerLink]="['reservation']" class="navigation">Reservation</a></li>
+            <li><a #link href="index.html" class="navigation">Activites</a></li>
+            <li><a #link href="index.html" class="navigation end">Contact</a></li>
             <input type="checkbox" id="toggle">
             <label for="toggle"></label>
             <ul class="dropDown">
-                <li><a [routerLink]="['/']" class="dropMenu">Home</a></li>
-                <li><a href="index.html" class="dropMenu">Rooms & Suites</a></li>
-                <li><a [routerLink]="['reservation']" class="dropMenu">Reservation</a></li>
-                <li><a href="index.html" class="dropMenu">Activites</a></li>
-                <li><a href="index.html" class="dropMenu">Contact</a></li>
+                <li><a #dropLink [routerLink]="['/']" class="dropMenu">Home</a></li>
+                <li><a #dropLink href="index.html" class="dropMenu">Rooms & Suites</a></li>
+                <li><a #dropLink [routerLink]="['reservation']" class="dropMenu">Reservation</a></li>
+                <li><a #dropLink href="index.html" class="dropMenu">Activites</a></li>
+                <li><a #dropLink href="index.html" class="dropMenu">Contact</a></li>
             </ul>
         </ul>
     </div>
