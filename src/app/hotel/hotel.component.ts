@@ -23,17 +23,7 @@ export class HotelComponent implements OnInit {
         private router: Router) {}
 
 	ngOnInit() {
-		this.request.getData('https://bookingnorma.glitch.me/hotel')
-			.subscribe(
-			(response: Response) => {
-				var data = response.json();
-
-            	this.latitude= data[0].lt;
-            	this.longitude = data[0].lng;
-
-			},
-			(error) => console.log(error)
-			);
+		
 	}
 
 }
