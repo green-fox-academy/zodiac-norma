@@ -6,8 +6,6 @@ declare var google: any;
 @Component({
   selector: 'app-streetview',
   template: '',
-  //templateUrl: './streetview.component.html',
-  //styleUrls: ['./simple-map.component.scss']
 })
 export class StreetviewComponent implements OnInit {
 		
@@ -21,7 +19,7 @@ export class StreetviewComponent implements OnInit {
 		console.log(map);
 		console.log(map.getZoom());
 
-		let position = new google.maps.LatLng(-45.521, -122.677);
+		let position = new google.maps.LatLng(45.521, -122.677);
 		
 		var cityCircle = new google.maps.Circle({
 			strokeColor: '#FF0000',
