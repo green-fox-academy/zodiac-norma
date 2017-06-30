@@ -3,7 +3,7 @@ import { SimpleMapComponent } from './simple-map/simple-map.component';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { AppService } from '../app.service';
 import { Response } from '@angular/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OwerviewComponent } from './owerview/owerview.component';
 
 @Component({
@@ -16,7 +16,10 @@ export class HotelComponent implements OnInit {
 	latitude;
 	longitude;
 
-	constructor(private request: AppService, private router: Router) { }
+	constructor(
+        private request: AppService,
+        private route: ActivatedRoute,
+        private router: Router) {}
 
 	ngOnInit() {
 		this.request.getData('https://bookingnorma.glitch.me/hotel')
