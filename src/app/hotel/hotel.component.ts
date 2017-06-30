@@ -3,6 +3,9 @@ import { SimpleMapComponent } from './simple-map/simple-map.component';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 import { AppService } from '../app.service';
 import { Response } from '@angular/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OwerviewComponent } from './owerview/owerview.component';
+import { SliderComponent } from '../slider/slider.component';
 
 @Component({
 	selector: 'app-hotel',
@@ -15,18 +18,21 @@ export class HotelComponent implements OnInit {
 	longitude;
 	adress;
 
-	constructor(private request: AppService) { }
+	constructor(
+        private request: AppService,
+        private route: ActivatedRoute,
+        private router: Router) {}
 
 	ngOnInit() {
 		this.request.getData('https://two-ferns.glitch.me/hotel')
 			.subscribe(
 			(response: Response) => {
 				var data = response.json();
-				console.log(data); 
 
             	this.latitude= data[0].lt;
             	this.longitude = data[0].lng;
 				this.adress = data[0].adr;
+
 			},
 			(error) => console.log(error)
 			);
