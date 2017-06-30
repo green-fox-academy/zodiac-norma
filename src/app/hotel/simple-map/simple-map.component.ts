@@ -8,9 +8,21 @@ import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 	templateUrl: './simple-map.component.html',
 	styleUrls: ['./simple-map.component.scss']
 })
+
+
 export class SimpleMapComponent implements OnInit {
+
 	@Input() lat;
 	@Input() long;
+
+	constructor(){
+    
+  }
+
+	ngOnInit() {
+		
+  	}
+
 
 	public customStyle = [
     {
@@ -159,12 +171,5 @@ export class SimpleMapComponent implements OnInit {
     }
 ];
 
-	constructor() { 
-		console.log(this.lat);
-		console.log(this.long);
-	}
-
-	ngOnInit() {
 		
-  	}	
 }; 

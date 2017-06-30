@@ -23,6 +23,7 @@ import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { AgmCoreModule } from '@agm/core';
 import { OwerviewComponent } from './hotel/owerview/owerview.component';
 
+
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
     { path: 'reservation', component: ReservationComponent },
