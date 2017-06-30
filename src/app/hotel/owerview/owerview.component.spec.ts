@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { OwerviewComponent } from './owerview.component';
+import { Routes, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('OwerviewComponent', () => {
   let component: OwerviewComponent;
@@ -8,7 +9,8 @@ describe('OwerviewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OwerviewComponent ]
+      declarations: [ OwerviewComponent ],
+      imports: [RouterTestingModule ]
     })
     .compileComponents();
   }));

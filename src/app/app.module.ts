@@ -21,12 +21,17 @@ import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.compo
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { AgmCoreModule } from '@agm/core';
+import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 import { OwerviewComponent } from './hotel/owerview/owerview.component';
+
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
     { path: 'reservation', component: ReservationComponent },
-	{ path: 'hotel', component: HotelComponent }
+    { path: 'hotel', component: HotelComponent },
+    { path: 'hotel/overview', component: OwerviewComponent },
+    { path: 'hotel/rooms', component: SinglehotelComponent },
+    { path: 'hotel/map', component: SimpleMapComponent }
 ];
 
 @NgModule({
@@ -44,7 +49,8 @@ const appRoutes: Routes =[
     HotelCardsComponent,
 	HotelComponent,
 	SimpleMapComponent,
-	OwerviewComponent,	
+	SinglehotelComponent,
+	OwerviewComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,17 +60,17 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
 	AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
-    }),	
+    }),
   ],
   exports: [ RouterModule ],
   providers: [
-    TopHotelsComponent, 
-    SliderComponent, 
-    BookinSectionComponent, 
-    AppService, 
+    TopHotelsComponent,
+    SliderComponent,
+    BookinSectionComponent,
+    AppService,
     HotelCardsComponent
   ],
-  
+
     bootstrap: [AppComponent]
 })
 export class AppModule { }
