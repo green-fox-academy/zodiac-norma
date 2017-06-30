@@ -6,10 +6,12 @@
             <div class='subtitle'>{{item.subtitle}}</div>
         </div>
         <div (click)="setClassIndex(1, 'translated-right')" class='arrow right'></div>
+    <div class="thumb-flex">
         <div class="thumb-container">
             <div class="thumblist" *ngFor="let thumb of thumbImages; let thumbIndex = index">
                 <div (click)="showAsMainImage(thumbIndex)" class="thumb" [ngStyle]="{'background-image': 'url('+thumb+')'}"></div>
             </div>
         </div>
+    </div>
     </div>
 </section>
