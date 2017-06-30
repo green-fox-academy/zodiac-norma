@@ -29,7 +29,7 @@ import { MyDatePickerModule } from 'mydatepicker';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { OwerviewComponent } from './hotel/owerview/owerview.component';
-import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
+import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 
 describe('AppComponent', () => {
     let locations, routing;
@@ -52,7 +52,8 @@ describe('AppComponent', () => {
                 SimpleHeaderComponent,
                 SimpleMapComponent,
                 OwerviewComponent,
-                SimpleMapComponent
+                SinglehotelComponent,
+                HotelComponent
             ],
             imports: [
                 HttpModule,
