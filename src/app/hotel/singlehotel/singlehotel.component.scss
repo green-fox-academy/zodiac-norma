@@ -1,9 +1,4 @@
-@import '../.././scss/break-points.scss';
-
-app-simple-map {
-    position: absolute;
-    display: none;
-}
+@import '../../.././scss/break-points.scss';
 
 .fullWidthHolder {
     width: 100%;
@@ -15,7 +10,7 @@ app-simple-map {
     width: 975px;
     height: 50px;
     position: absolute;
-    top: 636px;
+    top: 679px;
     display: flex;
     justify-content: center;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
@@ -30,8 +25,20 @@ app-simple-map {
     width: 975px;
     height: 1px;
     position: absolute;
-    top: 687px;
+    top: 630px;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+    }
+}
+
+.gradientBorderTop {
+    width: 975px;
+    height: 1px;
+    position: absolute;
+    top: 678px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
+    z-index: 1100;
     @media screen and (max-width: $break-collapse) {
         width: 100%;
     }
@@ -41,7 +48,7 @@ app-simple-map {
     width: 975px;
     height: 10px;
     position: absolute;
-    top: 683px;
+    top: 726px;
     background: radial-gradient(rgba(190, 190, 190, 0.5), rgba(255, 255, 255, 0));
     @media screen and (max-width: $break-collapse) {
         width: 100%;
@@ -70,7 +77,7 @@ app-simple-map {
 }
 
 .roomsContainer {
-    margin-top: 55px;
+    margin-top: 75px;
     width: 975px;
     min-height: 575px;
     display: flex;
@@ -116,7 +123,7 @@ app-simple-map {
 }
 
 .oneRoom {
-    margin-bottom: 55px;
+    margin-bottom: 75px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -129,8 +136,7 @@ app-simple-map {
     min-width: 150px;
     height: 100px;
     border-radius: 5px;
-    background-image: url(https://cdn.glitch.com/fede26cd-2622-4d50-b768-5da9b932383a%2Fpic1_mod.jpg?1497949004290);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     @media screen and (max-width: $break-big) {
         background-position: center;
