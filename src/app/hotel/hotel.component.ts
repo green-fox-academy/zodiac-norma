@@ -13,11 +13,12 @@ export class HotelComponent implements OnInit {
 
 	latitude;
 	longitude;
+	adress;
 
 	constructor(private request: AppService) { }
 
 	ngOnInit() {
-		this.request.getData('https://bookingnorma.glitch.me/hotel')
+		this.request.getData('https://two-ferns.glitch.me/hotel')
 			.subscribe(
 			(response: Response) => {
 				var data = response.json();
@@ -25,7 +26,7 @@ export class HotelComponent implements OnInit {
 
             	this.latitude= data[0].lt;
             	this.longitude = data[0].lng;
-				
+				this.adress = data[0].adr;
 			},
 			(error) => console.log(error)
 			);

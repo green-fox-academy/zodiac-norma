@@ -14,16 +14,13 @@ export class SimpleMapComponent implements OnInit {
 
 	@Input() lat;
 	@Input() long;
-
+	@Input() adress;
 	constructor(){
-    
   }
 
-	ngOnInit() {
-		
+	ngOnInit() {	
   	}
-
-
+	
 	public customStyle = [
     {
         "featureType": "administrative",
