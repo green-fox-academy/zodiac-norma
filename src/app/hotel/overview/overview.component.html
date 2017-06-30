@@ -1,6 +1,6 @@
 <div class='room-info-container'>
     <div class="room-info" *ngFor="let room of roomInfo">
-        <div class='image' [ngStyle]="{'background-image': 'url('+room.visual+')'}"></div>
+        <div class='visual' [ngStyle]="{'background-image': 'url('+room.visual+')'}"></div>
         <h3 class="title">{{room.title}} </h3>
         <p class="descr">{{room.description}}</p>
     </div>
