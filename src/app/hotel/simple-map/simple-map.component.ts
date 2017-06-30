@@ -1,13 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 
 @Component({
 	selector: 'app-simple-map',
 	templateUrl: './simple-map.component.html',
 	styleUrls: ['./simple-map.component.scss']
 })
+
 
 
 export class SimpleMapComponent implements OnInit {
@@ -20,7 +21,7 @@ export class SimpleMapComponent implements OnInit {
   }
 
 	ngOnInit() {
-		
+	
   	}
 
 

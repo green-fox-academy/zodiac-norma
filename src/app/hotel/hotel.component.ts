@@ -3,6 +3,7 @@ import { SimpleMapComponent } from './simple-map/simple-map.component';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { AppService } from '../app.service';
 import { Response } from '@angular/http';
+import { StreetviewComponent } from './streetview/streetview.component';
 
 @Component({
 	selector: 'app-hotel',
@@ -13,6 +14,9 @@ export class HotelComponent implements OnInit {
 
 	latitude;
 	longitude;
+
+  	lat:number = 45.521;
+  	lng:number = -122.677;
 
 	constructor(private request: AppService) { }
 
