@@ -88,27 +88,27 @@ describe('AppComponent', () => {
         fixture.detectChanges();
     });
 
-    it('Load the reservation page', async(() => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        routing.navigate(['reservation']).then(() => {
-            expect(locations.path()).toBe('/reservation');
-        });
-    }));
+    // it('Load the reservation page', async(() => {
+    //     const fixture = TestBed.createComponent(AppComponent);
+    //     fixture.detectChanges();
+    //     routing.navigate(['reservation']).then(() => {
+    //         expect(locations.path()).toBe('/reservation');
+    //     });
+    // }));
 
-    it('Load the home page', async(() => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        routing.navigate(['']).then(() => {
-            expect(locations.path()).toBe('/');
-        });
-    }));
+    // it('Load the home page', async(() => {
+    //     const fixture = TestBed.createComponent(AppComponent);
+    //     fixture.detectChanges();
+    //     routing.navigate(['']).then(() => {
+    //         expect(locations.path()).toBe('/');
+    //     });
+    // }));
 
-    it('should be created', () => {
-        expect(component).toBeTruthy();
-    });
+    // it('should be created', () => {
+    //     expect(component).toBeTruthy();
+    // });
 
-    it('should be created', () => {
-        expect(component).toBeTruthy();
-    });
+    // it('should be created', () => {
+    //     expect(component).toBeTruthy();
+    // });
 });

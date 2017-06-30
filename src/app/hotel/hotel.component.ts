@@ -5,6 +5,7 @@ import { AppService } from '../app.service';
 import { Response } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OwerviewComponent } from './owerview/owerview.component';
+import { SliderComponent } from '../slider/slider.component';
 
 @Component({
 	selector: 'app-hotel',

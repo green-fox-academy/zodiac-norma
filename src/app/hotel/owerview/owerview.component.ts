@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-owerview',
@@ -9,7 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class OwerviewComponent implements OnInit {
 
     constructor(
-        private route: ActivatedRoute,
         private router: Router) {}
 
   ngOnInit() {

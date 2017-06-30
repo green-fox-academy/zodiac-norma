@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { Router } from '@angular/router';
+import { SliderComponent } from '../../slider/slider.component';
 
 @Component({
     selector: 'app-singlehotel',
@@ -16,7 +17,6 @@ export class SinglehotelComponent implements OnInit {
     constructor(
         private roomData: AppService,
         private router: Router) {}
-
 
     ngOnInit() {
         this.getRequest();
