@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper, } from '@agm/core';
 
 declare var google: any;
@@ -8,12 +8,21 @@ declare var google: any;
   template: '',
 })
 export class StreetviewComponent implements OnInit {
-		
-	constructor(public mapApiWrapper:GoogleMapsAPIWrapper,) { 
+	private nativeElement;
 
+	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, element : ElementRef) { 
+		this.nativeElement = element.nativeElement;
+		
+		
+	}
+	ngAfterContentInit() {
+		console.log(this.nativeElement.querySelector('div'));
 	}
 
 	ngOnInit() {	
+		
+		console.log(document.querySelector('#sv'));
+		var mapFrame = document.querySelector('#sv');
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
 		console.log(map);
@@ -31,6 +40,13 @@ export class StreetviewComponent implements OnInit {
 			center: position,
 			radius: 10000
 		});
+		var panorama = new google.maps.StreetViewPanorama( mapFrame,{
+        	position: position,
+        	pov: {
+        	heading: 34,
+          	pitch: 10
+        }
+      })
 		
 	});
 }

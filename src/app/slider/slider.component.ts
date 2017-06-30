@@ -19,7 +19,7 @@ export class SliderComponent implements OnInit {
         this.nativeElement = element.nativeElement;
 		this.notNodeElement = element.nativeElement;
 	}
-
+	
 	ngOnInit() {
 
 
