@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
+
+declare var google: any;
 
 @Component({
 	selector: 'app-simple-map',
@@ -16,12 +18,42 @@ export class SimpleMapComponent implements OnInit {
 	@Input() long;
 	@Input() adress;
 	
-	constructor(){
+	constructor(public mapApiWrapper:GoogleMapsAPIWrapper){
   }
 
 	ngOnInit() {	
   	}
-	
+	toggleStreetview() {
+        console.log(document.querySelector('#sv'));
+        var mapFrame = document.querySelector('#sv');
+        this.mapApiWrapper.getNativeMap()
+        .then((map)=> {
+        console.log(map);
+        console.log(map.getZoom());
+
+        let position = new google.maps.LatLng(45.521, -122.677);
+        
+        var cityCircle = new google.maps.Circle({
+            strokeColor: '#FF0000',
+            strokeOpacity: 0.8,
+            strokeWeight: 2,
+            fillColor: '#FF0000',
+            fillOpacity: 0.35,
+            map: map,
+            center: position,
+            radius: 10000
+        });
+        var panorama = new google.maps.StreetViewPanorama( mapFrame,{
+            position: position,
+            pov: {
+            heading: 34,
+            pitch: 10
+        }
+      })
+        
+    });
+    }
+
 	public customStyle = [
     {
         "featureType": "administrative",
