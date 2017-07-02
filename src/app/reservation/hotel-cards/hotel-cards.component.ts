@@ -60,7 +60,7 @@ export class HotelCardsComponent implements OnInit {
                 'cardsPerPage': this.cardsPerPage
             }]
 
-            this.roomData.postData(this.sendData, 'https://two-ferns.glitch.me/api/hotels')
+            this.roomData.postData(this.sendData, 'https://two-ferns.glitch.me/api/hotels2')
             .subscribe(
                 (response: Response) => {
                     const cardData = response.json();

@@ -22,14 +22,14 @@ import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { AgmCoreModule } from '@agm/core';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
-import { OwerviewComponent } from './hotel/owerview/owerview.component';
+import { OverviewComponent } from './hotel/overview/overview.component';
 
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
     { path: 'reservation', component: ReservationComponent },
     { path: 'hotel', component: HotelComponent },
-    { path: 'hotel/overview', component: OwerviewComponent },
+    { path: 'hotel/overview', component: OverviewComponent },
     { path: 'hotel/rooms', component: SinglehotelComponent },
     { path: 'hotel/map', component: SimpleMapComponent }
 ];
@@ -50,7 +50,7 @@ const appRoutes: Routes =[
 	HotelComponent,
 	SimpleMapComponent,
 	SinglehotelComponent,
-	OwerviewComponent,
+	OverviewComponent,
   ],
   imports: [
     BrowserModule,

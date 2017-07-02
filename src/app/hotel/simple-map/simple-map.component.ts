@@ -1,9 +1,8 @@
 import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
-import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
-
-declare var google: any;
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	selector: 'app-simple-map',
@@ -14,53 +13,28 @@ declare var google: any;
 
 
 export class SimpleMapComponent implements OnInit {
-	private nativeElement;
-	@Input() lat;
-	@Input() long;
-
-	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, element : ElementRef){
-		this.nativeElement = element.nativeElement;
-  }
+	lat;
+	long;
+	adress;
+	constructor( private request: AppService,
+        private route: ActivatedRoute,
+        private router: Router) { 
+		
+	}
 
 	ngOnInit() {
-	
-  	}
-	ngAfterContentInit() {
-		console.log(this.nativeElement.querySelector('div'));
-	}
+		this.request.getData('https://two-ferns.glitch.me/hotel')
+			.subscribe(
+			(response: Response) => {
+				var data = response.json();
 
-	toggleStreetview() {
-		console.log(document.querySelector('#sv'));
-		var mapFrame = document.querySelector('#sv');
-		this.mapApiWrapper.getNativeMap()
-		.then((map)=> {
-		console.log(map);
-		console.log(map.getZoom());
-
-		let position = new google.maps.LatLng(45.521, -122.677);
-		
-		var cityCircle = new google.maps.Circle({
-			strokeColor: '#FF0000',
-			strokeOpacity: 0.8,
-			strokeWeight: 2,
-			fillColor: '#FF0000',
-			fillOpacity: 0.35,
-			map: map,
-			center: position,
-			radius: 10000
-		});
-		var panorama = new google.maps.StreetViewPanorama( mapFrame,{
-        	position: position,
-        	pov: {
-        	heading: 34,
-          	pitch: 10
-        }
-      })
-		
-	});
-	}
-		
-
+            	this.lat= data[0].lt;
+            	this.long = data[0].lng;
+				this.adress = data[0].adr;
+			},
+			(error) => console.log(error)
+			);
+  	}	
 	public customStyle = [
     {
         "featureType": "administrative",
@@ -208,5 +182,5 @@ export class SimpleMapComponent implements OnInit {
     }
 ];
 
-		
+	
 }; 
