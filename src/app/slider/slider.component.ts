@@ -39,7 +39,6 @@ export class SliderComponent implements OnInit {
 			);
 	}
 
-
 	imageData = [];
     thumbImages = [];
 	classIndex = 0;

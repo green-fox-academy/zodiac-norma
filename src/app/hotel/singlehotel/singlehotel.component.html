@@ -1,0 +1,34 @@
+<div class="slider">
+    <app-slider thumbnails="true" endpoint="hotel-slider" ></app-slider>
+</div>
+<div class="fullWidthHolder">
+    <div class="gradientBorderTop"></div>
+    <div class="whiteShadow">
+        <ul class="navContainer">
+            <li><a [routerLink]="['/hotel/overview']" class="navigation">Overview</a></li>
+            <li><a [routerLink]="['/hotel/rooms']" class="navigation"><strong>Rooms</strong></a></li>
+            <li><a [routerLink]="['/hotel/map']" class="navigation">Map</a></li>
+        </ul>
+    </div>
+    <div class="gradientBorder"></div>
+    <div class="gradientShadow"></div>
+</div>
+<div class="mainContainer">
+    <div class="roomsContainer">
+        <div class="roomsList">
+            <div class="header">Available rooms</div>
+            <div class="oneRoom" *ngFor="let room of rooms">
+                <div class="picture" [ngStyle]="{'background-image': 'url('+room.image+')'}"></div>
+                <div class="rightBar">
+                    <div class="title">{{room.title}}</div>
+                    <p class="text">{{room.description}}</p>
+                    <div class="button">Book now</div>
+                    <div class="price">{{room.price}} / night</div>
+                </div>
+            </div>
+        </div>
+        <div class='features'>
+            <div class="headerMobile">Available rooms</div>
+        </div>
+    </div>
+</div>
