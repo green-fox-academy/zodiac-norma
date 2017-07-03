@@ -24,6 +24,7 @@ import { AgmCoreModule } from '@agm/core';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 import { OverviewComponent } from './hotel/overview/overview.component';
 import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
+import { MultiLocationComponent } from './multi-location/multi-location.component';
 
 
 const appRoutes: Routes =[
@@ -32,7 +33,8 @@ const appRoutes: Routes =[
     { path: 'hotel', component: HotelComponent },
     { path: 'hotel/overview', component: OverviewComponent },
     { path: 'hotel/rooms', component: SinglehotelComponent },
-    { path: 'hotel/map', component: SimpleMapComponent }
+    { path: 'hotel/map', component: SimpleMapComponent },
+	{ path: 'multi-location', component: MultiLocationComponent }
 ];
 
 @NgModule({
@@ -53,6 +55,7 @@ const appRoutes: Routes =[
 	SinglehotelComponent,
 	OverviewComponent,
 	RoomFeaturesComponent,
+	MultiLocationComponent,
   ],
   imports: [
     BrowserModule,
