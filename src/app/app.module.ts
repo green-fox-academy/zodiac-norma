@@ -24,6 +24,8 @@ import { AgmCoreModule } from '@agm/core';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 import { OverviewComponent } from './hotel/overview/overview.component';
 import { HotelSubmenuComponent } from './hotel/hotel-submenu/hotel-submenu.component';
+import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
+
 
 
 const appRoutes: Routes =[
@@ -53,6 +55,8 @@ const appRoutes: Routes =[
 	SinglehotelComponent,
 	OverviewComponent,
 	HotelSubmenuComponent,
+	RoomFeaturesComponent
+
   ],
   imports: [
     BrowserModule,
