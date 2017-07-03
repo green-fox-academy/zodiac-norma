@@ -2,9 +2,18 @@
     <div class="gradientBorderTop"></div>
     <div class="whiteShadow">
         <ul class="navContainer">
-            <li><a #linken [routerLink]="['/hotel/overview']" class="navigation">Overview</a></li>
-            <li><a #linken [routerLink]="['/hotel/rooms']" class="navigation">Rooms</a></li>
-            <li><a #linken [routerLink]="['/hotel/map']" class="navigation">Map</a></li>
+            <li>
+                <a *ngIf="currentRoute == '/hotel/overview'" [routerLink]="['/hotel/overview']" class="highlight">Overview</a>
+                <a *ngIf="currentRoute !== '/hotel/overview'" [routerLink]="['/hotel/overview']" class="navigation">Overview</a>
+            </li>
+            <li>
+                <a *ngIf="currentRoute == '/hotel/rooms'" [routerLink]="['/hotel/rooms']" class="highlight">Rooms</a>
+                <a *ngIf="currentRoute !== '/hotel/rooms'" [routerLink]="['/hotel/rooms']" class="navigation">Rooms</a>
+            </li>
+            <li>
+                <a *ngIf="currentRoute == '/hotel/map'" [routerLink]="['/hotel/map']" class="highlight">Map</a>
+                <a *ngIf="currentRoute !== '/hotel/map'" [routerLink]="['/hotel/map']" class="navigation">Map</a>
+            </li>
         </ul>
     </div>
     <div class="gradientBorder"></div>
