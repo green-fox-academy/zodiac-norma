@@ -11,9 +11,8 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class OverviewComponent implements OnInit {
     name:string;
-    video: any = {id: 'wzrnuUOoFNM'};
+    video: any = {id: 'a_426RiwST8'};
     baseUrl:string = 'https://www.youtube.com/embed/';
-    
     roomInfo = {}
     url;
 
