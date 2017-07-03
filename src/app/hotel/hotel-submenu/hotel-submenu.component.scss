@@ -59,6 +59,7 @@
 }
 
 .navContainer {
+    padding: 0;
     min-width: 200px;
     display: flex;
     justify-content: flex-end;
@@ -75,4 +76,5 @@
     padding: 0px 17px;
     line-height: 50px;
     font-weight: bold;
+    background-color: red;
 }
