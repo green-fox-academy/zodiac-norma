@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
     templateUrl: './hotel-submenu.component.html',
     styleUrls: ['./hotel-submenu.component.scss']
 })
+
 export class HotelSubmenuComponent implements OnInit {
 
     @ViewChildren('link') link:ElementRef;
@@ -22,7 +23,7 @@ export class HotelSubmenuComponent implements OnInit {
         for (let i = 0; i < this.link._results.length; i++) {
             this.link._results[i].nativeElement.className = 'navigation';
         }
-        console.log(url.slice(7, 12));
+
         if (url.slice(7, 15) === 'overview') {
             this.link._results[0].nativeElement.className = 'highlighted';
         }
