@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+declare var google: any;
 
 @Component({
 	selector: 'app-simple-map',
@@ -13,25 +15,64 @@ export class SimpleMapComponent implements OnInit {
 	lat;
 	long;
 	adress;
-	constructor( private request: AppService,
-        private route: ActivatedRoute,
-        private router: Router) { 
-		
+	private nativeElement;
+	mapBox;
+
+	constructor( private request: AppService, private route: ActivatedRoute, private router: Router, public mapApiWrapper:GoogleMapsAPIWrapper, public element : ElementRef) { 
+		 //this.nativeElement = elementRef.nativeElement;
 	}
 
 	ngOnInit() {
+		this.ajax()
+		this.mapBox = this.element.nativeElement.querySelector('.map');
+		console.log(this.mapBox);
+		
+  	}
+
+	ajax() {
 		this.request.getData('https://two-ferns.glitch.me/hotel')
 			.subscribe(
 			(response: Response) => {
 				var data = response.json();
-
+				console.log(data);
             	this.lat= data[0].lt;
             	this.long = data[0].lng;
 				this.adress = data[0].adr;
 			},
 			(error) => console.log(error)
 			);
-  	}	
+	}
+
+	streetview() {
+		console.log(document.querySelector('#sv'));
+        var mapFrame = document.querySelector('#sv');
+        this.mapApiWrapper.getNativeMap()
+        .then((map)=> {
+	        console.log(map);
+	        console.log(map.getZoom());
+
+	        let position = new google.maps.LatLng(45.521, -122.677);
+	        
+	        var cityCircle = new google.maps.Circle({
+	            strokeColor: '#FF0000',
+	            strokeOpacity: 0.8,
+	            strokeWeight: 2,
+	            fillColor: '#FF0000',
+	            fillOpacity: 0.35,
+	            map: map,
+	            center: position,
+	            radius: 10000
+	        });
+	        var panorama = new google.maps.StreetViewPanorama( mapFrame,{
+			    position: position,
+			    pov: {
+			    heading: 34,
+			  pitch: 10
+				}
+			})
+    	})
+	}
+
 	public customStyle = [
     {
         "featureType": "administrative",
