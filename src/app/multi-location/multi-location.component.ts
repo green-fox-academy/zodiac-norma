@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+//import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -11,20 +11,31 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MultiLocationComponent implements OnInit {
 
+	data;
+	centre;
+
+	lat = -33.890542;
+	long = 151.274856;
+	
 	constructor(private request: AppService,
 		private route: ActivatedRoute,
 		private router: Router) { }
 
 	ngOnInit() {
-		this.ajax();
+		//this.ajax();
 	}
-	ajax() {
+
+	/*ajax() {
 		this.request.getData('https://two-ferns.glitch.me/multi-location')
 			.subscribe(
 			(response: Response) => {
-				var data = response.json();
+				this.data = response.json();
+				console.log(this.data);
+				
+				this.centre = { lat: this.data[0].lt, long: this.data[0].lng };
+				console.log(this.centre);
 			},
 			(error) => console.log(error)
 			);
-	}	
+	}*/
 }

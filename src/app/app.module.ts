@@ -20,11 +20,12 @@ import { SimpleHeaderComponent } from './reservation/simple-header/simple-header
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 import { OverviewComponent } from './hotel/overview/overview.component';
 import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
 import { MultiLocationComponent } from './multi-location/multi-location.component';
+import { MapObjectComponent } from './multi-location/map-object/map-object.component';
 
 
 const appRoutes: Routes =[
@@ -56,6 +57,7 @@ const appRoutes: Routes =[
 	OverviewComponent,
 	RoomFeaturesComponent,
 	MultiLocationComponent,
+	MapObjectComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,7 @@
 <p>
   multi-location works!
 </p>
-<div class='map'>
-	<agm-map [latitude]="lat" [longitude]="long">
-  		<agm-marker [latitude]="lat" [longitude]="long">
-			<agm-info-window [disableAutoPan]="true">{{address}}</agm-info-window>
-		</agm-marker>	
-	</agm-map>
-</div>
+
+<agm-map #map [latitude]="lat" [longitude]="long">
+  <app-map-object></app-map-object>
+</agm-map>
