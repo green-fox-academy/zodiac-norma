@@ -20,7 +20,7 @@
 	border-color:rgba(102,102,102, 0.2);
 	box-shadow: 0px 4px 10px 0px rgba(204,200,204,1);
 	border-radius: 3px;
-	@media screen and (max-width: $break-big) {
+	@media screen and (max-width: 1400px) {
 		min-height: 100%;
 		max-width: 320px;
 		min-width: 320px;
@@ -35,7 +35,7 @@
     flex-direction: column;
     margin: 25px;
     margin-top: 15px;
-    @media screen and (max-width: $break-big) {
+    @media screen and (max-width: 1400px) {
         margin-top: 0px;
         margin-bottom: 0px;
     }
@@ -60,7 +60,7 @@
 	background-size: 170px;
 	background-repeat: no-repeat;
 	background-position: left;
-	@media screen and (max-width: $break-big) {
+	@media screen and (max-width: 1400px) {
 		min-height: 220px;
 		background-size: contain;
 		background-position: center;
@@ -76,7 +76,7 @@ ul {
     font-weight: bolder;
     columns: 180px 2;
     list-style: inside disc;
-    @media screen and (max-width: $break-big) {
+    @media screen and (max-width: 1400px) {
         column-count: 1;
     }
 }
@@ -117,7 +117,7 @@ li span {
     color: white;
     font-weight: bold;
     cursor: pointer;
-    @media screen and (max-width: $break-big) {
+    @media screen and (max-width: 1400px) {
         margin-bottom: 20px;
         margin-right: 0;
     }
@@ -137,7 +137,7 @@ li span {
     border-color: rgb(205, 205, 205);
     border-width: 1px;
     cursor: pointer;
-    @media screen and (max-width: $break-big) {
+    @media screen and (max-width: 1400px) {
         min-width: 318px;
     }
 }
@@ -151,7 +151,7 @@ li span {
     font-size: 16px;
     color: rgb(49, 49, 49);
     cursor: default;
-    @media screen and (max-width: $break-collapse) {
+    @media screen and (max-width: 1400px) {
         min-width: 318px;
     }
 }
