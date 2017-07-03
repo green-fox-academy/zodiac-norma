@@ -48,6 +48,7 @@
 
 .spaceHolder {
     min-width: 975px;
+    background-color: yellow;
     @media screen and (max-width: $break-big) {
         min-width: 320px;
     }
@@ -63,10 +64,10 @@
     overflow-y: hidden;
     z-index: 0;
     @media screen and (max-width: 1800px) {
-        width: 400px;
+        width: 425px;
     }
     @media screen and (max-width: 1600px) {
-        width: 340px;
+        width: 330px;
     }
     @media screen and (max-width: 1400px) {
         width: 250px;
