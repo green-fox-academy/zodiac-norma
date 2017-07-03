@@ -46,5 +46,4 @@ export class MapObjectComponent implements OnInit {
 		map.fitBounds(bounds);
 		})
 	}
-
 }
