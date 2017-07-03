@@ -1,11 +1,14 @@
 <app-simple-header></app-simple-header>
 <app-hotel-submenu></app-hotel-submenu>
 <div class='room-info-container'>
-    <div class="room-info" *ngFor="let room of roomInfoWithImage">
-        <div class="image" [ngStyle]="{'background-image': 'url('+room.image+')'}"></div>
-        <h3 class="title">{{room.title}} </h3>
-        <p class="descr">{{room.description}}</p>
+    <div class="room-info1" *ngFor="let room1 of roomInfoWithImage">
+        <div class="image" [ngStyle]="{'background-image': 'url('+room1.image+')'}"></div>
+        <h3 class="title">{{room1.title}} </h3>
+        <p class="descr">{{room1.description}}</p>
     </div>
-    <iframe width="298" height="148" [src]="url" frameborder="0" allowfullscreen></iframe>
-
+    <div class="room-info2" *ngFor="let room2 of roomInfoWithFootage">
+        <iframe width="298" height="148" [src]="url" frameborder="0" allowfullscreen></iframe>
+        <h3 class="title">{{room2.title}} </h3>
+        <p class="descr">{{room2.description}}</p>
+    </div>
 </div>
