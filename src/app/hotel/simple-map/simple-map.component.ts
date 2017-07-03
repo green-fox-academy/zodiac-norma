@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { AgmCoreModule, MapsAPILoader } from '@agm/core';
@@ -9,6 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 	templateUrl: './simple-map.component.html',
 	styleUrls: ['./simple-map.component.scss']
 })
+
+
+
 export class SimpleMapComponent implements OnInit {
 	lat;
 	long;
