@@ -11,13 +11,14 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class OverviewComponent implements OnInit {
     name:string;
-    video: any = {id: 'a_426RiwST8'};
-    baseUrl:string = 'https://www.youtube.com/embed/';
-    roomInfo = {}
+    // video: any = {id: 'a_426RiwST8'};
+    roomImage = {};
+    roomVideo = {};
+    baseUrl:string = "https://www.youtube.com/embed/A2VK5xXjiDA";
     url;
 
     constructor(private appService: AppService, private sanitizer: DomSanitizer) { 
-        this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + this.video.id); 
+        // this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.roomVideo.footage); 
     }
     
     ngOnInit() {
@@ -25,7 +26,10 @@ export class OverviewComponent implements OnInit {
         .subscribe(
             (response: Response) => {
                 const roomData = response.json();
-                this.roomInfo = roomData;
+                console.log('valami', response);
+                this.roomImage = roomData[0];
+                this.roomVideo = roomData[1];
+                
             },
             (error) => console.log(error)
         );
