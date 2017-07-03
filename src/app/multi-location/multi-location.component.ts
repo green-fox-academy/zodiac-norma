@@ -22,6 +22,7 @@ export class MultiLocationComponent implements OnInit {
 	ngOnInit() {
 		this.ajax()
 	}
+	
 	ajax() {
 		this.request.getData('https://two-ferns.glitch.me/multi-location')
 			.subscribe(

@@ -20,19 +20,18 @@ export class MapObjectComponent implements OnInit {
 	ngOnInit() {
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
-			console.log(map);
-			console.log(this.data);
-			var latLng = {lat: this.data[0].lt, lng: this.data[0].lng};
+			console.log("map object: " + map);
+			console.log("data retrieved and inputted from parent component: " + this.data);	
 
-			let position = new google.maps.LatLng(this.data[0].lt, this.data[0].lng);
-
+			var bounds = new google.maps.LatLngBounds();
 			this.data.forEach((location) => {
 				var marker = new google.maps.Marker({
 				position: {lat: location.lt, lng: location.lng},
-				map: map,
-				
-				});
-			})		
+				map: map,	
+				})
+			bounds.extend(marker.position);
+			})	
+		map.fitBounds(bounds);
 		})
 	}
 
