@@ -4,6 +4,7 @@
 .room-info-container {
     max-width: 975px;
     min-width: 975px;
+    background-color: rgba(235, 235, 235, 1);
     @media screen and (max-width: $break-big) {
         min-width: 0px;
         margin-top: 20px;
@@ -52,5 +53,3 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
-

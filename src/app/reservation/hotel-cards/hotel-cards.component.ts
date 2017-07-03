@@ -106,8 +106,6 @@ export class HotelCardsComponent implements OnInit {
 
                 this.features.push(onesFeatures);
             }
-            console.log(this.features);
-            console.log(this.currentHotels);
         }
 
         buttonQuery = function() {
