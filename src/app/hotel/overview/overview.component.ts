@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
-// import {SafeResourceUrl, DomSanitizationService} from '@angular/platform-browser';
 import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
@@ -11,14 +10,13 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class OverviewComponent implements OnInit {
     name:string;
-    // video: any = {id: 'a_426RiwST8'};
+    video: any = {id: 'A2VK5xXjiDA'};
     roomImage = {};
-    roomVideo = {};
-    baseUrl:string = "https://www.youtube.com/embed/A2VK5xXjiDA";
+    baseUrl:string = "https://www.youtube.com/embed/";
     url;
 
     constructor(private appService: AppService, private sanitizer: DomSanitizer) { 
-        // this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.roomVideo.footage); 
+        this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + this.video.id); 
     }
     
     ngOnInit() {
@@ -26,9 +24,7 @@ export class OverviewComponent implements OnInit {
         .subscribe(
             (response: Response) => {
                 const roomData = response.json();
-                console.log('valami', response);
-                this.roomImage = roomData[0];
-                this.roomVideo = roomData[1];
+                this.roomImage = roomData;
                 
             },
             (error) => console.log(error)

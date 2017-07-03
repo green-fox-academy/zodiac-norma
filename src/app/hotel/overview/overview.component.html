@@ -4,9 +4,6 @@
         <h3 class="title">{{room.title}} </h3>
         <p class="descr">{{room.description}}</p>
     </div>
-    <div class="room-info" *ngFor="let room of roomVideo">
-        <iframe width="560" height="315" [src]="room.video" frameborder="0" allowfullscreen></iframe>
-        <h3 class="title">{{room.title}} </h3>
-        <p class="descr">{{room.description}}</p>
-    </div>
+    <iframe width="560" height="315" [src]="url" frameborder="0" allowfullscreen></iframe>
+
 </div>
