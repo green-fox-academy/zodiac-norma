@@ -20,7 +20,7 @@ import { SimpleHeaderComponent } from './reservation/simple-header/simple-header
 import { HotelCardsComponent } from './reservation/hotel-cards/hotel-cards.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
-import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 import { OverviewComponent } from './hotel/overview/overview.component';
 import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
@@ -75,7 +75,8 @@ const appRoutes: Routes =[
     SliderComponent,
     BookinSectionComponent,
     AppService,
-    HotelCardsComponent
+    HotelCardsComponent,
+	GoogleMapsAPIWrapper
   ],
 
     bootstrap: [AppComponent]

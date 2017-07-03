@@ -1,7 +1,8 @@
 <p>
   multi-location works!
 </p>
-
-<agm-map #map [latitude]="lat" [longitude]="long">
-  <app-map-object></app-map-object>
-</agm-map>
+<div *ngIf='data'>
+	<agm-map [latitude]="centre.lat" [longitude]="centre.long">
+	<app-map-object [data]='data'></app-map-object>
+	</agm-map>
+</div>

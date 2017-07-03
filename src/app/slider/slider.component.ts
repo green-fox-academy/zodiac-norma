@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
 

@@ -1,31 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
-//import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MapObjectComponent } from './map-object/map-object.component'
 
 @Component({
 	selector: 'app-multi-location',
 	templateUrl: './multi-location.component.html',
 	styleUrls: ['./multi-location.component.scss']
 })
-export class MultiLocationComponent implements OnInit {
 
+export class MultiLocationComponent implements OnInit {
 	data;
 	centre;
-
-	lat = -33.890542;
-	long = 151.274856;
 	
-	constructor(private request: AppService,
+	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, private request: AppService,
 		private route: ActivatedRoute,
 		private router: Router) { }
 
 	ngOnInit() {
-		//this.ajax();
+		this.ajax()
 	}
-
-	/*ajax() {
+	ajax() {
 		this.request.getData('https://two-ferns.glitch.me/multi-location')
 			.subscribe(
 			(response: Response) => {
@@ -34,8 +31,11 @@ export class MultiLocationComponent implements OnInit {
 				
 				this.centre = { lat: this.data[0].lt, long: this.data[0].lng };
 				console.log(this.centre);
+
 			},
 			(error) => console.log(error)
 			);
-	}*/
+	}
+
+
 }
