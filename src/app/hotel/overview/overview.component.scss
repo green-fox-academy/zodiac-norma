@@ -32,7 +32,7 @@
     text-align: left;
     font-weight: normal;
     font-size: 20px;
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: $break-big) {
         display: none;
     }
 }
@@ -48,7 +48,7 @@
     border-bottom: dashed;
     border-color: rgb(200, 200, 200);
     border-width: 1px;
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: $break-big) {
         width: 320px;
         display: none;
     }
@@ -64,15 +64,25 @@
 .room-info1 {
     margin-left: 18.5px;
     margin-right: 18.5px;
+    @media screen and (max-width: $break-big) {
+        margin-top: 50px;
+    }
 }
 
 .room-info1:nth-child(1) {
     margin-left: 0;
+    @media screen and (max-width: $break-big) {
+        margin-left: 18.5px;
+        margin-top: 0px;
+    }
 }
 
 .room-info2 {
     margin-left: 18.5px;
     margin-right: 0px;
+    @media screen and (max-width: $break-big) {
+        margin-top: 50px;
+    }
 }
 
 .image {
