@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AppService } from '../../../app.service';
+import { Routes, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpModule } from '@angular/http';
 import { RoomFeaturesComponent } from './room-features.component';
 
 describe('RoomFeaturesComponent', () => {
@@ -8,7 +11,9 @@ describe('RoomFeaturesComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoomFeaturesComponent ]
+      declarations: [ RoomFeaturesComponent ],
+	  imports: [HttpModule, RouterTestingModule ],
+	  providers: [AppService]
     })
     .compileComponents();
   }));
