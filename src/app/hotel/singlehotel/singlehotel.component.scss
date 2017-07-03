@@ -1,5 +1,11 @@
 @import '../../.././scss/break-points.scss';
 
+.submenu {
+    width: 100%;
+    position: absolute;
+    top: 679px;
+}
+
 .mainContainer {
     height: 49.5%;
     min-height: 575px;

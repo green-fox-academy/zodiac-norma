@@ -23,7 +23,11 @@ export class HotelSubmenuComponent implements OnInit {
         for (let i = 0; i < this.link._results.length; i++) {
             this.link._results[i].nativeElement.className = 'navigation';
         }
-
+        this.link._results[0].nativeElement.className = 'highlighted';
+        console.log('overview:   ' + url.slice(7, 15));
+        console.log('rooms:   ' + url.slice(7, 12));
+        console.log('map:   ' + url.slice(7, 10));
+        console.log(this.link._results[0].nativeElement.className);
         if (url.slice(7, 15) === 'overview') {
             this.link._results[0].nativeElement.className = 'highlighted';
         }

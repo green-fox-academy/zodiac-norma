@@ -3,18 +3,18 @@
 .fullWidthHolder {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(235, 235, 235, 1);
 }
 
 .whiteShadow {
     width: 100%;
     max-width: 975px;
     height: 50px;
-    position: absolute;
-    top: 679px;
     display: flex;
     justify-content: center;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    background: linear-gradient(to right, rgba(235, 235, 235, 0), rgba(255, 255, 255, 1), rgba(235, 235, 235, 0));
     z-index: 1100;
     @media screen and (max-width: $break-collapse) {
         width: 100%;
@@ -26,8 +26,7 @@
     width: 100%;
     max-width: 975px;
     height: 1px;
-    position: absolute;
-    top: 730px;
+    top: 51px;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
     @media screen and (max-width: $break-collapse) {
         width: 100%;
@@ -38,8 +37,7 @@
     width: 100%;
     max-width: 975px;
     height: 1px;
-    position: absolute;
-    top: 678px;
+    top: -1px;
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
     z-index: 1100;
     @media screen and (max-width: $break-collapse) {
@@ -51,9 +49,10 @@
     width: 100%;
     max-width: 975px;
     height: 10px;
-    position: absolute;
-    top: 726px;
+    position: relative;
+    top: -5px;
     background: radial-gradient(rgba(190, 190, 190, 0.3), rgba(255, 255, 255, 0));
+    z-index: -1;
     @media screen and (max-width: $break-big) {
         width: 100%;
     }
