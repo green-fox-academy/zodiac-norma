@@ -4,5 +4,7 @@
 <div class='map'>
 	<agm-map [styles]="customStyle" [latitude]="lat" [longitude]="long">
   		<agm-marker [latitude]="lat" [longitude]="long"></agm-marker>
+		<app-streetview [lat]="lat" [long]="long"></app-streetview>
 	</agm-map>
 </div>
+<button class='svButton' (click)="streetview()">get streetview</button>

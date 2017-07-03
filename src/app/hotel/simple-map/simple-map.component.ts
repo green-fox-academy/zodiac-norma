@@ -3,8 +3,9 @@ import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StreetviewComponent } from './streetview/streetview.component';
 
-declare var google: any;
+
 
 @Component({
 	selector: 'app-simple-map',
@@ -18,14 +19,12 @@ export class SimpleMapComponent implements OnInit {
 	private nativeElement;
 	mapBox;
 
-	constructor( private request: AppService, private route: ActivatedRoute, private router: Router, public mapApiWrapper:GoogleMapsAPIWrapper, public element : ElementRef) { 
-		 //this.nativeElement = elementRef.nativeElement;
+	constructor( private request: AppService, private route: ActivatedRoute, private router: Router, ) { 
+		 
 	}
 
 	ngOnInit() {
 		this.ajax()
-		this.mapBox = this.element.nativeElement.querySelector('.map');
-		console.log(this.mapBox);
 		
   	}
 
@@ -43,35 +42,6 @@ export class SimpleMapComponent implements OnInit {
 			);
 	}
 
-	streetview() {
-		console.log(document.querySelector('#sv'));
-        var mapFrame = document.querySelector('#sv');
-        this.mapApiWrapper.getNativeMap()
-        .then((map)=> {
-	        console.log(map);
-	        console.log(map.getZoom());
-
-	        let position = new google.maps.LatLng(45.521, -122.677);
-	        
-	        var cityCircle = new google.maps.Circle({
-	            strokeColor: '#FF0000',
-	            strokeOpacity: 0.8,
-	            strokeWeight: 2,
-	            fillColor: '#FF0000',
-	            fillOpacity: 0.35,
-	            map: map,
-	            center: position,
-	            radius: 10000
-	        });
-	        var panorama = new google.maps.StreetViewPanorama( mapFrame,{
-			    position: position,
-			    pov: {
-			    heading: 34,
-			  pitch: 10
-				}
-			})
-    	})
-	}
 
 	public customStyle = [
     {
