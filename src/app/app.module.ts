@@ -23,6 +23,7 @@ import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { AgmCoreModule } from '@agm/core';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
 import { OverviewComponent } from './hotel/overview/overview.component';
+import { HotelSubmenuComponent } from './hotel/hotel-submenu/hotel-submenu.component';
 
 
 const appRoutes: Routes =[
@@ -51,6 +52,7 @@ const appRoutes: Routes =[
 	SimpleMapComponent,
 	SinglehotelComponent,
 	OverviewComponent,
+	HotelSubmenuComponent,
   ],
   imports: [
     BrowserModule,
