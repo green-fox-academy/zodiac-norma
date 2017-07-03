@@ -6,6 +6,7 @@ import { AppService } from '../app.service';
 import { Response } from '@angular/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SliderComponent } from '../slider/slider.component';
+import { HotelSubmenuComponent } from './hotel-submenu/hotel-submenu.component';
 
 @Component({
 	selector: 'app-hotel',
@@ -23,7 +24,7 @@ export class HotelComponent implements OnInit {
         private router: Router) {}
 
 	ngOnInit() {
-		
+
 	}
 
 }

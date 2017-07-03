@@ -1,19 +1,7 @@
 <div class="slider">
     <app-slider thumbnails="true" endpoint="hotel-slider" ></app-slider>
 </div>
-<div class="fullWidthHolder">
-    <div class="gradientBorderTop"></div>
-    <div class="whiteShadow">
-        <ul class="navContainer">
-            <li><a [routerLink]="['/hotel/overview']" class="navigation">Overview</a></li>
-            <li><a [routerLink]="['/hotel/rooms']" class="navigation"><strong>Rooms</strong></a></li>
-            <li><a [routerLink]="['/hotel/map']" class="navigation">Map</a></li>
-        </ul>
-    </div>
-    <div class="gradientBorder"></div>
-    <div class="gradientShadow"></div>
-</div>
-
+<app-hotel-submenu></app-hotel-submenu>
 <div class="mainContainer">
     <div class="roomsContainer">
         <div class="roomsList">
@@ -30,8 +18,7 @@
         </div>
         <div class='features'>
             <div class="headerMobile">Available rooms</div>
+            <app-room-features></app-room-features>
         </div>
     </div>
 </div>
-
-<app-room-features></app-room-features>
