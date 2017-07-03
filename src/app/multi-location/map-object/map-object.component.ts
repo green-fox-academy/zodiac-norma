@@ -12,6 +12,7 @@ declare var google:any;
   //templateUrl: './map-object.component.html',
   //styleUrls: ['./map-object.component.scss']
 })
+
 export class MapObjectComponent implements OnInit {
 	@Input() data;
 
@@ -24,11 +25,22 @@ export class MapObjectComponent implements OnInit {
 			console.log("data retrieved and inputted from parent component: " + this.data);	
 
 			var bounds = new google.maps.LatLngBounds();
+
 			this.data.forEach((location) => {
 				var marker = new google.maps.Marker({
-				position: {lat: location.lt, lng: location.lng},
-				map: map,	
+					position: {lat: location.lt, lng: location.lng},
+					map: map,
+					id: location.id,	
 				})
+				var infowindow = new google.maps.InfoWindow({
+          			content: "for now it is the id: " + marker.id
+        		});
+				marker.addListener('click', function() {
+          			console.log(marker.id);  
+        		})
+				marker.addListener('click', function() {
+          			infowindow.open(map, marker);
+        		});
 			bounds.extend(marker.position);
 			})	
 		map.fitBounds(bounds);

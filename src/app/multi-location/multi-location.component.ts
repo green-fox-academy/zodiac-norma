@@ -13,8 +13,7 @@ import { MapObjectComponent } from './map-object/map-object.component'
 
 export class MultiLocationComponent implements OnInit {
 	data;
-	centre;
-	
+		
 	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, private request: AppService,
 		private route: ActivatedRoute,
 		private router: Router) { }
@@ -22,17 +21,13 @@ export class MultiLocationComponent implements OnInit {
 	ngOnInit() {
 		this.ajax()
 	}
-	
+
 	ajax() {
 		this.request.getData('https://two-ferns.glitch.me/multi-location')
 			.subscribe(
 			(response: Response) => {
 				this.data = response.json();
 				console.log(this.data);
-				
-				this.centre = { lat: this.data[0].lt, long: this.data[0].lng };
-				console.log(this.centre);
-
 			},
 			(error) => console.log(error)
 			);
