@@ -12,7 +12,7 @@ describe('RoomFeaturesComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RoomFeaturesComponent ],
-	  imports: [HttpModule, RouterTestingModule ],
+	  imports: [ HttpModule, RouterTestingModule ],
 	  providers: [AppService]
     })
     .compileComponents();
