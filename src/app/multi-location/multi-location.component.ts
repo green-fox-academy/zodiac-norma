@@ -13,7 +13,7 @@ import { MapObjectComponent } from './map-object/map-object.component'
 
 export class MultiLocationComponent implements OnInit {
 	data;
-		
+
 	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, private request: AppService,
 		private route: ActivatedRoute,
 		private router: Router) { }
@@ -32,6 +32,4 @@ export class MultiLocationComponent implements OnInit {
 			(error) => console.log(error)
 			);
 	}
-
-
 }

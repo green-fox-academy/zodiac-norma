@@ -1,0 +1,79 @@
+@import '../../.././scss/break-points.scss';
+
+.fullWidthHolder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(235, 235, 235, 1);
+}
+
+.whiteShadow {
+    width: 100%;
+    max-width: 975px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to right, rgba(235, 235, 235, 0), rgba(255, 255, 255, 1), rgba(235, 235, 235, 0));
+    z-index: 1100;
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.gradientBorder {
+    width: 100%;
+    max-width: 975px;
+    height: 1px;
+    top: 51px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+    }
+}
+
+.gradientBorderTop {
+    width: 100%;
+    max-width: 975px;
+    height: 1px;
+    top: -1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(190, 190, 190, 1), rgba(255, 255, 255, 0));
+    z-index: 1100;
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+    }
+}
+
+.gradientShadow {
+    width: 100%;
+    max-width: 975px;
+    height: 10px;
+    position: relative;
+    top: -5px;
+    background: radial-gradient(rgba(190, 190, 190, 0.3), rgba(255, 255, 255, 0));
+    z-index: -1;
+    @media screen and (max-width: $break-big) {
+        width: 100%;
+    }
+}
+
+.navContainer {
+    padding: 0;
+    min-width: 200px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navigation {
+    color: rgb(55, 55, 55);
+    padding: 0px 17px;
+    line-height: 50px;
+}
+
+.highlight {
+    color: rgb(55, 55, 55);
+    padding: 0px 17px;
+    line-height: 50px;
+    font-weight: bold;
+}
