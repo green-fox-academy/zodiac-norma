@@ -1,9 +1,9 @@
 <div class='room-info-container'>
-    <div class="room-info" *ngFor="let room of roomImage">
+    <div class="room-info" *ngFor="let room of roomInfoWithImage">
         <div class="image" [ngStyle]="{'background-image': 'url('+room.image+')'}"></div>
         <h3 class="title">{{room.title}} </h3>
         <p class="descr">{{room.description}}</p>
     </div>
-    <iframe width="560" height="315" [src]="url" frameborder="0" allowfullscreen></iframe>
+    <iframe width="298" height="148" [src]="url" frameborder="0" allowfullscreen></iframe>
 
 </div>

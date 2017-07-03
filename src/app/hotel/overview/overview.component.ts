@@ -12,6 +12,8 @@ export class OverviewComponent implements OnInit {
     name:string;
     video: any = {id: 'A2VK5xXjiDA'};
     roomImage = {};
+    roomInfoWithImage = {};
+    roomInfoWithFootage = {};
     baseUrl:string = "https://www.youtube.com/embed/";
     url;
 
@@ -25,10 +27,15 @@ export class OverviewComponent implements OnInit {
             (response: Response) => {
                 const roomData = response.json();
                 this.roomImage = roomData;
-                
+                this.roomInfoWithImage = roomData[0];
+                this.roomInfoWithFootage = roomData[1]
+                console.log('dadad', this.roomImage);
+                console.log('image', this.roomInfoWithImage);
+                console.log('vid', this.roomInfoWithFootage[0].footage);
             },
             (error) => console.log(error)
         );
-  }
+    }
+
 
 }
