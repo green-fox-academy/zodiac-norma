@@ -9,5 +9,5 @@ export class ReservationComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit() {}    
+    ngOnInit() {}
 }
