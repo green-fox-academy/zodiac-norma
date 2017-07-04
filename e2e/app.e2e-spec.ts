@@ -20,9 +20,9 @@ it('should display: Book a room online', done => {
     expect(elem.isPresent()).toBeTruthy();
   });
 
-  it('type of room initially should be Select a type of room', () => {
-    let elem = element(by.css('#adults'));
-    expect(elem.value).toBe('1');
+  it('location placeholder should be City name', () => {
+      let elem = element(by.css('#location'));
+      expect(elem.getAttribute('placeholder')).toBe('City name');
   });
 
   it('first datepicker placeholder initially should be DD/MM/YYYY', () => {
