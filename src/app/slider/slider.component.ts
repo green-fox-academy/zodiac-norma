@@ -30,6 +30,7 @@ export class SliderComponent implements OnInit {
 			.subscribe(
 			(response: Response) => {
 				let sliderData = response.json();
+				
 				this.createImageObjects(sliderData)
                 if (this.thumbNailNeed === 'true') {
                     this.createThumbNails(sliderData)
