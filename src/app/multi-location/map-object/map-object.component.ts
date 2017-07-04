@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterContentInit, Input, Output , EventEmitter} from '@angular/core';
-import {GoogleMapsAPIWrapper} from '@agm/core';
+import { GoogleMapsAPIWrapper } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from '../../app.service';
 import { Response } from '@angular/http';
@@ -9,8 +9,6 @@ declare var google:any;
 @Component({
   selector: 'app-map-object',
   template: '',
-  //templateUrl: './map-object.component.html',
-  //styleUrls: ['./map-object.component.scss']
 })
 
 export class MapObjectComponent implements OnInit {
@@ -40,6 +38,9 @@ export class MapObjectComponent implements OnInit {
         		})
 				marker.addListener('click', function() {
           			infowindow.open(map, marker);
+        		});
+				map.addListener('dragstart', function() {
+          			console.log('map dragged'); 
         		});
 			bounds.extend(marker.position);
 			})	

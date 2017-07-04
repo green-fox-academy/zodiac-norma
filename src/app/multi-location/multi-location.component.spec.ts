@@ -7,23 +7,23 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MapObjectComponent } from './map-object/map-object.component';
 
 describe('MultiLocationComponent', () => {
-  let component: MultiLocationComponent;
-  let fixture: ComponentFixture<MultiLocationComponent>;
+	let component: MultiLocationComponent;
+	let fixture: ComponentFixture<MultiLocationComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ MultiLocationComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+		declarations: [ MultiLocationComponent ]
+		})
+		.compileComponents();
+  	}));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(MultiLocationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(MultiLocationComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+  	});
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
+	it('should be created', () => {
+		expect(component).toBeTruthy();
+  	});
 });
