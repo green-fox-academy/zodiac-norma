@@ -6,7 +6,7 @@
     <div class='room-info-container'>
         <div class="text-container">
             <h1 class="header">Overview</h1>
-            <p class="section-description">Welcome to our hotel! Below you can see our suits and rooms.</p>
+            <p class="section-description">Welcome to our hotel! Below you can see our suites and rooms.</p>
         </div>
         <div class="loop-container">
             <div class="room-info1" *ngFor="let room1 of roomInfoWithImage">
@@ -15,7 +15,7 @@
                 <p class="descr">{{room1.description}}</p>
             </div>
             <div class="room-info2" *ngFor="let room2 of roomInfoWithFootage">
-                <a ng-box src={{room2.footage}} href=""><img width="298" height="148" src={{thumbnail}} alt=""><span class="playBtn"><img src="http://wptf.com/wp-content/uploads/2014/05/play-button.png" width="50" height="50" alt=""></span></a>
+                <a ng-box src={{room2.footage}} href=""><img width="298" height="148" src={{thumbnail}} alt="" (click)="autopllay()"><span class="playBtn"><img src="http://wptf.com/wp-content/uploads/2014/05/play-button.png" width="50" height="50" alt=""></span></a>
                 <h3 class="title">{{room2.title}}</h3>
                 <p class="descr">{{room2.description}}</p>
             </div>
