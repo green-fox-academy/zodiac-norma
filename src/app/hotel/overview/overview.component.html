@@ -1,3 +1,4 @@
+<ngbox></ngbox>
 <app-simple-header></app-simple-header>
 <app-hotel-submenu></app-hotel-submenu>
 
@@ -14,7 +15,7 @@
                 <p class="descr">{{room1.description}}</p>
             </div>
             <div class="room-info2" *ngFor="let room2 of roomInfoWithFootage">
-                <iframe width="298" height="148" [src]="url" frameborder="0" allowfullscreen></iframe>
+                <a ng-box src={{room2.footage}} href=""><img width="298" height="148" src={{thumbnail}} alt=""></a>
                 <h3 class="title">{{room2.title}} </h3>
                 <p class="descr">{{room2.description}}</p>
             </div>
