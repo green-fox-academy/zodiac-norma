@@ -19,7 +19,7 @@ export class HotelCardsComponent implements OnInit {
     buttonClass = 'roomButton';
 
     classSelector;
-    typeofroom;
+    location;
     checkin;
     checkout;
     adults;
@@ -38,7 +38,7 @@ export class HotelCardsComponent implements OnInit {
             this.subscribe = this.route
             .queryParams
             .subscribe(params => {
-                this.typeofroom = params['typeofroom'];
+                this.location = params['location'];
                 this.checkin = params['checkin'];
                 this.checkout = params['checkout'];
                 this.adults = params['adults'];
@@ -51,7 +51,7 @@ export class HotelCardsComponent implements OnInit {
 
         postRequest = function () {
             this.sendData = [{
-                'typeofroom': this.typeofroom,
+                'location': this.location,
                 'checkin': this.checkin,
                 'checkout': this.checkout,
                 'adults': this.adults,
@@ -121,7 +121,7 @@ export class HotelCardsComponent implements OnInit {
 
             this.router.navigate(['/reservation'],
             { queryParams: {
-                typeofroom: this.typeofroom,
+                location: this.location,
                 checkin: this.checkin,
                 checkout: this.checkout,
                 adults: this.adults,
