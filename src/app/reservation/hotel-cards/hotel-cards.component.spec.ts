@@ -128,7 +128,7 @@ describe('HotelCardsComponent', () => {
             })));
         });
 
-        component.ngOnInit()
+        component.ngOnInit();
 
         fixture.detectChanges();
         fixture.whenStable().then(() => {
