@@ -11,12 +11,12 @@
         <div class="loop-container">
             <div class="room-info1" *ngFor="let room1 of roomInfoWithImage">
                 <div class="image" [ngStyle]="{'background-image': 'url('+room1.image+')'}"></div>
-                <h3 class="title">{{room1.title}} </h3>
+                <h3 class="title">{{room1.title}}</h3>
                 <p class="descr">{{room1.description}}</p>
             </div>
             <div class="room-info2" *ngFor="let room2 of roomInfoWithFootage">
-                <a ng-box src={{room2.footage}} href=""><img width="298" height="148" src={{thumbnail}} alt=""></a>
-                <h3 class="title">{{room2.title}} </h3>
+                <a ng-box src={{room2.footage}} href=""><img width="298" height="148" src={{thumbnail}} alt=""><span class="playBtn"><img src="http://wptf.com/wp-content/uploads/2014/05/play-button.png" width="50" height="50" alt=""></span></a>
+                <h3 class="title">{{room2.title}}</h3>
                 <p class="descr">{{room2.description}}</p>
             </div>
         </div>
