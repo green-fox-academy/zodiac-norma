@@ -10,18 +10,14 @@ import { Router } from '@angular/router';
 })
 export class RoomFeaturesComponent implements OnInit {
 	inputId = 2;
-	roomFeatures;
-	featureList = [];
-
-	airCo = 'Air Condition';
-	bar = 'Bar';
-	gym = 'Gym';
-	parking = 'Parking';
-	pets = "Pets allowed"
-	restaurant = 'Restaurant';
-	swimpool = 'Swimming Pool';
-	wifi = 'Free Wifi';
-
+	rawData;
+	features = ['Air Condition','Bar', 'Gym', 'Parking', 'Pets allowed', 'Restaurant', 'Swimming Pool', 'Free Wifi' ];
+	
+	listAll = [];
+	ifFeatureExist = [];
+	result = {};
+	toDisplay = [];
+	
 	constructor(private appService: AppService, private router: Router) { }
 
 	ngOnInit() {
@@ -30,46 +26,27 @@ export class RoomFeaturesComponent implements OnInit {
             (response: Response) => {
                 const resp = response.json();
 				console.log(resp);
-                this.roomFeatures = resp.data.attributes;
-				console.log(this.roomFeatures);
-				this.createList()
+                this.rawData = resp.data.attributes;
+				this.createObject();
             },
             (error) => console.log(error)
-        );
-		
+        );	
 	};
-	createList() {
-		if (this.roomFeatures.has_air_conditioning === true) {
-			this.featureList.push(this.airCo)
+
+	createObject() {
+		for (let prop in this.rawData) {
+			this.listAll.push(this.rawData[prop]);
+			this.ifFeatureExist = this.listAll.slice(3, 11);
 		}
-		if (this.roomFeatures.has_bar === true) {
-			this.featureList.push(this.bar)
+		this.features.forEach((feature, value) => this.result[feature] = this.ifFeatureExist[value]);	
+		this.selectFeature();
+	};
+
+	selectFeature() {
+		for (let prop in this.result) {
+			if (this.result[prop] === true) {	
+				this.toDisplay.push(prop)
+			}
 		}
-		if (this.roomFeatures.has_parking === true) {
-			this.featureList.push(this.parking)
-		}
-		if (this.roomFeatures.has_gym === true) {
-			this.featureList.push(this.gym)
-		}
-		if (this.roomFeatures.has_pets === true) {
-			this.featureList.push(this.pets)
-		}
-		if (this.roomFeatures.has_restaurant === true) {
-			this.featureList.push(this.restaurant)
-		}
-		if (this.roomFeatures.has_swimming_pool === true) {
-			this.featureList.push(this.swimpool)
-		}
-		if (this.roomFeatures.has_wifi === true) {
-			this.featureList.push(this.wifi)
-		}
-		console.log(this.featureList);
-		//this.renderList()
 	}
-
-	/*renderList() {
-		this.featureList.forEach((el) => {
-
-		})
-	}*/
 }
