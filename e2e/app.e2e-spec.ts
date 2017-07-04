@@ -21,7 +21,7 @@ it('should display: Book a room online', done => {
   });
 
   it('type of room initially should be Select a type of room', () => {
-    let elem = element(by.css('#adultInput'));
+    let elem = element(by.css('#adults'));
     expect(elem.value).toBe('1');
   });
 
