@@ -26,6 +26,8 @@ import { OverviewComponent } from './hotel/overview/overview.component';
 import { HotelSubmenuComponent } from './hotel/hotel-submenu/hotel-submenu.component';
 import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
 
+import { NgBoxModule } from 'ngbox/ngbox.module';
+import { NgBoxService } from 'ngbox/ngbox.service';
 
 
 const appRoutes: Routes =[
@@ -38,45 +40,47 @@ const appRoutes: Routes =[
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SliderComponent,
-    BookinSectionComponent,
-    TopHotelsComponent,
-    HeaderComponent,
-    HomeComponent,
-    ReservationComponent,
-    FooterComponent,
-    CheckFormComponent,
-    SimpleHeaderComponent,
-    HotelCardsComponent,
-	HotelComponent,
-	SimpleMapComponent,
-	SinglehotelComponent,
-	OverviewComponent,
-	HotelSubmenuComponent,
-	RoomFeaturesComponent
+    declarations: [
+        AppComponent,
+        SliderComponent,
+        BookinSectionComponent,
+        TopHotelsComponent,
+        HeaderComponent,
+        HomeComponent,
+        ReservationComponent,
+        FooterComponent,
+        CheckFormComponent,
+        SimpleHeaderComponent,
+        HotelCardsComponent,
+        HotelComponent,
+        SimpleMapComponent,
+        SinglehotelComponent,
+        OverviewComponent,
+        HotelSubmenuComponent,
+        RoomFeaturesComponent
 
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MyDatePickerModule,
-    RouterModule.forRoot(appRoutes),
-	AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
-    }),
-  ],
-  exports: [ RouterModule ],
-  providers: [
-    TopHotelsComponent,
-    SliderComponent,
-    BookinSectionComponent,
-    AppService,
-    HotelCardsComponent
-  ],
-
+    ],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        FormsModule,
+        HttpModule,
+        MyDatePickerModule,
+        NgBoxModule,
+        RouterModule.forRoot(appRoutes),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
+        }),
+    ],
+    exports: [ RouterModule ],
+    providers: [
+        TopHotelsComponent,
+        SliderComponent,
+        BookinSectionComponent,
+        AppService,
+        HotelCardsComponent,
+        NgBoxService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
