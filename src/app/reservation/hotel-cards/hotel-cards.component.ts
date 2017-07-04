@@ -31,22 +31,22 @@ export class HotelCardsComponent implements OnInit {
     constructor(
         private roomData: AppService,
         private route: ActivatedRoute,
-        private router: Router) {}
+        private router: Router) {
+
+        this.subscribe = this.route
+        .queryParams
+        .subscribe(params => {
+            this.location = params['location'];
+            this.checkin = params['checkin'];
+            this.checkout = params['checkout'];
+            this.adults = params['adults'];
+            this.children = params['children'];
+            this.hotelPage = params['page'];
+            this.postRequest();
+        });
+    }
 
         ngOnInit() {
-
-            this.subscribe = this.route
-            .queryParams
-            .subscribe(params => {
-                this.location = params['location'];
-                this.checkin = params['checkin'];
-                this.checkout = params['checkout'];
-                this.adults = params['adults'];
-                this.children = params['children'];
-                this.hotelPage = params['page'];
-            });
-
-            this.postRequest();
         }
 
         postRequest = function () {

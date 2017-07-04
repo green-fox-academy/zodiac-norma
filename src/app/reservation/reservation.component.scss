@@ -1,6 +1,9 @@
 @import '../../scss/break-points.scss';
 
 app-check-form {
+    position: absolute;
+    top: 290px;
+    width: 100%;
     @media screen and (max-width: $break-big) {
         margin: 0px;
         display: flex;
@@ -30,6 +33,7 @@ app-check-form {
 }
 
 app-hotel-cards {
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -57,15 +61,15 @@ app-hotel-cards {
     text-align: left;
     font-weight: normal;
     font-size: 20px;
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: $break-big) {
         display: none;
     }
 }
 
 .roomDescription {
     margin-bottom: 40px;
-    padding-bottom: 40px;
-    width: 670px;
+    padding-bottom: 20px;
+    width: 570px;
     text-align: left;
     font-weight: normal;
     font-size: 14px;
@@ -73,14 +77,14 @@ app-hotel-cards {
     border-bottom: dashed;
     border-color: rgb(200, 200, 200);
     border-width: 1px;
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: $break-big) {
         width: 320px;
         display: none;
     }
 }
 
 .mapContainer {
-    margin-top: 25px;
+    margin-top: 152px;
     margin-left: 20px;
     width: 385px;
     height: 385px;
