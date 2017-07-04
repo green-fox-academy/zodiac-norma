@@ -11,7 +11,7 @@ describe('zodiac-norma App', () => {
 it('should display: Book a room online', done => {
     page.navigateToHome();
     page.getParagraphText()
-      .then(msg => expect(msg).toEqual('Book a room online'))
+      .then(msg => expect(msg).toEqual('Find a hotel online'))
       .then(done, done.fail);
   });
 
@@ -21,8 +21,8 @@ it('should display: Book a room online', done => {
   });
 
   it('type of room initially should be Select a type of room', () => {
-    let elem = element(by.css('.placehold'));
-    expect(elem.getText()).toBe('Select a type of room');
+    let elem = element(by.css('#adultInput'));
+    expect(elem.getText()).toBe('1');
   });
 
   it('first datepicker placeholder initially should be DD/MM/YYYY', () => {
