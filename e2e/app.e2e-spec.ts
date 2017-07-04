@@ -22,7 +22,7 @@ it('should display: Book a room online', done => {
 
   it('type of room initially should be Select a type of room', () => {
     let elem = element(by.css('#adultInput'));
-    expect(elem.getText()).toBe('1');
+    expect(elem.value).toBe('1');
   });
 
   it('first datepicker placeholder initially should be DD/MM/YYYY', () => {
