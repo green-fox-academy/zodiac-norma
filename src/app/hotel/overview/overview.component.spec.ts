@@ -10,6 +10,11 @@ import { FormsModule } from '@angular/forms';
 
 import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { DomSanitizer } from '@angular/platform-browser';
+import { NgBoxModule } from 'ngbox/ngbox.module';
+import { NgBoxService } from 'ngbox/ngbox.service';
+import { SimpleHeaderComponent } from '../../reservation/simple-header/simple-header.component';
+import { HotelSubmenuComponent } from '../hotel-submenu/hotel-submenu.component';
 
 describe('OverviewComponent', () => {
     let component: OverviewComponent;
@@ -17,13 +22,14 @@ describe('OverviewComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ OverviewComponent ],
+            declarations: [ OverviewComponent, SimpleHeaderComponent, HotelSubmenuComponent ],
             imports: [
                 HttpModule,
                 FormsModule,
-                RouterTestingModule
+                RouterTestingModule,
+                NgBoxModule,
             ],
-            providers: [ AppService ]
+            providers: [ AppService, NgBoxService ]
         })
         .compileComponents();
     }));

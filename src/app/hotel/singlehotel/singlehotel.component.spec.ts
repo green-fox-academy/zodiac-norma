@@ -3,6 +3,10 @@ import { SinglehotelComponent } from './singlehotel.component';
 import { Routes, RouterModule } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SliderComponent } from '../../slider/slider.component';
+import { HotelSubmenuComponent } from '../hotel-submenu/hotel-submenu.component';
+import { RoomFeaturesComponent } from './room-features/room-features.component';
+import { AppService } from '../../app.service';
+import { HttpModule } from '@angular/http';
 
 describe('SinglehotelComponent', () => {
   let component: SinglehotelComponent;
@@ -10,8 +14,9 @@ describe('SinglehotelComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SinglehotelComponent ],
-      imports: [RouterTestingModule ]
+      declarations: [ SinglehotelComponent, SliderComponent, HotelSubmenuComponent, RoomFeaturesComponent ],
+      imports: [ RouterTestingModule, HttpModule ],
+      providers: [ AppService ]
     })
     .compileComponents();
   }));
@@ -22,7 +27,7 @@ describe('SinglehotelComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should be created', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should be created', () => {
+    expect(component).toBeTruthy();
+  });
 });

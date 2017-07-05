@@ -16,9 +16,7 @@ export class BookinSectionComponent implements OnInit {
     ngOnInit() {
     }
 
-    roomsinList = ['single room', 'double room', 'extra view room', 'luxory room', 'Classic room, non-smoking: King bed'];
-
-    goToPage(roomType, checkin, checkout, adults, children) {
+    goToPage(location, checkin, checkout, adults, children) {
         if (checkin.mydate === undefined) {
             checkin.mydate = {
                 formatted: ""
@@ -31,7 +29,7 @@ export class BookinSectionComponent implements OnInit {
         }
         this.router.navigate(['/reservation'],
         { queryParams: {
-            typeofroom: roomType,
+            location: location,
             checkin: checkin.mydate.formatted,
             checkout: checkout.mydate.formatted,
             adults: adults,

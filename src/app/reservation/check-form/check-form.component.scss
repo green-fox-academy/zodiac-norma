@@ -1,92 +1,155 @@
 @import '../../../scss/break-points.scss';
 
-section {
-    margin-left: 30px;
-    width: 200px;
-    @media screen and (max-width: $break-big) {
-        margin: 0px;
-        display: flex;
-        flex-direction: column;
-    }
+.elemPositioner {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0);
 }
 
-.title {
-    font-size: 20px;
-    padding-bottom: 6px;
-}
-
-.option-box {
+.mainContainer {
+    width: 975px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
-}
-
-.subtitle {
-    font-size: 16px;
-    padding: 8px 0px;
-    color: #757575;
-}
-
-form {
-    padding-bottom: 4px;
-}
-
-.button {
-    padding: 10px 0px;
-    margin: 20px 0px;
-    background-color: #00A8E8;
-    text-align: center;
-    color: #FFFFFF;
-}
-
-.button:hover {
-    box-shadow: 2px 2px 2px #888888;
-    cursor: pointer;
-}
-
-.input {
-    height: 30px;
-    width: 40px;
-    font-size: 14px;
-    border-radius: 8%;
+    border-radius: 5px;
+    border-style: solid;
     border-width: 2px;
-    padding: 0px 6px;
-}
-
-div {
-    font-weight: bold;
-}
-
-.item-box3 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.header {
-    display: none;
+    border-color: rgba(0, 0, 0, 0.2);
+    background-clip: padding-box;
+    background-color: rgb(255, 255, 255);
     @media screen and (max-width: $break-big) {
-        margin-bottom: 15px;
+        flex-direction: column;
         width: 320px;
-        text-align: left;
-        font-weight: normal;
-        font-size: 20px;
-        display: inherit;
+        height: auto;
+        align-items: center;
     }
 }
 
-.roomDescription {
-    display: none;
+.textBox {
+    padding: 20px;
+    width: 175px;
+    background-color: rgb(243, 243, 243);
+    border-radius: 5px 0px 0px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     @media screen and (max-width: $break-big) {
-        width: 320px;
-        margin-bottom: 40px;
-        padding-bottom: 40px;
-        text-align: justify;
-        font-weight: normal;
-        font-size: 14px;
-        color: rgb(105, 105, 105);
-        border-bottom: dashed;
-        border-color: rgb(200, 200, 200);
-        border-width: 1px;
-        display: inherit;
+        padding: 10px 20px;
+        width: 280px;
+        text-align: center;
+    }
+}
+
+.textBox h1 {
+    color: rgb(55, 55, 55);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: left;
+}
+
+.textBox p {
+    color: rgb(128, 128, 128);
+    font-size: 12px;
+    line-height: 20px;
+    text-overflow: clip;
+}
+
+.elemBox {
+    padding: 20px 0px;
+    min-width: 170px;
+    max-width: 170px;
+    color: rgb(128, 128, 128);
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: $break-big) {
+        padding-bottom: 0;
+    }
+}
+
+input, select {
+    padding-left: 6px;
+    height: 34px;
+    width: 100%;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: rgb(210, 210, 210);
+    border-width: 1px;
+    line-height: 30px;
+    color: rgb(128, 128, 128);
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    height: 38px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+.lesserBox {
+    padding: 20px 0px;
+    min-width: 145px;
+    max-width: 145px;
+    color: rgb(128, 128, 128);
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    line-height: 20px;
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: $break-big) {
+        padding-bottom: 0;
+    }
+}
+
+.miniContainer {
+    width: 118px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $break-big) {
+        width: 140px;
+    }
+}
+
+.miniBox {
+    padding: 20px 0px;
+    min-width: 50px;
+    max-width: 50px;
+    color: rgb(128, 128, 128);
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 20px;
+    @media screen and (max-width: $break-big) {
+        padding-bottom: 0;
+    }
+}
+
+.buttonBox {
+    margin-top: 45px;
+    margin-right: 10px;
+    width: 95px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 35px;
+    background-color: rgb(50, 162, 227);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    @media screen and (max-width: $break-big) {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-right: 0;
     }
 }

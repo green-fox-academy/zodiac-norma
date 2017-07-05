@@ -18,7 +18,8 @@
 	min-width: 548px;
 	display: flex;
 	background: white;
-	margin: 25px 0px;
+	margin: 0px;
+    margin-bottom: 50px;
 	border-style: solid;
 	border-width: 1px;
 	border-color:rgba(102,102,102, 0.2);
@@ -144,7 +145,6 @@ ul {
 }
 
 .noButton {
-    margin-top: 20px;
     min-width: 548px;
     height: 30px;
     text-align: center;
