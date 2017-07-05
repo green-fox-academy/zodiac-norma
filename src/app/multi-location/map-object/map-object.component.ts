@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterContentInit, Input, Output , EventEmitter} from '@angular/core';
+import { Component, OnInit, AfterContentInit, Input, Output , EventEmitter, ElementRef} from '@angular/core';
 import { GoogleMapsAPIWrapper } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from '../../app.service';
@@ -13,10 +13,12 @@ declare var google:any;
 
 export class MapObjectComponent implements OnInit {
 	@Input() data;
+	
 
-	constructor(public mapApiWrapper:GoogleMapsAPIWrapper) { }
+	constructor( public mapApiWrapper:GoogleMapsAPIWrapper) { }
 
 	ngOnInit() {
+		
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
 			console.log("map object: " + map);
@@ -39,12 +41,15 @@ export class MapObjectComponent implements OnInit {
 				marker.addListener('click', function() {
           			infowindow.open(map, marker);
         		});
-				map.addListener('dragstart', function() {
-          			console.log('map dragged'); 
-        		});
-			bounds.extend(marker.position);
-			})	
-		map.fitBounds(bounds);
+				
+				bounds.extend(marker.position);
+			})
+			map.addListener('dragend', function(e) {
+          		console.log('map dragged',e); 
+				  console.log(this);
+				  
+        	});
+			map.fitBounds(bounds);
 		})
 	}
 }

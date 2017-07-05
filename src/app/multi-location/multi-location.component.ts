@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MapObjectComponent } from './map-object/map-object.component'
+declare var google:any;
 
 @Component({
 	selector: 'app-multi-location',
@@ -13,13 +14,16 @@ import { MapObjectComponent } from './map-object/map-object.component'
 
 export class MultiLocationComponent implements OnInit {
 	data;
+	mapElement;
 
-	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, private request: AppService,
+	constructor(public el: ElementRef, public mapApiWrapper:GoogleMapsAPIWrapper, private request: AppService,
 		private route: ActivatedRoute,
 		private router: Router) { }
 
 	ngOnInit() {
 		this.ajax()
+		this.mapElement = this.el.nativeElement.querySelector('.map');
+		console.log(this.mapElement);
 	}
 
 	ajax() {
