@@ -1,5 +1,4 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { Router } from '@angular/router';
 
@@ -21,11 +20,12 @@ export class SimpleHeaderComponent implements OnInit {
         private router: Router,
         private element : ElementRef) {
             this.nativeElement = element.nativeElement;
-            this.text = this.nativeElement.attributes[2].value;
-            this.image = this.nativeElement.attributes[1].value;
-
-            console.log(this.text);
-            console.log(this.image);
+            if (this.nativeElement.attributes[2] !== undefined &&
+                this.nativeElement.attributes[1] !== undefined)
+                {
+                this.text = this.nativeElement.attributes[2].value;
+                this.image = this.nativeElement.attributes[1].value;
+            }
         }
 
     ngOnInit() {
