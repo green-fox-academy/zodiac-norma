@@ -28,6 +28,8 @@ import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-fe
 import { MultiLocationComponent } from './multi-location/multi-location.component';
 import { MapObjectComponent } from './multi-location/map-object/map-object.component';
 
+import { NgBoxModule } from 'ngbox/ngbox.module';
+import { NgBoxService } from 'ngbox/ngbox.service';
 
 
 const appRoutes: Routes =[
@@ -41,47 +43,49 @@ const appRoutes: Routes =[
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    SliderComponent,
-    BookinSectionComponent,
-    TopHotelsComponent,
-    HeaderComponent,
-    HomeComponent,
-    ReservationComponent,
-    FooterComponent,
-    CheckFormComponent,
-    SimpleHeaderComponent,
-    HotelCardsComponent,
-	HotelComponent,
-	SimpleMapComponent,
-	SinglehotelComponent,
-	OverviewComponent,
-	RoomFeaturesComponent,
-	MultiLocationComponent,
-	MapObjectComponent,
-	HotelSubmenuComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    MyDatePickerModule,
-    RouterModule.forRoot(appRoutes),
-	AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
-    }),
-  ],
-  exports: [ RouterModule ],
-  providers: [
-    TopHotelsComponent,
-    SliderComponent,
-    BookinSectionComponent,
-    AppService,
-    HotelCardsComponent,
-	GoogleMapsAPIWrapper
-  ],
+    declarations: [
+        AppComponent,
+        SliderComponent,
+        BookinSectionComponent,
+        TopHotelsComponent,
+        HeaderComponent,
+        HomeComponent,
+        ReservationComponent,
+        FooterComponent,
+        CheckFormComponent,
+        SimpleHeaderComponent,
+        HotelCardsComponent,
+        HotelComponent,
+        SimpleMapComponent,
+        SinglehotelComponent,
+        OverviewComponent,
+        HotelSubmenuComponent,
+        RoomFeaturesComponent,
+		MultiLocationComponent
 
+    ],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        FormsModule,
+        HttpModule,
+        MyDatePickerModule,
+        NgBoxModule,
+        RouterModule.forRoot(appRoutes),
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyBl_VpCrcJFmYAEiHVEYca9TWFLvYTNaaY',
+        }),
+    ],
+    exports: [ RouterModule ],
+    providers: [
+        TopHotelsComponent,
+        SliderComponent,
+        BookinSectionComponent,
+        AppService,
+        HotelCardsComponent,
+        NgBoxService,
+		GoogleMapsAPIWrapper
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

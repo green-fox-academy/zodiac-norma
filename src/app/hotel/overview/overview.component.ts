@@ -13,6 +13,8 @@ export class OverviewComponent implements OnInit {
     roomInfoWithImage = {};
     roomInfoWithFootage = {};
     url;
+    thumbnail;
+    id;
 
     constructor(private appService: AppService, private sanitizer: DomSanitizer) { 
     }
@@ -24,8 +26,12 @@ export class OverviewComponent implements OnInit {
                 const roomData = response.json();
                 this.roomImage = roomData;
                 this.roomInfoWithImage = roomData[0];
-                this.roomInfoWithFootage = roomData[1]
+                this.roomInfoWithFootage = roomData[1];
                 this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.roomInfoWithFootage[0].footage); 
+                this.id = this.roomInfoWithFootage[0].footage.substr(30);
+                this.thumbnail = 'https://img.youtube.com/vi/'+this.id+'/0.jpg'  
+                console.log('thumb', this.thumbnail);
+                          
             },
             (error) => console.log(error)
         );
