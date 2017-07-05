@@ -31,17 +31,9 @@ export class OverviewComponent implements OnInit {
                 this.urlToClick = this.roomInfoWithFootage[0].footage;
                 this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.roomInfoWithFootage[0].footage); 
                 this.id = this.roomInfoWithFootage[0].footage.slice(30, 41);
-                this.thumbnail = 'https://img.youtube.com/vi/'+this.id+'/0.jpg'  
-                console.log('thumb', this.thumbnail);
-                          
+                this.thumbnail = 'https://img.youtube.com/vi/'+this.id+'/0.jpg'                    
             },
             (error) => console.log(error)
         );
     }
-
-    autoplay() {
-        this.urlToClick + '?autoplay=1'
-    }
-
-
 }
