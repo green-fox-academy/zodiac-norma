@@ -1,5 +1,4 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { Router } from '@angular/router';
 
@@ -9,38 +8,34 @@ import { Router } from '@angular/router';
     styleUrls: ['./simple-header.component.scss']
 })
 export class SimpleHeaderComponent implements OnInit {
+    private nativeElement: Node;
 
     @ViewChild('imageHolder') imageHolder:ElementRef;
 
-    imageProperties = [];
-    title;
+    text;
+    image;
 
     constructor(
         private imageData: AppService,
-        private router: Router) {}
+        private router: Router,
+        private element : ElementRef) {
+            this.nativeElement = element.nativeElement;
+            if (this.nativeElement.attributes[2] !== undefined &&
+                this.nativeElement.attributes[1] !== undefined)
+                {
+                this.text = this.nativeElement.attributes[2].value;
+                this.image = this.nativeElement.attributes[1].value;
+            }
+        }
 
     ngOnInit() {
-        this.getRequest();
-    }
-
-    getRequest = function () {
-
-        this.imageData.getData('https://two-ferns.glitch.me/headerimages')
-        .subscribe(
-            (response: Response) => {
-                var responseData = response.json();
-                this.imageProperties = responseData;
-                this.headerGenerator();
-            },
-            (error) => console.log(error)
-        );
+        this.headerGenerator();
     }
 
     headerGenerator = function () {
-        this.imageHolder.nativeElement.style.backgroundImage = 'url(' + this.imageProperties[0].backgroundImage + ')';
+        this.imageHolder.nativeElement.style.backgroundImage = 'url(' + this.image + ')';
 
-        this.imageHolder.nativeElement.style.backgroundPosition = this.imageProperties[0].backgroundPosition;
-
-        this.title = this.imageProperties[0].title;
+        // optional position parameter below:
+        // this.imageHolder.nativeElement.style.backgroundPosition = 0;
     }
 }

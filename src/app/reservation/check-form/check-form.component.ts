@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {IMyDpOptions} from 'mydatepicker';
+import { IMyDpOptions } from 'mydatepicker';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-check-form',
@@ -8,33 +9,36 @@ import {IMyDpOptions} from 'mydatepicker';
 })
 export class CheckFormComponent implements OnInit {
 
-    private myDatePickerOptions: IMyDpOptions = {
-        dateFormat: 'dd.mm.yyyy',
-    };
-
-    constructor() { }
+    constructor(private router: Router) {
+    }
 
     ngOnInit() {
     }
 
-    allInputs = [];
-
-    collectInput(checkin, checkout, rooms, adults, children) {
-        this.allInputs = [];
-
-        if (checkin.mydate === undefined || checkin.mydate === null) {
+    goToPage(location, checkin, checkout, adults, children) {
+        if (checkin.mydate === undefined) {
             checkin.mydate = {
                 formatted: ""
             }
         }
-        if (checkout.mydate === undefined || checkin.mydate === null) {
+        if (checkout.mydate === undefined) {
             checkout.mydate = {
                 formatted: ""
             }
         }
-
-        this.allInputs.push(checkin.mydate.formatted, checkout.mydate.formatted, rooms, adults, children);
-        console.log(this.allInputs);
+        this.router.navigate(['/reservation'],
+        { queryParams: {
+            location: location,
+            checkin: checkin.mydate.formatted,
+            checkout: checkout.mydate.formatted,
+            adults: adults,
+            children: children,
+            page: 1
+            }
+        });
     }
 
+    myDatePickerOptions: IMyDpOptions = {
+        dateFormat: 'dd.mm.yyyy',
+    }
 }
