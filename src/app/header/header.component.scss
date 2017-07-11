@@ -126,19 +126,60 @@
     padding-right: 0;
 }
 
-.navContainer label {
-    padding: 0;
-    height: 25px;
+.hambrugerMenu {
+    padding: 4px 0px;
+    height: 18px;
     width: 25px;
     display: none;
-    background-image: url(../images/hamburger_icon.png);
-    background-repeat: no-repeat;
-    background-size: cover;
     @media screen and (max-width: $break-collapse) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     z-index: 200;
     }
+}
+
+.menuIcon {
+    width: 21px;
+    height: 2px;
+    background-color: white;
+}
+
+.menuIconContainer{
+    max-width: 25px;
+    width: 21px;
+    height: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+input[type=checkbox]:checked ~ label > .menuIconContainer > .menuIcon.second {
+    transform: translateX(25px);
+    transition: transform 0.5s ease-in-out;
+}
+
+input[type=checkbox]:checked ~ label >  .menuIcon {
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+}
+
+input[type=checkbox]:checked ~ label >  .menuIcon.first {
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked ~ label >  .menuIcon.third {
+    transform: rotate(45deg);
+}
+
+input[type=checkbox] ~ label > .menuIconContainer > .menuIcon {
+    transition: transform 0.5s ease-in-out;
+}
+
+input[type=checkbox] ~ label > .menuIcon {
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
 }
 
 input[type=checkbox] {
@@ -164,11 +205,12 @@ input[type=checkbox] {
     }
 }
 
-a.dropMenu {
+label.dropMenu {
     width: 200px;
     text-align: center;
     line-height: 30px;
     color: white;
+    cursor: pointer;
 }
 
 input[type=checkbox]:checked ~ .dropDown {
@@ -204,4 +246,5 @@ input[type=checkbox]:checked ~ .dropDown .highlightedDrop {
     transform: translateX(49%) scale(0.1, 0.1);
     transition-delay: 0.5s;
     transition: 0.5s ease-in-out;
+    cursor: pointer;
 }
