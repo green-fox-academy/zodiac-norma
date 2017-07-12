@@ -16,7 +16,7 @@ export class BookinSectionComponent implements OnInit {
     ngOnInit() {
     }
 
-    goToPage(location, checkin, checkout, adults, children) {
+    isValid(location, checkin, checkout, adults, children) {
         if (checkin.mydate === undefined) {
             checkin.mydate = {
                 formatted: ""
@@ -27,6 +27,17 @@ export class BookinSectionComponent implements OnInit {
                 formatted: ""
             }
         }
+        if (adults == '' || adults < 1) {
+            console.log('Characters in the adults field are not all numbers')
+        }
+        if (children == '' || children < 0) {
+            console.log('Characters in the children field are not all numbers')
+        }
+
+        this.goToPage(location, checkin, checkout, adults, children);
+    }
+
+    goToPage(location, checkin, checkout, adults, children) {
         this.router.navigate(['/reservation'],
         { queryParams: {
             location: location,

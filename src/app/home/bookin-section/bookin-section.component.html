@@ -5,31 +5,31 @@
     </div>
     <div class="elemBox">
         <label>Search for city:</label>
-        <input id="location" #location placeholder="City name">
+        <input pattern="[a-z]" id="location" #location placeholder="City name">
     </div>
     <div class="lesserBox">
         <label>Check-in date:</label>
         <form #checkin="ngForm" novalidate>
-            <my-date-picker id="firstDatePicker" placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkinDate" required></my-date-picker>
+            <my-date-picker id="firstDatePicker" placeholder="dd.mm.yyyy" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkinDate" required></my-date-picker>
         </form>
     </div>
     <div class="lesserBox">
         <label>Check-out date:</label>
         <form #checkout="ngForm" novalidate>
-            <my-date-picker placeholder="DD/MM/YYYY" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkoutDate" required></my-date-picker>
+            <my-date-picker placeholder="dd.mm.yyyy" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkoutDate" required></my-date-picker>
         </form>
     </div>
     <div class="miniContainer">
         <div class="miniBox">
             <label>Adults:</label>
-            <input id="adultInput" placeholder="1" #adults value=1 type="number" min="1">
+            <input id="adultInput" #adults value=1 type="number" min="1">
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input id="childInput" placeholder="0" #children value=0 type="number" min="0">
+            <input id="childInput" #children value=0 type="number" min="0">
         </div>
     </div>
-    <div (click) = "goToPage(location.value, checkin.value, checkout.value, adults.value, children.value)" class="buttonBox">
+    <div (click) = "isValid(location.value, checkin.value, checkout.value, adults.value, children.value)" class="buttonBox">
         <p>Book now</p>
     </div>
 </div>
