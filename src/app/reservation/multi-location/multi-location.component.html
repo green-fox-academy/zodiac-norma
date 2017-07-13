@@ -1,7 +1,7 @@
 
 <div class= 'label'>Add a city: </div>
 <input type="text" name="location" #locInput><span (click)="ajax(locInput.value.toLowerCase())">Search</span>
-<div *ngIf='data'>
+<div>
 	<agm-map>
 		<app-map-object [data]='data'></app-map-object>
 	</agm-map>
