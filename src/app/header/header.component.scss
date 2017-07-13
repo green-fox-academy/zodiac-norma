@@ -1,5 +1,38 @@
 @import '../.././scss/break-points.scss';
 
+@keyframes headmove {
+    0% {transform: translateY(0px);}
+    33% {transform: translateY(10px);}
+    66% {transform: translateY(10px);}
+    100% {transform: translateY(0px);}
+}
+
+@keyframes tailmove {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(20deg);}
+    75% {transform: rotate(-20deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes legmove {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(20deg);}
+    75% {transform: rotate(-20deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes gallop {
+    0% {transform: translateX(0px);}
+    33.33% {transform: translateX(120px);}
+    38.89% {transform: translateX(120px) rotateZ(-90deg);}
+    44.44% {transform: translateX(120px) translateY(-20px) rotateZ(-90deg);}
+    50% {transform: translateX(120px) translateY(-20px) rotateZ(-180deg);}
+    83.33% {transform: translateX(0px) translateY(-20px) rotateZ(-180deg);}
+    88.89% {transform: translateX(0px) translateY(-20px) rotateZ(-270deg);}
+    94.44% {transform: translateX(0px) translateY(0px) rotateZ(-270deg);}
+    100% {transform: translateX(0px);}
+}
+
 .header {
     min-width: 590px;
     min-height: 90px;
@@ -34,8 +67,9 @@
 .topLogo {
     min-width: 100px;
     min-height: 80px;
-    background: no-repeat center url(../images/cute_logo_nohead_notail.png);
+    background: no-repeat center url(../images/cute_logo_body.png);
     background-size: contain;
+    z-index: 5;
 }
 
 .topLogoMovingHead {
@@ -48,13 +82,7 @@
     background: no-repeat center url(../images/deerhead.png);
     background-size: 45px;
     transition: 1s;
-}
-
-@keyframes headmove {
-    0% {transform: translateY(0px);}
-    33% {transform: translateY(10px);}
-    66% {transform: translateY(10px);}
-    100% {transform: translateY(0px);}
+    z-index: 5;
 }
 
 .topLogoMovingTail {
@@ -65,13 +93,15 @@
     top: 20px;
     background: center no-repeat url(../images/deertail.png);
     background-size: 11px;
+    z-index: 5;
 }
 
-@keyframes tailmove {
-    0% {transform: rotate(0deg);}
-    25% {transform: rotate(20deg);}
-    75% {transform: rotate(-20deg);}
-    100% {transform: rotate(0deg);}
+.legMove {
+    min-width: 10px;
+    height: 10px;
+    position: relative;
+    left: -133px;
+    top: 50px;
 }
 
 #logo {
@@ -80,19 +110,93 @@
     display: flex;
 }
 
-#logo:hover #head{
+#logo:hover {
+    width: 100px;
+    height: 80px;
+    display: flex;
+    animation-name: gallop;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+}
+
+#firstLeg {
+    background: center no-repeat url(../images/first_leg.png);
+    background-size: 8px;
+    z-index: 4;
+}
+
+#secondLeg {
+    background: center no-repeat url(../images/second_leg.png);
+    left: -152px;
+    background-size: 8px;
+    z-index: 4;
+}
+
+#thirdLeg {
+    background: center no-repeat url(../images/third_leg.png);
+    left: -171px;
+    background-size: 8px;
+    z-index: 4;
+}
+
+#fourthLeg {
+    background: center no-repeat url(../images/fourth_leg.png);
+    left: -189px;
+    background-size: 8px;
+    z-index: 4;
+}
+
+#logo:hover #head {
     animation-name: headmove;
     animation-duration: 3s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
 }
 
-#logo:hover #tail{
+#logo:hover #tail {
     transform-origin: bottom center;
     animation-name: tailmove;
     animation-duration: 0.6s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
+}
+
+#logo:hover .legMove {
+    transform-origin: top center;
+    animation-name: tailmove;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#logo:hover #firstLeg {
+    animation-delay: 5s;
+}
+
+#logo:hover #secondLeg {
+    animation-delay: 5.2s;
+}
+
+#logo:hover #thirdLeg {
+    animation-delay: 5.4s;
+}
+
+#logo:hover #fourthLeg {
+    animation-delay: 5.6s;
+}
+
+.logoText {
+    min-width: 95px;
+    height: 15px;
+    position: relative;
+    left: -99px;
+    top: 64px;
+    background: no-repeat url(../images/logo_text.png);
+    background-size: 95px;
 }
 
 .navContainer {
@@ -126,19 +230,60 @@
     padding-right: 0;
 }
 
-.navContainer label {
-    padding: 0;
-    height: 25px;
+.hambrugerMenu {
+    padding: 4px 0px;
+    height: 18px;
     width: 25px;
     display: none;
-    background-image: url(../images/hamburger_icon.png);
-    background-repeat: no-repeat;
-    background-size: cover;
     @media screen and (max-width: $break-collapse) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     cursor: pointer;
     z-index: 200;
     }
+}
+
+.menuIcon {
+    width: 21px;
+    height: 2px;
+    background-color: white;
+}
+
+.menuIconContainer{
+    max-width: 25px;
+    width: 21px;
+    height: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+input[type=checkbox]:checked ~ label > .menuIconContainer > .menuIcon.second {
+    transform: translateX(25px);
+    transition: transform 0.5s ease-in-out;
+}
+
+input[type=checkbox]:checked ~ label >  .menuIcon {
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+}
+
+input[type=checkbox]:checked ~ label >  .menuIcon.first {
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked ~ label >  .menuIcon.third {
+    transform: rotate(45deg);
+}
+
+input[type=checkbox] ~ label > .menuIconContainer > .menuIcon {
+    transition: transform 0.5s ease-in-out;
+}
+
+input[type=checkbox] ~ label > .menuIcon {
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
 }
 
 input[type=checkbox] {
@@ -150,11 +295,11 @@ input[type=checkbox] {
     @media screen and (max-width: $break-collapse) {
     padding: 0;
     width: 100%;
-    height: 150px;
+    height: 160px;
     background: rgb(25, 25, 25);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     position: absolute;
     top: -30px;
@@ -164,11 +309,12 @@ input[type=checkbox] {
     }
 }
 
-a.dropMenu {
+label.dropMenu {
     width: 200px;
     text-align: center;
     line-height: 30px;
     color: white;
+    cursor: pointer;
 }
 
 input[type=checkbox]:checked ~ .dropDown {
@@ -204,4 +350,5 @@ input[type=checkbox]:checked ~ .dropDown .highlightedDrop {
     transform: translateX(49%) scale(0.1, 0.1);
     transition-delay: 0.5s;
     transition: 0.5s ease-in-out;
+    cursor: pointer;
 }

@@ -67,6 +67,7 @@
     justify-content: space-between;
     @media screen and (max-width: $break-big) {
         flex-direction: column;
+        margin-top: 50px;
     }
 }
 

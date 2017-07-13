@@ -25,9 +25,9 @@ it('should display: Book a room online', done => {
       expect(elem.getAttribute('placeholder')).toBe('City name');
   });
 
-  it('first datepicker placeholder initially should be DD/MM/YYYY', () => {
+  it('first datepicker placeholder initially should be dd.mm.yyyy', () => {
     let elem = element(by.css('#firstDatePicker'));
-    expect(elem.getAttribute('placeholder')).toBe('DD/MM/YYYY');
+    expect(elem.getAttribute('placeholder')).toBe('dd.mm.yyyy');
   });
 
   it('adultInput initially should be 1', () => {
