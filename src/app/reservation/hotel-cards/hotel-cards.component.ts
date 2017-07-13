@@ -17,6 +17,8 @@ export class HotelCardsComponent implements OnInit {
     cardsPerPage = 5;
     buttonText = 'Load more Results';
     buttonClass = 'roomButton';
+    
+    favorite = false;
 
     classSelector;
     location;
