@@ -51,8 +51,28 @@
     }
 }
 
+.text-subcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .title {
     font-weight: 900;
+}
+
+.grey-star {
+    min-width: 20px;
+    min-height: 20px;
+    background: no-repeat center url(../../images/greystar.png);
+    background-size: contain;
+}
+
+.yellow-star {
+    min-width: 20px;
+    min-height: 20px;
+    background: no-repeat center url(../../images/yellowstar.png);
+    background-size: contain;
 }
 
 .image {
@@ -97,6 +117,7 @@ ul {
     margin-top: 10px;
     padding-bottom: 12px;
     max-width: 295px;
+    min-width: 295px;
     border-bottom-style: dashed;
     border-bottom-color: #DEDEDE;
     line-height: 22px;
