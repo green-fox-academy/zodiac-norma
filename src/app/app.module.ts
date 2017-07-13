@@ -25,8 +25,8 @@ import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component'
 import { OverviewComponent } from './hotel/overview/overview.component';
 import { HotelSubmenuComponent } from './hotel/hotel-submenu/hotel-submenu.component';
 import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
-import { MultiLocationComponent } from './multi-location/multi-location.component';
-import { MapObjectComponent } from './multi-location/map-object/map-object.component';
+import { MultiLocationComponent } from './reservation/multi-location/multi-location.component';
+import { MapObjectComponent } from './reservation/multi-location/map-object/map-object.component';
 
 import { NgBoxModule } from 'ngbox/ngbox.module';
 import { NgBoxService } from 'ngbox/ngbox.service';
@@ -61,7 +61,8 @@ const appRoutes: Routes =[
         OverviewComponent,
         HotelSubmenuComponent,
         RoomFeaturesComponent,
-		MultiLocationComponent
+		MultiLocationComponent,
+		MapObjectComponent
 
     ],
     imports: [

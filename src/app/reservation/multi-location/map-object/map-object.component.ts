@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterContentInit, Input, Output , EventEmitter, ElementRef} from '@angular/core';
 import { GoogleMapsAPIWrapper } from '@agm/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AppService } from '../../app.service';
+import { AppService } from '../../../app.service';
 import { Response } from '@angular/http';
 
 declare var google:any;
@@ -13,12 +13,16 @@ declare var google:any;
 
 export class MapObjectComponent implements OnInit {
 	@Input() data;
-	
+	@Input() display;
 
 	constructor( public mapApiWrapper:GoogleMapsAPIWrapper) { }
 
 	ngOnInit() {
-		
+		 	this.renderMap()
+	}
+
+	
+	renderMap() {
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
 			console.log("map object: " + map);
@@ -26,14 +30,14 @@ export class MapObjectComponent implements OnInit {
 
 			var bounds = new google.maps.LatLngBounds();
 
-			this.data.forEach((location) => {
+			this.data.locData.forEach((location) => {
 				var marker = new google.maps.Marker({
 					position: {lat: location.lt, lng: location.lng},
 					map: map,
 					id: location.id,	
 				})
 				var infowindow = new google.maps.InfoWindow({
-          			content: "for now it is the id: " + marker.id
+          			content: location.name
         		});
 				marker.addListener('click', function() {
           			console.log(marker.id);  
