@@ -1,11 +1,10 @@
 <div class='hotel-cards-container'>
-    <div class="hotels" *ngFor="let hotel of currentHotels">
+    <div class="hotels" *ngFor="let hotel of currentHotels; let idx = index">
         <div class='image' [ngStyle]="{'background-image': 'url('+hotel.attributes.main_image_src+')'}"></div>
         <div class="text-container">
             <div class="text-subcontainer">
                 <h3 class="title">{{hotel.attributes.name}}</h3>
-                <div *ngIf="!favorite" class="grey-star" (click)="favorite = !favorite"></div>
-                <div *ngIf="favorite" class="yellow-star" (click)="favorite = !favorite"></div>
+                <div (click)="markFavorite($event)" class="grey-star"></div>
             </div>
             <div class="feature-container">
                 <ul>

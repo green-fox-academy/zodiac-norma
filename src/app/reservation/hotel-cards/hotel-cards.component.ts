@@ -17,8 +17,6 @@ export class HotelCardsComponent implements OnInit {
     cardsPerPage = 5;
     buttonText = 'Load more Results';
     buttonClass = 'roomButton';
-    
-    favorite = false;
 
     classSelector;
     location;
@@ -48,6 +46,16 @@ export class HotelCardsComponent implements OnInit {
             this.hotelPage = params['page'];
             this.postRequest();
         });
+    }
+
+    markFavorite = function(event) {
+        console.log('hhhhh', event);
+        console.log('sss', event.target.className);
+        if (event.target.className === 'grey-star') {
+            event.target.className = 'yellow-star'
+        } else {
+            event.target.className = 'grey-star'
+        }
     }
 
     postRequest = function () {
