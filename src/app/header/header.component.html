@@ -5,7 +5,12 @@
                 <div class="topLogo"></div>
                 <div id="head" class="topLogoMovingHead"></div>
                 <div id="tail" class="topLogoMovingTail"></div>
+                <div id="firstLeg" class="legMove"></div>
+                <div id="secondLeg" class="legMove"></div>
+                <div id="thirdLeg" class="legMove"></div>
+                <div id="fourthLeg" class="legMove"></div>
             </div>
+            <div class="logoText"></div>
         </a>
         <ul class="navContainer">
             <li><a #link [routerLink]="['/']" class="navigation">Home</a></li>
@@ -14,13 +19,19 @@
             <li><a #link href="index.html" class="navigation">Activites</a></li>
             <li><a #link href="index.html" class="navigation end">Contact</a></li>
             <input type="checkbox" id="toggle">
-            <label for="toggle"></label>
+            <label for="toggle" class="hambrugerMenu">
+              <div class="menuIcon first"></div>
+              <div class="menuIconContainer">
+                  <div class="menuIcon second"></div>
+              </div>
+              <div class="menuIcon third"></div>
+            </label>
             <ul class="dropDown">
-                <li><a #dropLink [routerLink]="['/']" class="dropMenu">Home</a></li>
-                <li><a #dropLink [routerLink]="['/hotel/overview']" class="dropMenu">Rooms & Suites</a></li>
-                <li><a #dropLink [routerLink]="['reservation']" class="dropMenu">Reservation</a></li>
-                <li><a #dropLink href="index.html" class="dropMenu">Activites</a></li>
-                <li><a #dropLink href="index.html" class="dropMenu">Contact</a></li>
+                <li><label for="toggle" #dropLink [routerLink]="['/']" class="dropMenu">Home</label></li>
+                <li><label for="toggle" #dropLink [routerLink]="['/hotel/overview']" class="dropMenu">Rooms & Suites</label></li>
+                <li><label for="toggle" #dropLink [routerLink]="['reservation']" class="dropMenu">Reservation</label></li>
+                <li><label for="toggle" #dropLink href="index.html" class="dropMenu">Activites</label></li>
+                <li><label for="toggle" #dropLink href="index.html" class="dropMenu">Contact</label></li>
             </ul>
         </ul>
     </div>
