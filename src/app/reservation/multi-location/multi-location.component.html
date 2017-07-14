@@ -1,10 +1,6 @@
 
-<div class= 'label'>Add a city: </div>
-<input type="text" name="location" #locInput><span (click)="ajax(locInput.value.toLowerCase())">Search</span>
-<div>
-	<agm-map>
-		<app-map-object [data]='data'></app-map-object>
-	</agm-map>
-</div>
+<agm-map>
+	<app-map-object [data]='data'></app-map-object>
+</agm-map>
 
 <div class='map'></div>

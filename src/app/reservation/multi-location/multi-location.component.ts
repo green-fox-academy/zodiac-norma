@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { Response } from '@angular/http';
 import { AppService } from '../../app.service';
 import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from '@agm/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { MapObjectComponent } from './map-object/map-object.component';
 
 declare var google:any;
@@ -16,6 +16,8 @@ declare var google:any;
 
 export class MultiLocationComponent implements OnInit {
 	data;
+	location;
+	subscribe;
 
 	@ViewChild (MapObjectComponent)
 	private mapFeatureComponent: MapObjectComponent;
@@ -24,17 +26,26 @@ export class MultiLocationComponent implements OnInit {
 		public mapApiWrapper:GoogleMapsAPIWrapper, 
 		private request: AppService,
 		private route: ActivatedRoute,
-		private router: Router) { 
-			console.log('component ready');
+		private router: Router) { 	
+			this.router.events.forEach((event) => {
+			if(event instanceof NavigationEnd) {
+				this.subscribe = this.route
+					.queryParams
+					.subscribe(params => {
+						this.location = params['location'];		
+					});
+					console.log(this.location);
+					this.ajax();
+			}
+		});
 		}
 
 	ngOnInit() {
 
 	}
 
-	ajax(input) {
-		
-		this.request.getData('https://two-ferns.glitch.me/multi-location/' + input)
+	ajax() {
+		this.request.getData('https://two-ferns.glitch.me/multi-location/' + this.location)
 			.subscribe(
 			(response: Response) => {
 				this.data = response.json();
