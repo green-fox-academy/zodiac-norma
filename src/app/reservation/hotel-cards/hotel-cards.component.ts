@@ -48,6 +48,16 @@ export class HotelCardsComponent implements OnInit {
         });
     }
 
+    markFavorite = function(event) {
+        console.log('hhhhh', event);
+        console.log('sss', event.target.className);
+        if (event.target.className === 'grey-star') {
+            event.target.className = 'yellow-star'
+        } else {
+            event.target.className = 'grey-star'
+        }
+    }
+
     postRequest = function () {
         console.log('megyen');
         this.sendData = [{
