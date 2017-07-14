@@ -20,113 +20,144 @@ export class BookinSectionComponent implements OnInit {
     childrenInput = true;
     checkinInput = true;
     checkoutInput = true;
+    adultsFalseClass = '';
+    childrenFalseClass = '';
+    checkoutCoverClass = '';
+    checkinCoverClass = '';
 
     isValid(location, checkin, checkout, adults, children) {
 
-        location = location.value;
-        checkin = checkin.value;
-        checkout = checkout.value;
-        adults = adults.value;
-        children = children.value;
+        if (checkin.value.mydate === null) {
+            checkin.value.mydate = {
+                formatted: "ERROR"
+            }
+            this.checkinInput = false;
+        }
 
-        if (adults == '' || adults < 1) {
+        if (checkout.value.mydate === null) {
+            checkout.value.mydate = {
+                formatted: "ERROR"
+            }
+            this.checkoutInput = false;
+        }
+
+        if (checkin.value.mydate === undefined || checkin.value.mydate.formatted === '') {
+            checkin.value.mydate = {
+                formatted: ""
+            }
+            this.checkinInput = true;
+            this.checkinCoverClass = '';
+        }
+
+        if (checkout.value.mydate === undefined || checkout.value.mydate.formatted === '') {
+            checkout.value.mydate = {
+                formatted: ""
+            }
+            this.checkoutInput = true;
+            this.checkoutCoverClass = '';
+        }
+
+        if (adults.value == '' || adults.value < 1) {
             this.adultsInput = false;
+            this.adultsFalseClass = 'inputFalse';
         }
         else {
             this.adultsInput = true;
+            this.adultsFalseClass = '';
         }
-        if (children == '' || children < 0) {
+        if (children.value == '' || children.value < 0) {
             this.childrenInput = false;
+            this.childrenFalseClass = 'inputFalse';
         }
         else {
             this.childrenInput = true;
+            this.childrenFalseClass = '';
         }
 
-        if (checkin.length !== 10) {
+        if (checkin.value.mydate.formatted.length !== 10) {
             this.checkinInput = false;
+            this.checkinCoverClass = 'coverTrue';
         }
         else {
             this.checkinInput = true;
+            this.checkinCoverClass = '';
         }
 
-        if (checkin[2] !== '.' || checkin[5] !== '.') {
+        if (checkin.value.mydate.formatted[2] !== '.' || checkin.value.mydate.formatted[5] !== '.') {
             this.checkinInput = false;
+            this.checkinCoverClass = 'coverTrue';
         }
         else {
             this.checkinInput = true;
+            this.checkinCoverClass = '';
         }
 
-        for (let i = 0; i < checkin.length; i++) {
+        for (let i = 0; i < checkin.value.mydate.formatted.length; i++) {
             if (i !== 2 && i !== 5) {
-                if (typeof this.checkinInput !== 'number') {
+                if (isNaN(parseInt(checkin.value.mydate.formatted[i]) / 1)) {
                     this.checkinInput = false;
+                    this.checkinCoverClass = 'coverTrue';
                 }
                 else {
                     this.checkinInput = true;
+                    this.checkinCoverClass = '';
                 }
             }
         }
 
-        if (checkout.length !== 10) {
+        if (checkout.value.mydate.formatted.length !== 10) {
             this.checkoutInput = false;
+            this.checkoutCoverClass = 'coverTrue';
         }
         else {
             this.checkoutInput = true;
+            this.checkoutCoverClass = '';
         }
 
-        if (checkout[2] !== '.' || checkout[5] !== '.') {
+        if (checkout.value.mydate.formatted[2] !== '.' || checkout.value.mydate.formatted[5] !== '.') {
             this.checkoutInput = false;
+            this.checkoutCoverClass = 'coverTrue';
         }
         else {
             this.checkoutInput = true;
+            this.checkoutCoverClass = '';
         }
 
-        for (let i = 0; i < checkout.length; i++) {
+        for (let i = 0; i < checkout.value.mydate.formatted.length; i++) {
             if (i !== 2 && i !== 5) {
-                if (typeof this.checkoutInput !== 'number') {
+                if (isNaN(parseInt(checkout.value.mydate.formatted[i]) / 1)) {
                     this.checkoutInput = false;
+                    this.checkoutCoverClass = 'coverTrue';
                 }
                 else {
                     this.checkoutInput = true;
+                    this.checkoutCoverClass = '';
                 }
             }
         }
 
-        if (checkin.mydate === undefined || checkin.mydate.formatted === '') {
-            checkin.mydate = {
-                formatted: ""
-            }
+        if (checkin.value.mydate.formatted === '') {
             this.checkinInput = true;
+            this.checkinCoverClass = '';
         }
-        if (checkout.mydate === undefined || checkout.mydate.formatted === '') {
-            checkout.mydate = {
-                formatted: ""
-            }
+        if (checkout.value.mydate.formatted === '') {
             this.checkoutInput = true;
+            this.checkoutCoverClass = '';
         }
 
-        this.decorator(location, checkin, checkout, adults, children);
-        console.log(this.checkinInput, this.checkoutInput, this.adultsInput, this.childrenInput);
         if (this.checkinInput === true && this.checkoutInput === true && this.adultsInput === true && this.childrenInput === true) {
             this.goToPage(location, checkin, checkout, adults, children);
-        }
-    }
-
-    decorator(location, checkin, checkout, adults, children) {
-        console.log(children.value);
-        if (this.childrenInput == false) {
-            console.log(children);
         }
     }
 
     goToPage(location, checkin, checkout, adults, children) {
         this.router.navigate(['/reservation'],
         { queryParams: {
-            location: location,
-            checkin: checkin.mydate.formatted,
-            checkout: checkout.mydate.formatted,
-            adults: adults,
-            children: children,
+            location: location.value,
+            checkin: checkin.value.mydate.formatted,
+            checkout: checkout.value.mydate.formatted,
+            adults: adults.value,
+            children: children.value,
             page: 1
             }
         });
