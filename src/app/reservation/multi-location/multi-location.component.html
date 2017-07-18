@@ -1,6 +1,5 @@
-
-<agm-map>
-	<app-map-object [data]='data'></app-map-object>
-</agm-map>
-
-<div class='map'></div>
+<div class='default' [class.topFixed]="ifTopFixed" [class.bottomFixed]="ifBottomFixed">
+	<agm-map>
+		<app-map-object [data]='data'></app-map-object>
+	</agm-map>
+</div>

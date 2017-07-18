@@ -1,12 +1,21 @@
+.default {
+    width: 385px;
+    height: 385px;
+}
+
+.topFixed {
+	position: fixed;
+	top: 0px;
+	//height: 100vh;
+}
+
+.bottomFixed {
+	
+}
+
 agm-map {
 	width: 100%;
 	height: 100%;
-}
-
-
-.map {
-	width: 75%;
-	height: 400px;
 }
 
 span {

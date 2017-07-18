@@ -20,7 +20,7 @@ export class MapObjectComponent implements OnInit {
 	}
 
 	
-	renderMap(x) {
+	renderMap(data) {
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
 			console.log("map object: " + map);
@@ -28,14 +28,17 @@ export class MapObjectComponent implements OnInit {
 
 			var bounds = new google.maps.LatLngBounds();
 
-			x.locData.forEach((location) => {
+			data.locData.forEach((location) => {
 				var marker = new google.maps.Marker({
 					position: {lat: location.lt, lng: location.lng},
 					map: map,
 					id: location.id,	
 				})
 				var infowindow = new google.maps.InfoWindow({
-          			content: '<h1>' + location.name +'</h1>'+'<style> h1 {color: rgb(50, 162, 227); text-shadow: 1px 0px rgb(128, 128, 128); padding: 4px;}</style>',
+          			content: '<h1>' + location.name +'</h1>'+
+					  		'<style> h1 {color: rgb(50, 162, 227);' + 
+							'text-shadow: 1px 0px rgb(128, 128, 128);' +
+							'padding: 4px;}</style>',
         		});
 				marker.addListener('click', function() {
           			console.log(marker.id);  
