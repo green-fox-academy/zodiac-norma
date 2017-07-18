@@ -13,7 +13,7 @@
             </div>
             <div class="price-container">
                 <p class="price" >{{ hotel.attributes.amount }} {{ hotel.attributes.currency }}</p>
-                <div class="button">Visit Hotel</div>
+                <div class="button" [routerLink]="['/hotel/overview']">Visit Hotel</div>
             </div>
         </div>
     </div>

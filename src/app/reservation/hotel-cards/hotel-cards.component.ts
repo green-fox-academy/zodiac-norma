@@ -129,7 +129,7 @@ export class HotelCardsComponent implements OnInit {
         //     this.buttonClass = 'noButton';
         // }
 
-        this.router.navigate(['/reservation'],
+        this.router.navigate(['/hotels'],
         { queryParams: {
             location: this.location,
             checkin: this.checkin,
