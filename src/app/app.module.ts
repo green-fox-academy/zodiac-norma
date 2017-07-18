@@ -28,11 +28,13 @@ import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-fe
 
 import { NgBoxModule } from 'ngbox/ngbox.module';
 import { NgBoxService } from 'ngbox/ngbox.service';
+import { ContactComponent } from './contact/contact.component';
 
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
     { path: 'reservation', component: ReservationComponent },
+    { path: 'contact', component: ContactComponent },
     { path: 'hotel', component: HotelComponent },
     { path: 'hotel/overview', component: OverviewComponent },
     { path: 'hotel/rooms', component: SinglehotelComponent },
@@ -57,7 +59,8 @@ const appRoutes: Routes =[
         SinglehotelComponent,
         OverviewComponent,
         HotelSubmenuComponent,
-        RoomFeaturesComponent
+        RoomFeaturesComponent,
+        ContactComponent
 
     ],
     imports: [
