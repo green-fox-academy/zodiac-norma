@@ -36,9 +36,9 @@ export class HeaderComponent implements OnInit {
             this.link._results[1].nativeElement.className = 'highlighted';
             this.dropLink._results[1].nativeElement.className = 'highlightedDrop';
         }
-        // if (url.slice(1, 6) === 'hotel') {
-        //     this.link._results[1].nativeElement.className = 'highlighted';
-        //     this.dropLink._results[1].nativeElement.className = 'highlightedDrop';
-        // }
+        if (url.slice(1, 6) === 'about') {
+            this.link._results[2].nativeElement.className = 'highlighted';
+            this.dropLink._results[2].nativeElement.className = 'highlightedDrop';
+        }
     }
 }
