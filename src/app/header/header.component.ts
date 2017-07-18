@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
             this.dropLink._results[i].nativeElement.className = 'dropMenu';
         }
 
-        this.link._results[2].nativeElement.className = 'navigation end';
+        this.link._results[3].nativeElement.className = 'navigation end';
 
         if (url === '/') {
             this.link._results[0].nativeElement.className = 'highlighted';
@@ -36,9 +36,13 @@ export class HeaderComponent implements OnInit {
             this.link._results[1].nativeElement.className = 'highlighted';
             this.dropLink._results[1].nativeElement.className = 'highlightedDrop';
         }
-        if (url.slice(1, 6) === 'about') {
+        if (url.slice(1, 10) === 'favorites') {
             this.link._results[2].nativeElement.className = 'highlighted';
             this.dropLink._results[2].nativeElement.className = 'highlightedDrop';
+        }
+        if (url.slice(1, 6) === 'about') {
+            this.link._results[3].nativeElement.className = 'highlighted';
+            this.dropLink._results[3].nativeElement.className = 'highlightedDrop';
         }
     }
 }
