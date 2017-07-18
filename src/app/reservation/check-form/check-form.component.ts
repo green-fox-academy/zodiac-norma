@@ -154,7 +154,7 @@ export class CheckFormComponent implements OnInit {
     }
 
     goToPage(location, checkin, checkout, adults, children) {
-        this.router.navigate(['/reservation'],
+        this.router.navigate(['/hotels'],
         { queryParams: {
             location: location.value,
             checkin: checkin.value.mydate.formatted,
