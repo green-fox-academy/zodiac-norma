@@ -49,8 +49,7 @@ export class HotelCardsComponent implements OnInit {
     }
 
     markFavorite = function(event) {
-        console.log('hhhhh', event);
-        console.log('sss', event.target.className);
+        
         if (event.target.className === 'grey-star') {
             event.target.className = 'yellow-star'
         } else {
@@ -59,7 +58,6 @@ export class HotelCardsComponent implements OnInit {
     }
 
     postRequest = function () {
-        console.log('megyen');
         this.sendData = [{
             'location': this.location,
             'checkin': this.checkin,
@@ -129,7 +127,7 @@ export class HotelCardsComponent implements OnInit {
         //     this.buttonClass = 'noButton';
         // }
 
-        this.router.navigate(['/reservation'],
+        this.router.navigate(['/hotels'],
         { queryParams: {
             location: this.location,
             checkin: this.checkin,

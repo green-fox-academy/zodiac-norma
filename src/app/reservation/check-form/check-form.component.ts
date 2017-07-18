@@ -26,7 +26,7 @@ export class CheckFormComponent implements OnInit {
                 formatted: ""
             }
         }
-        this.router.navigate(['/reservation'],
+        this.router.navigate(['/hotels'],
         { queryParams: {
             location: location,
             checkin: checkin.mydate.formatted,
