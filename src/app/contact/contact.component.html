@@ -1,11 +1,20 @@
-<h1>Contact us</h1>
-<h3>If you have any concern or question feel free to drop us a line!</h3>
-<div class="main">
-  <div class="form-container">
-    <input placeholder="Firstname">  <input placeholder="Lastname">
-    <input placeholder="Email">
-    <textarea name="textarea" rows="10" cols="50" placeholder="write here your message..."></textarea>
-    <button>send</button>
+<div class="simple-header">
+  <app-simple-header text="About us" image="https://cdn.glitch.com/4d4b7a40-dc10-4300-bbe8-e4dd45f60e40%2Fpencil-education-pencil-sharpener-art-159731a.jpeg?1500412351640"></app-simple-header>
+</div>
+<div class="background">
+  <div class="main-container">
+    <h1>Give a shout to the deer</h1>
+    <h3>If you have any concern or question feel free to drop us a line!</h3>
+    <div class="main">
+      <div class="map"></div>
+      <form class="form-container" method="POST" action="http://formspree.io/zodiacnorma@gmail.com">
+        <input placeholder="First name" name="name">  
+        <input placeholder="Last name" name="name">
+        <input placeholder="Email" type="email" name="_replyto">
+        <textarea name="name" rows="10" cols="50" placeholder="write here your message..."></textarea>
+        <input class="button" value="Send" type="Submit">
+        <!-- <input class="button" value="//bookingnorma.herokuapp.com/contact" type="hidden"> -->
+      </form>
+    </div>
   </div>
-  <div class="map"></div>
 </div>
