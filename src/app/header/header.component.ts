@@ -26,19 +26,19 @@ export class HeaderComponent implements OnInit {
             this.dropLink._results[i].nativeElement.className = 'dropMenu';
         }
 
-        this.link._results[4].nativeElement.className = 'navigation end';
+        this.link._results[2].nativeElement.className = 'navigation end';
 
         if (url === '/') {
             this.link._results[0].nativeElement.className = 'highlighted';
             this.dropLink._results[0].nativeElement.className = 'highlightedDrop';
         }
-        if (url.slice(1, 12) === 'reservation') {
-            this.link._results[2].nativeElement.className = 'highlighted';
-            this.dropLink._results[2].nativeElement.className = 'highlightedDrop';
-        }
-        if (url.slice(1, 6) === 'hotel') {
+        if (url.slice(1, 7) === 'hotels') {
             this.link._results[1].nativeElement.className = 'highlighted';
             this.dropLink._results[1].nativeElement.className = 'highlightedDrop';
         }
+        // if (url.slice(1, 6) === 'hotel') {
+        //     this.link._results[1].nativeElement.className = 'highlighted';
+        //     this.dropLink._results[1].nativeElement.className = 'highlightedDrop';
+        // }
     }
 }

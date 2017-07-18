@@ -32,7 +32,7 @@ import { NgBoxService } from 'ngbox/ngbox.service';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
-    { path: 'reservation', component: ReservationComponent },
+    { path: 'hotels', component: ReservationComponent },
     { path: 'hotel', component: HotelComponent },
     { path: 'hotel/overview', component: OverviewComponent },
     { path: 'hotel/rooms', component: SinglehotelComponent },

@@ -38,7 +38,7 @@ export class BookinSectionComponent implements OnInit {
     }
 
     goToPage(location, checkin, checkout, adults, children) {
-        this.router.navigate(['/reservation'],
+        this.router.navigate(['/hotels'],
         { queryParams: {
             location: location,
             checkin: checkin.mydate.formatted,
