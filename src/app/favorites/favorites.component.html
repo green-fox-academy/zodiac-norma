@@ -1,3 +1,30 @@
-<p>
-  favorites works!
-</p>
+<section>
+    <div class="simple-header">
+        <app-simple-header text="Favorites" image="https://cdn.glitch.com/4d4b7a40-dc10-4300-bbe8-e4dd45f60e40%2Fpexels-photo-196045.jpeg?1500384362257"></app-simple-header>
+    </div>
+
+    <div class="mainContainer">
+        <div class="hotelHolder">
+            <div class='hotel-cards-container'>
+                <div class="hotels" *ngFor="let hotel of currentHotels; let idx = index">
+                    <div class='image' [ngStyle]="{'background-image': 'url('+hotel.attributes.main_image_src+')'}"></div>
+                    <div class="text-container">
+                        <div class="text-subcontainer">
+                            <h3 class="title">{{hotel.attributes.name}}</h3>
+                            <div (click)="markFavorite($event)" class="grey-star"></div>
+                        </div>
+                        <div class="feature-container">
+                            <ul>
+                                <li class="descr" *ngFor='let feature of hotel.features'> {{ feature }}</li>
+                            </ul>
+                        </div>
+                        <div class="price-container">
+                            <p class="price" >{{ hotel.attributes.amount }} {{ hotel.attributes.currency }}</p>
+                            <div class="button">Visit Hotel</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
