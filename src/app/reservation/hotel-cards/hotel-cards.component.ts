@@ -17,6 +17,8 @@ export class HotelCardsComponent implements OnInit {
     cardsPerPage = 5;
     buttonText = 'Load more Results';
     buttonClass = 'roomButton';
+    defaultStorage = [];
+    setClass = 'grey-star';
 
     classSelector;
     location;
@@ -27,6 +29,9 @@ export class HotelCardsComponent implements OnInit {
     hotelPage;
     subscribe;
     sendData;
+    dataToStore;
+    dataToStoreString;
+    toRemove;
 
     constructor(
         private roomData: AppService,
@@ -46,14 +51,30 @@ export class HotelCardsComponent implements OnInit {
             this.hotelPage = params['page'];
             this.postRequest();
         });
+
+        if (localStorage.getItem('id') == null) {
+            localStorage.setItem('id', JSON.stringify(this.defaultStorage));
+        }
+
+        this.dataToStore = JSON.parse(localStorage.getItem('id'));
+        this.dataToStoreString = localStorage.getItem('id');
     }
 
     markFavorite = function(event) {
-        
+
+        this.dataToStore = JSON.parse(localStorage.getItem('id'));
+        this.dataToStoreString = localStorage.getItem('id');
+
         if (event.target.className === 'grey-star') {
-            event.target.className = 'yellow-star'
+            event.target.className = 'yellow-star';
+            this.dataToStore.push(JSON.parse(event.target.innerHTML));
+            localStorage.setItem('id', JSON.stringify(this.dataToStore));
         } else {
-            event.target.className = 'grey-star'
+            event.target.className = 'grey-star';
+            let searchIndex = JSON.parse(event.target.innerHTML);
+            this.toRemove = this.dataToStore.indexOf(searchIndex);
+            this.dataToStore.splice(this.toRemove, 1);
+            localStorage.setItem('id', JSON.stringify(this.dataToStore));
         }
     }
 
