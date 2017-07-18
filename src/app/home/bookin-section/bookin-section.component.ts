@@ -107,7 +107,7 @@ export class BookinSectionComponent implements OnInit {
 
         if (checkout.value.mydate.formatted.length !== 10) {
             this.checkoutInput = false;
-            this.checkoutCoverClass = 'coverTrue';
+            this.checkoutCoverClass = 'coverTrueOut';
         }
         else {
             this.checkoutInput = true;
@@ -116,7 +116,7 @@ export class BookinSectionComponent implements OnInit {
 
         if (checkout.value.mydate.formatted[2] !== '.' || checkout.value.mydate.formatted[5] !== '.') {
             this.checkoutInput = false;
-            this.checkoutCoverClass = 'coverTrue';
+            this.checkoutCoverClass = 'coverTrueOut';
         }
         else {
             this.checkoutInput = true;
@@ -127,7 +127,7 @@ export class BookinSectionComponent implements OnInit {
             if (i !== 2 && i !== 5) {
                 if (isNaN(parseInt(checkout.value.mydate.formatted[i]) / 1)) {
                     this.checkoutInput = false;
-                    this.checkoutCoverClass = 'coverTrue';
+                    this.checkoutCoverClass = 'coverTrueOut';
                 }
                 else {
                     this.checkoutInput = true;
@@ -145,6 +145,10 @@ export class BookinSectionComponent implements OnInit {
             this.checkoutCoverClass = '';
         }
 
+    }
+
+    isValidGo(location, checkin, checkout, adults, children) {
+        this.isValid(location, checkin, checkout, adults, children);
         if (this.checkinInput === true && this.checkoutInput === true && this.adultsInput === true && this.childrenInput === true) {
             this.goToPage(location, checkin, checkout, adults, children);
         }
