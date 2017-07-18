@@ -27,6 +27,7 @@ import { HotelSubmenuComponent } from './hotel/hotel-submenu/hotel-submenu.compo
 import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
 import { ContactComponent } from './contact/contact.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { ContactService } from './contact.service';
 
 import { NgBoxModule } from 'ngbox/ngbox.module';
 import { NgBoxService } from 'ngbox/ngbox.service';
@@ -85,7 +86,8 @@ const appRoutes: Routes =[
         BookinSectionComponent,
         AppService,
         HotelCardsComponent,
-        NgBoxService
+        NgBoxService,
+        ContactService
     ],
     bootstrap: [AppComponent]
 })
