@@ -10,26 +10,28 @@
     <div class="lesserBox">
         <label>Check-in date:</label>
         <form #checkin="ngForm" novalidate>
-            <my-date-picker id="firstDatePicker" placeholder="dd.mm.yyyy" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkinDate" required></my-date-picker>
+            <my-date-picker (keyup) = "isValid(location, checkin, checkout, adults, children)" (change) = "isValid(location, checkin, checkout, adults, children)" id="firstDatePicker" placeholder="dd.mm.yyyy" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkinDate" required></my-date-picker>
+            <div [ngClass]="checkinCoverClass"></div>
         </form>
     </div>
     <div class="lesserBox">
         <label>Check-out date:</label>
         <form #checkout="ngForm" novalidate>
-            <my-date-picker placeholder="dd.mm.yyyy" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkoutDate" required></my-date-picker>
+            <my-date-picker (keyup) = "isValid(location, checkin, checkout, adults, children)" (change) = "isValid(location, checkin, checkout, adults, children)" placeholder="dd.mm.yyyy" name="mydate" [options]="myDatePickerOptions" [(ngModel)]="checkoutDate" required></my-date-picker>
+            <div [ngClass]="checkoutCoverClass"></div>
         </form>
     </div>
     <div class="miniContainer">
         <div class="miniBox">
             <label>Adults:</label>
-            <input id="adultInput" #adults value=1 type="number" min="1">
+            <input (keyup) = "isValid(location, checkin, checkout, adults, children)" (change) = "isValid(location, checkin, checkout, adults, children)" [ngClass]="adultsFalseClass" id="adultInput" #adults value=1 type="number" min="1">
         </div>
         <div class="miniBox">
             <label>Children:</label>
-            <input id="childInput" #children value=0 type="number" min="0">
+            <input (keyup) = "isValid(location, checkin, checkout, adults, children)" (change) = "isValid(location, checkin, checkout, adults, children)" [ngClass]="childrenFalseClass" id="childInput" #children value=0 type="number" min="0">
         </div>
     </div>
-    <div (click) = "isValid(location.value, checkin.value, checkout.value, adults.value, children.value)" class="buttonBox">
+    <div (click) = "isValidGo(location, checkin, checkout, adults, children)" class="buttonBox">
         <p>Book now</p>
     </div>
 </div>
