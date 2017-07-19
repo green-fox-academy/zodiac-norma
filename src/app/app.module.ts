@@ -42,8 +42,7 @@ const appRoutes: Routes =[
 	{ path: 'hotel', component: HotelComponent },
 	{ path: 'hotel/overview', component: OverviewComponent },
 	{ path: 'hotel/rooms', component: SinglehotelComponent },
-	{ path: 'hotel/map', component: SimpleMapComponent },
-	{ path: 'multi-location', component: MultiLocationComponent }
+	{ path: 'hotel/map', component: SimpleMapComponent }
 ];
 
 @NgModule({

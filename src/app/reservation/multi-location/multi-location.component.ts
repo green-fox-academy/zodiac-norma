@@ -12,7 +12,7 @@ declare var google:any;
 	selector: 'app-multi-location',
 	templateUrl: './multi-location.component.html',
 	styleUrls: ['./multi-location.component.scss'],
-	
+
 })
 
 
@@ -22,24 +22,24 @@ export class MultiLocationComponent implements OnInit {
 	subscribe;
 	ifTopFixed = false;
 	ifBottomFixed = false;
-	
+
 	@ViewChild (MapObjectComponent)
 
 	private mapFeatureComponent: MapObjectComponent;
 
-	constructor(@Inject(DOCUMENT) private document: Document, 
-		public el: ElementRef, 
-		public mapApiWrapper:GoogleMapsAPIWrapper, 
+	constructor(@Inject(DOCUMENT) private document: Document,
+		public el: ElementRef,
+		public mapApiWrapper:GoogleMapsAPIWrapper,
 		private request: AppService,
 		private route: ActivatedRoute,
 		private router: Router,
-		) { 		
+		) {
 		this.router.events.forEach((event) => {
 			if (event instanceof NavigationEnd) {
 				this.subscribe = this.route
 					.queryParams
 					.subscribe(params => {
-						this.location = params['location'];		
+						this.location = params['location'];
 					});
 					console.log(this.location);
 					this.ajax();
@@ -58,8 +58,8 @@ export class MultiLocationComponent implements OnInit {
 				this.mapFeatureComponent.renderMap(this.data);
 			},
 			(error) => console.log(error)
-			);	
-	}	
+			);
+	}
 
 	@HostListener("window:scroll", [])
 	onWindowScroll() {
