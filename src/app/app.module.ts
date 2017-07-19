@@ -30,6 +30,7 @@ import { MapObjectComponent } from './reservation/multi-location/map-object/map-
 import { ContactComponent } from './contact/contact.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ContactService } from './contact.service';
+import { StreetviewComponent } from './hotel/streetview/streetview.component';
 
 import { NgBoxModule } from 'ngbox/ngbox.module';
 import { NgBoxService } from 'ngbox/ngbox.service';
@@ -68,7 +69,8 @@ const appRoutes: Routes =[
 		MultiLocationComponent,
 		MapObjectComponent,
 		ContactComponent,
-		FavoritesComponent
+		FavoritesComponent,
+		StreetviewComponent
 	],
 	imports: [
 		BrowserModule,

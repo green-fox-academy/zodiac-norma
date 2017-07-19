@@ -7,22 +7,23 @@ declare var google: any;
 
 @Component({
   selector: 'app-streetview',
-  template: '',
+  templateUrl: '../hotel.component.html',
+  styleUrls: ['./streetview.component.scss']
 })
 export class StreetviewComponent implements OnInit {
 	private nativeElement;
 
-	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, element : ElementRef) { 
+	constructor(public mapApiWrapper:GoogleMapsAPIWrapper, element : ElementRef) {
 		this.nativeElement = element.nativeElement;
-		
-		
+
+
 	}
 	ngAfterContentInit() {
 		console.log(this.nativeElement.querySelector('div'));
 	}
 
-	ngOnInit() {	
-		
+	ngOnInit() {
+
 		console.log(document.querySelector('#sv'));
 		var mapFrame = document.querySelector('#sv');
 		this.mapApiWrapper.getNativeMap()
@@ -31,7 +32,7 @@ export class StreetviewComponent implements OnInit {
 		console.log(map.getZoom());
 
 		let position = new google.maps.LatLng(45.521, -122.677);
-		
+
 		var cityCircle = new google.maps.Circle({
 			strokeColor: '#FF0000',
 			strokeOpacity: 0.8,
@@ -49,7 +50,7 @@ export class StreetviewComponent implements OnInit {
           	pitch: 10
         }
       })
-		
+
 	});
 }
 
