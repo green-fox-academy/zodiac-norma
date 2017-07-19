@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { SimpleHeaderComponent } from '../reservation/simple-header/simple-header.component';
 import { ContactComponent } from './contact.component';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { ContactService } from '../contact.service';
+import { HttpModule } from '@angular/http';
+import { AppService } from '../app.service';
+import { Routes, RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ContactComponent', () => {
   let component: ContactComponent;
@@ -8,7 +14,9 @@ describe('ContactComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactComponent ]
+      declarations: [ ContactComponent, SimpleHeaderComponent ],
+      imports: [ HttpModule, AgmCoreModule, RouterTestingModule ],
+      providers: [ ContactService, AppService, MapsAPILoader ]
     })
     .compileComponents();
   }));
@@ -19,7 +27,4 @@ describe('ContactComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
-  });
 });
