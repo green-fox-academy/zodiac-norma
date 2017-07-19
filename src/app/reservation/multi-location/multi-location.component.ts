@@ -66,11 +66,6 @@ export class MultiLocationComponent implements OnInit {
 	onWindowScroll() {
 		let number = this.document.body.scrollTop;
 		console.log(number);
-		if (number > 240) {
-		this.ifBottomFixed = true;
-		} else {
-			this.ifBottomFixed = true;
-		}
 
 		if (number > 490) {
 		this.ifTopFixed = true;
