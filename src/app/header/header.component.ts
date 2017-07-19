@@ -40,7 +40,7 @@ export class HeaderComponent implements OnInit {
             this.link._results[2].nativeElement.className = 'highlighted';
             this.dropLink._results[2].nativeElement.className = 'highlightedDrop';
         }
-        if (url.slice(1, 6) === 'about') {
+        if (url.slice(1, 8) === 'contact') {
             this.link._results[3].nativeElement.className = 'highlighted';
             this.dropLink._results[3].nativeElement.className = 'highlightedDrop';
         }

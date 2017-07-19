@@ -40,7 +40,7 @@ const appRoutes: Routes =[
 	{ path: '', component: HomeComponent },
 	{ path: 'hotels', component: ReservationComponent },
 	{ path: 'favorites', component: FavoritesComponent },
-	{ path: 'about', component: ContactComponent },
+	{ path: 'contact', component: ContactComponent },
 	{ path: 'hotel', component: HotelComponent },
 	{ path: 'hotel/overview', component: OverviewComponent },
 	{ path: 'hotel/rooms', component: SinglehotelComponent },
