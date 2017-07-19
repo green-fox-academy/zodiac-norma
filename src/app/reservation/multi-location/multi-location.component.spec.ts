@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { MultiLocationComponent } from './multi-location.component';
 import { HttpModule } from '@angular/http';
 import { Routes, RouterModule } from '@angular/router';
@@ -22,5 +21,4 @@ describe('MultiLocationComponent', () => {
 		component = fixture.componentInstance;
 		fixture.detectChanges();
   	});
-
 });

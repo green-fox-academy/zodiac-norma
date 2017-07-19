@@ -7,17 +7,17 @@ import { Response } from '@angular/http';
 declare var google:any;
 
 @Component({
-  selector: 'app-map-object',
-  template: '',
+	selector: 'app-map-object',
+	template: '',
 })
 
 export class MapObjectComponent implements OnInit {
+	
 	@Input() data;
 
-	constructor( public mapApiWrapper:GoogleMapsAPIWrapper) { }
+	constructor( public mapApiWrapper:GoogleMapsAPIWrapper) {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 
 	
 	renderMap(data) {
@@ -45,14 +45,13 @@ export class MapObjectComponent implements OnInit {
         		})
 				marker.addListener('click', function() {
           			infowindow.open(map, marker);
-        		});
-				
+        		});	
 				bounds.extend(marker.position);
 			})
+			
 			map.addListener('dragend', function(e) {
           		console.log('map dragged',e); 
-				  console.log(this);
-				  
+				console.log(this);	  
         	});
 			map.fitBounds(bounds);
 		})

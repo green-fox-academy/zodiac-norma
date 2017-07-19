@@ -27,28 +27,27 @@ export class MultiLocationComponent implements OnInit {
 
 	private mapFeatureComponent: MapObjectComponent;
 
-	constructor(@Inject(DOCUMENT) private document: Document, public el: ElementRef, 
+	constructor(@Inject(DOCUMENT) private document: Document, 
+		public el: ElementRef, 
 		public mapApiWrapper:GoogleMapsAPIWrapper, 
 		private request: AppService,
 		private route: ActivatedRoute,
 		private router: Router,
-		) { 	
-			this.router.events.forEach((event) => {
-				if (event instanceof NavigationEnd) {
-					this.subscribe = this.route
-						.queryParams
-						.subscribe(params => {
-							this.location = params['location'];		
-						});
-						console.log(this.location);
-						this.ajax();
-				}
-			})
-		}
-
-	ngOnInit() {
-
+		) { 		
+		this.router.events.forEach((event) => {
+			if (event instanceof NavigationEnd) {
+				this.subscribe = this.route
+					.queryParams
+					.subscribe(params => {
+						this.location = params['location'];		
+					});
+					console.log(this.location);
+					this.ajax();
+			}
+		})
 	}
+
+	ngOnInit() {}
 
 	ajax() {
 		this.request.getData('https://two-ferns.glitch.me/multi-location/' + this.location.toLowerCase())
@@ -68,9 +67,9 @@ export class MultiLocationComponent implements OnInit {
 		console.log(number);
 
 		if (number > 490) {
-		this.ifTopFixed = true;
+			this.ifTopFixed = true;
 		} else {
-		this.ifTopFixed = false;
+			this.ifTopFixed = false;
 		}
 	}
 }
