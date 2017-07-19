@@ -90,9 +90,9 @@ app-hotel-cards {
 .mapContainer {
     margin-top: 152px;
     margin-left: 20px;
+	margin-bottom: 165px;
     width: 385px;
-    height: 385px;
-    background-color: violet;
+    height: 100vh;
     @media screen and (max-width: $break-big) {
         margin-top: 550px;
         margin-left: 0px;
