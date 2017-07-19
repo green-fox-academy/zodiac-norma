@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { SimpleHeaderComponent } from '../reservation/simple-header/simple-header.component';
 
 import { FavoritesComponent } from './favorites.component';
 

@@ -1,0 +1,201 @@
+@import '../.././scss/grid.scss';
+@import '../.././scss/break-points.scss';
+
+.hotel-cards-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media screen and (max-width: $break-collapse) {
+        padding: 0px;
+        width: 100%;
+        border: none;
+   }
+}
+
+.hotels {
+	max-height: 100%;
+	min-height: 100%;
+	max-width: 548px;
+	min-width: 548px;
+	display: flex;
+	background: white;
+	margin: 0px;
+    margin-bottom: 50px;
+	border-style: solid;
+	border-width: 1px;
+	border-color:rgba(102,102,102, 0.2);
+	box-shadow: 0px 4px 10px 0px rgba(204,200,204,1);
+	border-radius: 3px;
+	@media screen and (max-width: $break-collapse) {
+		min-height: 100%;
+		max-width: 320px;
+		min-width: 320px;
+		display: block;
+		margin-bottom: 30px;
+		padding-bottom: 5px;
+	}
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 15px;
+    margin-top: 15px;
+    @media screen and (max-width: $break-collapse) {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+
+.text-subcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.title {
+    font-weight: 900;
+}
+
+.grey-star {
+    min-width: 20px;
+    min-height: 20px;
+    background: no-repeat center url(../images/greystar.png);
+    background-size: contain;
+    font-size: 0.1px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.yellow-star {
+    min-width: 20px;
+    min-height: 20px;
+    background: no-repeat center url(../images/yellowstar.png);
+    background-size: contain;
+    font-size: 0.1px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.image {
+    max-height: 100%;
+    min-height: 100%;
+    max-width: 180px;
+    min-width: 180px;
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-right: 20px;
+	border-right-style: solid;
+	border-right-width: 2px;
+	border-right-color: rgb(235, 235, 235);
+	background-size: 180px;
+	background-repeat: no-repeat;
+	background-position: left;
+	@media screen and (max-width: $break-collapse) {
+		min-height: 220px;
+		background-size: contain;
+		background-position: center;
+		margin-left: 60.5px;
+		border-style: none;
+	}
+}
+
+ul {
+    padding-left: 0px;
+    color: grey;
+    font-size: 12px;
+    font-weight: bolder;
+    list-style: outside disc;
+    display: flex;
+    flex-wrap: wrap;
+    @media screen and (max-width: $break-collapse) {
+        column-count: 1;
+    }
+}
+
+.feature-container {
+    margin-bottom: 18px;
+    margin-top: 10px;
+    padding-bottom: 12px;
+    max-width: 295px;
+    min-width: 295px;
+    border-bottom-style: dashed;
+    border-bottom-color: #DEDEDE;
+    line-height: 22px;
+}
+
+.price-container {
+    display: flex;
+}
+
+.price {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.button {
+    margin-left: 20px;
+    width: 150px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 35px;
+    background-color: rgb(50, 162, 227);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    @media screen and (max-width: $break-collapse) {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+}
+
+li {
+    margin-left: 15px;
+    width: 130px;
+}
+
+.mainContainer {
+    min-width: 975px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $break-big) {
+        min-width: 580px;
+        flex-direction: column-reverse;
+    }
+    @media screen and (max-width: $break-collapse) {
+        min-width: 320px;
+        flex-direction: column-reverse;
+    }
+}
+
+.hotelHolder {
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: $break-collapse) {
+        width: 100%;
+        margin-top: 50px;
+    }
+}
+
+.hotelContainer {
+    margin-bottom: 180px;
+    min-width: 740px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: solid;
+    border-width: 1px;
+    border-color: rgb(205, 205, 205);
+    @media screen and (max-width: 1400px) {
+        min-width: 320px;
+        padding-right: 0px;
+        border: none;
+    }
+}

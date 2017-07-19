@@ -4,7 +4,8 @@
         <div class="text-container">
             <div class="text-subcontainer">
                 <h3 class="title">{{hotel.attributes.name}}</h3>
-                <div (click)="markFavorite($event)" class="grey-star"></div>
+                <div *ngIf="dataToStoreString.includes(hotel.id) == true" (click)="markFavorite($event)" class="yellow-star">{{hotel.id}}</div>
+                <div *ngIf="dataToStoreString.includes(hotel.id) == false" (click)="markFavorite($event)" class="grey-star">{{hotel.id}}</div>
             </div>
             <div class="feature-container">
                 <ul>

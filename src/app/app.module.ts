@@ -29,6 +29,7 @@ import { MultiLocationComponent } from './reservation/multi-location/multi-locat
 import { MapObjectComponent } from './reservation/multi-location/map-object/map-object.component';
 import { ContactComponent } from './contact/contact.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { ContactService } from './contact.service';
 
 import { NgBoxModule } from 'ngbox/ngbox.module';
 import { NgBoxService } from 'ngbox/ngbox.service';
@@ -89,7 +90,8 @@ const appRoutes: Routes =[
 		AppService,
 		HotelCardsComponent,
 		NgBoxService,
-		GoogleMapsAPIWrapper
+		GoogleMapsAPIWrapper,
+		ContactService
 	],
 	bootstrap: [AppComponent]
 })
