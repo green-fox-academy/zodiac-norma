@@ -7,7 +7,16 @@
     <h1>Give a shout to the deer</h1>
     <h3>If you have any concern or question feel free to drop us a line!</h3>
     <div class="main">
-      <div class="map"></div>
+      <div class="map">
+        <agm-map [styles]="customStyle" [latitude]="47.507408" [longitude]="19.066224" [zoom]="15">
+          <agm-marker
+            [latitude]="47.507408"
+            [longitude]="19.066224">
+            <agm-info-window [disableAutoPan]="true">Hi, this is the Greenfox Travel headquarters
+            </agm-info-window>
+          </agm-marker>
+	      </agm-map>
+      </div>
       <form class="form-container">
         <input #first placeholder="First name" name="name">
         <input #last placeholder="Last name" name="name">
