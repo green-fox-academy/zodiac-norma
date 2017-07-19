@@ -25,11 +25,13 @@ import { Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MyDatePickerModule } from 'mydatepicker';
-//import { AgmCoreModule, MapsAPILoader } from '@agm/core';
+import { AgmCoreModule, MapsAPILoader } from '@agm/core';
 import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { OverviewComponent } from './hotel/overview/overview.component';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
+import { MultiLocationComponent} from './reservation/multi-location/multi-location.component';
+import { MapObjectComponent} from './reservation/multi-location/map-object/map-object.component'
 
 describe('AppComponent', () => {
     let locations, routing;
@@ -53,7 +55,9 @@ describe('AppComponent', () => {
                 SimpleMapComponent,
                 OverviewComponent,
                 SinglehotelComponent,
-                HotelComponent
+                HotelComponent,
+				MultiLocationComponent,
+				MapObjectComponent
             ],
             imports: [
                 HttpModule,
