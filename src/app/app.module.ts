@@ -67,9 +67,8 @@ const appRoutes: Routes =[
         RoomFeaturesComponent,
 		MultiLocationComponent,
 		MapObjectComponent,
-        ContactComponent,
-        FavoritesComponent
-
+		ContactComponent,
+		FavoritesComponent
     ],
     imports: [
         BrowserModule,
