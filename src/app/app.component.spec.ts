@@ -30,8 +30,8 @@ import { HotelComponent } from './hotel/hotel.component';
 import { SimpleMapComponent } from './hotel/simple-map/simple-map.component';
 import { OverviewComponent } from './hotel/overview/overview.component';
 import { SinglehotelComponent } from './hotel/singlehotel/singlehotel.component';
-import { MultiLocationComponent} from './multi-location/multi-location.component';
-import { MapObjectComponent} from './multi-location/map-object/map-object.component'
+import { MultiLocationComponent} from './reservation/multi-location/multi-location.component';
+import { MapObjectComponent} from './reservation/multi-location/map-object/map-object.component'
 
 describe('AppComponent', () => {
     let locations, routing;
