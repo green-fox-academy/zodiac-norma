@@ -1,0 +1,19 @@
+<div class="simple-header">
+  <app-simple-header text="About us" image="https://cdn.glitch.com/4d4b7a40-dc10-4300-bbe8-e4dd45f60e40%2Fpencil-education-pencil-sharpener-art-159731a.jpeg?1500412351640"></app-simple-header>
+</div>
+<div class="background">
+  <div class="main-container">
+    <h1>Give a shout to the deer</h1>
+    <h3>If you have any concern or question feel free to drop us a line!</h3>
+    <div class="main">
+      <div class="map"></div>
+      <form class="form-container">
+        <input #first placeholder="First name" name="name">  
+        <input #last placeholder="Last name" name="name">
+        <input #mail placeholder="Email">
+        <textarea #msg name="name" rows="10" cols="50" placeholder="write here your message..."></textarea>
+        <input class="button" value="Send" (click)="onSubmit(first, last, mail, msg)">
+      </form>
+    </div>
+  </div>
+</div>

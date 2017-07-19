@@ -27,6 +27,8 @@ import { HotelSubmenuComponent } from './hotel/hotel-submenu/hotel-submenu.compo
 import { RoomFeaturesComponent } from './hotel/singlehotel/room-features/room-features.component';
 import { MultiLocationComponent } from './reservation/multi-location/multi-location.component';
 import { MapObjectComponent } from './reservation/multi-location/map-object/map-object.component';
+import { ContactComponent } from './contact/contact.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 import { NgBoxModule } from 'ngbox/ngbox.module';
 import { NgBoxService } from 'ngbox/ngbox.service';
@@ -34,7 +36,9 @@ import { NgBoxService } from 'ngbox/ngbox.service';
 
 const appRoutes: Routes =[
     { path: '', component: HomeComponent },
-    { path: 'reservation', component: ReservationComponent },
+    { path: 'hotels', component: ReservationComponent },
+    { path: 'favorites', component: FavoritesComponent },
+    { path: 'about', component: ContactComponent },
     { path: 'hotel', component: HotelComponent },
     { path: 'hotel/overview', component: OverviewComponent },
     { path: 'hotel/rooms', component: SinglehotelComponent },
@@ -62,7 +66,9 @@ const appRoutes: Routes =[
         HotelSubmenuComponent,
         RoomFeaturesComponent,
 		MultiLocationComponent,
-		MapObjectComponent
+		MapObjectComponent,
+        ContactComponent,
+        FavoritesComponent
 
     ],
     imports: [

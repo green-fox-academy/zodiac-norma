@@ -19,18 +19,17 @@ export class SliderComponent implements OnInit {
         this.nativeElement = element.nativeElement;
 		this.notNodeElement = element.nativeElement;
 	}
-	
+
 	ngOnInit() {
 
 
         this.endpoint = this.nativeElement.attributes[1].value;
         this.thumbNailNeed = this.nativeElement.attributes[2].value;
-
 		this.request.getData('https://two-ferns.glitch.me/'+this.endpoint)
 			.subscribe(
 			(response: Response) => {
 				let sliderData = response.json();
-				
+
 				this.createImageObjects(sliderData)
                 if (this.thumbNailNeed === 'true') {
                     this.createThumbNails(sliderData)
