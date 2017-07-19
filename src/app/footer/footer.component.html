@@ -2,11 +2,10 @@
     <div class="container">
         <div class="footerText">© 2017 Greenfox Academy. All Rights Reserved</div>
         <ul class="navContainer">
-            <li><a href="index.html" class="navigation">Hotel</a></li>
-            <li><a href="index.html" class="navigation">Rooms & Suites</a></li>
-            <li><a href="index.html" class="navigation">Reservation</a></li>
-            <li><a href="index.html" class="navigation">Activites</a></li>
-            <li><a href="index.html" class="navigation end">Contact</a></li>
+            <li><a #link [routerLink]="['/']" class="navigation">Home</a></li>
+            <li><a #link [routerLink]="['hotels']" class="navigation">Hotels</a></li>
+            <li><a #link [routerLink]="['favorites']" class="navigation">Favorites</a></li> 
+            <li><a #link [routerLink]="['contact']" class="navigation end">Contact Us</a></li>
         </ul>
     </div>
 </footer>
