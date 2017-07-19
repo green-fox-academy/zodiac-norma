@@ -19,11 +19,21 @@
   bottom: 0;
 }
 
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  min-width: 955px;
+}
+
 agm-map {
   height: 400px;
   width: 100%;
 }
 
+.google {
+  min-height: 400px;
+  min-width: 326px;
+}
 .form-container {
   display: flex;
   justify-content: center;
