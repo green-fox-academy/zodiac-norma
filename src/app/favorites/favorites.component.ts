@@ -68,13 +68,17 @@ export class FavoritesComponent implements OnInit {
             event.target.className = 'yellow-star';
             this.dataToStore.push(JSON.parse(event.target.innerHTML));
             localStorage.setItem('id', JSON.stringify(this.dataToStore));
+            this.dataToStoreString = localStorage.getItem('id');
         } else {
             event.target.className = 'grey-star';
             let searchIndex = JSON.parse(event.target.innerHTML);
             this.toRemove = this.dataToStore.indexOf(searchIndex);
             this.dataToStore.splice(this.toRemove, 1);
             localStorage.setItem('id', JSON.stringify(this.dataToStore));
+            this.dataToStoreString = localStorage.getItem('id');
         }
+
+        this.pageRefresh();
     }
 
     postRequest = function () {
@@ -134,6 +138,10 @@ export class FavoritesComponent implements OnInit {
 
             this.features.push(onesFeatures);
         }
+    }
+
+    pageRefresh = function() {
+        this.router.navigate(['/favorites']);
     }
 
     buttonQuery = function() {
