@@ -58,7 +58,6 @@ const appRoutes: Routes =[
 		ReservationComponent,
 		FooterComponent,
 		CheckFormComponent,
-		SimpleHeaderComponent,
 		HotelCardsComponent,
 		HotelComponent,
 		SimpleMapComponent,
@@ -70,6 +69,7 @@ const appRoutes: Routes =[
 		MapObjectComponent,
 		ContactComponent,
 		FavoritesComponent,
+		SimpleHeaderComponent,
 		StreetviewComponent
 	],
 	imports: [

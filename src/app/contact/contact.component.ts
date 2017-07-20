@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { Response } from '@angular/http';
+import { SimpleHeaderComponent } from '../reservation/simple-header/simple-header.component';
 
 @Component({
   selector: 'app-contact',
