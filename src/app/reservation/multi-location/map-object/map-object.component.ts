@@ -23,9 +23,6 @@ export class MapObjectComponent implements OnInit {
 
 	renderMap(data) {
 		console.log(this.router)
-		/*let goToHotel = function(id) {
-			this.router.navigate(['/hotel/overview/:id'])
-		};*/
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
 			console.log("map object: " + map);
@@ -47,17 +44,16 @@ export class MapObjectComponent implements OnInit {
         		});
 				marker.addListener('click', () => {
 					infowindow.open(map, marker);
-          			console.log(document.querySelector('#thelink'));
-
 					document.querySelector('#thelink').addEventListener('click', function() {
-						this.router.navigate(['/hotel/overview/:' + marker.id]);
-					}.bind(this))
+						this.router.navigate(['/hotel/overview/'], { queryParams: {
+				            hotelName: location.name,
+							}
+				        });
+					}.bind(this));
         		})
 				bounds.extend(marker.position);
 			})
-
 			map.fitBounds(bounds);
 		})
 	}
-
 }
