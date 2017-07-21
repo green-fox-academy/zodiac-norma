@@ -1,14 +1,29 @@
 @import '../../scss/break-points.scss';
 
-.background {
+.background-image {
   z-index: -1;
+  position: absolute;
+  opacity: 0.15;
   padding-bottom: 100px;
   background-image: url('https://cdn.glitch.com/4d4b7a40-dc10-4300-bbe8-e4dd45f60e40%2Fpexels-photo-479453.jpeg?1500394183482');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 620px;
+  height: 670px;
   width: 100%;
-  box-shadow: inset 0px 16px 26px -11px rgba(120,118,120,1);
+  box-shadow: inset 0px 8px 12px 0px rgba(38,37,38,0.84);
+  @media screen and (max-width: $break-big) {
+    height: 1200px;
+  }
+}
+
+.background {
+  z-index: -2;
+  padding-bottom: 100px;
+  height: 670px;
+  width: 100%;
+  @media screen and (max-width: $break-big) {
+    height: 100%;
+  }
 }
 
 .main-container {
@@ -23,21 +38,38 @@
   display: flex;
   justify-content: space-between;
   min-width: 955px;
+  @media screen and (max-width: $break-big) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+  }
 }
 
 agm-map {
-  height: 400px;
+  height: 440px;
   width: 100%;
 }
 
 .google {
-  min-height: 400px;
-  min-width: 326px;
+  height: 440px;
+  min-width: 496px;
+  max-width: 496px;
+  border: 2px solid rgb(235, 235, 233);
+  box-shadow: 0px 4px 10px 0px rgba(58, 56, 55, 1);
 }
+
 .form-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background-color: rgb(251, 251, 251);
+  border: 2px solid rgb(235, 235, 233);
+  box-shadow: 0px 4px 10px 0px rgba(58, 56, 55, 1);
+  padding: 20px;
+  @media screen and (max-width: $break-big) {
+    margin-top: 50px;
+  }
 }
 
 h1, h3 {
@@ -64,23 +96,22 @@ textarea {
 
 input {
   width: 300px;
-  margin: 10px;
+  margin-bottom: 20px;
+  margin-left: 10px;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
 .button {
-  margin-top: 45px;
+  align-self: flex-end;
+  margin-top: 25px;
   margin-right: 10px;
   width: 95px;
   height: 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 35px;
   background-color: rgb(50, 162, 227);
   color: white;
   font-weight: bold;
   cursor: pointer;
+  text-align: center;
   @media screen and (max-width: $break-big) {
     margin-top: 20px;
     margin-bottom: 20px;
