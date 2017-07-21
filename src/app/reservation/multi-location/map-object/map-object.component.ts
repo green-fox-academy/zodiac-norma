@@ -23,10 +23,9 @@ export class MapObjectComponent implements OnInit {
 
 	renderMap(data) {
 		console.log(this.router)
-
-		let goToHotel = function() {
-			this.router.navigate(['/hotel/overview'])
-		};
+		/*let goToHotel = function(id) {
+			this.router.navigate(['/hotel/overview/:id'])
+		};*/
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
 			console.log("map object: " + map);
@@ -41,25 +40,22 @@ export class MapObjectComponent implements OnInit {
 					id: location.id,
 				})
 				var infowindow = new google.maps.InfoWindow({
-          			content: '<h1 class = ' + location.id + ' onclick = "(function(e){ console.log(e)})(event)">' + location.name + '</h1>'+
+          			content: '<h1 id="thelink">' + location.name + '</h1>'+
 					  		'<style> h1 {color: rgb(50, 162, 227);' +
 							'text-shadow: 1px 0px rgb(128, 128, 128);' +
 							'padding: 4px;}</style>',
         		});
-
-				marker.addListener('click', function() {
+				marker.addListener('click', () => {
 					infowindow.open(map, marker);
-          			console.log(marker.id);
+          			console.log(document.querySelector('#thelink'));
 
+					document.querySelector('#thelink').addEventListener('click', function() {
+						this.router.navigate(['/hotel/overview/:' + marker.id]);
+					}.bind(this))
         		})
-
 				bounds.extend(marker.position);
 			})
 
-			map.addListener('dragend', function(e) {
-          		console.log('map dragged',e);
-				console.log(this);
-        	});
 			map.fitBounds(bounds);
 		})
 	}

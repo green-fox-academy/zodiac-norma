@@ -36,13 +36,11 @@ export class MultiLocationComponent implements OnInit {
 		) {
 		this.router.events.forEach((event) => {
 			if (event instanceof NavigationEnd) {
-				this.subscribe = this.route
-					.queryParams
-					.subscribe(params => {
-						this.location = params['location'];
-					});
-					console.log(this.location);
-					this.ajax();
+				this.subscribe = this.route.queryParams.subscribe(params => {
+					this.location = params['location'];
+				});
+				console.log(this.location);
+				this.ajax();
 			}
 		})
 	}
@@ -64,7 +62,6 @@ export class MultiLocationComponent implements OnInit {
 	@HostListener("window:scroll", [])
 	onWindowScroll() {
 		let number = this.document.body.scrollTop;
-		console.log(number);
 
 		if (number > 490) {
 			this.ifTopFixed = true;
