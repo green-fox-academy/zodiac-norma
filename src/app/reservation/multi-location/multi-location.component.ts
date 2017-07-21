@@ -35,9 +35,12 @@ export class MultiLocationComponent implements OnInit {
 		this.router.events.forEach((event) => {
 			if (event instanceof NavigationEnd) {
 				this.subscribe = this.route.queryParams.subscribe(params => {
-					this.location = params['location'];
+					if (params['location'] != '') {
+						this.location = params['location'];
+					} else {
+						this.location = 'Budapest'
+					}
 				});
-				console.log(this.location);
 				this.ajax();
 			}
 		})
@@ -50,7 +53,6 @@ export class MultiLocationComponent implements OnInit {
 			.subscribe(
 			(response: Response) => {
 				this.data = response.json();
-				console.log(this);
 				this.mapFeatureComponent.renderMap(this.data);
 			},
 			(error) => console.log(error)

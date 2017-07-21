@@ -19,17 +19,10 @@ export class MapObjectComponent implements OnInit {
 
 	ngOnInit() {}
 
-
-
 	renderMap(data) {
-		console.log(this.router)
 		this.mapApiWrapper.getNativeMap()
 		.then((map)=> {
-			console.log("map object: " + map);
-			console.log("data retrieved and inputted from parent component: " + this.data);
-
 			var bounds = new google.maps.LatLngBounds();
-
 			data.locData.forEach((location) => {
 				var marker = new google.maps.Marker({
 					position: {lat: location.lt, lng: location.lng},
