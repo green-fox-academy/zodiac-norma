@@ -244,13 +244,8 @@ li {
 
 .sideHolder {
     height: 100vh;
-    width: calc(50% - 250px);
-    opacity: 0;
     width: 0px;
-    @media screen and (max-width: $break-big) {
-        height: 0px;
-        width: 0px;
-    }
+    opacity: 0;
 }
 
 .hotelHolder {

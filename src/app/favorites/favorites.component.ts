@@ -71,11 +71,10 @@ export class FavoritesComponent implements OnInit {
             this.leftPic = 'sideImageLeft Top';
             this.rightPic = 'sideImageRight Top';
         }
-        if ((window.pageYOffset + window.innerHeight) >= document.body.scrollHeight) {
+        if ((window.pageYOffset + window.innerHeight)>=document.body.scrollHeight) {
             this.leftPic = 'sideImageLeft Bottom';
             this.rightPic = 'sideImageRight Bottom';
         }
-
     }
 
     markFavorite = function(event) {
