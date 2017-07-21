@@ -18,8 +18,8 @@ export class FavoritesComponent implements OnInit {
     buttonClass = 'roomButton';
     defaultStorage = [];
     setClass = 'grey-star';
-    leftPic = 'sideImageLeft';
-    rightPic = 'sideImageRight';
+    leftPic = 'sideImageLeft Top';
+    rightPic = 'sideImageRight Top';
 
     classSelector;
     location;
@@ -64,16 +64,16 @@ export class FavoritesComponent implements OnInit {
     @HostListener("window:scroll", [])
     onWindowScroll() {
         if (window.pageYOffset > 340) {
-            this.leftPic = 'sideImage1';
-            this.rightPic = 'sideImage2';
+            this.leftPic = 'sideImageLeft Scroll';
+            this.rightPic = 'sideImageRight Scroll';
         }
         else {
-            this.leftPic = 'sideImageLeft';
-            this.rightPic = 'sideImageRight';
+            this.leftPic = 'sideImageLeft Top';
+            this.rightPic = 'sideImageRight Top';
         }
-        if ((window.pageYOffset + window.innerHeight + 1) > document.body.scrollHeight) {
-            this.leftPic = 'sideImageBottom1';
-            this.rightPic = 'sideImageBottom2';
+        if ((window.pageYOffset + window.innerHeight) >= document.body.scrollHeight) {
+            this.leftPic = 'sideImageLeft Bottom';
+            this.rightPic = 'sideImageRight Bottom';
         }
 
     }
