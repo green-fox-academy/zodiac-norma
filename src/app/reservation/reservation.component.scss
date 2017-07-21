@@ -94,7 +94,6 @@ app-hotel-cards {
     width: 385px;
     height: 100vh;
     @media screen and (max-width: $break-big) {
-        margin-top: 550px;
-        margin-left: 0px;
+        display: none
     }
 }

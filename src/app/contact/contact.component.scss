@@ -47,12 +47,12 @@
 }
 
 agm-map {
-  height: 440px;
+  height: 450px;
   width: 100%;
 }
 
 .google {
-  height: 440px;
+  height: 450px;
   min-width: 496px;
   max-width: 496px;
   border: 2px solid rgb(235, 235, 233);
@@ -92,6 +92,7 @@ textarea {
   height: 150px;
   margin: 10px;
   background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.3em;
 }
 
 input {
@@ -99,6 +100,8 @@ input {
   margin-bottom: 20px;
   margin-left: 10px;
   background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid grey;
+  padding: 0.3em;
 }
 
 .button {

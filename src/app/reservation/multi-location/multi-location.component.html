@@ -1,5 +1,5 @@
 <div class='default' [class.topFixed]="ifTopFixed">
-	<agm-map>
+	<agm-map [styles]="customStyle">
 		<app-map-object [data]='data'></app-map-object>
 	</agm-map>
 </div>
