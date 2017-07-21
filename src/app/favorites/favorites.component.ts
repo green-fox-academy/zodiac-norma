@@ -18,8 +18,8 @@ export class FavoritesComponent implements OnInit {
     buttonClass = 'roomButton';
     defaultStorage = [];
     setClass = 'grey-star';
-    leftPic = 'sideImage';
-    rightPic = 'sideImage';
+    leftPic = 'sideImageLeft';
+    rightPic = 'sideImageRight';
 
     classSelector;
     location;
