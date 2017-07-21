@@ -18,8 +18,8 @@ export class FavoritesComponent implements OnInit {
     buttonClass = 'roomButton';
     defaultStorage = [];
     setClass = 'grey-star';
-    leftPic = 'sideImage';
-    rightPic = 'sideImage';
+    leftPic = 'sideImageLeft';
+    rightPic = 'sideImageRight';
 
     classSelector;
     location;
@@ -66,9 +66,6 @@ export class FavoritesComponent implements OnInit {
         if (window.pageYOffset > 340) {
             this.leftPic = 'sideImage1';
             this.rightPic = 'sideImage2';
-            console.log(document.body.scrollHeight);
-            console.log(window.innerHeight);
-            console.log(window.pageYOffset);
         }
         else {
             this.leftPic = 'sideImageLeft';
