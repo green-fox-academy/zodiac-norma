@@ -164,16 +164,99 @@ li {
     justify-content: space-between;
     @media screen and (max-width: $break-big) {
         min-width: 580px;
-        flex-direction: column-reverse;
+        display: flex;
+        justify-content: space-between;
     }
     @media screen and (max-width: $break-collapse) {
         min-width: 320px;
-        flex-direction: column-reverse;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.sideImageLeft {
+    margin-right: 25px;
+    background: no-repeat left url(../images/imageleft.png);
+    height: 100vh;
+    width: calc(50% - 250px);
+    @media screen and (max-width: $break-big) {
+        display: none;
+    }
+}
+
+.sideImageRight {
+    margin-left: 25px;
+    background: no-repeat left url(../images/imageright.png);
+    height: 100vh;
+    width: calc(50% - 250px);
+    @media screen and (max-width: $break-big) {
+        display: none;
+    }
+}
+
+.sideImage1 {
+    margin-right: 25px;
+    background: no-repeat left url(../images/imageleft.png);
+    height: 100vh;
+    width: calc(50% - 300px);
+    top: 0;
+    position: fixed;
+    @media screen and (max-width: $break-big) {
+        display: none;
+    }
+}
+
+.sideImage2 {
+    margin-left: 25px;
+    background: no-repeat left url(../images/imageright.png);
+    height: 100vh;
+    width: calc(50% - 300px);
+    position: fixed;
+    top: 0;
+    left: calc(100vw - 50% + 258px);
+    @media screen and (max-width: $break-big) {
+        display: none;
+    }
+}
+
+.sideImageBottom1 {
+    margin-right: 25px;
+    background: no-repeat left url(../images/imageleft.png);
+    height: calc(100vh - 65px);
+    width: calc(50% - 300px);
+    top: 0;
+    position: fixed;
+    @media screen and (max-width: $break-big) {
+        display: none;
+    }
+}
+
+.sideImageBottom2 {
+    margin-left: 25px;
+    background: no-repeat left url(../images/imageright.png);
+    height: calc(100vh - 65px);
+    width: calc(50% - 300px);
+    position: fixed;
+    top: 0;
+    left: calc(100vw - 50% + 258px);
+    @media screen and (max-width: $break-big) {
+        display: none;
+    }
+}
+
+.sideHolder {
+    height: 100vh;
+    width: calc(50% - 250px);
+    opacity: 0;
+    width: 0px;
+    @media screen and (max-width: $break-big) {
+        height: 0px;
+        width: 0px;
     }
 }
 
 .hotelHolder {
-    width: 100%;
+    width: 550px;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
@@ -198,4 +281,11 @@ li {
         padding-right: 0px;
         border: none;
     }
+}
+
+.favoriteHeader {
+    position: absolute;
+    text-align: center;
+    top: 340px;
+    width: 100%;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChildren } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChildren, HostListener } from '@angular/core';
 import { Response } from '@angular/http';
 import { AppService } from '../app.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -18,6 +18,8 @@ export class FavoritesComponent implements OnInit {
     buttonClass = 'roomButton';
     defaultStorage = [];
     setClass = 'grey-star';
+    leftPic = 'sideImage';
+    rightPic = 'sideImage';
 
     classSelector;
     location;
@@ -57,6 +59,26 @@ export class FavoritesComponent implements OnInit {
 
         this.dataToStore = JSON.parse(localStorage.getItem('id'));
         this.dataToStoreString = localStorage.getItem('id');
+    }
+
+    @HostListener("window:scroll", [])
+    onWindowScroll() {
+        if (window.pageYOffset > 340) {
+            this.leftPic = 'sideImage1';
+            this.rightPic = 'sideImage2';
+            console.log(document.body.scrollHeight);
+            console.log(window.innerHeight);
+            console.log(window.pageYOffset);
+        }
+        else {
+            this.leftPic = 'sideImageLeft';
+            this.rightPic = 'sideImageRight';
+        }
+        if ((window.pageYOffset + window.innerHeight + 1) > document.body.scrollHeight) {
+            this.leftPic = 'sideImageBottom1';
+            this.rightPic = 'sideImageBottom2';
+        }
+
     }
 
     markFavorite = function(event) {
