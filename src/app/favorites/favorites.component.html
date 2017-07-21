@@ -2,8 +2,10 @@
     <div class="simple-header">
         <app-simple-header text="Favorites" image="https://cdn.glitch.com/4d4b7a40-dc10-4300-bbe8-e4dd45f60e40%2Fpexels-photo-196045.jpeg?1500384362257"></app-simple-header>
     </div>
-
+    <h1 class="favoriteHeader">Here you can see your favorite hotels:</h1>
     <div class="mainContainer">
+        <div [class]= 'leftPic'></div>
+        <div class="sideHolder"></div>
         <div class="hotelHolder">
             <div class='hotel-cards-container'>
                 <div *ngFor="let hotel of currentHotels; let idx = index">
@@ -29,5 +31,7 @@
                 </div>
             </div>
         </div>
+        <div [class]= 'rightPic'></div>
+        <div class="sideHolder"></div>
     </div>
 </section>

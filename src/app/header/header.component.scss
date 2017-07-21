@@ -33,6 +33,18 @@
     100% {transform: translateX(0px);}
 }
 
+// @keyframes gallop {
+//     0% {transform: translateX(0px);}
+//     41.67% {transform: translateX(360px);}
+//     44.44% {transform: translateX(360px) rotateZ(-90deg);}
+//     47.22% {transform: translateX(360px) translateY(-20px) rotateZ(-90deg);}
+//     50% {transform: translateX(360px) translateY(-20px) rotateZ(-180deg);}
+//     91.67% {transform: translateX(0px) translateY(-20px) rotateZ(-180deg);}
+//     94.44% {transform: translateX(0px) translateY(-20px) rotateZ(-270deg);}
+//     97.22% {transform: translateX(0px) translateY(0px) rotateZ(-270deg);}
+//     100% {transform: translateX(0px);}
+// }
+
 .header {
     min-width: 590px;
     min-height: 90px;
@@ -115,6 +127,7 @@
     height: 80px;
     display: flex;
     animation-name: gallop;
+    // animation-duration: 36s;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
