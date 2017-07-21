@@ -5,12 +5,12 @@
 <div class="main-container">
     <div class='room-info-container'>
         <div class="text-container">
-            <h1 class="header">Overview</h1>
+            <h1 class="header">{{hotelName}}</h1>
             <p class="section-description">Welcome to our hotel! Below you can see our suites and rooms.</p>
         </div>
         <div class="loop-container">
             <div class="room-info1" *ngFor="let room1 of roomInfoWithImage">
-                <div class="image" [ngStyle]="{'background-image': 'url('+room1.image+')'}"></div>
+                <a class="image" ng-box group="group1" [image]="true" src={{room1.image}} href=""><img width="298" height="148" src={{room1.image}} alt=""></a>
                 <h3 class="title">{{room1.title}}</h3>
                 <p class="descr">{{room1.description}}</p>
             </div>

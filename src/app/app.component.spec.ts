@@ -56,7 +56,7 @@ describe('AppComponent', () => {
                 OverviewComponent,
                 SinglehotelComponent,
                 HotelComponent,
-				MultiLocationComponent,
+                MultiLocationComponent,
 				MapObjectComponent
             ],
             imports: [
