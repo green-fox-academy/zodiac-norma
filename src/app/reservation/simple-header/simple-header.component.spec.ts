@@ -19,7 +19,8 @@ describe('SimpleHeaderComponent', () => {
                 RouterTestingModule
             ],
             providers: [
-                AppService
+                AppService,
+                SimpleHeaderComponent
             ]
         })
         .compileComponents();
